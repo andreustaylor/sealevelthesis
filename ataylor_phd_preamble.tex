@@ -1,0 +1,88 @@
+%------------------------------------------------------------------------ 
+% document general
+%------------------------------------------------------------------------ 
+\documentclass[10pt,a4paper]{article}
+\usepackage{amsmath}  % main ams math 
+\usepackage{amsfonts} % fonts
+\usepackage{amsbsy}    % bold fonts
+\usepackage{amssymb}
+\usepackage{graphicx} 
+\usepackage{url}
+%\usepackage{bm} 
+\usepackage[numbers]{natbib}    % http://merkel.zoneo.net/Latex/natbib.php 
+\usepackage[parfill]{parskip}
+\usepackage{caption}
+\usepackage{subfig}
+%\usepackage{hyperref}
+\usepackage{paralist}
+\usepackage{nomencl}
+\makenomenclature
+
+%------------------------------------------------------------------------ 
+% watermarks, colours & symbols
+%------------------------------------------------------------------------ 
+
+\usepackage{draftwatermark}
+\SetWatermarkText{DRAFT} 
+\SetWatermarkLightness{0.9}
+\SetWatermarkAngle{45}
+\SetWatermarkScale{5}
+
+\usepackage[framemethod=tikz]{mdframed}
+
+\usepackage{color}
+\definecolor{mygrey}{rgb}{0.9,0.9,0.9}
+\definecolor{mygreen}{rgb}{0,.4,0}
+\usepackage{listings}
+\lstset{
+language=bash,                   % Code langugage
+backgroundcolor=\color{mygrey},  % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+basicstyle=\ttfamily,            % Code font, Examples: \footnotesize, \ttfamily
+commentstyle=\color{mygreen},    % comment style
+breaklines=true,
+}
+
+% bullet symbol
+% \renewcommand{\labelitemi}{$\diamond$}
+\renewcommand{\labelitemi}{{\tiny$\blacksquare$}}
+
+
+% highlights
+\newcommand{\BoxBegin}{\begin{mdframed}[hidealllines=true,backgroundcolor=yellow!30]}
+\newcommand{\BoxEnd}{\end{mdframed}}
+
+% matrices etc
+\newcommand{\M}[1]{\mathsf{#1}}
+\newcommand{\V}[1]{\mathbf{#1}}
+
+%------------------------------------------------------------------------ 
+% shortcut text
+%------------------------------------------------------------------------ 
+%\newcommand{\TITLE}{`Sea level forecasting in the context of the Australian regional data assimilating ocean prediction system.'}
+\newcommand{\TITLE}{`Operational sea level forecasts in the context of Australian mesoscale ocean prediction.'}
+\newcommand{\ALTTITLE}{`Tidal harmonics and turbulent ocean dynamics for operational sea level forecasts.'}
+\newcommand{\BOM}{Australian Bureau of Meteorology}
+\newcommand{\LTE}{\textbf{\texttt{LTE}}}
+\newcommand{\ATGF}{\textbf{\texttt{ATGF}}}
+\newcommand{\ATGP}{\textbf{\texttt{ATGP}}}
+\newcommand{\SSH}{\textbf{\texttt{ssh}}}
+\newcommand{\BL}{\textbf{\texttt{Bluelink-OceanMAPS}}}
+\newcommand{\MOM}{\textbf{\texttt{MOM}}}
+\newcommand{\ROMS}{\textbf{\texttt{ROMS}}}
+\newcommand{\GODAE}{\textbf{\texttt{GODAE}}}
+\newcommand{\OGCM}{\textbf{\texttt{{OGCM}}}}       %{\textbf{\texttt{OGCM}}}
+\newcommand{\OFAM}{\textbf{\texttt{{OFAM}}}}
+\newcommand{\OFAMHR}{\textbf{\texttt{{OFAMHR}}}}
+\newcommand{\NWP}{\textbf{\texttt{NWP}}}
+\newcommand{\OTIS}{\textbf{\texttt{OTIS}}}
+\newcommand{\GOOS}{\textbf{\texttt{GOOS}}}
+\newcommand{\obc}{\textbf{\texttt{obc}}}
+\newcommand{\ANTT}{\textbf{\texttt{ANTT}}}
+\newcommand{\CTE}{\textbf{\texttt{CTE}}}
+\newcommand{\SAL}{\textbf{\texttt{SAL}}}
+\newcommand{\AG}{\textbf{\texttt{ACCESS-G}}}
+\newcommand{\AR}{\textbf{\texttt{ACCESS-R}}}
+\newcommand{\ER}{\textbf{\texttt{eReefs}}}
+
+
+

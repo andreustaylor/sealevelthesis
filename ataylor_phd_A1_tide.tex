@@ -1,0 +1,142 @@
+%Section ----------------------------------------------------------------------------------------------------------------------------------------------------
+\newpage
+\section{Theory: Astronomy and Tidal Foundations}  \label{S:THEORY_TIDE} 
+
+%-----------------%
+\subsection{Introduction}
+
+
+%-----------------%
+\subsection{Positional Astronomy}
+
+In the present geophysical context, a development of the astronomical tide generating force (\ATGF)  is considered to be a fundamental common element.  Phenomena taken to be physically tidal are described with reference to the some aspect of the \ATGF.  For instance, whilst conventional harmonics analysis is devoid of dynamics, it requires a list of frequencies developed from a harmonic decomposition of the \ATGF.\\ 
+
+Quantifications of the \ATGF are derived from the relative motions of astronomical bodies.  For earth tides, only the relative motions of the Earth/Moon/Sun system are considered relevant (see derivation) and are quantified from the perspective of \textit{positional astronomy}.\\
+Reiterating the discussion above in section [ref], this common element is not exclusive and the connections between the \ATGF and the various things described as 'tidal' have many important peculiarities.  
+
+How to quantify the relative positions of astronomical masses?
+There are well established methods to quantify the relative position of astronomical bodies.  In particular the Earth, Moon and Sun.
+
+\underline{Ephemerides} 
+
+
+\underline{Spherical astronomy}
+Concept of locating bodies with reference to the 'fixed' stars.  
+What about Copernicus?  Pragmatic purposes.
+
+\underline{Time}
+Various methods for describing time.  
+For determining the positions of the astronomical bodies for common ocean tide purposes, many nuances are negligible.  In particular, differences of order 10 seconds.
+There is room for major error with regard to absolute time quantities with regard to the 'epoch' or zero date.
+Analytic approximations of astronomical ephemeris are typically written in terms of an independant time variable that assumes a particular epoch.
+For exmaple>
+Besselian date;
+Modified Julian
+Older epoch's:
+Pugh: 1899?  midnight verus noon?
+Foreman: 1900 
+
+\underline{Astronomical frequencies?}
+What does it mean to refer to frequencies?
+
+\underline{Tidal Potential $\Phi$} 
+Formulations of the tidal potential are a conventional reference for ocean tide analysis and prediction.
+
+\underline{scratch} 
+Idea:
+fluid defined by inability to sustain a shear load
+tidal defined by the rigid body rotation of the planet ...ie the resistance of planetary mass to redistrubute about 
+tidal response largely defined by the time scales of change and inability of the mass to adjust instantaneously.
+So : ocean tides arise from the mix of spatially distributed force field and 
+
+\underline{Newtonian gravitation}
+Paradigm.
+Formulation.
+Relevance to dynamics.
+
+\underline{Primary development of astronomical $\Phi$ relevant to ocean tides}
+The tide generating force \ATGF, or 'tractive force', relevant ocean tides is conventionally described as arising from the horizontal gradient of the potential: $\nabla_H\Phi \mapsto \ATGF$ \\
+It is highlighted that the relevant force does not act vertically.  
+
+single body diagram
+
+\underline{Modifications to $\Phi$ due to earth deformation: loading}
+loading
+\underline{Modifications to $\Phi$ due to water mass movement: self-attraction}
+self attraction
+\underline{Spectra of $\Phi$}
+spectra
+\underline{Traditional harmonic decomposition of $\Phi$ }
+harmonic decomposition
+\underline{Codification of the frequencies of spectral lines}
+6 Fundamental astronomical frequencies
+Table
+
+Doodson codes
+
+\underline{Coordinates and Paradigms}  
+Require multiple spatial and temporal coordinate systems.
+Combination of seperately evolved bodies of science.
+\begin{itemize}
+\item astronomical 
+\item geodetic
+\item oceans
+\item insitu - earth surface point
+\end{itemize}
+Fundamental tidal quantities are function of the relative astronomical details of Earth, Moon and Sun.  In particular, the formulations of the tidal potential are conventionally employed as a reference.
+
+\underline{Astronomical Frequencies} 
+
+\begin{table}[htdp]
+\caption{Reference astronomical terms}
+\begin{center}
+\begin{tabular}{c|c|c|c|c}
+\hline
+\hline
+description          & postition          & rate of change      &  value \\
+\hline
+lunar-hour           & $\tau$             & kfdjgh              & 1 day \\
+solar-hour           & $s$                & kfdjgh              &  1 day     \\   %(alt solar time)
+sidereal-month       & $h$                & jfdljs              & ~30days \\
+tropical-year        & $p$                & jfdljs              & ~365 days \\
+lunar-nodal          & $N^\prime$          & jfdljs              & ~18 years \\
+perihelion           & $p_1$              & jfdljs              & ~20000 years \\
+\hline
+\end{tabular}
+\end{center}
+\label{default}
+\end{table}
+
+
+
+
+% --------------------------------------------------------------------------------------------
+Foreman casts the harmonic analysis problem as a least squares fit in linear algebra formulation.    The construction is essentially traditional with regard to fitting modulated sinusoidal basis functions, but allows for time varying `nodal factors'.  This is a simple and desirable improvement on the common practice of using such factors in a fixed form.\\
+More importantly for the present work, the use of Singular Value Decomposition (SVD) method facilitates metrics addressing aspects of error and quality of fit.   The formulation is described in more detail in \citep{Cherniawsky:2011en}.\\
+
+
+The timeseries fitting problem is formulated:\\
+ $\M{A} \V{x}=\V{b}$
+ where $\M{A}$ is a matrix of tidal timeseries basis functions, $\V{x}$ is the analysed tidal solution an $\V{b}$ is an observational record. 
+
+
+In operational harmonic analysis the details of how matrix $\M{A}$ is constructed is largely a matter of convention.  Despite the apparent opaqueness and dynamical blindness of these conventions \citep{Munk:1966ts} the basic approach is well suited to routine use for tide tables.\\
+
+%Tidal basis functions are traditionally derived via harmonic decomposition or spectral transform of the astronomical tide generating potential in light of an ephemeris estimating the relative positions of Earth, Moon and Sun.
+%Even in the case of an analytically harmonic ephemeris model, geometric factors mean that the harmonic decomposition relevant to timeseries analysis provides an essentially infinite number of candidate frequencies.  The frequencies %are however arranged into clusters that have lead to various conventions to choose which constituents to fit and account for the modulation effects of tightly grouped frequencies.\\
+%Note on where the `response' method fits here....
+
+Choice of the basis functions by convention is however unnecessarily susceptible to problems associated with over-fitting and projection of aperiodic noise. 
+
+Foreman proposes that the SVD formulation provides qualitative insights into both constituent selection and error estimates that reflect the reality of the fitting problem.  
+Specifically, the condition number of the basis matrix $cond(\M{A})$ and an estimate of covariances from the right singular matrix.\\
+Limitations to the quality of fit are determined by consideration of the linear independence of the basis functions and the effective noisiness of the data.  
+Orthogonality of the basis is measured by $cond(\M{A})$.
+
+
+In this formulation, the statistical nature of the `noise' or non-tidal signal is important.  
+The results presented by \citep{Foreman:2009bg} explicitly chooses to assume a Gaussian error distribution.  Despite the lack of realism, they suggest that this is still useful guide to constituent selection.\\
+The availability of non-tidal sea level model output from a system such as \BL{} appears to offer an alternative insight into the covariances of the harmonic fit.
+
+
+

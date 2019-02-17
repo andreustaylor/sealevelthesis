@@ -1,0 +1,243 @@
+
+% segue into OGCM
+%--------------------------------------------------
+%--------------------------------------------------
+\subsection{Tides and \OGCM{}s}
+\label{S:tides_ogcm}
+To date, literature addressing the development of operational ocean circulation models in the \GODAE{} heritage has focussed on nominally \emph{nontidal} ocean dynamics.  Data assimilation has been an fundamental ingredient,  with assimilation of sea level observations satellite-based altimeters playing a unique role.\\
+
+
+
+From that background, recent publications indicate a common motivation towards more dynamic representation of the effects of ocean tides.   This is indicative of pervasive goal across numerical simulation practice to increase model concreteness via a reduction of the role played by parameterisations \cite[section 5.3]{Petersen:2012tr}.  In the schematic Figure \ref{fig:models}, this represents a shift downwards on the scale of complexity of parameterised physics, or equivalently a reduction of system aggregation \citep{Stevens:2001kb}.\\
+Similarly, Griffies describes as a reasonable goal the ``general trend in ocean climate modelling towards reducing many of the common approximations'' \citep[pp20] {Griffies:2004vs}.
+It could be said that the modelling community typically perceives parameterisations as a compromise that should ideally be replaced with explicit physics when computing power allows.
+
+
+
+This portrayal is not unreasonable in the case of explicit tides and \OGCM{}s.
+Contemporary nontidal \OGCM{}s nominally exclude tidal effects - especially with regard to barotropic surface tides associated with the \ATGP{}.  This exclusion requires parameterisation, wether deliberately coded or implied, of non-separable effects associated with the excluded tidal motions.\\
+An instance of such a non-seperable influence is the role of barotropic tidal motions in influencing vertical mixing.\\
+
+
+
+
+%-----------------%
+\subsubsection{Nominally Nontidal \OGCM{}s}
+\label{S:nontidal}
+Before discussing the motivation to explicitly represent tidal forcing within \OGCM{}s, it is relevant to discuss further the background behind the more established use of nontidal \OGCM{}s in operational oceanography.
+
+
+
+
+\BL{} is a nontidal system.  It is nontidal from perspective of \OGCM{} dynamics in that no gravitational body forcing associated with the \ATGP{} is applied.   It is nontidal from the perspective of data assimilation in that assimilated observations of sea level are corrected (filtered) using pre-computed global tide models.  The state variable quantifying surface elevation that is carried by the model is termed sea level anomaly (SLA). Using Stevens' nomenclature, \BL{} simulates an aggregated pseudofluid system with a qualified relationship to the actual ocean.
+
+
+% split 
+The timescales of variation for depth-integrated barotropic and depth-dependant baroclinic ocean state are quite distinct.   It makes intuitive sense to approach the quantification of these motions separately. \\
+From a computational numerics perspective, fast barotropic motions require a much smaller timestep ($\sim$ 100 times) to evolve stabily than slow baroclinic motions at the same horizontal resolution.   On the other hand,  baroclinic dynamics by definition require quantification of a depth-dependant ocean state.\\
+Historically, the design of \OGCM{}s have been strongly influenced by this distinction.   One approach has been to make the so-called `rigid-lid' approximation \cite[pp128]{gill1982atmosphere} in order to effectively ignore the barotropic mode, and allow the use of a much longer timestep.   A rigid-lid model doesn't explicitly carry a free surface elevation in it's ocean state, although baroclinic modes do in fact produce a relatively small surface elevation signal.   The rigid-lid by definition cannot represent explicit barotropic tides, and despite the computational efficiencies introduces various ramifications for ocean forecasting \cite[pp19]{Griffies:2004vs}.\\
+With contemporary computational resources, evolving a full 3-dimensional global (or even large regional) ocean state at the small timesteps required to represent barotropic tides is not practical.\\
+It is desirable to evolve an ocean state that contains both free surface and internal structure.  A compromise strategy to achieve this employed in \MOM{} (and other \OGCM{}S) is to split the time discretisation with a so-called `split-explicit' scheme.    In essence, cheap shallow-water barotropic dynamics are timestepped many times for each relatively expensive update of the full depth-dependant ocean state.  
+
+
+
+% split explicit
+Since the introduction of a split-explicit scheme in \MOM{} it has at face value possible to include tidal forcing and represent barotropic surface tides.   However, there are several high level considerations that provide good arguments against doing so.\\
+One reason to not include tides in an \OGCM{} is in regard to the fundamental aims to which the model is being employed.  Much of the development and use of \OGCM{}s has been in the study and prediction of the general circulation effects at climate times-scales.  A primary interest in such long integrations tips the balance of importance away from accuracy of high frequency sea level signals.   Furthermore, in comparison to the highly tuned methods employed to produce tidal atlases, the simple barotropic side of such an \OGCM{} couldn't be expected to produce similarly accurate predictions of the barotropic tides.\\
+
+\OGCM{}s employed for operational oceanography forecasts do not have identical design constraints to climate simulations.  In the operational setting the assimilation of realtime observational data is of great importance.  Observations of sea level are both spatially and temporally sparse relative to evolution of barotropic dynamics.   Filtering of these observations to estimate only the baroclinic contribution to sea surface topography facilitates assimilation of a quantity that projects constraint down the water column to density related ocean state variables.   Filtered altimetry observations thus provide great value in observing mesoscale eddies and improving forecasts of 3-dimensional ocean structure.\\
+In the current configuration of \BL{}, the optimal interpolation scheme used for data assimilation is designed with a particular focus on the representation of mesoscale eddies.   Exclusion of the powerful and fast barotropic surface tides enables the forecast system to focus on these time-length scales.   Treating tides as noise is reasonable insofar as the effects on the mesoscale structure are small relative to other source of error.
+
+
+
+% decomposition and users
+Whilst the decomposition of ocean dynamics into separate categories has been motivated by tractability for computational systems, from the perspective of \emph{users} of ocean forecasts there is basically no inherent value in separation.   Moreover, it is apparent that interpreting the relatively abstract properties of the simulated pseudofluid is problematic with regard to providing meaningful ocean forecasts. 
+
+ 
+%-----------------%
+\subsubsection{Motivation to Explicitly Resolve Tides}
+
+% context: turbulence and parameterisation
+A conceptual framework was introduced in Section \ref{S:two_perspectives} in which geophysical fluid simulations can be organised by degree of aggregation.  Greater aggregation suggesting a greater complexity of dynamics within parameterisations - rather than being explicitly resolved.\\
+The global ocean is a turbulent fluid characterised by broad band energy cascades and multi-scale interactions.  Explicit numerical representation of anything like the full range of ocean dynamics is well beyond both practical simulation and observation.  
+
+
+
+%  context: decomposition
+Practical forecasts have broadly been achieved via the decomposition of sea level.   For instance, the conceptual split into periodic and aperiodic categories visualised in Figure \ref{fig:SPECTRA_CARTOON}, and subsequently the split of aperiodic sea level into barotropic and baroclinic discussed in Section ref{S:nontidal}.  Decomposition of the dynamics into tractable categories for simulation is not aggregation per se, but it certainly does have implications for the role of parameterisations.  The manner in which decomposed dynamics are aggregated need not be mutually complimentary. 
+%  This situation is reflected by the lack of complimentarily for nominally seperate sea level forecasts REF-TAYLOR.\\
+
+
+
+% tides <-> baroclinic
+Barotropic tides do interact with the 3-dimension structure of the ocean and baroclinic evolution.   Baroclinic structure conversely impacts the behaviour of barotropic waves and the \emph{non-constant} \citep{Ray:2010jm} nature of tidal constants.\\
+
+
+
+The possible significance of such interactions for the global circulation provides the primary motivation for considering explicit resolution of tides within \OGCM{}s.   
+Reducing the role played by parameterisations and increasing model concreteness is a common ideal in geophysical simulation, but an ideal is of itself not a justification for implementation.  Moreover, justification of system design in an operational context relies on a unique balance of goals - as discussed in \ref{S:operational_setting}.\\
+
+
+% mention local scale high res?
+% fine scale, non-hydrostatic etc
+
+% GODAE 
+Within the \GODAE{} setting, there does appear to be a common motivation towards explicitly resolving tides within \OGCM{}s.  
+A background of increasing computational power renders this a technically feasible endeavour.  
+% ...mixing 
+The literature suggests that the interest is directed primarily at the influence of barotropic tides on the baroclinic structure of the ocean state.   
+In this context, the design choice to explicitly include tidal dynamics would be justified on the basis of improving the skill of the nontidal signal, rather than the total ocean state per se.
+
+
+
+
+
+
+
+%-----------------%
+\subsubsection{Numerical Implementation of Tidal Forcing}
+\label{S:numerical_impl}
+
+Tidal forcing is nominally excluded from most contemporary operational \OGCM{}s including \BL{}.   Options are available as to how best to include tidal body forcing in an \OGCM{}.
+
+
+Hydrodynamic body forcing due to the \ATGP{} is conventionally written as a depth independent horizontal force proportional to $\nabla \eta_{eq}=\nabla \left( \frac{V_t}{g} \right)$.  However significant modifications are required to account for earth tides, self-attraction and loading (SAL).   These terms were introduced in Section \ref{S:ATGP_extras}.\\
+In summary, the astronomical tidal forcing can be viewed as a relatively smooth global surface field that varies in time.
+
+
+
+Numerical implementation of a tidal body forcing into an \OGCM{} requires design decisions that may have implications for computational efficiency and forecast accuracy.\\
+Perhaps most significantly is with regard to how time variation is coded. The $\eta_{eq}$ field may be written in either \emph{harmonic} or \emph{direct} representation.\\
+
+
+
+At face value, the \underline{direct formulation} provides the most unmediated and accurate representation of $\eta_{eq}$. Time variation is contained within the scalar weightings $c_{nm}(t)=a_{nm}(t) + ib_{nm}$ for each spherical harmonic included.   These can be fully specified via timeseries for geocentric coordinates of the Moon and Sun - with 3 dimensions each. Given that ocean tide models rarely justify a role beyond harmonics $(n,m) = (2,0) , (2,1) , (2,2)$, the direct tidal forcing can be given as pre-computed $c_{nm}(t)$ as 6 real valued time series.  Full representation of all degree-3 harmonics adds another 8 timeseries.
+That is, the full global tidal forcing is simply specified via these scalar timeseries and trigonometric functions of location.\\
+This approach has the advantage of accurately representing the \ATGP{} by incorporation of best-practice numerical ephemerides. Modern pre-computed SAL forcing may be incorporated in a similar manner as is recommended in the tidal literature \citep{Egbert:2002ug}.  
+Furthermore, this approach could likely be treated identically to other forcing fields such as barometric pressure (and possibly assimilation adjustments to be addressed in Section \label{S:plan_bodyforcing}) should they also be included in the model.\\
+
+On the other hand, some programatic inconveniences and risks are introduced. The input time series must be extracted from the ephemerides at timings to match each particular simulation.  Furthermore, the extraction process is relatively opaque and would require cross-checks to mitigate the risk of non-fatal errors arising for file dependancies (e.g. incorrect dates).\\
+Direct forcing is apparently not as common in the ocean literature as gravity related studies.   An instance of forcing a global hydrodynamic model directly is described by Weis and Sunderman \citep{Weis:2008ex}.\\\
+
+
+
+
+In contrast, a \underline{harmonic formulation} of $c_{nm}(t)$ for the same range of spatial harmonics requires the specification of constants for each \emph{temporal} harmonic to be included.  
+To match the spectral content of $c_{nm}(t)$ derived from a numerical ephemerides would require the inclusion of some hundreds of harmonic components \citep[pp3]{Desai:2006wo}
+In practice only a small number (often 8) of the most powerful spectral clusters are specified as `primary constituents'.  Truncation is based on the relative power of tidal lines within the harmonic development, not on the ocean response.
+Truncating the harmonic representation to several constituents subsequently requires nodal adjustments to account for the modulation effects of satellite spectral lines.\\
+Programatically the harmonic approach facilities some attractive simplifications.  After the specification of a small number of constants, the temporal variation can be cheaply calculated within the ocean model via only a few lines of code.   
+For relatively short simulations (less than about 1 year), the nodal corrections can be treated as fixed.   This situation is amenable to de-bugging and has no external dependancies.\\
+It is also a relevant consideration that assessment of tidal output is conventionally based on harmonic fits to these same primary constituents.\\
+
+Arbic et al \citep{Arbic:2010us}, apply body forcing using the temporal harmonic representation.  In what appears to be common approach the authors describe developing their implementation via a progressive addition of temporal harmonics: no tides, M2-only, 8 primary constituents.  Treating M2 separately facilitates interpretation and comparison to other literature; including theoretical developments of single frequencies and tidal atlases.
+
+
+%\begin{quotation}
+%Firstly, use of the astronomical ephemerides provides the complete spectral content of $c_{nm}(t)$ without any application of threshold limits on the amplitudes H_{nmk}, and is therefore not susceptible to errors from the omission of tidal frequencies. Secondly, using the astronomical ephemerides is more efficient. For each degree and order [$\dots{}$] involve the summation of two terms, for the Sun and Moon, while also requiring computation of the luni-solar positions from astronomical ephemerides. In contrast, similar spectral content and accuracy requires the summation of the contribution from hundreds of frequencies [$\dots{}$] as well as the computation of the tidal phase angles [$\dots{}$] for each of those terms. As such, the body tide potential is usually computed from luni-solar ephemerides rather than from harmonic developments $dots{} \cite{Desai:2006wo}
+%\end{quotation}
+
+
+
+The public distribution of \MOM{} includes a very simple module for representing tidal body forcing in a manner suitable for climate simulations. 
+In this code, the harmonic approach to representing temporal variation is taken.   The eight most powerful constituents (frequency clusters) from $\eta_{eq}$, due to only spherical harmonics $(n,m) = (2,1) , (2,2)$, are written with fixed harmonic amplitude.  
+Spherical harmonics of order 0 $(n,m) = (2,0)$ are thus implied to contribute to the unvarying geoid.  SAL is simply parameterised with the scalar approximation.   
+Astronomical phase information, $\beta$ in Equation \ref{E:harmonic}, is neglected altogether.\\
+\MOM{} employs a split-explicit scheme that timesteps depth-independent hydrodynamics more frequently than the full ocean state.  Tidal body forcing is written as a depth-independent horizontal term in the momentum equation that varies at relatively high frequencies.  Subsequently, tidal forcing is a term that should be applied and evolved at the barotropic timestep.
+Implementation of a time varying forcing term within the barotropic loop is not facilitated by the \MOM{} structure, though it is possible.  This reflects the climate-simulation background of \MOM{}.  
+By default, arbitrary forcing terms such as surface fluxes are held constant over iterations of the inner barotropic loop.  This is a reasonable measure to optimise calculation speed given the assumption of relatively slow forcing timescales.   
+However, this assumption is not valid for $\eta_{eq}$ which varies powerfully and quickly.
+By employing the temporal harmonic approach to representing the tidal force, $\eta_{eq}$ can be updated algebraically at the barotropic timestep, without requiring relatively expensive file input/output.\\
+
+Schiller and Feidler \citep{Schiller:2007gk} enhanced this simple module via the addition of a hard-coded astronomical argument offset.   This addition aligns the tidal sinusoids with an astronomical epoch.\\
+
+
+
+In addition to the gravitational tidal forcing, there may be some prospect for translating special forcing terms arising from tidal data assimilation process to apply within an \OGCM{}. \\
+Specialised data assimilation methods have been an important ingredient in successes of contemporary global tide modelling.  With the \underline{Generalised Inverse} (GI) \cite[pp345] {Zaron:2011ft} approach , an objective trade-off is drawn between quantified observational and dynamic uncertainties.  With regard to the hydrodynamics the uncertainties cover the varied sources of error implied by the ``inevitably approximate nature of the discretised dynamical constraints''\cite[pp155]{Egbert:1996vr}.  In the process applied to invert a tidal solution using the GI approach, calculation of `representers' effectively involves the creation of augmented tidal forcing terms.   That is, the inversion involves determining adjusted forcing that optimises the trade off between observations and dynamics.   This approach is implemented in tidal harmonic space with the \OTIS{} software \cite{Egbert:2002ug}.\\
+With regard to implementation of tidal forcing within an \OGCM{}, it is speculated that complementary use of tidal GI software \OTIS{} may be exploited to improve the representation of a stationary tidal signal in the time-space model.   
+This is a research topic.   Technical challenges are likely to arise from the dynamical inhomogeneity of the two models.  One particular detail that may be relevant in this respect is the different averaging operators on the respective staggered grid formulations (Arakawa B versus C).
+
+
+
+
+Application of tidal forcing to a regional prediction system raises the topic of open boundary conditions (OBC).  The implementation of OBCs for regional models is of fundamental importance for limited area ocean models.  The literature addressing OBC schemes and implications is large.  A review of OBCs is considered beyond the scope of this document at present.\\
+
+
+%-----------------%
+\subsubsection{Implementation of Tides within \OGCM{}s}
+
+% climate mixing
+An emphasis on improving the representation of \emph{baroclinic} circulation is apparent in simulations implementing explicit tides in \OGCM{}s for seasonal and climate timescales.  
+For instance, in simulations spanning thousands of years Simmons et al \citep{Simmons:2004fi} are motivated to increase the concreteness of parameterisations with regard to the conversion of barotropic tidal energy.  
+By including a representation of the barotropic tides, parameterisation of mixing can evolve both spatially and temporarily to reflect processes involving the interaction of tidal currents with topography.   
+Surface elevations were not the target of these simulations. \\
+The tidal model distributed with \MOM{} was authored by Simmons \cite[pp263] {Griffies:2008vh} and reflects this climate scale focus.\\
+
+
+
+% schiller MOM
+At timescales closer to those of operational forecasts, Schiller et al have also employed explicit tides within free-surface configurations of \MOM{}.  
+Better representation of baroclinic mixing is again a primary motivation for implementing a barotropic tidal representation in this \OGCM{}. Specifically, improved understanding of water mass structures \cite{Schiller:2004fv} and upper ocean circulation \cite{Schiller:2007gk} were cited as justifications for the implemention.  
+Whilst the resolution of these configurations did not aim to resolve internal tide processes, explicit barotropic tidal currents enabled vertical mixing parameterisations to reflect the spatially and temporally varying tidal effects.\\
+In addition to the focus on mixing, surface level skill was evaluated against a coastal tide gauge and shown to offer some promise as a prognostic output \citep[Fig 2]{Schiller:2007gk} - apparently despite expectations.   
+The issue of top-layer thickness limitations on surface elevation magnitudes highlighted by the authors does not directly apply to the contemporary \BL{} configuration of \MOM{}, which employs the $z^*$ coordinate \citep{Brassington:2012wm}.\\
+
+
+
+% wave drag
+Achieving reasonable representations of tidal surface elevation within an \OGCM{} does rely on specialised parameterisations - most notably with regard to dissipation of barotropic energy.   This situation reflects a general truism that SGS parameterisations typically do not scale well and often require re-formulation upon significant model changes.\\
+Baroclinic conversion represents a significant sink of barotropic energy, the spatial distribution of which is not well represented by a simple bottom-drag formulation.  
+Arbic et al \cite{Arbic:2004wz} discuss the `inordinately large' bottom drag values required by hydrodynamic tidal models and argue for the value of additional topography-based parameterisations.   
+For example, the wave drag scheme described by Jayne \cite{Jayne:2001tr} is designed to spatially align barotropic dissipation over features such as mid-ocean ridges that are known to be source of internal tide generation.  Whilst a spatial concentration over internal tide generation locations is attractive - the relationship to vertical mixing may be misaligned to the extent that the energy cascade is non-local.  Internal wave propagation has a frequency/latitude dependance, with a qualitative transition from propagating to trapped occurring poleward of critical latitudes.  Furthermore `` the extent to which internal tides produce turbulence as they propagate away from their generation sites is not clear'' \citep[pp812]{Jayne:2001tr}.\\
+
+
+
+
+The relevance of a topography-base wave-drag parameterisation of baroclininc conversion is not limited to tide motions.  The operational MOG2D (now called T-UGO) barotropic model \citep{Carrere:2003cj} employed to provide high frequency atmospheric corrections to altimetry data streams employs a related scheme.   Given the dynamical similarity of barotropic evolution with barometric pressure, the model was validated using a tidal simulation and comparison to tidal harmonics.   Formulation of what the author calls the `internal wave' term includes a tuning parameter, but the tuning methodology was not described.
+
+
+% deviation from invbar. Test run with tides.  6hr ECMWF - 'freqs<12 hr misrepreseted'
+%variance reduction metric\\
+% T-UGO and tidal double count \cite{Ray:2009ie}
+
+% schiller drag
+The need to apply a special dissipation term to barotropic tides is also described by Schiller \citep[Eq 6]{Schiller:2007gk}.   This ad hoc drag term was applied only within the barotropic loop and was designed via a tuning procedure but not described in detail.
+
+
+
+
+% Arbic HYCOM
+Arbic et al have implemented explicit tidal resolution in version of the HYCOM hybrid coordinate model \cite{Arbic:2005gv,Arbic:2009hf,Arbic:2010us,Arbic:hy}.  These efforts appear to represent the most advanced investigations into tides within an \OGCM{}.\\
+Generally, the implementation described involves preliminary tuning of a spatially varying wave drag term.  Tuning is achieved on the basis of minimising the disagreement between a M2-only simulation and a published tidal atlas.   
+Temporal filtering measures are described to isolate the action of the wave drag term from inappropriate application to other dynamics.  \\
+At face value, the use of a parameterisation for baroclinic tide conversion in a full baroclinic model appears somewhat inconsistent.   The justification offered by authors is based on the spatial resolution of the model compared to theoretical expectations of internal tide wavelengths:
+\noindent \begin{quotation}
+$\dots{}$  vertical mode numbers beyond about 10 are probably not resolved at all in the simulations $\dots{}$, and vertical mode numbers beyond one or two are probably not well-resolved. Thus horizontal resolution limitations are in part responsible for the fact that parameterised topographic wave drag is still required to achieve accurate barotropic tides in baroclinic tide models. \citep[pp177]{Arbic:2010us}
+\end{quotation}
+
+
+
+
+% ephemerides and shallow
+The impact of lateral boundaries and shallow water effects on representing global tides is a topic that arises in time-stepped forward models.\\
+In a barotropic simulation forced directly by tidal ephemerides \cite{Weis:2008ex}, the authors indicate that solutions for deep-water partial tides are significantly influenced by the explicit simulation of broad-band tidal spectrum.   
+(It is notable that this simulation did not include a `wave drag' term - but the authors sicte this exclusion as a likely source of error \citep[pp5]{Weis:2008ex})\\
+Based on a more thorough and analytical approach, Arbic et al investigations provide a similar conclusion:
+\noindent \begin{quotation}
+$\dots{}$ the back-effect of coastal tides upon open-ocean tides is demonstrated in numerical experiments in which removal of regions of resonant coastal tides significantly alters tidal amplitudes (generally, increasing them) and phases, over basin-wide and even global scales.\citep[pp263]{Arbic:2009in}
+\end{quotation}
+
+With regard to operational \OGCM{}s these discussions are taken to highlight the potential impact of lateral conditions designed for nontidal simulations.  
+One instance are the so-called `earth-works', where bathymetry and coastlines are manually adjusted in the interest of allowing certain ocean circulation features to exist.  
+Similarly relevant is the representation of barotropic dissipation in shelf regions. 
+Specific cases that may have an impact on the Australian coastline include the parameterisation of bottom dissipation over the Great Barrier Reef, and possibly the geometry of coastline features such as the Gulf of St Vincent and King Sound.
+
+
+
+
+% DA
+Inclusion of explicit tides within an \OGCM{} thus offers the potential to improve the simulation of the global ocean state, but in doing so introduces many novel challenges.\\
+How to approach data assimilation is particularly problematic.  Assimilation of corrected observations and the exclusion of tidal dynamics provides has been more or less fundamental to the design of the current generation of \GODAE{} systems (Section \ref{S:nontidal}).\\
+Sea level observations provide a powerful constraint upon operational ocean models, and how to assimilate sea level into models that dynamically include both mesoscale and tidal motions is an open question.   Maintaining the conceptual split between periodic and aperiodic motions appears to be a reasonable general framework.  This is a research topic to be addressed in the present work plan [Section \ref{S:plan_DA}]. \\
+

@@ -1,0 +1,42 @@
+%-----------------%
+\subsubsection{Prospects for Sea Level Forecasts}
+\label{S:fc_prospects}
+
+Whatever the promise of inclusion of explicit tides within \OGCM{}s scientifically, application to operational sea level forecasts is yet to be explored and justified.
+Operational forecast systems must balance a unique set of motivations quite distinct from other \OGCM{}-based simulations [Section \ref{S:operational_setting}].  \\
+
+
+
+Two broad directions are identified with regard to the prospects for \OGCM{}-based operational sea level forecasts:
+\begin{enumerate}
+\item \underline{Aggregation}: the \OGCM{} is used to forecast a nontidal quantity that is subsequently aggregated with tide predictions and other forecast products;
+\item \underline{Integrated simulations}: the \OGCM{} is used to forecast as much of the sea level signal as is feasible and is used directly.
+\end{enumerate}
+These equally apply to the realistic scenario of employing a spatially nested set of simulations.  Open boundary conditions may be provided by aggregation or integration.\\
+
+
+
+Some form of aggregation does appear most promising for \emph{routine} forecasts in the current operational setting.  This assertion is based on consideration of the highly evolved specialisations of forecasting methods as well as organisational realities of system development.\\
+For instance, hydrodynamic simulations are contingent on the accurate spatial representation of bathymetry, which is often poorly known. For periodic signals direct output from a dynamic model is unlikely to approach the ability of harmonic methods to predict complex local and nonlinear effects.   Conventional tide predictions reasonably provide the reference and foundation for sea level forecasts more generally. \\
+Operationally, the reality of the existing infrastructure and the established conventions of tide predictions cannot be ignored.\\
+
+
+
+More inclusive physical simulations and aggregation are not however mutually exclusive.  And one promising concept involves aggregation \emph{and} a tide-resolving \OGCM{}.\\
+Such a forecast system would involve deriving a `tidal residual' forecast by taking the difference of two parallel model integrations: one with full dynamics and the other with tidal forcing only.  The residual forecast is then used to augment the conventional tide prediction for an insitu location.\\
+The premise of this approach is that the \OGCM{} will only ever represent a compromised version of the tidal signal, but the impact of including these dynamics will produce a net gain for the nontidal flow.  This concept is consistent with the motivation to include tides within an \OGCM{} so as to better represent the \emph{nontidal} ocean state. \\
+
+An existing operational reference for such an approach is found in the design of the UK Storm Tide Warning Service (now titled UK Coastal Monitoring and Forecasting) \cite{Horsburg:2009ui}.   Although the UK system is based on depth integrated surge models, rather than an \OGCM{}, the aggregation of hydrodynamic models and tide predictions is instructive.\\   
+
+
+
+
+It is asserted that the preceding review establishes the setting from which coherent line of research can be pursued. \\
+The workplan outlined in Section \ref{S:work_plan}, takes the form of a series of discrete research problems following a conceptual path along the intersection of \OGCM{}s and tidal analysis.    Ultimately this effort will contribute towards understanding the new prospects for operational sea level forecasts in the context of \BL{}.
+
+%addresses questions perceived from both sides of the intersection of \OGCM{}s and tidal analysis within an operational setting.
+
+%Conventional approach = global model for dominantly linear and tractable.   -. nesting and downscaling to localised effects.\\
+%Organisation questions: is downscaling ready?, investment required and time lag - justificaiton and bench marking.
+
+

@@ -1,0 +1,74 @@
+\newpage
+\subsection{Tides and data assimilation in operational meso-scale ocean prediction}
+\label{S:plan_DA}
+
+Following the conceptual path between tidal harmonics and operational oceanography, it is pertinent to address the implications for data assimilation (DA).\\
+A critical discussion of issues and prospects in this area is proposed as a concluding chapter.\\
+
+
+\subsubsection{Overview of a critical discussion}
+Prediction systems in the \GODAE{} heritage have intentionally excluded ocean tides to focus on mesoscale ocean turbulence [Section \ref{S:operational_oceanography}].  This approach has largely been guided and enabled by the assimilation of sea level anomaly (SLA) observations from nadir-looking altimeters.  
+However, the very existence of realtime SLA datastreams has been enabled by global tide solutions founded on the historical record of observations from the same satellite platforms.\\
+Thus DA has played two distinct and complimentary roles:
+\begin{itemize}
+\item historical observations to optimise global atlases of stationary tides \citep{Egbert:1996vr};
+\item realtime observations to constrain mesoscale \OGCM{} forecasts. 
+\end{itemize}
+
+
+\BoxBegin
+Given the prospect of explicitly resolving tidal dynamics in an \OGCM{}, how should data assimilation be approached with regard to operational sea level forecasts? \\
+\BoxEnd
+
+The motivation is summarised as follows:
+\begin{enumerate}
+\item it is desirable to include ocean tides in the \OGCM{} (more physical representation of barotropic conversion and mixing dynamics - Section \ref{S:tides_ogcm});
+\item the skill of mesoscale ocean forecasts is reliant on DA and the contemporary global observing array;
+\item naively extending the present \OGCM{} data assimilation to ingest SSH does not appear viable (tidal phase errors are likely to be more powerful than the targeted nontidal signal); 
+\item the goal of simultaneously resolving ocean tides \emph{and} constraining mesoscale circulation invites a high level exploration of limitations and options.
+\end{enumerate}
+
+%require a re-evaluation of data assimilation approach.
+%\item Naively introduced, explicit tidal resolution in the model would not be compatible with data assimilation due to the relative power and high frequencies of this component of sea level. 
+
+The existing DA configuration of \BL{} (BODAS EnOI)  will provide the launching point for this discussion.  From the outset, the role of resolving tidal dynamics will be considered a tool to improve the nontidal ocean state estimation. \\
+
+
+
+
+For instance, the follow sketch outlines a prospective hybrid approach, persisting with the concept of decomposing the ocean state into tidal and nontidal.\\
+DA could be facilitated by employing two parallel instances of the \OGCM{}: one with full dynamics and another with only tidal forcing.   Drawing on an analogy with the UK storm tide service \cite{Horsburg:2009ui}, the difference between the models could provide a self-consistent estimate of sea level anomaly.\\
+Key to this concept is the reality that representation of tidal dynamics in an \OGCM{} will always be compromised compared to best available tidal atlases. 
+
+For instance, at each analysis step:   
+\begin{inparaenum}[(i)]
+\item full background state from tide-resolving \OGCM{} stepped forward in time;
+\item complimentary tidal background from a tide-only version of the same \OGCM{} stepped forward in time;
+\item difference states to give nontidal state estimate;
+\item increments to nontidal ocean state derived from existing DA software;
+\item reconstitute the full ocean state by superposition of updated nontidal state with best estimate tide prediction.
+\end{inparaenum}
+
+
+
+
+Supporting the discussion of prospective approaches, this discussion will draw on relevant literature and address questions such as:
+\begin{itemize}
+\item Are fundamental scale limits imposed by the observation array? \\
+\item Would realistic changes to the observation array dictate the choice of approach? 
+\item Do model parameterisations and the role bathymetry influence the balance of considerations?
+\item Can the respective strengths of tidal and nontidal DA be exploited in a hybrid approach? 
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
