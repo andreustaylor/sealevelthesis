@@ -37,7 +37,7 @@ Reference to the astronomical tide generating potential (\ATGP{}) is here consid
 
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=120mm]{figures_2/tidal_force_flowchart.png}
+\includegraphics[width=100mm]{figures/tidal_force_flowchart.png}
 \caption{Ocean tide flow chart (following Agnew \citep{Agnew:2011ub}.  Reference to the \ATGP{} is common to all tidal methods, whilst the distinction between Tidal/Nontidal elements can differ markedly.}
 \label{fig:TIDE_FORCE_FLOW}
 \end{center}
@@ -83,7 +83,7 @@ It may also be proper to exclude at least some of $(n,m) = (2,0)$ for many ocean
 
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=120mm]{figures_2/tidal_potential_spatial_20130101_0000.png}
+\includegraphics[width=100mm]{figures/tidal_potential_spatial_20130101_0000.png}
 \caption{Snapshot of global $\eta_{eq}$ field illustrating spatial decomposition into spherical harmonics.  Note the wide variation of relative magnitude}
 \label{fig:VT_EG}
 \end{center}
@@ -95,7 +95,7 @@ It is significant that the temporal variations of the \ATGP{} for the entire glo
 
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=120mm]{figures_2/tidal_coeff_timeseries_2days.png}
+\includegraphics[width=100mm]{figures/tidal_coeff_timeseries_2days.png}
 \caption{Snapshot of time varying coefficients $c_{nm}(t)$.  In the upper panel, classification of $c_{2m}$ into long, diurnal and semi-diurnal `species' is evident.  Note the much smaller magnitude of higher degree harmonics.}
 \end{center}
 \end{figure}
@@ -148,7 +148,7 @@ Similarly to body tide effects, it is possible to formulate \SAL{} as a scaled m
 An evaluation of intermediate methods to parameterise SAL is described by Stepanov and Hughes \cite{Stepanov:2004up}
 In contrast to the $\beta$ scaling approximation, it appears to be quite reasonable to consider \SAL{} as separate pre-calculated body forcing rather than a scaling of $\eta_{eq}$. 
 \begin{quotation}
-SAL should be computed by convolution \dots with the Green’s function for loading and self-attraction. Since this convolution smoothes out small-scale features, and since large-scale tidal elevations are now well determined over most	of the earth, SAL is in fact now reasonably well known, even where local details of tidal elevations and currents remain uncertain. \citep{Egbert:2002ug}
+SAL should be computed by convolution \dots with the Green's function for loading and self-attraction. Since this convolution smoothes out small-scale features, and since large-scale tidal elevations are now well determined over most	of the earth, SAL is in fact now reasonably well known, even where local details of tidal elevations and currents remain uncertain. \citep{Egbert:2002ug}
 \end{quotation}
 
 
@@ -208,7 +208,7 @@ There has been some variation of conventions with regard to the exact formulatio
 In essence the Doodson codes provide a compact unique specification, or in practice \emph{definition} of frequencies relevant to tidal methods.
 
 
-\begin{table}[htdp]
+\begin{table}[htp]
 \caption{Doodson astronomical arguments.  Small integer combinations of these six numbers $d_1 d_2 d_3 d_4 d_5 d_6$ are used to classify tidal components.}
 \begin{center} 
 \begin{tabular}{|c|c|c|}
@@ -292,11 +292,13 @@ By an unfortunate coincidence, the size of the earth, the depth of the ocean, an
 
 
 In practice, details and embellishments built into tidal methods lead to variations regarding the precise definition of a reference input signal and characterisation of the LTI system.   Following Munk and Cartwright \citep{Munk:1966ts} there are three foci for these complexities:
-\begin{inparaenum}[(i)]
+%\begin{inparaenum}[(i)]
+\begin{itemize}
 \item the background spectral continuum of ocean variation, 
 \item non-gravitational phenomena that can be considered tidal and 
 \item non-linear interactions.   
-\end{inparaenum}
+\end{itemize}
+%\end{inparaenum}
 The manner in which the three `interesting effects' are incorporated distinguishes between the two primary methods of tidal sea level prediction discussed in Section \ref{S:formalisms}.
 
 
@@ -312,7 +314,7 @@ There is no unique approach to implementing the LTI concept of ocean tide predic
 
 
 
-Within operational authorities, tide prediction is practically synonymous with \underline{harmonic methods}.  These have an especially long historical legacy in both theoretical and applied settings \citep{Cartwright:2000tt}\citep{Parker:2007wq}.   Harmonic methods of sea level prediction are very successful and important and will continue to be so, regardless of other advances.  Most notably, harmonic analyses based on tide-gauge observations are thoroughly embedded in operation centres and the wider economy.   In Australia, this conventional role is embodied by the official promulgation of the  Australian National Tide Tables \ANTT.  These tables are required by law to be carried by many marine vehicles and have broader ramifications for uses such as cadastral definitions.\\
+Within operational authorities, tide prediction is practically synonymous with harmonic methods.  These have an especially long historical legacy in both theoretical and applied settings \citep{Cartwright:2000tt}\citep{Parker:2007wq}.   Harmonic methods of sea level prediction are very successful and important and will continue to be so, regardless of other advances.  Most notably, harmonic analyses based on tide-gauge observations are thoroughly embedded in operation centres and the wider economy.   In Australia, this conventional role is embodied by the official promulgation of the  Australian National Tide Tables \ANTT.  These tables are required by law to be carried by many marine vehicles and have broader ramifications for uses such as cadastral definitions.\\
 There are several different schools of convention that lead to various incompatabilities between operational centres. \\
 At its foundation, harmonic tidal analysis and prediction characterises the LTI system via a finite set of amplitude and phase terms that are identified empirically.  Equation \ref{E:cos} shows the LTI model with constant amplitude $A_k$ and phase lag $g_k$, other terms are discussed below.  This situation is illustrated by the following simplistic assertion from the Australian Tide Manual \citep{PCTMSL:2009vy}:
 \begin{quote}
@@ -339,9 +341,13 @@ The practical value of harmonic methods reflects the special significance and \e
 
 \begin{figure}[!h]
 	\centering
-	\subfloat[Harris-Fischer tide machine circ. 1912 \citep{Parker:2007wq}]{\includegraphics[width=50mm]{figures_2/HarrisFischer_tide_machine_ParkerFig1p1}}
+	%\subfloat{\includegraphics[width=50mm]{figures/HarrisFischer_tide_machine_ParkerFig1p1}}
+	\includegraphics[width=50mm]{figures/HarrisFischer_tide_machine_ParkerFig1p1}
+	\caption{Harris-Fischer tide machine circ. 1912 \protect{ \citep{Parker:2007wq} }}
 	\qquad
-	\subfloat[Gezeitenrechenmaschine at DHI circ. 1940 \citep{Cartwright:2000tt}]{\includegraphics[width=50mm]{figures_2/DHI_machine_cartwright_fig11p2.png}}
+	%\subfloat{\includegraphics[width=50mm]{figures/DHI_machine_cartwright_fig11p2.png}}
+    \includegraphics[width=50mm]{figures/DHI_machine_cartwright_fig11p2.png}
+	\caption{Gezeitenrechenmaschine at DHI circ. 1940 \protect{ \citep{Cartwright:2000tt} }}
 	\caption{Analogue tide machines embody harmonic prediction.  A finite set of fixed constants are dialled up for a port, and the handle turned to generate a prediction timeseries.}
 	\label{fig:tide_machines}
 \end{figure}
@@ -375,7 +381,7 @@ By convention, the effects of clusters of unresolved tidal frequencies are repre
 %% non gravity
 The occurrence of non-gravitational influences of sea level at tidal frequencies is a significant detail.   Non gravitational phenomena contribute to all three of Munk and Cartwright's \emph{interesting} effects cited above.  The inversion of Equation\ref{E:Axb} is a data-fitting exercise that cannot distinguish dynamical cause.  In particular, the presence of non-astronomical forces with frequency content at or very near that of the \ATGP{} can and does project onto the solution for $x$.\\
 To the extent that the non-astronomical phenomena are regular enough to be predictably periodic, inclusion within the LTI model is can be to the benefit of a tide prediction.   On the other hand, effects that are not perfectly aligned to the \ATGF{} conflict with the fundamental LTI model and necessarily present an additional risk to forecast skill.\\
-For instance with seasonal phenomena.   The harmonic decomposition of $c_{nm}(t)$ provides two relatively tiny signals at periods of 1 and 0.5 years - conventionally termed Sa and Ssa.  Despite the small amplitudes in $\eta_{eq}$ there are powerful seasonal variations in ocean observations that project onto the Sa and Ssa tidal components.   This is well recognised and `...whether the calculated values of Sa and Ssa are used or not, becomes almost a philosophical question, based on one’s application' \citep[p122]{Parker:2007wq}.   Related terms that reflect seasonal modulation of semi-diurnal components can also included be included in standard harmonic analyses (eg H1 and H2 in Foreman schedule \citep{Foreman:1977ua})\\
+For instance with seasonal phenomena.   The harmonic decomposition of $c_{nm}(t)$ provides two relatively tiny signals at periods of 1 and 0.5 years - conventionally termed Sa and Ssa.  Despite the small amplitudes in $\eta_{eq}$ there are powerful seasonal variations in ocean observations that project onto the Sa and Ssa tidal components.   This is well recognised and `...whether the calculated values of Sa and Ssa are used or not, becomes almost a philosophical question, based on ones application' \citep[p122]{Parker:2007wq}.   Related terms that reflect seasonal modulation of semi-diurnal components can also included be included in standard harmonic analyses (eg H1 and H2 in Foreman schedule \citep{Foreman:1977ua})\\
 Perhaps more significant methodologically, is the case of diurnal and semidiurnal sea level signals driven directly by \emph{meteorology} rather than the \ATGP{}.   The tidal frequencies denoted S1 and S2 are a prominent case in point.  For instance, Ray and Ponte \citep{Ray:2003ui} evaluate \NWP{} representations of \emph{barometric} tides at these frequencies with implications for oceanographic processes.  Treatment of S1 and S2 in tidal sea level predictions is a point of difference between the harmonic and response methods.  The later going so far as to invoke a distinct input function in the form of a `radiation potential'.    The response approach is now discussed in more detail. 
 
 
@@ -430,7 +436,7 @@ Nonlinear effects are especially significant in coastal locations.   By definiti
 
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=120mm]{figures_2/response_analysis_flowchart.png}
+\includegraphics[width=100mm]{figures/response_analysis_flowchart.png}
 \caption{Response method tidal schematic.  Nonlinear and non-gravitational inputs are explicitly formed.   Analysis consists of empirically fitting smooth admittance curves.}
 \label{fig:response}
 \end{center}
@@ -524,7 +530,7 @@ Operational oceanography in the form of \BL{} relies on de-tided altimetry obser
 
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=130mm]{figures_2/diag_plot_014406_detide_compare_20120101.png}
+\includegraphics[width=100mm]{figures/diag_plot_014406_detide_compare_20120101.png}
 \caption{Illustration of de-tiding observations by subtraction of tide predictions.  Different `residuals' result from alternative tide predictions: [1] regional gridded tide solution, [2] harmonic prediction and [3] harmonic prediction with significant non-gravitional harmonics removed. }
 \end{center}
 \end{figure}
@@ -565,7 +571,7 @@ Modern tidal atlases are in close agreement with regard to broad patterns, but c
 
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=130mm]{figures_2/global_m2_tpx08.png}
+\includegraphics[width=130mm]{figures/global_m2_tpx08.png}
 \caption{Example tidal altas showing cophase and corange diagrams for a single tidal component M2.  Data source TPX08 \cite{Egbert:2002ug}  }
 \label{fig:atlas}
 \end{center}
@@ -574,7 +580,7 @@ Modern tidal atlases are in close agreement with regard to broad patterns, but c
 
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=110mm]{figures_2/map_tide_differences_tpx_xovers.png}
+\includegraphics[width=110mm]{figures/map_tide_differences_tpx_xovers.png}
 \caption{Maximum difference between tidal timeseries for 2012 at topex cross-overs near Australia.  The different solutions agree very closely in deep water, whilst the significance of shallow water effects are apparent.  Models included: CSR04\citep{Eanes:1996tr}, FES04\citep{Lyard:2006ir}, DTU10\citep{IMPROVEMENTOFGLOBA:2010tu}, GOT47, GOT48\citep{Schrama:1994vr}\citep{Ray:1999vm} }
 \label{fig:tpx_cross}
 \end{center}
