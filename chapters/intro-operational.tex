@@ -1,85 +1,6 @@
-\chapter{Contextual review}  
-\label{S:REVIEW} 
 
 %--------------------------------------------------
-\section{Sea Level}
-Sea level plays a unique role in physical oceanography. A role at least partly be attributed to it's \emph{observability}\citep{Wilson:2010hy}.
-
-
-The present study will be limited to forecasts of sea level over time scales of hours to days; variations that basically constitute `the tides' as far as the general public is concerned.
-
-
-\begin{figure}[!h]
-\begin{center}
-\includegraphics[width=130mm]{figures/diagrams/ocean_scales.png}
-\caption{Schematic indication of time/length scales of ocean processes.  The approximate scale limits for this research are highlighted. (Following \citet{Chelton:2001ws} )}
-\label{fig:SCALES}
-\end{center}
-\end{figure}
-
-
-\begin{figure}[!h]
-\begin{center}
-\includegraphics[width=80mm]{figures/images/sealevel_cartoon.png}
-\caption{Simplified illustration of the relative nature of sea level and different observing platforms.}
-\label{fig:SEALEVEL}
-\end{center}
-\end{figure}
-
-
-\begin{figure}[!h]
-	\centering
-	\subfloat[Darwin in Northern Australia - large diurnal tide.]{\includegraphics[width=130mm]{figures/images/plot_14072.png}} \\
-	\subfloat[Esperence in Southern Australia - powerful synoptic signal.]{\includegraphics[width=130mm]{figures/images/plot_109504.png}}
-	\caption{Spectral estimates from two coastal tide gauges. Hourly data, black = observations, red = tidal residual. An example of a `mixed spectra' \citep{Percival:1998tw}, in the sense of that discrete spectral lines appear embedded in a background continuum of coloured noise.  The overall `redness' of the spectra and the prominence of spikes at tidal frequencies is highlighted }
-    \label{fig:SPECTRA_EG}
-\end{figure}
-
-
-%--------------------------------------------------
-\section{Literature and Operations}
-\label{S:operational_setting}
-
-Operational considerations are relevant to this review, which does not launch neatly from a single `conversation' \citep{Booth:2009vy} in the scientific literature.\\
-Unfortunately operational documentation often falls far behind aspirations.
-Tidal observation manuals exist eg \citep{IOC:2005tj}, \citep{Level:2011wu}, \citep{Parker:2007wq}.  However, analysis methods and design justifications are less formally documented - if at all.  The IOC understates this situation simply: `many organizations have developed their own method of tidal analysis'\citep{IOC:2005tj}\\
-
-User expectations of sea level forecasts have largely been defined by harmonic tidal prediction practice. 
-Conversely operational practice have influenced oceanography more broadly. Doodson's \citep{Doodson:1928wf} tidal procedures reflect the practical limits imposed by human computers and paper records, but have ongoing influence. \\
-
-%-------------------------------------------------- 
-\subsection{Intersection of Two Perspectives}
-\label{S:two_perspectives}
-
-Tidal harmonic methods have for many decades provided the only routine source of sea level forecast - and with great success.  
-In contrast, time stepping primitive equation dynamic models and data assimilation are relatively new arrivals to operational centres.  
-These represent two qualitatively different perspectives on sea level prediction.\\
-
-
-
-Over the past decade, the operational evolution of \OGCM-based prediction has increasingly brought the two approaches into something akin to Gallison's `trading zone' \citep{Galison:1996uc}.
-Developments promise only to increase the amount of overlap into the previously independent practices of harmonic analysis, eg \cite{Arbic:2010us}.\\
-Here Munk and Cartwright's aphorism from the 1960's regarding tidal analysis is illustrative:
-\begin{quote}
-\dots predicting and learning are in a sense orthogonal, and the most interesting effects are those that cause the most trouble with a forecasting: the continuum, the nongravitational tides, and the non-linear interactions.\citep{Munk:1966ts} 
-\end{quote}
-Forecasts from \BL{} and other similar systems now represent sea level attributable to exactly these troublesome areas; or at least some physical subset therein.
-Jayne's reference to the ``vexing problems'' \citep[pp812]{Jayne:2001tr} arising from applying frequency-domain theory in time-domain numerical tide modelling is illustrative.
-
-
-\begin{figure}[h]
-\begin{center}
-\includegraphics[width=120mm]{figures/images/spectra_cartoon_1.png}
-\caption{Conventional decomposition concept: mixed sea level spectra comprising discrete tidal `lines' and red turbulent continuum.  Implementation of this concept has ramifications for sea level forecasting.}
-\label{fig:SPECTRA_CARTOON}
-\end{center}
-\end{figure}
-
-
-Viewing sea level as a stationary set of harmonics is at face value quite at odds with a view of the ocean as a turbulent fluid.   In that sense, Gallison's portrayal of physics as `neither unified nor splintered into isolated fragments' \citep[pp 782]{Galison:1987wh} is apt.  Thus also is Peterson's assertion of `\dots{} the fundamental plurality of \dots{} scientific practice' \cite{Petersen:2012tr}. 
-\newpage
-%--------------------------------------------------
-\section{Operational Oceanography}
+\section{Operational oceanography}
 \label{S:operational_oceanography}
 
 Mesoscale ocean prediction moved into operations across the early 2000s in a manner that lagged and imitated the path of NWP \citep{Harper:2008ub}. Operational oceanography is `big science' \citep{Petersen:2012tr} in the sense that it fundamentally relies on the coordination of large organisations, global networks and capital. \\
@@ -117,7 +38,7 @@ Common to `big science' simulation practice \citep{Petersen:2012tr} an \OGCM{} e
 
 
 %-----------------%
-\subsection{Ocean Observations and Data Assimilation}
+\subsection{Ocean observations and data assimilation}
 Data assimilation is the framework for combining information from ocean observations and the chaotic dynamics embodied by an \OGCM{}; usefully viewed from a Bayesian perspective\citep{Zaron:2011ft}.\\
 Despite the growth of \GOOS{} \citep{Komen:1999ch}, the ocean is fundamentally under-observed for the purposes of physical state estimation.\\
 
@@ -131,9 +52,9 @@ Altimetry has directly enabled contrasting scientific developments in global tid
 % segue into OGCM
 %--------------------------------------------------
 %--------------------------------------------------
-\subsection{Tides and \OGCM{}s}
+\subsection{Treatment of tides in \OGCM{}s}
 \label{S:tides_ogcm}
-To date \OGCM{}s in the \GODAE{} heritage have focussed on nominally \emph{nontidal} ocean dynamics, with de-tided sea level observations playing a unique role.\\
+To date \OGCM{}s in the \GODAE{} heritage have focused on nominally \emph{nontidal} ocean dynamics, with de-tided sea level observations playing a unique role.\\
 
 
 From that background, recent publications indicate a motivation towards more dynamic representation of the effects of ocean tides.   This is indicative of pervasive goal across numerical simulation practice to increase model concreteness by reducing the role of parameterisations \cite[section 5.3]{Petersen:2012tr}; a reduction of system aggregation \citep{Stevens:2001kb}.\\
@@ -142,7 +63,7 @@ It could be said that the modelling community perceives parameterisations as a c
 
 
 %-----------------%
-\subsection{Nominally Nontidal \OGCM{}s}
+\subsection{Nominally non-tidal \OGCM{}s}
 \label{S:nontidal}
 
 \BL{} is a nontidal system in that no gravitational body forcing associated with the \ATGP{} is applied.   Subsequently, assimilated observations of sea level are corrected (filtered) using pre-computed global tide models.  The state variable quantifying surface elevation carried by the model is termed sea level anomaly (SLA) which in itself is a rather abstract quantity. Using Stevens' nomenclature, \BL{} simulates an aggregated pseudofluid system with a qualified relationship to the actual ocean.
@@ -170,7 +91,7 @@ Decomposition of the dynamics into tractable categories for simulation is not ag
 From the perspective of \emph{users} of ocean forecasts there is basically no inherent value in decomposition.   
  
 %-----------------%
-\subsection{Motivation to Explicitly Resolve Tides}
+\subsection{Motivation to explicitly resolve tides}
 
 As processing capacity increases, compromises imposed by past computing limitations are re-contextualised.   Inclusion of explicit tides within \OGCM{}s is increasingly affordable from a computational perspective.
 
@@ -185,7 +106,7 @@ Beyond the general simulation goals of model concreteness, it is the possible si
 
 
 %-----------------%
-\subsection{Temporal Formulation of Tidal Forcing}
+\subsubsection{Temporal formulation of tidal forcing}
 \label{S:numerical_impl}
 
 The astronomical tidal forcing can be conceptualised as a relatively smooth global surface field that varies in time. 
@@ -233,7 +154,7 @@ By employing the temporal harmonic approach to representing the tidal force, $\e
 
 
 
-\subsection{Other Aspects of Formulation}
+\subsubsection{Other Aspects of Formulation}
 Beyond the basic \ATGP{}, there may be some prospect for translating forcing corrections from \emph{tidal} data assimilation models to an \OGCM{}. \\
 The \underline{Generalised Inverse} (GI) \cite[pp345] {Zaron:2011ft} approach employed by \OTIS{} \cite{Egbert:2002ug}, draws an objective trade-off between observational and dynamic uncertainties; the ``inevitably approximate nature of the discretised dynamical constraints''\cite[pp155]{Egbert:1996vr}.  The inversion process involves determining adjusted forcing to achieve the optimal trade off.\\
 Thus it is speculated that complementary use of \OTIS{} may be exploited to improve the representation of a stationary tidal signal in the time-stepping \OGCM{}.  \\
@@ -244,7 +165,7 @@ Application of tidal forcing to a \emph{regional} prediction system raises the t
 
 
 %-----------------%
-\subsection{Vertical Mixing}
+\subsubsection{Vertical Mixing}
 
 % climate mixing
 An emphasis on improving the representation of \emph{baroclinic} circulation is apparent in \OGCM{} simulations implementing explicit tides.\\
@@ -293,7 +214,7 @@ $\dots{}$  vertical mode numbers beyond about 10 are probably not resolved at al
 
 
 %-----------------%
-\subsubsection{Coastal Boundaries}
+\subsection{Coastal boundaries}
 
 The impact of lateral boundaries and shallow water effects on representing global tides is a topic that arises in time-stepped forward models.\\
 In a barotropic simulation forced directly by tidal ephemerides \cite{Weis:2008ex}, the authors indicate that solutions for \emph{deep-water} partial tides are significantly influenced by the explicit simulation of broad-band tidal spectrum.   
@@ -315,42 +236,4 @@ Specific cases that may have an impact on the Australian coastline include the p
 Inclusion of explicit tides within an \OGCM{} thus offers the potential to improve the simulation of the global ocean state, but in doing so introduces many novel challenges.\\
 How to approach data assimilation is particularly problematic.  Assimilation of corrected observations and the exclusion of tidal dynamics provides has been more or less fundamental to the design of the current generation of \GODAE{} systems (Section \ref{S:nontidal}).\\
 Sea level observations provide a powerful constraint upon operational ocean models, and how to assimilate sea level into models that dynamically include both mesoscale and tidal motions is an open question.   Maintaining the conceptual split between periodic and aperiodic motions appears to be a reasonable general framework.
-
-
-
-
-
-
-
-%-----------------%
-\section{Sea Level Forecasts at the Overlap}
-\label{S:fc_prospects}
-
-Whatever the promise of inclusion of explicit tides within \OGCM{}s scientifically, application to operational sea level forecasts is not well explored or justified.
-Operational forecast systems must balance a unique set of motivations quite distinct from other \OGCM{}-based simulations.  \\
-Nested models of increasing resolution may be appear the obvious direction for coastal sea level forecasting.  But in contrast to the status of \BL{}, operational realisation of such a capability is not imminent nor guaranteed.
-
-
-Two broad directions are identified with regard to the prospects for \OGCM{}-based operational sea level forecasts:
-\begin{enumerate}
-\item \underline{Aggregation}: the \OGCM{} is used to forecast a nontidal quantity that is subsequently aggregated with tide predictions and other forecast products;
-\item \underline{Integrated simulations}: the \OGCM{} is used to forecast as much of the sea level signal as is feasible and is used directly.
-\end{enumerate}
-These equally apply to the realistic scenario of employing a spatially nested set of simulations in that \obc{}s may be provided by either aggregation or integration.\\
-
-
-Some form of aggregation does appear most promising for \emph{routine} forecasts in the current operational setting.  
-This assertion is based on consideration of the highly evolved specialisations of forecasting methods as well as organisational realities of system development.\\
-Caveats aside, for periodic signals direct output from a dynamic model is unlikely to approach the ability of harmonic methods to predict complex local and nonlinear effects.   The fundamentals of conventional tide predictions reasonably provide the reference for sea level forecasts more generally. \\
-
-
-
-More inclusive physical simulations and aggregation are not however mutually exclusive.  
-And one promising concept involves aggregation \emph{and} a tide-resolving \OGCM{}.  The premise is that an \OGCM{} will only ever represent a compromised tidal signal, but inclusion of these dynamics will produce a net gain for the nontidal flow.\\
-An operational reference for such an approach is found in the design of the UK Storm Tide Warning Service (now titled UK Coastal Monitoring and Forecasting) \cite{Horsburg:2009ui}.   Although the UK system is based on depth integrated surge models, rather than an \OGCM{}, the aggregation of hydrodynamic models and tide predictions is instructive.\\   
-
-
-
-% questions 
-A series of research questions is proposed to explore and test key ideas behind these forecasting prospects.\\
 
