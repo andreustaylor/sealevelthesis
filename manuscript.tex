@@ -1,16 +1,17 @@
 %------------------------------------------------------------
-% Thesis  
+% thesis - Andy Taylor 
 %------------------------------------------------------------
-\documentclass[11pt,a4paper]{book} %titlepage,twoside,openright
+\documentclass[11pt,a4paper,titlepage,twoside,openrigh]{book} %titlepage,twoside,openright
 % Use the UniMelb Dissertation Template
 \usepackage{style/uomthesis}
 %---------------------------
 % formats and definitions
 %---------------------------
-% Comment out the following line TO MARK blank pages with the 
-% text "This page intentionally left blank."
-%\newcommand{\markblankpages}{}
-%Comment out the following line for the copy submitted to the library
+% option: 
+%    on/off "This page intentionally left blank."
+%\newcommand{\markblankpages}{}  
+% option: 
+%    copy submitted to the library
 %\newcommand{\archivalpapernote}{}
 % User defined commands
 \input{format-draft}
@@ -18,6 +19,9 @@
 \input{format-shortcuts}
 %----------------------------------------
 \begin{document}
+    %---------------------------
+    % front 
+    %---------------------------
 	\begin{frontmatter}
 		\frontmatterheadings    % collect information for the title page
 		\input{metadata}          
@@ -26,38 +30,36 @@
 		\makedeclaration        % author declaration
 		\input{preface}
 		\input{acknowledgements}
-		% TOC, LOF, LOT
 		{%
 			\singlespacing%
 			\tableofcontents%
 			\listoffigures%
-			% Do not include a list of tables if you have less
-			% than 10 tables, as per SGS suggestion.
+			% Do not include a list of tables if you have less than 10 tables, as per SGS suggestion.
 			%\listoftables
 		   \clearpage%
 		}%
    \end{frontmatter}
     %----------------------------------------------
-	% Main
+	% main
     %----------------------------------------------
 	\begin{mainmatter}
 		\mainmatterheadings
-		\input{chapter-introduction}
-		\input{chapter-intro-tides}
-		\input{chapter-methods}
-		\input{chapter-conclusions}
+		\input{chapters/chapter-introduction}
+		\input{chapters/chapter-intro-tides}
+		\input{chapters/chapter-methods}
+		\input{chapters/chapter-conclusions}
 	\end{mainmatter}
 	%---------------
-	% Bibliography
+	% bibliography
 	%---------------
 	\addcontentsline{toc}{part}{Bibliography}		
 	\bibliography{bib/references}
 	%---------------
-	% Appendix
+	% appendix
 	%---------------
-	%\begin{appendix}
-	%	\input{appendix}
-	%\end{appendix}
+    \begin{appendix}
+		\input{appendices/appendix}
+	\end{appendix}
 \end{document}
 
 
