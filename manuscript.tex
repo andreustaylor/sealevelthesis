@@ -22,9 +22,10 @@
 		\frontmatterheadings    % collect information for the title page
 		\input{metadata}          
 		\maketitle              % title         
-		\input{abstract}
+
 		\makedeclaration        % author declaration
-		\input{preface}
+		\input{abstract}
+		\input{preface-publications}
 		\input{acknowledgements}
 		% TOC, LOF, LOT
 		{%
@@ -34,6 +35,8 @@
 			% Do not include a list of tables if you have less
 			% than 10 tables, as per SGS suggestion.
 			%\listoftables
+			% list of equations? 
+			
 		   \clearpage%
 		}%
    \end{frontmatter}
