@@ -6,12 +6,12 @@ Tidal prediction is the oldest form of ocean prediction, and is still the most a
 \end{quote}
 
 %-----------------%
-\subsubsection{Prelude: `Nontidal' Systems Rely on Tidal Methods}
+\subsection{Prelude: `Nontidal' Systems Rely on Tidal Methods}
 As a prelude to discussing tides and harmonics, it is highlighted that nominally nontidal systems such as \BL{} are not independent of tidal analysis. In the first instance this directly reflects the correction (decomposition) of satellite altimetry data streams.   Derivation of the sea level anomaly (SLA) quantity assimilated into the current configuration of \BL{} requires the subtraction of a global tide model; all of which to date are fundamentally harmonic in nature. 
 
 
 %-----------------%
-\subsubsection{Unavoidable Semantics}
+\subsection{Unavoidable Semantics}
 \label{SS:semantics}
 The topic of ocean tides is particularly rich in ambiguous terminology, and given the ongoing influence of the tidal perspective, it is relevant here to address some further background and matters of definition.\\ 
 Tidal methods of analysing and forecasting the ocean have a long legacy in the history of modern science.  Economically significant `tidal' predictions in fact pre-date the whole modern scientific enterprise, and the evolution of the tidal perspective mirrors much of the story of classical physics.\\
@@ -32,7 +32,7 @@ This is the setting in which many instances of ostensibly oxymoronic terminology
 
 
 %-----------------%
-\subsubsection{Common Foundation of the \ATGP{}}
+\subsection{Common Foundation of the \ATGP{}}
 Reference to the astronomical tide generating potential (\ATGP{}) is here considered to be the common foundation what is properly considered a tidal method or tidal phenomena.  The flow chart in Figure \ref{fig:TIDE_FORCE_FLOW} illustrates that the \ATGP{} is an abstraction developed from positional astronomy and gravity theory alone.   The variety amongst methods considered to be `tidal' can be accounted for by differing treatment of the intermediate parts of this flow chart - that is, the connection between \ATGP{} and ocean observations.  Notably, differences amongst approaches are located in the decomposition of the ocean into tidal and nontidal categories.\\
 
 \begin{figure}[h]
@@ -45,7 +45,7 @@ Reference to the astronomical tide generating potential (\ATGP{}) is here consid
 
 
 %-----------------%
-\subsubsection{Basic Development of the \ATGP{}}  \label{S:basic_potential}
+\subsection{Basic Development of the \ATGP{}}  \label{S:basic_potential}
 
 Development of the \ATGP{} is founded on a consideration of the gravitational field near the Earths surface. The temporal variations of gravity are developed as a function of the rotation of the Earth and the relative positions of celestial bodies.\\
 For ocean tides, the Sun and Moon alone are considered relevant on the basis of relative contribution to the gravity field. It follows that the information required for computation of the `lunisolar' tidal potential is encapsulated in ephemeris for the Sun and Moon \citep{Agnew:2011ub}.\\
@@ -120,7 +120,7 @@ The same relative magnitude argument is applied to neglecting more distant celes
 
 
 %-----------------%
-\subsubsection{Included Phenomena in Formulation the \ATGP{}}
+\subsection{Included Phenomena in Formulation the \ATGP{}}
 \label{S:ATGP_extras}
 The essential development of the \ATGP{} in Section\ref{S:basic_potential} is standard.  However, progressing beyond the basic development towards an ocean forecasting application raises several issues of significance that depend on the details of the application.\\
 
@@ -179,7 +179,7 @@ Any differences between modern ephemeris over ocean forecasting timescales are e
 
 
 %-----------------%
-\subsubsection{Temporal Representation of the \ATGP{}}
+\subsection{Temporal Representation of the \ATGP{}}
 The \ATGP{} varies in time.  Variations over forecasting timescales of several days are most relevant to the present discussion, though it worth noting that much longer astronomical timescales play a role in quantification.\\
 Just how these temporal changes are formulated is fundamental to the different tidal methods.   In short, the temporal changes can be written in time-space or frequency-space.\\
 
@@ -246,7 +246,7 @@ Equation \ref{E:doodson} gives the angular argument for a single tidal component
 
 
 %-----------------%
-\subsubsection{Ocean as an LTI System}
+\subsection{Ocean as an LTI System}
 \label{S:LTI}
 With historical hindsight it could be said that the success of tidal sea level prediction have been based on treating the ocean as a linear time invariant (LTI) system driven by the \ATGP{}.\\
 In essence, temporal variation in the \ATGP{} is an input that the LTI maps directly to an predicted ocean response.  Once such a time invariant `black box' for the ocean has been characterised,  accurate astronomical predictions can be mapped to an ocean prediction.  The details of how the LTI system is characterised and implemented distinguish the variants of tidal analysis and prediction.\\
@@ -307,7 +307,7 @@ As an aside, the nomenclature LTI is taken from engineering control theory.   It
 
 
 %-----------------%
-\subsubsection{Tidal Harmonics and Formalisms}
+\subsection{Tidal Harmonics and Formalisms}
 \label{S:formalisms}
 
 There is no unique approach to implementing the LTI concept of ocean tide prediction.   The different approaches are variously referred to as `methods' or `formalisms' and at a higher level share the LTI system model discussed above.  In very broad terms there are basically two categories: harmonic methods and response methods.   Within each categories there are variations that are more or less significant depending on context. 
@@ -477,7 +477,7 @@ The use of orthotides may provide some benefits to the empirical determination o
 
 
 %-----------------%
-\subsubsection{Contrasting Admittance Curves and Constants}
+\subsection{Contrasting Admittance Curves and Constants}
 
 % LTI
 It should be re-iterated that at high level, the harmonic and response models contain the same core concept.   Both model the ocean as an LTI system responding to some type of tidal forcing and both contain assumptions about the smoothness of ocean admittance.  Indeed Le Provost in \citep[chpt6]{Fu:2001ub} groups both the standard harmonic and convolution formalism as instances of the `response' formalism on this basis. \\
@@ -515,7 +515,7 @@ Expanding Cartwright's explanation, the importance of robustness and intuitive e
 
 
 %-----------------%
-\subsubsection{Distinguishing Forecasts, Filtering and Other Analyses}
+\subsection{Distinguishing Forecasts, Filtering and Other Analyses}
 
 Sea level forecasting is not the only reason for employing tidal methods in operational centres.\\
 Tidal methods are employed for two broadly distinct purposes: forecasting and filtering.  And beyond the operational context even more varied tidal methods are employed for data analysis and specialised studies.\\
@@ -557,7 +557,7 @@ For instance, specifically tidal applications of wavelet analysis have been desc
 
 
 %-----------------%
-\subsubsection{Tidal Atlases}
+\subsection{Tidal Atlases}
 
 Satellite altimetry motivated the extension of the empirical analysis methods discussed above to the production of regional and global atlases of ocean tides.  Indeed, tidal analysis formed an important driver and design constraint on the development of satellite altimetry missions.\\
 Global tide models are commonly employed as intermediate products for other calculations well beyond the purposes of sea level forecasting per se.  For instance in the quantification of gravity effects, orbit determination, earth rotation and even the definition of coordinate systems \citep{Anonymous:2004tm}.\\
@@ -618,7 +618,7 @@ This international effort quickly split into two main approaches: the so-called 
 
 
 %-----------------%
-\subsubsection{Global Tide Model Hydrodynamics and Data Assimilation}
+\subsection{Global Tide Model Hydrodynamics and Data Assimilation}
 
 No global tidal atlas can be purely empirical - the spatial and temporal coverage of observations is too sparse.\\
 Schwiderski's pre-altimetry solutions relied heavily on global compilations of harmonic constants for mainly coastal tide gauges, from which spatial maps were created via a `hydrodynamic interpolation' method that would in hindsight be considered an application of data assimilation \cite[pp822]{Egbert:1994wz}.\\
