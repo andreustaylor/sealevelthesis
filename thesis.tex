@@ -1,46 +1,45 @@
 %------------------------------------------------------------
 % thesis - Andy Taylor 
 %------------------------------------------------------------
-\documentclass[11pt,a4paper,titlepage,twoside,openrigh]{book} %titlepage,twoside,openright
-% Use the UniMelb Dissertation Template
-\usepackage{style/uomthesis}
+\documentclass[11pt,a4paper,titlepage,twoside,openrigh]{book}
+\usepackage{style/uomthesis}  % Unimelb thesis template
 %---------------------------
 % formats and definitions
 %---------------------------
-% option: 
-%    on/off "This page intentionally left blank."
-%\newcommand{\markblankpages}{}  
-% option: 
-%    copy submitted to the library
-%\newcommand{\archivalpapernote}{}
-% User defined commands
-\input{format-draft}
-\input{format-config}
-\input{format-shortcuts}
+%\newcommand{\markblankpages}{}     % option:"This page intentionally left blank."
+%\newcommand{\archivalpapernote}{}  % option: copy submitted to the library
+\input{format-draft}                % draft watermark
+\input{format-config}               
+\input{format-shortcuts}            
+%---------------------------
+% metadata
+%---------------------------
+\title{On the application of conventional tidal concepts within operational sea level forecasting}
+\author{Andy Taylor}
+\orcid{0000-0003-1258-5002}
+\submissionmonth{April}
+\submissionyear{2021}
+\department{School of Earth Sciences}
+\university{\textsc The University of Melbourne}
 %----------------------------------------
 \begin{document}
     %---------------------------
     % front 
     %---------------------------
 	\begin{frontmatter}
-		\frontmatterheadings    % collect information for the title page
-		\input{metadata}          
+		\frontmatterheadings    % collect information for title page        
 		\maketitle              % title         
-
 		\makedeclaration        % author declaration
 		\input{abstract}
 		\input{preface-publications}
 		\input{acknowledgements}
-		{%
-			\singlespacing%
-			\tableofcontents%
-			\listoffigures%
-			% Do not include a list of tables if you have less than 10 tables, as per SGS suggestion.
-			%\listoftables
-			% list of equations? 
-			
-		   \clearpage%
-		}%
+		{
+			\singlespacing
+			\tableofcontents
+			\listoffigures
+			%\listoftables   % not for less than 10 tables
+		   \clearpage
+		}
    \end{frontmatter}
     %----------------------------------------------
 	% main
@@ -57,11 +56,9 @@
 	\addcontentsline{toc}{part}{Bibliography}		
 	\bibliography{bib/references}
 	%---------------
-	% appendix
+	% appendices
 	%---------------
     \begin{appendix}
 		\input{appendices/appendix}
 	\end{appendix}
 \end{document}
-
-
