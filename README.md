@@ -1,3 +1,11 @@
+# Uni of Melbourne Phd Thesis Material
+
+## Content
+* thesis document
+* completeion seminar material
+
+## template
+
 This thesis is based off the University of Melbourne 
 [LaTeX template](http://jpap.org/projects.html) written by John Papandriopoulos.
 
