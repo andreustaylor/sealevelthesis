@@ -1,0 +1,19 @@
+\ProvidesPackage{style/uom_beamer}
+\usepackage{palatino}
+\usepackage{mathpazo}
+% For roman numeral lists
+\usepackage{enumerate}
+%------------------------------------------------------------
+% repeat outline each section
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Overview}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+% theme
+%\usetheme{Copenhagen}
+\usetheme{Madrid}
+
+
