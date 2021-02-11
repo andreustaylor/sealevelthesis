@@ -323,7 +323,7 @@ Finally we note that whilst forecasting systems will continue to be updated and 
 %----------------------------
 % map guidance
 \begin{figure}[t]
-    \noindent\includegraphics[width=\myfigwidth]{figures/omaps_chart_anim_eg.png}
+    \noindent\includegraphics[width=\myfigwidth]{figures/maps/omaps_chart_anim_eg.png}
     \caption[OceanMAPS SLA chart from the Bureau's public website]{ OceanMAPS SLA chart from the Bureau's public website;
               whilst moving patterns are often noticeable when animated, these displays do not inherently focus on coastal aspects of the forecast.  \protect\citep{urlBOM_SLA:2018} }
     \label{fig:oldcharts}
@@ -331,7 +331,7 @@ Finally we note that whilst forecasting systems will continue to be updated and 
 %----------------------------
 % coord system
 \begin{figure}[t]
-    \noindent\includegraphics[width=\myfigwidth]{figures/ctw_coords.png}
+    \noindent\includegraphics[width=\myfigwidth]{figures/diagrams/ctw_coords.png}
     \caption[Coastally trapped wave idealised coordinates]
              {Coastally trapped wave idealised coordinates and bathymetry profile. 
               Uniform and large scale in the longshore direction, with a coastal boundary and bathymetry either flat or monotonically increasing offshore. In the southern hemisphere CTWs propagate with the coast on the left. The term CTW covers the range of Kelvin and continental shelf wave mechanisms.  Following \protect\citep{Dale:2001dn}. }
@@ -340,7 +340,7 @@ Finally we note that whilst forecasting systems will continue to be updated and 
 %----------------------------
 % map waveguide
 \begin{figure}[t]
-    \noindent\includegraphics[width=\myfigwidth]{figures/map_overview.png}
+    \noindent\includegraphics[width=\myfigwidth]{figures/maps/map_overview.png}
     \caption[Coastal waveguide path around the Australian mainland used for this study.]
             {A coastal waveguide path around the Australian mainland with anticyclonic direction indicated (southern hemisphere).
              For this realisation, segment lengths $\protect\propto$ a Rossby Radius of Deformation measure. 
@@ -353,7 +353,7 @@ Finally we note that whilst forecasting systems will continue to be updated and 
 %----------------------------
 % coastline length 
 \begin{figure}[t]
-    \noindent\includegraphics[width=\myfigwidth]{figures/mandelbrot_lengths.png}
+    \noindent\includegraphics[width=\myfigwidth]{figures/plots/mandelbrot_lengths.png}
     \caption[Waveguide length dependence on scale]{Total lengths of waveguide paths as a function of fixed divider scales, from which an effective fractal dimension of $\sim$1.08 is derived.  
 All walk the same anti-cyclonic direction around the coast from an arbitrary start point near Darwin to and end point at Cape York. 
 The final divider length in each case is allowed to vary in order to ensure identical start and end points.}
@@ -362,7 +362,7 @@ The final divider length in each case is allowed to vary in order to ensure iden
 %----------------------------
 % sla hovmuller
 \begin{figure}[t]
-    \noindent\includegraphics[width=\myfigwidth]{figures/concat_sla_day0_full.png}
+    \noindent\includegraphics[width=\myfigwidth]{figures/plots/concat_sla_day0_full.png}
     \caption[Concatenated first day of OceanMAPS SLA forecasts] 
             {Concatenated first day of OceanMAPS SLA forecasts for the comparison period, 
              timeseries at each position centred by removal of sample mean. Note the distance units are meters and range to $\sim$11000km}
@@ -371,7 +371,7 @@ The final divider length in each case is allowed to vary in order to ensure iden
 %----------------------------
 % forecast collection of Hovmullers
 \begin{figure}[t]
-    \noindent\includegraphics[width=\myfigwidth]{figures/collate_g.png}
+    \noindent\includegraphics[width=\myfigwidth]{figures/plots/collate_g.png}
     \caption[Forecast with basedate 2018-05-12]
             {A single forecast with basedate 2018-05-12.  Each field is shown on a separate axis with identical time and space limits, feint contours indicate pendulum days to highlight changing inertial periods over the large latitude range. (a) longshore wind stress $\tau_{along}$ units Pa (b) onshore wind stress $\tau_{on}$ units Pa (c) Surge [3-day lead time only] (d) OceanMAPS.}
     \label{fig:collate_g}
@@ -380,7 +380,7 @@ The final divider length in each case is allowed to vary in order to ensure iden
 % correlations
 % 0 hours
 \begin{figure}
-    \noindent\includegraphics[width=\myfigwidth]{figures/concatC_U_gstr_lag_000.png}
+    \noindent\includegraphics[width=\myfigwidth]{figures/plots/concatC_U_gstr_lag_000.png}
     \caption[Cross-correlation at lag of zero hours $\tau_{along}$]{
              Cross-correlation at lag of zero hours: 
              $\tau_{along}$ lagging (a) $\tau_{along}$ (b) $\tau_{on}$}
@@ -391,7 +391,7 @@ The final divider length in each case is allowed to vary in order to ensure iden
 % 66 hours
 \newcommand\CAPTIONb{Cross-correlation at lag of 66 hours}
 \begin{figure}
-    \noindent\includegraphics[width=\myfigwidth]{figures/concatC_sla_lag_066.png}
+    \noindent\includegraphics[width=\myfigwidth]{figures/plots/concatC_sla_lag_066.png}
     \caption[\CAPTIONb{} OceanMAPS]{
              \CAPTIONb{}: 
              OceanMAPS response lagging (a) $\tau_{along}$ (b) $\tau_{on}$} 
@@ -399,7 +399,7 @@ The final divider length in each case is allowed to vary in order to ensure iden
 \end{figure}
 
 \begin{figure}
-    \noindent\includegraphics[width=\myfigwidth]{figures/concatC_surgeg_lag_066.png}
+    \noindent\includegraphics[width=\myfigwidth]{figures/plots/concatC_surgeg_lag_066.png}
     \caption[\CAPTIONb{} Surge]{
              \CAPTIONb{}: 
              Surge response lagging (a) $\tau_{along}$ (b) $\tau_{on}$} 
@@ -409,17 +409,17 @@ The final divider length in each case is allowed to vary in order to ensure iden
 % differences
 \newcommand\CAPTIONc{SLA differences from concatenated datasets}
 \begin{figure}
-    \noindent\includegraphics[width=\myfigwidth]{figures/interpTdiff_obs_sla_day0_d0.png}
+    \noindent\includegraphics[width=\myfigwidth]{figures/plots/interpTdiff_obs_sla_day0_d0.png}
     \caption{\CAPTIONc{} - Tide gauges versus OceanMAPS.}
     \label{fig:diff_tide_omaps}
 \end{figure}
 \begin{figure}
-    \noindent\includegraphics[width=\myfigwidth]{figures/interpTdiff_obs_surgeg_day0_d0.png}
+    \noindent\includegraphics[width=\myfigwidth]{figures/plots/interpTdiff_obs_surgeg_day0_d0.png}
     \caption{\CAPTIONc{} - Tide gauges versus Surge.}
     \label{fig:diff_tide_surge}
 \end{figure}
 \begin{figure}
-    \noindent\includegraphics[width=\myfigwidth]{figures/interpRdiff_sla_surgeg_day0.png}
+    \noindent\includegraphics[width=\myfigwidth]{figures/plots/interpRdiff_sla_surgeg_day0.png}
     \caption{\CAPTIONc{} - OceanMAPS versus Surge.
              Patterns of anticyclonic propagation are apparent and indicative of systemic differences in representation between the models.   
              These features are set against the slower seasonal patterns of difference.}
@@ -428,7 +428,7 @@ The final divider length in each case is allowed to vary in order to ensure iden
 %----------------------------
 % shelf profiles
 \begin{figure}[t]
-    \noindent\includegraphics[width=\myfigwidth]{figures/plot_skill_path_mebs.png}
+    \noindent\includegraphics[width=\myfigwidth]{figures/plots/plot_skill_path_mebs.png}
     \caption[Forecast skill along the waveguide.]
             {Forecast skill along the waveguide. Mean absolute error for SLA at tide gauge locations. Forecasts are categorised into lead times of 0-24 hours (day-0), 24-48 hours (day-1) and 48-72 hours (day-2).  
             Lower error indicates better overall skill for the 1 year period.
