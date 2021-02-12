@@ -1,76 +1,6 @@
-%  LaTeX support: latex@mdpi.com 
-%  In case you need support, please attach all files that are necessary for compiling as well as the log file, and specify the details of your LaTeX setup (which operating system and LaTeX version / tools you are using).
-% You need to save the "mdpi.cls" and "mdpi.bst" files into the same folder as this template file.
-%=================================================================
-\documentclass[jmse,article,accept,moreauthors,pdftex,10pt,a4paper]{mdpi} 
-%--------------------
-% Class Options:
-%----------
-% submit
-%----------
-% The class option "submit" will be changed to "accept" by the Editorial Office when the paper is accepted. This will only make changes to the frontpage (e.g. the logo of the journal will get visible), the headings, and the copyright information. Also, line numbering will be removed. Journal info and pagination for accepted papers will also be assigned by the Editorial Office.
-%------------------
-% moreauthors
-%------------------
-% If there is only one author the class option oneauthor should be used. Otherwise use the class option moreauthors.
-%---------
-% pdftex
-%---------
-% The option pdftex is for use with pdfLaTeX. If eps figure are used, remove the option pdftex and use LaTeX and dvi2pdf.
-%=================================================================
-\firstpage{1} 
-\makeatletter 
-\setcounter{page}{\@firstpage} 
-\makeatother 
-\articlenumber{x}
-\doinum{10.3090/------}
-\pubvolume{5}
-\pubyear{2017}
-\copyrightyear{2017}
-
-\history{Received: 30 May 2017; Accepted: 25 July 2017; Published: date}
-%------------------------------------------------------------------
-% The following line should be uncommented if the LaTeX file is uploaded to arXiv.org
-%\pdfoutput=1
-%=================================================================
-% Add packages and commands here. The following packages are loaded in our class file: fontenc, calc, indentfirst, fancyhdr, graphicx, lastpage, ifthen, lineno, float, amsmath, setspace, enumitem, mathpazo, booktabs, titlesec, etoolbox, amsthm, hyphenat, natbib, hyperref, footmisc, geometry, caption, url, mdframed, tabto, soul, multirow, microtype
-\setitemize{parsep=6pt,itemsep=0pt,leftmargin=*,labelsep=5.5mm}
-\setenumerate{parsep=6pt,itemsep=0pt,leftmargin=*,labelsep=5.5mm}
-\setlist[description]{itemsep=0mm} 
- \usepackage[labelformat=simple]{subcaption}
- \usepackage{soul}
-\renewcommand\thesubfigure{\alph{subfigure}}
-\DeclareCaptionLabelFormat{subcaptionlabel}{\normalfont(\textbf{#2}\normalfont)}
-\captionsetup[subfigure]{labelformat=subcaptionlabel}
-
-%=================================================================
-
-% Full title of the paper (Capitalized)
-\Title{Sea Level Forecasts Aggregated from Established Operational Systems}
-
-% Authors, for the paper (add full first names)
-\Author{\hl{Andy Taylor} $^{1,}$* and Gary B. Brassington $^{2}$ } 
-%Please carefully check the accuracy of names and affiliations. Changes will not be possible after proofreading.
-
-% Authors, for metadata in PDF
-\AuthorNames{Andy Taylor, Gary B. Brassington}
-
-% Affiliations / Addresses (Add [1] after \address if there is only one affiliation.)
-\address{$^{1}$ \quad \hl{Bureau of Meteorology}, 700 Collins St Docklands 3008, Australia\\  %Please provide more specific affiliation, such as the department. 
-$^{2}$ \quad \hl{Bureau of Meteorology}, 300 Elizabeth St Darlinghurst 1300, Australia; Gary.Brassington@bom.gov.au} 
-
-% Contact information of the corresponding author
-\corres{Correspondence: Andy.Taylor@bom.gov.au; Tel.: +61-3-9669-4650}
-% Current address and/or shared authorship
-%\firstnote{Current address: Affiliation 3} 
-%\secondnote{These authors contributed equally to this work.}
-% The commands \thirdnote{} till \eighthnote{} are available for further notes
-
-% Simple summary
-%\simplesumm{}
-
-% Abstract (Do not use inserted blank lines, i.e. \\) 
-\abstract{ A system for providing routine seven-day forecasts of sea level observable at tide gauge locations is described and evaluated.
+\chapter{Sea Level Forecasts Aggregated from Established Operational Systems}
+%\abstract{ 
+A system for providing routine seven-day forecasts of sea level observable at tide gauge locations is described and evaluated.
 Forecast time series are aggregated from well-established operational systems of the Australian Bureau of Meteorology; although following some adjustments these systems are only quasi-complimentary.
 Target applications are routine coastal decision processes under non-extreme conditions.
 The configuration aims to be relatively robust to operational realities such as version upgrades, data gaps and metadata ambiguities.
@@ -79,21 +9,9 @@ Characteristics of the bias correction term are demonstrated to be primarily sta
 This simple approach to exploiting existing complex systems can offer valuable levels of skill at a range of Australian locations.
 The prospect of interpolation between observation sites and exploitation of lagged-ensemble uncertainty estimates could be meaningfully pursued. 
 Skill characteristics define a benchmark against which new operational sea level forecasting systems can be measured. 
-More generally, an aggregation approach may prove to be optimal for routine sea level forecast services given the physically inhomogeneous processes involved and ability to incorporate ongoing improvements and extensions of source systems.}
-           
-% Keywords
-\keyword{forecasting; sea level; tides; Australia; operational oceanography}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Only for the journal Data:
-%\dataset{DOI number or link to the deposited data set in cases where the data set is published or set to be published separately. If the data set is submitted and will be published as a supplement to this paper in the journal Data, this field will be filled by the editors of the journal. In this case, please make sure to submit the data set as a supplement when entering your manuscript into our manuscript editorial system.}
-%\datasetlicense{license under which the data set is made available (CC0, CC-BY, CC-BY-SA, CC-BY-NC, etc.)}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{document}
+More generally, an aggregation approach may prove to be optimal for routine sea level forecast services given the physically inhomogeneous processes involved and ability to incorporate ongoing improvements and extensions of source systems.
+%}
 \section{Introduction}
-\vspace{-6pt}
 \subsection{Routine Sea Level and Operations}
 
 % sea level is relevant
@@ -638,392 +556,301 @@ Uncertainty information can already be roughly indicated by means of presenting 
 Optimal treatment of the lagged ensemble and communicating error growth to users is an outstanding need.
 Developments in ensemble NWP systems within the operational center are expected to provide additional sampling of uncertainty and enable further development of this important aspect of sea level forecasts.  
 
-%Authors should discuss the results and how they can be interpreted in perspective of previous studies and of the working hypotheses. The findings and their implications should be discussed in the broadest context possible. Future research directions may also be highlighted.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\section{Materials and Methods}
-
-%Materials and Methods should be described with sufficient details to allow others to %replicate and build on published results. Please note that publication of your manuscript implicates that you must make all materials, data, computer code, and protocols associated with the publication available to readers. Please disclose at the submission stage any restrictions on the availability of materials or information. New methods and protocols should be described in detail while well-established methods can be briefly described and appropriately cited.
-
-%Research manuscripts reporting large datasets that are deposited in a publicly available database should specify where the data have been deposited and provide the relevant accession numbers. If the accession numbers have not yet been obtained at the time of submission, please state that they will be provided during review. They must be provided prior to publication.
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\section{Conclusions}
-
-%This section is not mandatory, but can be added to the manuscript if the discussion is unusually long or complex.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\vspace{6pt} 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% optional
-%TBC \supplementary{The following are available online at www.mdpi.com/link, time series and error plots for each station }
-% Figure S1: title, Table S1: title, Video S1: title.}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\acknowledgments{Thanks for input from Kevin Walsh at University of Melbourne, James Chittleborough at Bureau Tidal Unit.}
-
-%All sources of funding of the study should be disclosed. Please clearly indicate grants that you have received in support of your research work. Clearly state if you received funds for covering the costs to publish in open access.}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- \authorcontributions{Andy Taylor conceived, implemented and analyzed the system and also wrote this paper.  Gary B. Brassington lead the project and provided substantial critical input.}
-%      \hl{For research articles with several authors, a short paragraph specifying their individual contributions must be provided. The following statements should be used ``X.X. and Y.Y. conceived and designed the experiments; X.X. performed the experiments; X.X. and Y.Y. analyzed the data; W.W. contributed reagents/materials/analysis tools; Y.Y. wrote the paper.'' Authorship must be limited to those who have contributed substantially to the work reported.}}
- %Please provide the author contributions to replace this part.
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\conflictsofinterest{Both authors are employed by the Bureau of Meteorology, but declare no conflict of interest with regard to the results presented.  
-The Bureau of Meteorology beyond the authors had no role in the design, analysis or presentation of the results}
-%Please provide the conflict of interest to replace his part.
-
-%\conflictsofinterest{Declare conflicts of interest or state ``The authors declare no conflict of interest.'' Authors must identify and declare any personal circumstances or interest that may be perceived as inappropriately influencing the representation or interpretation of reported research results. Any role of the funding sponsors in the design of the study; in the collection, analyses or interpretation of data; in the writing of the manuscript, or in the decision to publish the results must be declared in this section. If there is no role, please state ``The founding sponsors had no role in the design of the study; in the collection, analyses, or interpretation of data; in the writing of the manuscript, and in the decision to publish the results''.} 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% optional
-\abbreviations{The following abbreviations are used in this manuscript:\\
-
-\noindent 
-\begin{tabular}{@{}ll}
-aggSL & Aggregate Sea Level\\
-AHD & Australian Height Datum\\
-ATGF & Astronomical Tide Producing Forces\\ 
-BoM & Australian Bureau of Meteorology\\
-HAT & Highest Astronomical Tide---conventional tidal plane\\
-LAT & Lowest Astronomical Tide---conventional tidal plane\\
-LIB & Local Inverse Barometer Approximation\\
-MDT & Mean Dynamic Topography \\
-MSL & Mean Sea Level---conventional tidal plane\\
-MOM & Modular Ocean Model \\
-NWP & Numerical Weather Prediction\\
-OceanMAPS & Ocean Model, Analysis and Prediction System \\
-RMSE & Root Mean Square Error\\
-SLA & Sea Level Anomaly \\
-\end{tabular}}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% optional
-%\appendixtitles{no} %Leave argument "no" if all appendix headings stay EMPTY (then no dot is printed after "Appendix A"). If the appendix sections contain a heading then change the argument to "yes".
-%\appendixsections{multiple} %Leave argument "multiple" if there are multiple sections. Then a counter is printed ("Appendix A"). If there is only one appendix section then change the argument to "one" and no counter is printed ("Appendix").
-%\appendix
-%\section{}
-%\subsection{}
-%The appendix is an optional section that can contain details and data supplemental to the main text. For example, explanations of experimental details that would disrupt the flow of the main text, but nonetheless remain crucial to understanding and reproducing the research shown; figures of replicates for experiments of which representative data is shown in the main text can be added here if brief, or as Supplementary data. Mathematical proofs of results not central to the paper can be added as an appendix.
-
-%\section{}
-%All appendix sections must be cited in the main text. In the appendixes, Figures, Tables, etc. should be labelled starting with `A', e.g., Figure A1, Figure A2, etc. 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Citations and References in Supplementary files are permitted provided that they also appear in the reference list here. 
-
-%=====================================
-% References, variant A: internal bibliography
-%=====================================
-%\begin{thebibliography}{999}
-\bibliographystyle{mdpi}
-%\renewcommand\bibname{References}
-%\bibliography{ref_minimal}
-\begin{thebibliography}{999}
-\providecommand{\natexlab}[1]{#1}
-
-\bibitem[Bell \em{et~al.}(2009)Bell, Lef{\`e}bvre, Le~Traon, Smith, and
-  Wilmer-Becker]{Bell:2009uv}
-Bell, M.J.; Lef{\`e}bvre, M.; Le~Traon, P.Y.; Smith, N.; Wilmer-Becker, K.
-\newblock {GODAE The Global Ocean Data Assimilation Experiment}.
-\newblock {\em Oceanography} {\bf 2009}, {\em 22}, 14--21.
-
-\bibitem[Pugh and Woodworth(2014)]{Pugh:2014di}
-Pugh, D.; Woodworth, P.
-\newblock {\em Sea-Level Science: Understanding Tides, Surges, Tsunamis
-  and Mean Sea-Level Changes}; Cambridge University Press: Cambridge, UK, 2014.
-
-\bibitem[Box(1979)]{Box:1979wz}
-Box, G.
-\newblock {Robustness in the strategy of scientific model building}.
-\newblock {\em Robust. Stat.} {\bf 1979}, doi:10.1016/b978-0-12-438150-6.50018-2.
-
-\bibitem[Melet \em{et~al.}(2016)Melet, Almar, and
-  Meyssignac]{Anonymous:jdDiSHB0}
-Melet, A.; Almar, R.; Meyssignac, B.
-\newblock {What dominates sea level at the coast: A case study for the Gulf of
-  Guinea}.
-\newblock {\em Ocean Dyn.} {\bf 2016}, \emph{66}, 623--636.
-
-\bibitem[Haigh \em{et~al.}(2013{\natexlab{a}})Haigh, Wijeratne, MacPherson,
-  Pattiaratchi, Mason, Crompton, and George]{Haigh:2013bna}
-Haigh, I.D.; Wijeratne, E.M.S.; MacPherson, L.R.; Pattiaratchi, C.B.; Mason,
-  M.S.; Crompton, R.P.; George,~S.
-\newblock {Estimating present day extreme water level exceedance probabilities
-  around the coastline of Australia: Tides, extra-tropical storm surges and
-  mean sea level}.
-\newblock {\em Clim. Dyn.} {\bf 2013}, \emph{42}, 121--138.
-
-\bibitem[Haigh \em{et~al.}(2013{\natexlab{b}})Haigh, MacPherson, Mason,
-  Wijeratne, Pattiaratchi, Crompton, and George]{Haigh:2013hea}
-Haigh, I.D.; MacPherson, L.R.; Mason, M.S.; Wijeratne, E.M.S.; Pattiaratchi,
-  C.B.; Crompton, R.P.; George,~S.
-\newblock {Estimating present day extreme water level exceedance probabilities
-  around the coastline of Australia: Tropical cyclone-induced storm surges}.
-\newblock {\em Clim. Dyn.} {\bf 2013}, \emph{42}, 139--157.
-
-\bibitem[Woodham \em{et~al.}(2013)Woodham, Brassington, Robertson, and
-  Alves]{Woodham:2013cl}
-Woodham, R.; Brassington, G.B.; Robertson, R.; Alves, O.
-\newblock {Propagation characteristics of coastally trapped waves on the
-  Australian Continental Shelf}.
-\newblock {\em J. Geophys. Res. Oceans} {\bf 2013},  \emph{118}, 4461--4473.
-
-\bibitem[Ridgway(2004)]{Ridgway:2004kb}
-Ridgway, K.R.
-\newblock {The 5500-km-long boundary flow off western and southern Australia}.
-\newblock {\em J. Geophys. Res.} {\bf 2004}, doi:10.1029/2003jc001921.
-
-\bibitem[Church and Freeland(1986)]{Church:1986tl}
-Church, J.A.; Freeland, H.
-\newblock {Coastal-trapped waves on the east Australian continental shelf. I:
-  Propagation of modes}.
-\newblock {\em J. Phys. Oceanogr.} {\bf 1986}, \emph{16}, 1929--1943.
-
-\bibitem[Allen and Greenslade(2009)]{Allen:2009tf}
-Allen, S.C.R.; Greenslade, D.J.M.
-\newblock {\em A Spectral Climatology of Australian and South-West Pacific Tide
-  Gauges}; CAWCR Technical Reports; Centre for Australian Weather and Climate Research: Melbourne, VIC, Australia,~2009.
-
-\bibitem[Cartwright(2000)]{Cartwright:2000tt}
-Cartwright, D.E.
-\newblock {\em {Tides}}; Cambridge University Press: Cambridge, UK, 2000.
-
-\bibitem[Petersen(2012)]{Petersen:2012kp}
-Petersen, A.
-\newblock {\em {Simulating Nature}}; Chapman and Hall/CRC: London, UK,  2012.
-
-\bibitem[Schiller and Brassington(2011)]{Schiller:2011di}
-Schiller, A.; Brassington, G.B.
-\newblock {\em {Operational Oceanography in the 21st Century}}; Springer
-  Science + Business Media: Berlin, Germany, 2011.
-
-\bibitem[Harper(2008)]{Harper:kb}
-Harper, K.C.
-\newblock {\em {Weather by the Numbers}}; The MIT Press:  Cambridge, MA, USA, 2008.
-
-\bibitem[Paramygin \em{et~al.}(2017)Paramygin, Sheng, and
-  Davis]{Paramygin:2017dx}
-Paramygin, V.; Sheng, Y.; Davis, J.
-\newblock {Towards the Development of an Operational Forecast System for the
-  Florida Coast}.
-\newblock {\em J. Mar. Sci. Eng.} {\bf 2017}, \emph{5}, 8.
-
-\bibitem[Yang \em{et~al.}(2016)Yang, Richardson, Chen, Kelley, Myers, Aikman,
-  Peng, and Zhang]{Yang:2016ep}
-Yang, Z.; Richardson, P.; Chen, Y.; Kelley, J.; Myers, E.; Aikman, F.; Peng,
-  M.; Zhang, A.
-\newblock {Model Development and Hindcast Simulations of NOAA{\textquoteright}s
-  Gulf of Maine Operational Forecast System}.
-\newblock {\em J. Mar. Sci. Eng.} {\bf 2016}, \emph{4},~77.
-
-\bibitem[Wei \em{et~al.}(2014)Wei, Zhang, Yang, Chen, Kelley, Aikman, and
-  Cao]{Wei:2014ex}
-Wei, E.; Zhang, A.; Yang, Z.; Chen, Y.; Kelley, J.; Aikman, F.; Cao, D.
-\newblock {NOAA{\textquoteright}s Nested Northern Gulf of Mexico Operational
-  Forecast Systems Development}.
-\newblock {\em J. Mar. Sci. Eng.} {\bf 2014}, \emph{2}, 1--17.
-
-\bibitem[Peng \em{et~al.}(2014)Peng, {Richard Jr}, Zhang, and {Frank
-  III}]{Peng:2014kq}
-Peng, M.; {Schmalz, R.A., Jr.}; Zhang, A.; {Aikman, F., III}.
-\newblock {Towards the Development of the National Ocean Service San Francisco
-  Bay Operational Forecast System}.
-\newblock {\em J. Mar. Sci. Eng.} {\bf 2014}, \emph{2}, 247--286;
-
-\bibitem[Hendershott(1981)]{Hendershott:1981ub}
-Hendershott, M.
-\newblock {Long waves and ocean tides}. In {\em Evolution of Physical
-  Oceanography}; The MIT Press:  Cambridge, MA, USA, 1981.
-
-\bibitem[Foreman \em{et~al.}(2009)Foreman, Cherniawsky, and
-  Ballantyne]{Foreman:2009bg}
-Foreman, M.G.G.; Cherniawsky, J.Y.; Ballantyne, V.
-\newblock {Versatile Harmonic Tidal Analysis: Improvements and Applications}.
-\newblock {\em J. Atmos. Ocean. Technol.} {\bf 2009}, doi:10.1175/2008JTECHO615.1.
-
-\bibitem[Groves and Reynolds(1975)]{Groves:1975ky}
-Groves, G.W.; Reynolds, R.W.
-\newblock {An Orthogonalized Convolution Method of Tide Prediction}.
-\newblock {\em J. Geophys. Res.} {\bf 1975}, \emph{80}, 4131--4138. 
-
-\bibitem[Leffler and Jay(2009)]{LEFFLER:2009ej}
-Leffler, K.; Jay, D.
-\newblock {Enhancing tidal harmonic analysis: Robust (hybrid L1/L2L1/L2)
-  solutions}.
-\newblock {\em Cont.~Shelf~Res.} {\bf 2009}, \emph{29}, 78--88.
-
-\bibitem[Smith \em{et~al.}(1997)Smith, Ambrosius, Wakker, Woodworth, and
-  Vassie]{Smith:1997ut}
-Smith, A.; Ambrosius, B.; Wakker, K.F.; Woodworth, P.L.; Vassie, J.M.
-\newblock {Comparison between the harmonic and response methods of tidal
-  analysis using TOPEX/POSEIDON altimetry}.
-\newblock {\em J. Geod.} {\bf 1997},  \emph{71},  695--703.
-
-\bibitem[Mapping(2014)]{Mapping:2014wu}
-Mapping, I.C.o.S.
-\newblock {\em Australian Tides Manual};
-\newblock {Technical Report; Permanent Committee on Tides and Mean Sea Level: Wollongong, Australia, 2014.}
-%please confirm this accuracy ... details from here http://www.icsm.gov.au/tides/
-
-\bibitem[Parker(2007)]{Parker:2007wq}
-Parker, B.B.
-\newblock {\em Tidal Analysis and Prediction};
-\newblock {Technical Report; National Oceanic and Atmospheric Administration - Center for Operational Oceanographic Products and Services: Silver Spring, Maryland, USA, 2007.}
-
-\bibitem[Ray and Egbert(2004)]{Ray:2004ts}
-Ray, R.; Egbert, G.D.
-\newblock {The Global S1 Tide}.
-\newblock {\em J. Phys. Oceanogr.} {\bf 2004}, \emph{34}, 1922.
-
-\bibitem[Horsburgh \em{et~al.}(2008)Horsburgh, Williams, Flowerdew, and
-  Mylne]{Horsburgh:2008gw}
-Horsburgh, K.J.; Williams, J.A.; Flowerdew, J.; Mylne, K.
-\newblock {Aspects of operational forecast model skill during an extreme storm
-  surge event}.
-\newblock {\em J. Flood Risk Manag.} {\bf 2008}, \emph{1}, 213--221.
-
-\bibitem[Egbert and Bennett(1996)]{Egbert:1996vr}
-Egbert, G.D.; Bennett, A.F.
-\newblock {Data assimilation methods for ocean tides}. \emph{Elsevier Oceanogr. Ser.} \textbf{1996}, doi:10.1016/s0422-9894(96)80009-2.
-
-\bibitem[Greenslade and Warne(2012)]{Greenslade:2012um}
-Greenslade, D.J.M.; Warne, J.O.
-\newblock {Assessment of the Effectiveness of a Sea-Level Observing Network for
-  Tsunami Warning}.
-\newblock {\em J. Waterw. Port Coast. Ocean Eng.} {\bf
-  2012},  \emph{138}, 246--255.
-
-\bibitem[Horsburgh and De~Vries(2011)]{Horsburgh:2011th}
-Horsburgh, K.; De~Vries, H.
-\newblock {\em Guide to Storm Surge Forecasting};
-\newblock Technical Report; World Meteorological Organization: Geneva, Switzerland, 2011.
-%please provide the Publisher: City, Country before the year.
-
-\bibitem[Mourre \em{et~al.}(2006)Mourre, Crosnier, and Provost]{Mourre:2006hz}
-Mourre, B.; Crosnier, L.; Provost, C.L.
-\newblock {Real-time sea-level gauge observations and operational
-  oceanography}.
-\newblock {\em Philos. Trans. R. Soc. A} {\bf 2006}, \emph{364}, 867--884.
-
-\bibitem[Taylor \em{et~al.}(2010)Taylor, Brassington, and Nader]{Taylor:2010ud}
-Taylor, A.J.; Brassington, G.B.; Nader, J.
-\newblock {\em Assessment of BLUElink OceanMAPSv1.0b Against Coastal Tide Gauges};
-\newblock Technical Report; Centre for Australian Weather and Climate Research: Melbourne, VIC, Australia, 2010.
-
-\bibitem[Tilburg and Garvine(2004)]{Tilburg:2004cg}
-Tilburg, C.E.; Garvine, R.W.
-\newblock {A Simple Model for Coastal Sea Level Prediction}.
-\newblock {\em Weather Forecast.} {\bf 2004}, doi:10.1175/1520-0434(2004)019<0511:ASMFCS>2.0.CO;2.
-
-\bibitem[Taylor \em{et~al.}(2011)Taylor, Smith, Wang, Robinson, and
-  Brassington]{Taylor:2011ud}
-Taylor, A.J.; Smith, A.; Wang, W.; Robinson, J.; Brassington, G.B.
-\newblock {Ocean meets river: Connecting Bureau of Meteorology ocean forecasts
-  and river height predictions for improved flood warnings}.
-\newblock  In Proceedings of the 19th International Congress on Modelling and Simulation, Perth,
-  Australia, 12--16 December 2011. 
- %^ http://mssanzorgau/modsim2011,
-  
-
-\bibitem[Brassington \em{et~al.}(2007)Brassington, Pugh, Spillman, Schulz,
-  Beggs, Schiller, and Oke]{Brassington:2007ut}
-Brassington, G.B.; Pugh, T.; Spillman, C.; Schulz, E.; Beggs, H.; Schiller, A.;
-  Oke, P.R.
-\newblock {BLUElink> Development of Operational Oceanography and Servicing in
-  Australia}.
-\newblock {\em J. Res. Pract.  Inf. Technol.} {\bf
-  2007}, \emph{39}, 151--164.
-
-\bibitem[{Bureau of Meterology}(2007)]{NMOC:2007wq}
-{Bureau of Meterology}.
-\newblock {\emph{Implementation of OceanMAPS (BLUElink> Ocean Forecast
-  System)}};
-\newblock Technical Report; Bureau of Meteorology: Melbourne, VIC, Australia, 2007.
-
-\bibitem[{Bureau of Meterology}(2011)]{BureauofMeterology:2011ta}
-{Bureau of Meterology}.
-\newblock {\em Operational Upgrades to OceanMAPS (BLUElink> Ocean Forecast
-  System)};
-\newblock Technical Report; Bureau of Meteorology: Melbourne, VIC, Australia, 2011.
-
-\bibitem[Brassington \em{et~al.}(2012)Brassington, Freeman, Huang, Pugh, Oke,
-  Sandery, Taylor, Andreu-Burillo, Schiller, Griffin, Fiedler, Mansbridge,
-  Beggs, and Spillman]{Brassington:2012wm}
-Brassington, G.B.; Freeman, J.; Huang, X.; Pugh, T.; Oke, P.; Sandery, P.A.;
-  Taylor, A.J.; Andreu-Burillo,~I.; Schiller,~A.; Griffin,~D.; et al. 
-\newblock {\em Ocean Model, Analysis and Prediction System: Version 2};
-\newblock Technical Report;  Centre for Australian Weather and Climate Research: Melbourne, VIC, Australia, 2012.
-
-\bibitem[Griffies \em{et~al.}(2008)Griffies, Harrison, Pacanowski and Rosati]{Griffies:2008vh}
-Griffies, S.M.; Harrison, M.; Pacanowski, R.
-\newblock {\em A Technical Guide to MOM4};
-\newblock Technical Report; NOAA/Geophysical Fluid Dynamics Laboratory: Princeton NJ, USA, 2008.
-
-\bibitem[Oke \em{et~al.}(2008)Oke, Brassington, and Griffin]{Oke:2008wr}
-Oke, P.; Brassington, G.B.; Griffin, D.
-\newblock {The Bluelink ocean data assimilation system (BODAS)}.
-\newblock {\em Ocean Model.} {\bf 2008},  \emph{21}, 46--70.
-
-\bibitem[{Bureau of Meterology}(2016)]{BureauofMeterology:C8IaJ2Qq}
-{Bureau of Meterology}.
-\newblock {\em APS2 Upgrade to the ACCESS-G Numerical Weather Prediction System};
-\newblock Technical Report;  Bureau of Meteorology: Melbourne, VIC, Australia, 2016.
-
-\bibitem[Brassington(2013)]{GaryBBrassington:2013jw}
-Brassington, G.B.
-\newblock {Multicycle ensemble forecasting of sea surface temperature}.
-\newblock {\em Geophys. Res. Lett.} {\bf 2013}, \emph{40},~6191–6195.
-
-\bibitem[Mathers and Woodworth(2004)]{Mathers:2004bk}
-Mathers, E.L.; Woodworth, P.L.
-\newblock {A study of departures from the inverse-barometer response of sea
-  level to air-pressure forcing at a period of 5 days}.
-\newblock {\em Q. J. R. Meteorol. Soc.} {\bf
-  2004}, \emph{130}, 725–738.
-
-\bibitem[Murphy(1993)]{Murphy:1993dh}
-Murphy, A.H.
-\newblock {What Is a Good Forecast? An Essay on the Nature of Goodness in
-  Weather Forecasting}.
-\newblock {\em Weather Forecast.} {\bf 1993}, \emph{8}, 281–293.
-
-\bibitem[Taylor(2000)]{Taylor:2000wp}
-Taylor, K.
-\newblock {\em Summarizing Multiple Aspects of Model Performance in a Single
-  Diagram};
-\newblock Technical Report; Program For Climate Model Diagnosis And
-  Intercomparison University Of California, Lawrence Livermore National
-  Laboratory: Livermore, CA, USA, 2000.
-
-\bibitem[Slobbe \em{et~al.}(2013)Slobbe, Verlaan, Klees, and
-  Gerritsen]{Slobbe:wk}
-Slobbe, D.C.; Verlaan, M.; Klees, R.; Gerritsen, H.
-\newblock {Obtaining instantaneous water levels relative to a geoid with a 2D
-  storm surge model}.
-\newblock {\em Cont. Shelf Res.} {\bf 2013}, \emph{52}, 172--189.
-
-\bibitem[Oke \em{et~al.}(2013)Oke, Griffin, and Schiller]{Oke:2013fm}
-Oke, P.; Griffin, D.; Schiller, A.
-\newblock {Evaluation of a near-global eddy-resolving ocean model}.
-\newblock {\em Geosci. Model Dev.} {\bf 2013}, \emph{6}, 591--615.
-
-\end{thebibliography}
-
-%\input{aggSL_description_and_evaluation_v0.1.4.bbl}
-
-%=====================================
-% References, variant B: external bibliography
-%=====================================
-%\externalbibliography{yes}
-%\bibliography{your_external_BibTeX_file}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\end{document}
-
+%   %=====================================
+%   % References, variant A: internal bibliography
+%   %=====================================
+%   %\begin{thebibliography}{999}
+%   \bibliographystyle{mdpi}
+%   %\renewcommand\bibname{References}
+%   %\bibliography{ref_minimal}
+%   \begin{thebibliography}{999}
+%   \providecommand{\natexlab}[1]{#1}
+%   
+%   \bibitem[Bell \em{et~al.}(2009)Bell, Lef{\`e}bvre, Le~Traon, Smith, and
+%     Wilmer-Becker]{Bell:2009uv}
+%   Bell, M.J.; Lef{\`e}bvre, M.; Le~Traon, P.Y.; Smith, N.; Wilmer-Becker, K.
+%   \newblock {GODAE The Global Ocean Data Assimilation Experiment}.
+%   \newblock {\em Oceanography} {\bf 2009}, {\em 22}, 14--21.
+%   
+%   \bibitem[Pugh and Woodworth(2014)]{Pugh:2014di}
+%   Pugh, D.; Woodworth, P.
+%   \newblock {\em Sea-Level Science: Understanding Tides, Surges, Tsunamis
+%     and Mean Sea-Level Changes}; Cambridge University Press: Cambridge, UK, 2014.
+%   
+%   \bibitem[Box(1979)]{Box:1979wz}
+%   Box, G.
+%   \newblock {Robustness in the strategy of scientific model building}.
+%   \newblock {\em Robust. Stat.} {\bf 1979}, doi:10.1016/b978-0-12-438150-6.50018-2.
+%   
+%   \bibitem[Melet \em{et~al.}(2016)Melet, Almar, and
+%     Meyssignac]{Anonymous:jdDiSHB0}
+%   Melet, A.; Almar, R.; Meyssignac, B.
+%   \newblock {What dominates sea level at the coast: A case study for the Gulf of
+%     Guinea}.
+%   \newblock {\em Ocean Dyn.} {\bf 2016}, \emph{66}, 623--636.
+%   
+%   \bibitem[Haigh \em{et~al.}(2013{\natexlab{a}})Haigh, Wijeratne, MacPherson,
+%     Pattiaratchi, Mason, Crompton, and George]{Haigh:2013bna}
+%   Haigh, I.D.; Wijeratne, E.M.S.; MacPherson, L.R.; Pattiaratchi, C.B.; Mason,
+%     M.S.; Crompton, R.P.; George,~S.
+%   \newblock {Estimating present day extreme water level exceedance probabilities
+%     around the coastline of Australia: Tides, extra-tropical storm surges and
+%     mean sea level}.
+%   \newblock {\em Clim. Dyn.} {\bf 2013}, \emph{42}, 121--138.
+%   
+%   \bibitem[Haigh \em{et~al.}(2013{\natexlab{b}})Haigh, MacPherson, Mason,
+%     Wijeratne, Pattiaratchi, Crompton, and George]{Haigh:2013hea}
+%   Haigh, I.D.; MacPherson, L.R.; Mason, M.S.; Wijeratne, E.M.S.; Pattiaratchi,
+%     C.B.; Crompton, R.P.; George,~S.
+%   \newblock {Estimating present day extreme water level exceedance probabilities
+%     around the coastline of Australia: Tropical cyclone-induced storm surges}.
+%   \newblock {\em Clim. Dyn.} {\bf 2013}, \emph{42}, 139--157.
+%   
+%   \bibitem[Woodham \em{et~al.}(2013)Woodham, Brassington, Robertson, and
+%     Alves]{Woodham:2013cl}
+%   Woodham, R.; Brassington, G.B.; Robertson, R.; Alves, O.
+%   \newblock {Propagation characteristics of coastally trapped waves on the
+%     Australian Continental Shelf}.
+%   \newblock {\em J. Geophys. Res. Oceans} {\bf 2013},  \emph{118}, 4461--4473.
+%   
+%   \bibitem[Ridgway(2004)]{Ridgway:2004kb}
+%   Ridgway, K.R.
+%   \newblock {The 5500-km-long boundary flow off western and southern Australia}.
+%   \newblock {\em J. Geophys. Res.} {\bf 2004}, doi:10.1029/2003jc001921.
+%   
+%   \bibitem[Church and Freeland(1986)]{Church:1986tl}
+%   Church, J.A.; Freeland, H.
+%   \newblock {Coastal-trapped waves on the east Australian continental shelf. I:
+%     Propagation of modes}.
+%   \newblock {\em J. Phys. Oceanogr.} {\bf 1986}, \emph{16}, 1929--1943.
+%   
+%   \bibitem[Allen and Greenslade(2009)]{Allen:2009tf}
+%   Allen, S.C.R.; Greenslade, D.J.M.
+%   \newblock {\em A Spectral Climatology of Australian and South-West Pacific Tide
+%     Gauges}; CAWCR Technical Reports; Centre for Australian Weather and Climate Research: Melbourne, VIC, Australia,~2009.
+%   
+%   \bibitem[Cartwright(2000)]{Cartwright:2000tt}
+%   Cartwright, D.E.
+%   \newblock {\em {Tides}}; Cambridge University Press: Cambridge, UK, 2000.
+%   
+%   \bibitem[Petersen(2012)]{Petersen:2012kp}
+%   Petersen, A.
+%   \newblock {\em {Simulating Nature}}; Chapman and Hall/CRC: London, UK,  2012.
+%   
+%   \bibitem[Schiller and Brassington(2011)]{Schiller:2011di}
+%   Schiller, A.; Brassington, G.B.
+%   \newblock {\em {Operational Oceanography in the 21st Century}}; Springer
+%     Science + Business Media: Berlin, Germany, 2011.
+%   
+%   \bibitem[Harper(2008)]{Harper:kb}
+%   Harper, K.C.
+%   \newblock {\em {Weather by the Numbers}}; The MIT Press:  Cambridge, MA, USA, 2008.
+%   
+%   \bibitem[Paramygin \em{et~al.}(2017)Paramygin, Sheng, and
+%     Davis]{Paramygin:2017dx}
+%   Paramygin, V.; Sheng, Y.; Davis, J.
+%   \newblock {Towards the Development of an Operational Forecast System for the
+%     Florida Coast}.
+%   \newblock {\em J. Mar. Sci. Eng.} {\bf 2017}, \emph{5}, 8.
+%   
+%   \bibitem[Yang \em{et~al.}(2016)Yang, Richardson, Chen, Kelley, Myers, Aikman,
+%     Peng, and Zhang]{Yang:2016ep}
+%   Yang, Z.; Richardson, P.; Chen, Y.; Kelley, J.; Myers, E.; Aikman, F.; Peng,
+%     M.; Zhang, A.
+%   \newblock {Model Development and Hindcast Simulations of NOAA{\textquoteright}s
+%     Gulf of Maine Operational Forecast System}.
+%   \newblock {\em J. Mar. Sci. Eng.} {\bf 2016}, \emph{4},~77.
+%   
+%   \bibitem[Wei \em{et~al.}(2014)Wei, Zhang, Yang, Chen, Kelley, Aikman, and
+%     Cao]{Wei:2014ex}
+%   Wei, E.; Zhang, A.; Yang, Z.; Chen, Y.; Kelley, J.; Aikman, F.; Cao, D.
+%   \newblock {NOAA{\textquoteright}s Nested Northern Gulf of Mexico Operational
+%     Forecast Systems Development}.
+%   \newblock {\em J. Mar. Sci. Eng.} {\bf 2014}, \emph{2}, 1--17.
+%   
+%   \bibitem[Peng \em{et~al.}(2014)Peng, {Richard Jr}, Zhang, and {Frank
+%     III}]{Peng:2014kq}
+%   Peng, M.; {Schmalz, R.A., Jr.}; Zhang, A.; {Aikman, F., III}.
+%   \newblock {Towards the Development of the National Ocean Service San Francisco
+%     Bay Operational Forecast System}.
+%   \newblock {\em J. Mar. Sci. Eng.} {\bf 2014}, \emph{2}, 247--286;
+%   
+%   \bibitem[Hendershott(1981)]{Hendershott:1981ub}
+%   Hendershott, M.
+%   \newblock {Long waves and ocean tides}. In {\em Evolution of Physical
+%     Oceanography}; The MIT Press:  Cambridge, MA, USA, 1981.
+%   
+%   \bibitem[Foreman \em{et~al.}(2009)Foreman, Cherniawsky, and
+%     Ballantyne]{Foreman:2009bg}
+%   Foreman, M.G.G.; Cherniawsky, J.Y.; Ballantyne, V.
+%   \newblock {Versatile Harmonic Tidal Analysis: Improvements and Applications}.
+%   \newblock {\em J. Atmos. Ocean. Technol.} {\bf 2009}, doi:10.1175/2008JTECHO615.1.
+%   
+%   \bibitem[Groves and Reynolds(1975)]{Groves:1975ky}
+%   Groves, G.W.; Reynolds, R.W.
+%   \newblock {An Orthogonalized Convolution Method of Tide Prediction}.
+%   \newblock {\em J. Geophys. Res.} {\bf 1975}, \emph{80}, 4131--4138. 
+%   
+%   \bibitem[Leffler and Jay(2009)]{LEFFLER:2009ej}
+%   Leffler, K.; Jay, D.
+%   \newblock {Enhancing tidal harmonic analysis: Robust (hybrid L1/L2L1/L2)
+%     solutions}.
+%   \newblock {\em Cont.~Shelf~Res.} {\bf 2009}, \emph{29}, 78--88.
+%   
+%   \bibitem[Smith \em{et~al.}(1997)Smith, Ambrosius, Wakker, Woodworth, and
+%     Vassie]{Smith:1997ut}
+%   Smith, A.; Ambrosius, B.; Wakker, K.F.; Woodworth, P.L.; Vassie, J.M.
+%   \newblock {Comparison between the harmonic and response methods of tidal
+%     analysis using TOPEX/POSEIDON altimetry}.
+%   \newblock {\em J. Geod.} {\bf 1997},  \emph{71},  695--703.
+%   
+%   \bibitem[Mapping(2014)]{Mapping:2014wu}
+%   Mapping, I.C.o.S.
+%   \newblock {\em Australian Tides Manual};
+%   \newblock {Technical Report; Permanent Committee on Tides and Mean Sea Level: Wollongong, Australia, 2014.}
+%   %please confirm this accuracy ... details from here http://www.icsm.gov.au/tides/
+%   
+%   \bibitem[Parker(2007)]{Parker:2007wq}
+%   Parker, B.B.
+%   \newblock {\em Tidal Analysis and Prediction};
+%   \newblock {Technical Report; National Oceanic and Atmospheric Administration - Center for Operational Oceanographic Products and Services: Silver Spring, Maryland, USA, 2007.}
+%   
+%   \bibitem[Ray and Egbert(2004)]{Ray:2004ts}
+%   Ray, R.; Egbert, G.D.
+%   \newblock {The Global S1 Tide}.
+%   \newblock {\em J. Phys. Oceanogr.} {\bf 2004}, \emph{34}, 1922.
+%   
+%   \bibitem[Horsburgh \em{et~al.}(2008)Horsburgh, Williams, Flowerdew, and
+%     Mylne]{Horsburgh:2008gw}
+%   Horsburgh, K.J.; Williams, J.A.; Flowerdew, J.; Mylne, K.
+%   \newblock {Aspects of operational forecast model skill during an extreme storm
+%     surge event}.
+%   \newblock {\em J. Flood Risk Manag.} {\bf 2008}, \emph{1}, 213--221.
+%   
+%   \bibitem[Egbert and Bennett(1996)]{Egbert:1996vr}
+%   Egbert, G.D.; Bennett, A.F.
+%   \newblock {Data assimilation methods for ocean tides}. \emph{Elsevier Oceanogr. Ser.} \textbf{1996}, doi:10.1016/s0422-9894(96)80009-2.
+%   
+%   \bibitem[Greenslade and Warne(2012)]{Greenslade:2012um}
+%   Greenslade, D.J.M.; Warne, J.O.
+%   \newblock {Assessment of the Effectiveness of a Sea-Level Observing Network for
+%     Tsunami Warning}.
+%   \newblock {\em J. Waterw. Port Coast. Ocean Eng.} {\bf
+%     2012},  \emph{138}, 246--255.
+%   
+%   \bibitem[Horsburgh and De~Vries(2011)]{Horsburgh:2011th}
+%   Horsburgh, K.; De~Vries, H.
+%   \newblock {\em Guide to Storm Surge Forecasting};
+%   \newblock Technical Report; World Meteorological Organization: Geneva, Switzerland, 2011.
+%   %please provide the Publisher: City, Country before the year.
+%   
+%   \bibitem[Mourre \em{et~al.}(2006)Mourre, Crosnier, and Provost]{Mourre:2006hz}
+%   Mourre, B.; Crosnier, L.; Provost, C.L.
+%   \newblock {Real-time sea-level gauge observations and operational
+%     oceanography}.
+%   \newblock {\em Philos. Trans. R. Soc. A} {\bf 2006}, \emph{364}, 867--884.
+%   
+%   \bibitem[Taylor \em{et~al.}(2010)Taylor, Brassington, and Nader]{Taylor:2010ud}
+%   Taylor, A.J.; Brassington, G.B.; Nader, J.
+%   \newblock {\em Assessment of BLUElink OceanMAPSv1.0b Against Coastal Tide Gauges};
+%   \newblock Technical Report; Centre for Australian Weather and Climate Research: Melbourne, VIC, Australia, 2010.
+%   
+%   \bibitem[Tilburg and Garvine(2004)]{Tilburg:2004cg}
+%   Tilburg, C.E.; Garvine, R.W.
+%   \newblock {A Simple Model for Coastal Sea Level Prediction}.
+%   \newblock {\em Weather Forecast.} {\bf 2004}, doi:10.1175/1520-0434(2004)019<0511:ASMFCS>2.0.CO;2.
+%   
+%   \bibitem[Taylor \em{et~al.}(2011)Taylor, Smith, Wang, Robinson, and
+%     Brassington]{Taylor:2011ud}
+%   Taylor, A.J.; Smith, A.; Wang, W.; Robinson, J.; Brassington, G.B.
+%   \newblock {Ocean meets river: Connecting Bureau of Meteorology ocean forecasts
+%     and river height predictions for improved flood warnings}.
+%   \newblock  In Proceedings of the 19th International Congress on Modelling and Simulation, Perth,
+%     Australia, 12--16 December 2011. 
+%    %^ http://mssanzorgau/modsim2011,
+%     
+%   
+%   \bibitem[Brassington \em{et~al.}(2007)Brassington, Pugh, Spillman, Schulz,
+%     Beggs, Schiller, and Oke]{Brassington:2007ut}
+%   Brassington, G.B.; Pugh, T.; Spillman, C.; Schulz, E.; Beggs, H.; Schiller, A.;
+%     Oke, P.R.
+%   \newblock {BLUElink> Development of Operational Oceanography and Servicing in
+%     Australia}.
+%   \newblock {\em J. Res. Pract.  Inf. Technol.} {\bf
+%     2007}, \emph{39}, 151--164.
+%   
+%   \bibitem[{Bureau of Meterology}(2007)]{NMOC:2007wq}
+%   {Bureau of Meterology}.
+%   \newblock {\emph{Implementation of OceanMAPS (BLUElink> Ocean Forecast
+%     System)}};
+%   \newblock Technical Report; Bureau of Meteorology: Melbourne, VIC, Australia, 2007.
+%   
+%   \bibitem[{Bureau of Meterology}(2011)]{BureauofMeterology:2011ta}
+%   {Bureau of Meterology}.
+%   \newblock {\em Operational Upgrades to OceanMAPS (BLUElink> Ocean Forecast
+%     System)};
+%   \newblock Technical Report; Bureau of Meteorology: Melbourne, VIC, Australia, 2011.
+%   
+%   \bibitem[Brassington \em{et~al.}(2012)Brassington, Freeman, Huang, Pugh, Oke,
+%     Sandery, Taylor, Andreu-Burillo, Schiller, Griffin, Fiedler, Mansbridge,
+%     Beggs, and Spillman]{Brassington:2012wm}
+%   Brassington, G.B.; Freeman, J.; Huang, X.; Pugh, T.; Oke, P.; Sandery, P.A.;
+%     Taylor, A.J.; Andreu-Burillo,~I.; Schiller,~A.; Griffin,~D.; et al. 
+%   \newblock {\em Ocean Model, Analysis and Prediction System: Version 2};
+%   \newblock Technical Report;  Centre for Australian Weather and Climate Research: Melbourne, VIC, Australia, 2012.
+%   
+%   \bibitem[Griffies \em{et~al.}(2008)Griffies, Harrison, Pacanowski and Rosati]{Griffies:2008vh}
+%   Griffies, S.M.; Harrison, M.; Pacanowski, R.
+%   \newblock {\em A Technical Guide to MOM4};
+%   \newblock Technical Report; NOAA/Geophysical Fluid Dynamics Laboratory: Princeton NJ, USA, 2008.
+%   
+%   \bibitem[Oke \em{et~al.}(2008)Oke, Brassington, and Griffin]{Oke:2008wr}
+%   Oke, P.; Brassington, G.B.; Griffin, D.
+%   \newblock {The Bluelink ocean data assimilation system (BODAS)}.
+%   \newblock {\em Ocean Model.} {\bf 2008},  \emph{21}, 46--70.
+%   
+%   \bibitem[{Bureau of Meterology}(2016)]{BureauofMeterology:C8IaJ2Qq}
+%   {Bureau of Meterology}.
+%   \newblock {\em APS2 Upgrade to the ACCESS-G Numerical Weather Prediction System};
+%   \newblock Technical Report;  Bureau of Meteorology: Melbourne, VIC, Australia, 2016.
+%   
+%   \bibitem[Brassington(2013)]{GaryBBrassington:2013jw}
+%   Brassington, G.B.
+%   \newblock {Multicycle ensemble forecasting of sea surface temperature}.
+%   \newblock {\em Geophys. Res. Lett.} {\bf 2013}, \emph{40},~6191–6195.
+%   
+%   \bibitem[Mathers and Woodworth(2004)]{Mathers:2004bk}
+%   Mathers, E.L.; Woodworth, P.L.
+%   \newblock {A study of departures from the inverse-barometer response of sea
+%     level to air-pressure forcing at a period of 5 days}.
+%   \newblock {\em Q. J. R. Meteorol. Soc.} {\bf
+%     2004}, \emph{130}, 725–738.
+%   
+%   \bibitem[Murphy(1993)]{Murphy:1993dh}
+%   Murphy, A.H.
+%   \newblock {What Is a Good Forecast? An Essay on the Nature of Goodness in
+%     Weather Forecasting}.
+%   \newblock {\em Weather Forecast.} {\bf 1993}, \emph{8}, 281–293.
+%   
+%   \bibitem[Taylor(2000)]{Taylor:2000wp}
+%   Taylor, K.
+%   \newblock {\em Summarizing Multiple Aspects of Model Performance in a Single
+%     Diagram};
+%   \newblock Technical Report; Program For Climate Model Diagnosis And
+%     Intercomparison University Of California, Lawrence Livermore National
+%     Laboratory: Livermore, CA, USA, 2000.
+%   
+%   \bibitem[Slobbe \em{et~al.}(2013)Slobbe, Verlaan, Klees, and
+%     Gerritsen]{Slobbe:wk}
+%   Slobbe, D.C.; Verlaan, M.; Klees, R.; Gerritsen, H.
+%   \newblock {Obtaining instantaneous water levels relative to a geoid with a 2D
+%     storm surge model}.
+%   \newblock {\em Cont. Shelf Res.} {\bf 2013}, \emph{52}, 172--189.
+%   
+%   \bibitem[Oke \em{et~al.}(2013)Oke, Griffin, and Schiller]{Oke:2013fm}
+%   Oke, P.; Griffin, D.; Schiller, A.
+%   \newblock {Evaluation of a near-global eddy-resolving ocean model}.
+%   \newblock {\em Geosci. Model Dev.} {\bf 2013}, \emph{6}, 591--615.
+%   
+%   \end{thebibliography}
 
