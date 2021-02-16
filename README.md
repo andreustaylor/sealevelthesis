@@ -2,10 +2,24 @@
 
 ## Content
 * thesis document
-* completeion seminar material
+* completion seminar material
+
+
+## Proposed examiner list
+name               | institution        | comment
+-------------------|--------------------|-------
+Ivan Hague         | NOC (UK)?          | 
+Chari P            | UWA (AUS)          | 
+David Griffin      | UWA (AUS)          | 
+Ed Zaron           | OSU (USA)          | 
+David Jay          | ? (USA)          | 
+Stephen Talke      | ? (USA)          | 
+Mike Foreman       | ? (Canada)          | 
+John Church       | UNSW (AUS)?          | 
+
+
 
 ## template
-
 This thesis is based off the University of Melbourne 
 [LaTeX template](http://jpap.org/projects.html) written by John Papandriopoulos.
 
