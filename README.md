@@ -12,6 +12,7 @@ Stefan A. Talke    | (USA - Cal Poly)     |
 Adam T Devlin      | (China - Jiangxi Normal University )   |
 Mike Foreman       | (Canada)          |
 Shayne McGregor    | Monash (AUS) |
+Ruth Reef          | Monash (AUS) |
 Ivan Hague         | NOC (UK)?          | 
 David Jay          | PSU (USA) |
 Chari Pattiaratchi | UWA (AUS)          | 
