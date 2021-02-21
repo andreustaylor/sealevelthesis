@@ -8,13 +8,18 @@
 ## Proposed examiner list
 name               | institution        | comment
 -------------------|--------------------|-------
+Stefan A. Talke    | (USA - Cal Poly)     | 
+Adam T Devlin      | (China - Jiangxi Normal University )   |
+Mike Foreman       | (Canada)          |
+Shayne McGregor    | Monash (AUS) |
+Ruth Reef          | Monash (AUS) |
+mitchell-harley    | UNSW (AUS) |
 Ivan Hague         | NOC (UK)?          | 
-Chari P            | UWA (AUS)          | 
-David Griffin      | UWA (AUS)          | 
+David Jay          | PSU (USA) |
+Chari Pattiaratchi | UWA (AUS)          | 
+David Griffin      | Csiro (AUS)          | 
 Ed Zaron           | OSU (USA)          | 
-David Jay          | ? (USA)          | 
-Stephen Talke      | ? (USA)          | 
-Mike Foreman       | ? (Canada)          | 
+David Jay          | ? (USA)          |  
 John Church       | UNSW (AUS)?          | 
 
 
