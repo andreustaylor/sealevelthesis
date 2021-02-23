@@ -1,10 +1,7 @@
 \chapter{Conventional tide prediction and seamless forecasts}
 
 %-----------------------------------------------
-\section{Seamless prediction requires signal clarity}
-
-
-
+\section{Seamless prediction requires operational signal clarity}
 
 Evolving and improving forecast and observational capabilities.
 
@@ -52,14 +49,14 @@ Tide data via API.
 
 
 %---------
-\susection{Tide data micro-services}
+\subsection{Tide data micro-services}
 
 Forecast applications will increasingly rely on a `microservice` architecture (REF Boston).
 
 Australian tide predictions are ripe for a move to microservice model - but would benefit from differentiation into variants with clear signal intention.
 
 %---------
-\susection{Standard ports, secondary ports and the sausage factory}
+\subsection{Standard ports, secondary ports and the sausage factory}
 
 National service has evolved to cover a diverse range of community and business requirements.
 
@@ -78,6 +75,8 @@ Eg
 \end{itemize}
 
 
+
+
 %---------
 \subsection{Apriori distinction of tidal elevation flavours}
 At least the following:
@@ -88,6 +87,8 @@ At least the following:
     \item datum clarity
 \end{itemize}
 
+Such distinctions are not new per se, but the overlap and standarisation into operational environment is?:
+\citep{godin:1972}
 
 %-----------------------------------------------
 \section{Insitu and spatial tide predictions}
@@ -100,15 +101,45 @@ Apriori differences and practical differences.
     \item radiational
 \end{itemize}
 
+Cite some typical applications
+\begin{itemize}
+    \item GA inter-tidal zone mapping activity (TPXO raw)
+    \item CSIRO currents (TXPO as OBC)
+    \item Bluelink downscales (TBC)
+    \item BoM downscales (TBC)
+    \item UWA (TBC)?
+\end{itemize}
+
 %---------
 \subsection{How do global tide solutions differ from local insitu predictions}
 TBC
+
+\subsection{resolution versus risk of category-error}
+Is it all about coastal bathymetry resolution?
+
+Not only that.
+
+Fit-for-purpose.
+
+Assertions about tidal constants - persistence of a fixed admittance.   Let alone physical coverage of the admittance.
+
 
 %---------
 \subsection{TPXO versus BoM (versus CSIRO)}
 Timeseries stats at locations.
 
 Aims and inclusions.
+\begin{itemize}
+    \item pick time period to match csiro
+    \item lookup tides full
+    \item lookup tides no radiational
+    \item otps to match points
+    \item csiro (opendap) pick points and map to llookup tides file
+    \item RMSE/Bias ...maybe Taylor
+\end{itemize}
+
+Analysis:
+* significance of long periods
 
 Comments on rejected by CSIRO.
 
@@ -131,11 +162,25 @@ Implications for use of tide gauges for DA.
 National service, ANTT, navigation and survey.
 
 %---------
-\subsection{How stable are 'offical' predictions}
+\subsection{How constant are 'official' predictions}
 
-Note intention and oprational stetting
+Note intention and operational stetting
+
+* evolution of ZFL
+plot
+
+
+
+
+%---------
+\subsection{mean sea level and long periods}
 
 Ref to MHL compare.
+
+\subsubsection{length and quality of training data}
+
+Well known - but easily dropped in downstream applications.
+Best efforts.
 
 
 %-----------------------------------------------
@@ -165,8 +210,6 @@ verify files
 cosima
 no DA shocks
 dailys only
-
-
 
 
 %-----------------------------------------------
