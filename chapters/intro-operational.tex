@@ -1,5 +1,5 @@
-\section{Operational oceanography}
-\label{S:operational_oceanography}
+\section{Mesoscale operational oceanography}
+\label{sec:operational_oceanography}
 
 Mesoscale ocean prediction moved into operations across the early 2000s in a manner that lagged and imitated the path of NWP \citep{Harper:2008ub}. Operational oceanography is `big science' \citep{Petersen:2012tr} in the sense that it fundamentally relies on the coordination of large organisations, global networks and capital. \\
 Starting in 1997, the international collaboration of the Global Ocean Data Assimilation Experiment \GODAE{} serves as a historical reference point:
@@ -10,7 +10,7 @@ Starting in 1997, the international collaboration of the Global Ocean Data Assim
 
 
 %-----------------%
-\subsection{Ocean General Circulation Models}
+\subsection{Ocean general circulation models}
 
 Since \GODAE{}, Ocean General Circulation Models (\OGCM{}s) are a key component in operational oceanography.\\
 
@@ -46,7 +46,7 @@ Altimetry has directly enabled contrasting scientific developments in global tid
 % segue into OGCM
 %--------------------------------------------------
 %--------------------------------------------------
-\subsection{Treatment of tides in \OGCM{}s}
+\subsection{Treatment of tides in nominally non-tidal \OGCM{}s}
 \label{S:tides_ogcm}
 To date \OGCM{}s in the \GODAE{} heritage have focused on nominally \emph{nontidal} ocean dynamics, with de-tided sea level observations playing a unique role.\\
 
@@ -57,8 +57,8 @@ It could be said that the modelling community perceives parameterisations as a c
 
 
 %-----------------%
-\subsection{Nominally non-tidal \OGCM{}s}
-\label{S:nontidal}
+%\subsection{Nominally non-tidal \OGCM{}s}
+%\label{S:nontidal}
 
 \BL{} is a nontidal system in that no gravitational body forcing associated with the \ATGP{} is applied.   Subsequently, assimilated observations of sea level are corrected (filtered) using pre-computed global tide models.  The state variable quantifying surface elevation carried by the model is termed sea level anomaly (SLA) which in itself is a rather abstract quantity. Using Stevens' nomenclature, \BL{} simulates an aggregated pseudofluid system with a qualified relationship to the actual ocean.
 
@@ -208,7 +208,7 @@ $\dots{}$  vertical mode numbers beyond about 10 are probably not resolved at al
 
 
 %-----------------%
-\subsection{Coastal boundaries}
+\subsection{Representation of coastal boundaries}
 
 The impact of lateral boundaries and shallow water effects on representing global tides is a topic that arises in time-stepped forward models.\\
 In a barotropic simulation forced directly by tidal ephemerides \cite{Weis:2008ex}, the authors indicate that solutions for \emph{deep-water} partial tides are significantly influenced by the explicit simulation of broad-band tidal spectrum.   
@@ -234,6 +234,10 @@ Sea level observations provide a powerful constraint upon operational ocean mode
 
 
 
-%-----------------%
-\subsection{Prelude: `Nontidal' Systems Rely on Tidal Methods}
-As a prelude to discussing tides and harmonics, it is highlighted that nominally nontidal systems such as \BL{} are not independent of tidal analysis. In the first instance this directly reflects the correction (decomposition) of satellite altimetry data streams.   Derivation of the sea level anomaly (SLA) quantity assimilated into the current configuration of \BL{} requires the subtraction of a global tide model; all of which to date are fundamentally harmonic in nature. 
+TBC
+Special role of coastally trapped signals in Australia  
+....taken up in Chapter \ref{chp:waveguide}
+
+
+
+
