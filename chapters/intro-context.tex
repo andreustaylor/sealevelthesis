@@ -1,11 +1,11 @@
 %--------------
 \section{Research questions}
 This thesis addresses conceptual issues at the intersection of tide prediction and mesoscale oceanography, with practical implications for operational sea level forecasting practice. 
-Whilst the canonical numerical approach to coastal sea level requires the pursuit of ever-higher resolution simulations, this work turns to focus on the less-studied but relevant value offered by established operational systems; especially at the ocean mesoscale. Addressing the representation of sea level at the intersection of existing systems is important for building the foundations of future multi-model seamless forecasting services.
+In contrast to the canonical numerical approach to coastal sea level that broadly pursues  ever-higher resolution simulations, this work turns to focus on the less-studied but relevant value offered by established operational systems; especially at the ocean mesoscale. Addressing the representation of sea level at the intersection of existing systems is important for building the foundations of future multi-model seamless forecasting services.
 
 
 \emph{%
-Is the operationalisation of high resolution coastal simulations a prerequisite for providing useful sea level forecasts?  Despite comparatively low coastal resolution can \BL{} directly provide useful prognosis of non-tidal coastal sea level and with what limitations? }
+Is the operationalisation of high resolution coastal simulations a prerequisite for providing regular sea level forecasts?  Despite comparatively low coastal resolution, can \BL{} directly provide useful prognosis of non-tidal coastal sea level and with what limitations? }
 
 
 
@@ -14,17 +14,17 @@ Why is the role of coastally trapped waves prominent in the oceanographic litera
 
 
 
-\emph{Has numerical simulation rendered conventional tide prediction redundant for operations?  How can the unique traditional function of standard tide predictions compliment nominally non-tidal ocean forecasts and future seamless prediction systems? 
+\emph{Has numerical simulation rendered conventional tide prediction redundant for operations?  How can the unique traditional function of tide prediction compliment nominally non-tidal ocean forecasts and future seamless prediction systems? 
 }
 
 
 %--------------------------------------------------
 \section{Observable sea level and forecasts}
 
-Sea level plays a unique role in physical oceanography and forecasting thanks at least in part to its unique \emph{observability} \citep{Wilson:2010hy}. 
+Sea level plays a unique role in physical oceanography and forecasting thanks at least in part to its very \emph{observability} \citep{Wilson:2010hy}. 
 Variations in coastal \emph{still water level} \citep{Pugh:2014di} reflect a diverse range of hydrodynamic phenomena operating across time and length scales.   Furthermore the relative significance of the pheneomena vary greatly in space and time.
-\citet{10.1007/s10712-019-09531-1} provide a review listing of a wide range of relevant physical phenomena and note that ``\textit{it is mistake to think that coastal sea level variability always has a ‘local’ forcing (although it often does).}''. 
-Figure \ref{fig:sealevelScales} provides a visual schematic summary of the physical time and length scales  of phenomena contributing to observable changes in coastal water levels, taking inspiration from similar diagrams in \citet{10.1007/s10712-019-09531-1} and \citet{Chelton:2001ws}.
+\citet{10.1007/s10712-019-09531-1} recently reviewed this diverse mix of physical phenomena present in the observations and note that ``\textit{it is mistake to think that coastal sea level variability always has a ‘local’ forcing (although it often does).}''. 
+Figure \ref{fig:sealevelScales} provides a schematic summary of the physical time and length scales of broad classes of these phenomena that contribute to ocean water level variations, taking inspiration from similar diagrams in \citet{10.1007/s10712-019-09531-1} and \citet{Chelton:2001ws}.
 %-----------------------------
 \begin{figure}[H]\centering
   \includegraphics[width=\figwidthFull]{figures/diagrams/scales_time_length.pdf}
@@ -32,7 +32,7 @@ Figure \ref{fig:sealevelScales} provides a visual schematic summary of the physi
   \label{fig:sealevelScales}
 \end{figure}
 %-----------------------------
-The visual differentiation of tides from the other phenomena in Figure \ref{fig:sealevelScales} is intentional.  Tides have unique properties; but exactly what is designated as tidal in an operational context is more ambiguous than first impressions may imply. This topic is unpacked further in section \ref{sec:tide_intro}. Tides in the schematic are seen to span from very short to very long length-scales but at more restricted frequencies than other phenomena.    Furthermore, the long period tides are are shown separately in anticipation of a later discussion of how these species are potentially problematic in some forecasting applications.
+The visual differentiation of tides from the other phenomena in Figure \ref{fig:sealevelScales} is intentional.  Tides have unique properties; but exactly what is designated as tidal in an operational context can be more ambiguous than first impressions imply. This topic is unpacked further in section \ref{sec:tide_intro}. Tides in the schematic are seen to span from very short to very long length-scales but at more restricted frequencies than other phenomena.    Furthermore, the long period tides are are shown separately in anticipation of a later discussion of how these species are potentially problematic in some forecasting applications.
 
 How the varying balance of phenomena is expressed in observed sea level is illustrated by the spectra shown in Figure \ref{fig:obsSpectraEg} for two Australian locations.   Variability at nominally tidal frequencies is a striking feature at nearly all coastal locations;  ``the [tidal] constituent lines emerge from the noise background as trees from the grass'' \cite{godin:1972}.
 Observed power at tidal frequencies does not however provide a direct attribution to tidal forcing and the extent to which this matters for forecasting applications is a conceptual theme addressed in chapter \ref{chp:tideFlavours}.
@@ -45,11 +45,11 @@ Observed power at tidal frequencies does not however provide a direct attributio
 \end{figure}
 %-----------------------------
 
-Observations of sea level currently available for operational use fall into essentially two categories: (1) insitu and (2) remote.    Figure \ref{fig:sealevelObsCartoon} illustrates this difference schematically.
+Quantified observations of sea level currently available for operational use fall into essentially two categories: (1) insitu and (2) remote.    Figure \ref{fig:sealevelObsCartoon} illustrates this difference schematically.
 
-Insitu observations from coastal tide gauges are by far the most established and studied source.    The availability of tide gauge observations is intrinsically connected to the history of sea level study and the development of forecasting techniques \citep{Cartwright:2000tt}.
+Insitu observations from coastal tide gauges are by far the most established and studied source.    The availability of tide gauge observations is intrinsically connected to the history of sea level study and the development of forecasting techniques; the longer view of which is covered in the history of \citeauthor{Cartwright:2000tt}.
 Typical tide gauge instruments in fact measure the `air gap' between a sensor and the water surface from which a relative level is derived \citep{PCTMSL-sp9}. 
-But the very nature of why and how tide gauges are installed raises a list of special characteristics relevant to operational forecasting. 
+But the very nature of why and how tide gauges are installed raises a list of special characteristics relevant to operational forecasting. These characteristics are variously considered to add complication or insight from the perspective of academic  differec
 Coastal locations are subject to both global and spatially localised hydrodynamic effects; in addition to influences like sediment movement, riverine phenomena and even coastal engineering works.   
 The limited extent to which the range of scales present in the tide gauge observations can be adequately represented by any forecast system is a fundamental characterisation discussed across chapters \ref{chp:aggregate},\ref{chp:waveguide}and \ref{chp:tideFlavours}.    
 Tide gauge observations can be mapped to certain sea level impacts and decisions, though not always directly; as for instance in \cite{Hague:2019ha}. 
@@ -75,22 +75,33 @@ The de-facto network of tide gauges from which sea level observations are provid
 \subsection{Unique perspective of the operational setting}
 \label{S:operational_setting}
 
-Operational considerations are relevant to this review, which does not launch neatly from a single `conversation' \citep{Booth:2009vy} in the scientific literature.\\
-Unfortunately operational documentation often falls far behind aspirations.
-Tidal observation manuals exist eg \citep{IOC:2005tj}, \citep{Level:2011wu}, \citep{Parker:2007wq}.  However, analysis methods and design justifications are less formally documented - if at all.  The IOC understates this situation simply: `many organizations have developed their own method of tidal analysis'\citep{IOC:2005tj}\\
-
-User expectations of sea level forecasts have largely been defined by harmonic tidal prediction practice. 
-Conversely operational practice have influenced oceanography more broadly. Doodson's \citep{Doodson:1928wf} tidal procedures reflect the practical limits imposed by human computers and paper records, but have ongoing influence. \\
-%--------------------------------------------------
-\subsection{Relevance and scope for this thesis}
-
-Compare to event based or behind real time studies ...
+The Australian Bureau of Meteorology is an \emph{operational} forecasting agency with characteristics that fundamentally frame the present study. The operational setting involves:
+\begin{itemize}
+    \item a finite suite of foundational forecasting systems;
+    \item a diverse range of downstream applications;
+    \item reliance on real-time and imperfect observations;
+    \item regular and continuous schedule of forecast production;
+    \item a preference for reliability over fidelity;
+    \item a slow development and system change cycle.
+\end{itemize}
+This setting provides a perspective on geophysical fluid simulations that thus differs from broader academia as well as more single-purpose commercial forecasting.   As a result it could be said that this thesis does not launch neatly from a single academic `conversation' \citep{Booth:2009vy} but rather will draw on both peer-reviewed literature as well as internal Bureau of Meteorology inputs where relevant.
+Unfortunately operational documentation often falls far behind aspirations.  The practive..... TBC   ...Tidal observation manuals exist eg \citep{IOC:2005tj}, \citep{Level:2011wu}, \citep{Parker:2007wq}.  However, analysis methods and design justifications are less formally documented - if at all.  The IOC understates this situation simply: `many organizations have developed their own method of tidal analysis'\citep{IOC:2005tj}\\
 
 \begin{figure}[H]\centering
   \includegraphics[width=\figwidthBig]{figures/diagrams/scales.pdf}
-  \caption{Schematic on forecast scales}
+  \caption{Forecasting suite schematic with overlapping scales}
   \label{fig:SCALES}
 \end{figure}
+
+
+
+TBC - name why this raises PROBLEMS that are worth study ....
+
+%--------------------------------------------------
+\subsection{Relevance of restricted scope}
+
+Compare to event based or behind real time studies ...
+
 
 In contrast to the :
 focus on extreme events
@@ -109,7 +120,7 @@ not to detract from the inevitable pursuit of ``comprehensive ...coastal ''
 
 \begin{figure}[H]\centering
   \includegraphics[width=\figwidthBig]{figures/diagrams/scales_focus.pdf}
-  \caption{Scales in scope}
+  \caption{Focus on mesoscale and tidal scales overlap}
 \end{figure}
 
 set benchmarks and address some representation issues at the overlap of conventional tides and large scale ....
