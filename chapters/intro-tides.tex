@@ -1,96 +1,106 @@
 \section{Ocean tide prediction}
 \label{sec:tidesOverview}
-
+%-----------------%
 \begin{quote}
 Tidal prediction is the oldest form of ocean prediction, and is still the most accurate \citep{Parker:2007wq}. 
 \end{quote}
-
 %-----------------%
 \subsection{Why it is worth unpacking ocean tides}
-\label{SS:semantics}
+\label{sec:semantics}
+The topic of ocean tides is particularly rich in ambiguous terminology and the potential for miscommunication is a real risk for operational forecasting.  The need to unpack some historical background and common definitions is unavailable. 
 
-The topic of ocean tides is particularly rich in ambiguous terminology, and given the ongoing influence of the tidal perspective, it is relevant here to address some further background and matters of definition.
-Note the simple fact that ``\textit{many organizations have developed their own method of tidal analysis}''\citep{IOC:2005tj}.
+Tidal methods of analysing and forecasting the ocean have a long legacy in the history of western science.  Economically significant tidal sea level predictions in fact pre-date the whole modern scientific enterprise, and the evolution of the tidal perspective mirrors much of the story of classical continuum physics.
 
-Tidal methods of analysing and forecasting the ocean have a long legacy in the history of modern science.  Economically significant `tidal' predictions in fact pre-date the whole modern scientific enterprise, and the evolution of the tidal perspective mirrors much of the story of classical physics.
-
-Cartwright's \cite{Cartwright:2000tt} telling of the history of ocean tide science is illustrative. It is both remarkable and typical that his scientific history of tides never even attempts to define what a `tide' is.  This surely deliberate exclusion stands in stark contrast to the minutiae of historical formulations and glossaries that are included.  The absence of definition may be read as an assertion that the \emph{history itself} is the only meaningful way to frame the scope of tidal science.\\
-Pugh \cite{Pugh:1996uz} at least addresses the question of definition explicitly and casts a wide net that catches almost anything that can be considered periodic.
+The \cite{Cartwright:2000tt} telling of the history of ocean tide science is illustrative. Remarkably, and perhaps typically, this scientific history of tides never even attempts to pin down a definition of what tide really should mean.  This surely deliberate exclusion stands in stark contrast to the minutiae of historical approaches and formulations and that the history covers.  The absence of definition may be read as an assertion that the \emph{history itself} is the only meaningful way to frame the scope of tidal science.
+\cite{Pugh:1996uz} at least addresses the question of definition explicitly and in doing so casts a very wide net that catches almost anything that can be considered periodic.
 \begin{quote}
 Although any definition of tides will be somewhat arbitrary, it must emphasize this periodic and regular nature of the motion, whether that motion be of the sea surface level, currents, atmospheric pressure or earth movements. We define tides as periodic movements which are directly related in amplitude and phase to some periodic geophysical force \ldots.
 \end{quote}
-It is notable that whilst for Pugh \emph{periodicity} is a key feature of 'tidal', he does not lock this periodicity to astronomy.  Pugh's pragmatic definition appears to be designed to best accommodate the conventional methods of harmonic analysis. Whilst this sensibly reflects the context of Pugh's text, it is relevant to stress that there are differences between the working definition of `tide' used by the producers of pragmatic tide predictions and that used in much of the literature.\\
-In contrast to Pugh's emphasis on periodicity alone, other authors place the tidal potential in a defining role. Such an emphasis on the tidal potential or Astronomical Tide Generating Forces \ATGP{} reflects a greater regard for dynamics and inputs, as opposed to observed outputs, that is more complimentary to the wider field of geophysical fluid dynamics.  This will be the approach employed in the present work.\\
-Thus Henderscott \cite{Hendershott:1981ub} treats ocean tides as the subset of oceanographic long waves driven by the \ATGP{}.  Notably his discussion is careful with the distinction between dynamics and `practical tide prediction'. But even Henderscott's primarily dynamical perspective is imbued with the cultural interplay of physics and pragmatic prediction; as illustrated by his inclusion of the arteface of the `ad hoc radiational potential' associated with Munk's response method \cite{Munk:1966ts}.\\
-Foreman \cite{foreman:2012perscomm} considers the core characteristic of what constitutes tidal sea level as the involvement of the ocean's response to the forcing of the tidal potential.   A similar emphasis, without exclusive definition, is seen in Flinchim and Ray's \citep{Flinchem:2000kp} implicit discussion of what constitutes the object of tidal analysis.\\
+It is notable that whilst for Pugh \emph{periodicity} is a key feature of anything that is `tidal', he does not lock this periodicity to astronomy.  Pugh's pragmatic definition appears to be designed to best accommodate the conventional methods of harmonic analysis and sea level prediction that are so well established in operational agencies. Whilst this periodicity-stressing definition sensibly reflects the context of Pugh's text, it is certainly not the only working conceptualisation of what constitutes ocean tides; either within the operational forecasting context or in academic settings. 
+
+In contrast to the periodic definition, most modern authors place the tidal potential in a defining role. Such an emphasis on the tidal potential or Astronomical Tide Generating Forces \ATGP{} reflects a greater regard for dynamics and inputs, as opposed to observed outputs, that is more complimentary to the wider field of geophysical fluid dynamics.  
+\cite{Hendershott:1981ub} treats ocean tides as that subset of oceanographic long waves driven by the \ATGP{}.  Notably his discussion is careful with the distinction between dynamics and `practical tide prediction'. But even Henderscott's primarily dynamical perspective is imbued with the cultural interplay of physics and pragmatic prediction; as illustrated by his inclusion of the rather aphysical radiational potential concept associated with the \cite{Munk:1966ts} response method tradition.
+The Australian Tide Manual \cite{PCTMSL-sp9} similarly reflects the historical intertwining of tidal physics and practical prediction methods; such that any forcing physics simply provides a backdrop to the singular focus on harmonic prediction.   
+A step removed from ocean prediction, \cite{10.1016/b978-0-444-53802-4.00058-0} provides a modern physical perspective that both emphasises the core role of the tidal forcing (in this case for earth tides) whilst adopting the well established terminology derived from the long history of ocean tide prediction. A similar emphasis on the physical forcing within the historical perspective is taken by \citep{Flinchem:2000kp} in a  discussion of analysis methods associated with non-stationarity in ocean tide patterns.
+The centrality of \ATGP{} be the approach employed in the present work as well.
 
 
-
-This is the setting in which many instances of ostensibly oxymoronic terminology appear; and can at times be the source of miscommunication.  Geophysists can sensibly define an \emph{a-periodic} pole tide on the basis of the dynamic connection to gravitational body forces associated with astronomical motions. Similarly,  valid discussion of \emph{non-stationary} tides \cite{Ray:2011tj}, \emph{quasi-periodic} tidal phenomena \citep{Flinchem:2000kp} or \emph{storm} tides \cite{Horsburgh:2008gw} in the literature and operational products clashes with the perspective of conventional harmonic analysis.  The existence of this rich range of terminology simply highlights the need for semantic care at the intersection of pragmatic tide prediction and dynamical models of the ocean.\\
-
-%User expectations of sea level forecasts have largely been defined by harmonic tidal prediction practice. 
-%Conversely operational practice have influenced oceanography more broadly. Doodson's \citep{Doodson:1928wf} tidal procedures reflect the practical limits imposed by human computers and paper records, but have ongoing influence. \\
-
-TBC new data-driven total exclusion of ATGP such as ML with lunar phase input .... \cite{10.1016/j.oceaneng.2020.107013}
-
+Further on semantic issues, it is worth highlighting the extent to which the subject of ocean tides raises ostensibly oxymoronic terminology.  
+Geophysists can define an \emph{a-periodic} pole tide on the basis of the dynamic connection to gravitational body forces associated with astronomical motions.   And valid discussion of \emph{non-stationary} tides \cite{Ray:2011tj}, \emph{quasi-periodic} tidal phenomena \citep{Flinchem:2000kp} or \emph{storm} tides \cite{Horsburgh:2008gw} in the literature and operational products each conceptually clash with the perspective of conventional harmonic analysis.  
+A comparable semantic disconnect can arise in circumstances where a tidal prediction exceeds the designated Highest Astronomical Tide.   
+Each of these definitions are sensible in context, but can potentially be a source of miscommunication with the development and delivery of operational forecasts.    Chapter \ref{chp:tideFlavours} proposes measures to partially mitigate such problems.
 
 %-----------------%
 \subsection{Common foundation of the \ATGP{}}
-Reference to the astronomical tide generating potential (\ATGP{}) is here considered to be the common foundation what is properly considered a tidal method or tidal phenomena.  The flow chart in Figure \ref{fig:TIDE_FORCE_FLOW} illustrates that the \ATGP{} is an abstraction developed from positional astronomy and gravity theory alone.   The variety amongst methods considered to be `tidal' can be accounted for by differing treatment of the intermediate parts of this flow chart - that is, the connection between \ATGP{} and ocean observations.  Notably, differences amongst approaches are located in the decomposition of the ocean into tidal and nontidal categories.\\
-
+Reference to the astronomical tide generating potential (\ATGP{}) is here considered to be the common foundation what is properly considered a tidal method or tidal phenomena.  
+The \ATGP{} is an abstraction developed from positional astronomy and classical gravity theory alone.   Perhaps surprisingly for some readers, the underlying role of positional astronomy is formulated in an entirely geocentric, effectively pre-Copernican, framework. 
+Figure \ref{fig:tideForceFlow} schematically illustrates the conceptual connections from positional astronomy, to the \ATGP{} and geophysics through to observed sea level .  
+Differing treatment of the intermediate parts of this flow chart, the geophysical modelling, effectively comprise the alternative approaches to sea level forecasting.  Of special relevance to the present focus are the details of any decomposition of observed sea level into tidal and non-tidal categories.   The dotted lines connecting nominally non-tidal components indicate that the gravitationally forced response is not the sole factor in discussions of tidal sea level. 
+%-----------------
 \begin{figure}[h]
-\begin{center}
-\includegraphics[width=\figwidthFull]{figures/diagrams/tidal_force_flowchart.pdf}
-\caption{Ocean tide flow chart (following Agnew \citep{Agnew:2011ub}.  Reference to the \ATGP{} is common to all tidal methods, whilst the distinction between Tidal/Nontidal elements can differ markedly.}
-\label{fig:TIDE_FORCE_FLOW}
-\end{center}
+    \begin{center}
+    \includegraphics[width=\figwidthFull]{figures/diagrams/tidal_force_flowchart.pdf}
+    \caption{Ocean tide flow chart (following Agnew \citep{Agnew:2011ub}.  Reference to the \ATGP{} is common to tidal analysis and prediction methods, whilst the treatment of tidal/non-tidal connections can differ markedly.}
+    \label{fig:tideForceFlow}
+    \end{center}
 \end{figure}
+%-----------------
+Before expanding on the role of the tidal forcing, the recent work of \cite{10.1016/j.oceaneng.2020.107013} is worth mentioning.   Regardless of the finer details, this observation-based machine learning application to tide prediction is still founded on the connection between positional astronomy and sea level, but simply makes the connection more indirect by relying on easily accessible moon phase data.
+%-----------------i
+\subsection{Basic development of the \ATGP{}}  \label{sec:basic_potential}
+The centrality of the tidal generating potential to sea level forecasting warrants further elaboration, in order to later explicate the manner in which conventional and dynamic sea level forecasts respectively represent tides. 
+
+The \ATGP{} is a mathematical abstraction founded on a consideration of the classical gravitational field near the Earth surface. The temporal variations of gravity in the vicinity of this surface are developed as a function of the \emph{geocentric} relative positions of the celestial bodies.
+For ocean tide applications, only the two celestial bodies, the moon and sun, are considered relevant on the basis of relative contribution to the perceived gravity field changes. It follows that the information required for computation of this lunisolar tidal potential is encapsulated in the celestial positions (ie ephemeris) of the moon and sun alone \citep{Agnew:2011ub}.
 
 
-%-----------------%
-\subsection{Basic development of the \ATGP{}}  \label{S:basic_potential}
+The full gravity field is defined as a scalar potential in space fulfilling the Laplace equation $\Delta V=0$ \citep[sec 5.3.1]{Urban:2013vl}.  The spatial field $V(\theta,\lambda,r)$ can be formulated in spherical geocentric (ie fixed earth) coordinates as a weighted sum of surface spherical harmonics. As a potential field, contributions from each mass element can be computed separately and linearly superposed.
 
-Development of the \ATGP{} is founded on a consideration of the gravitational field near the Earths surface. The temporal variations of gravity are developed as a function of the rotation of the Earth and the relative positions of celestial bodies.\\
-For ocean tides, the Sun and Moon alone are considered relevant on the basis of relative contribution to the gravity field. It follows that the information required for computation of the `lunisolar' tidal potential is encapsulated in ephemeris for the Sun and Moon \citep{Agnew:2011ub}.\\
-
+The specific subset of $V$ attributed to the celestial bodies external to the Earth, but excluding components acting uniformly over the Earth's surface, is defined to be the tidal potential \ATGP{} or $V_T$.
+The associated tidal acceleration at any particular point on the earth surface can also be thought as the vector difference between the direct attraction of each celestial body and the orbital acceleration about the Earth-Body barycenter \citep{Wenzel:1997kn}.
 
 
-The full gravity field is defined as a scalar potential in space fulfilling the Laplace equation $\Delta V=0$ \citep[sec 5.3.1]{Urban:2013vl}.  The spatial field $V(\theta,\lambda,r)$ can be formulated in spherical geocentric coordinates as a weighted sum of surface spherical harmonics. As a potential field, contributions from each mass element can be computed separately and linearly superposed.\\
-A specific subset of $V$ due to bodies external to the Earth, but excluding components acting uniformly over the Earth's surface, is termed the \emph{tidal potential} \ATGP{} or $V_T$.\\
-In alternate wording, a tidal acceleration at a point on the Earth is due to the vector difference between the direct attraction of each celestial body and the orbital acceleration about the Earth-Body barycenter\\citep{Wenzel:1997kn}.\\
-
-The subset $V_T$ of $V$ that is relevant to ocean dynamics is formulated in geocentric coordinates following the convention of \cite{Cartwright:1973em} hereafter \CTE{}, and more recent notation of Desai \cite{Desai:2006wo}:
-
+The subset $V_T$ of $V$ that is relevant to ocean dynamics is formulated in geocentric coordinates following the convention of \cite{Cartwright:1973em} hereafter \CTE{}, and more recent notation of \cite{Desai:2006wo}:
 \begin{equation}
-\label{E:VT}
-\eta_{eq} = \frac{V_T(t,\theta,\lambda) }{g} = \sum_{n=2}^{\infty} \sum_{m=0}^{m=n} M_{nm} P_{nm}( \sin(\theta) ) \text{Re} \left [ c^{*}_{nm}(t) e^{im\lambda} \right ]
+    \eta_{eq} = \frac{V_T(t,\theta,\lambda) }{g} = \sum_{n=2}^{\infty} \sum_{m=0}^{m=n} M_{nm} P_{nm}( \sin(\theta) ) \text{Re} \left [ c^{*}_{nm}(t) e^{im\lambda} \right ]
+    \label{eq:VT}
 \end{equation}
+Where the potential is described only on an idealised spherical earth surface in terms of time, longitude $\lambda$ and latitude $\theta$, as a sum of functions described further below. 
 
-It is conventional to refer to $V_T$ normalised by the standard value for Earth gravity $g$ as the \emph{equilibrium tide} $\eta_{eq}$.  Conveniently, $\eta_{eq}$ has units of height.  Writing the potential as an abstract height field $\eta_{eq}$ is common in the ocean literature as it can facilitate tidy formulations; for instance \cite[Eq 9.8.3]{gill1982atmosphere}.   Use of the term `equilibrium tide' can unfortunately be a source of miscommunication, inviting confusion with actual ocean elevations or some meaningful equilibrium ocean state - which it is not.\\
+$P_{nm}$ are the associated Legendre polynomials of degree $n$ and order $m$.  Writing $P_{nm}(\sin(\theta))$ gives the surface spherical harmonics.   Note that some other formulations may appear to differ due to use of a co-latitude coordinate.   
+$M_{nm}$ are normalisation factors, that whilst not of direct interest here are noted to follow different conventions in some applications \cite{Anonymous:2004tm}.
+Figure \ref{fig:VTmaps} provides a visualisation of the field and decomposition into components for a snapshot in time.
 
-$P_{nm}$ are the associated Legendre polynomials of degree $n$ and order $m$.  Writing $P_{nm}( \sin(\theta) )$ gives the surface spherical harmonics.   Note that some formulations appear to differ due to use of a co-latitude coordinate.   There are differing conventions for the normalisation of spherical harmonics \citep[sec 6.5]{Anonymous:2004tm}. Following \CTE{} the normalisation factor is:
-\begin{equation}
-\label{E:M}
-M_{nm} = (-1)^m \left [ \frac{(2n+1)(n-m)!}{ 4 \pi (n+m)!} \right ]^{(1/2)}
-\end{equation}
+%-------------------------------
+\begin{figure}[h]
+    \begin{center}
+    \includegraphics[width=\figwidthBig]{figures/maps/tidal_potential_spatial_20130101_0000.png}
+    \caption{Snapshot of global $\eta_{eq}$ field illustrating spatial decomposition into spherical harmonics.  Note the wide variation of relative magnitude}
+    \label{fig:VTmaps}
+    \end{center}
+\end{figure}
+%-------------------------------
+Equation \ref{eq:VT} It is conventional to refer to $V_T$ normalised by the standard value for Earth gravity $g$ as the \emph{equilibrium tide} $\eta_{eq}$.  Conveniently, $\eta_{eq}$ has units of height.  Writing the potential as an abstract height field $\eta_{eq}$ is common in the ocean literature as it can facilitate tidy formulations; for instance \cite[Eq 9.8.3]{gill1982atmosphere}.   Use of the term `equilibrium tide' can unfortunately be a source of miscommunication, inviting confusion with actual ocean elevations or some meaningful equilibrium ocean state - which it is not.
 
-Equation \ref{E:VT} represents very generally the spatial decomposition of a surface field over the globe.  Of itself, the formulation asserts nothing specific about the causation of the field.  It embodies no astronomy or ocean dynamics.\\
-Practical implementation of \ref{E:VT} requires choices regarding the set of harmonics $(n,m)$ to be included and the determination of the complex weights $c_{nm}(t)$.\\
-In contrast to the thousands of harmonics utilised in high resolution gravity studies, for ocean tidal dynamics only a small set of $(n,m)$ is taken to be relevant.   The tidal subset is determined on the basis of relative magnitude and contribution of temporal variation at relevant scales.\\
-Very generally, it is only the horizontal gradient $\nabla V_T$ that can effect the distribution of ocean mass.  And furthermore, only temporal changes in this horizontal gradient will effect the non-static ocean distribution. Subsequently degrees $n=0,1$ are not relevant to ocean tides.   This is represented in Equation \ref{E:VT} by the lower limit $n=2$ of the outer sum.\\
-For almost all ocean studies an upper limit of $n=2$ is taken to be sufficient, or at most $n=3$.  This choice is based on the rapid decline in relative magnitude with increasing $n$ for the luni-solar system - discussed below regarding Equation \ref{E:c}.\\
-This concept is illustrated in Figure \ref{fig:VT_EG}.
+
+Equation \ref{eq:VT} represents very generally the spatial decomposition of a surface field over the globe.  Of itself, the formulation asserts nothing specific about the causation of the field.  It embodies no astronomy or ocean dynamics.
+
+Practical implementation of \ref{eq:VT} requires choices regarding the set of harmonics $(n,m)$ to be included and the determination of the complex weights $c_{nm}(t)$.
+
+
+In contrast to the thousands of harmonics utilised in high resolution gravity studies, for ocean tidal dynamics only a small set of $(n,m)$ is taken to be relevant.   The tidal subset is determined on the basis of relative magnitude and contribution of temporal variation at relevant scales.
+
+
+Very generally, it is only the horizontal gradient $\nabla V_T$ that can effect the distribution of ocean mass.  And furthermore, only temporal changes in this horizontal gradient will effect the non-static ocean distribution. Subsequently degrees $n=0,1$ are not relevant to ocean tides.   This is represented in Equation \ref{eq:VT} by the lower limit $n=2$ of the outer sum.
+
+
+For almost all ocean studies an upper limit of $n=2$ is taken to be sufficient, or at most $n=3$.  This choice is based on the rapid decline in relative magnitude with increasing $n$ for the luni-solar system - discussed below regarding Equation \ref{E:c}.
+
 
 
 It may also be proper to exclude at least some of $(n,m) = (2,0)$ for many ocean tidal uses.  Specifically, by having no variation in $lambda$ this largely contributes to the 'permanent tide' associated with mean dynamic topography rather than temporal variations.  Treatment of $(n,m) = (2,0)$ is worthy of special attention and care with regard to each ultimate application.  One instance is that the relatively slow temporal variations are associated with the so-called long-period tides - which includes seasonal cycles.  Also, the need to ensure complementarity treatment of $(n,m) = (2,0)$ with regard to geoid models is discussed in \cite[section 5.3.3.2]{Urban:2013vl}.
 
-\begin{figure}[h]
-\begin{center}
-\includegraphics[width=\figwidthBig]{figures/maps/tidal_potential_spatial_20130101_0000.png}
-\caption{Snapshot of global $\eta_{eq}$ field illustrating spatial decomposition into spherical harmonics.  Note the wide variation of relative magnitude}
-\label{fig:VT_EG}
-\end{center}
-\end{figure}
+
 
 
 All of the temporal variation of $V_T$ is contained in the time series of complex scalar weights $c_{nm}(t)$.\\
@@ -117,7 +127,7 @@ Normalisation $M$ is given by Equation \ref{E:M}. The radial scale $a$ is conven
 
 
 
-The rapid decay of the scaling term $\left(\frac{a}{r_b} \right)^n$ with n is the basis for excluding higher degree harmonics from ocean tide applications.  In the case of the Moon, the magnitude of the $n=3$ potential field is more than 2 orders of magnitude smaller than $n=2$.  The associated force also decays, but not quite so rapidly due to the decreasing spatial length scales of the higher harmonics.  This decay is apparent in the colorbars of Figure \ref{fig:VT_EG}\\
+The rapid decay of the scaling term $\left(\frac{a}{r_b} \right)^n$ with n is the basis for excluding higher degree harmonics from ocean tide applications.  In the case of the Moon, the magnitude of the $n=3$ potential field is more than 2 orders of magnitude smaller than $n=2$.  The associated force also decays, but not quite so rapidly due to the decreasing spatial length scales of the higher harmonics.  This decay is apparent in the colorbars of Figure \ref{fig:VTmaps}\\
 The same relative magnitude argument is applied to neglecting more distant celestial masses from formulation of $\eta_{eq}$.
 
 
@@ -176,7 +186,7 @@ Another phenomena effecting Earth rotation is the Free Core Nutation (FCN).  For
 The formulation of the tidal potential in Section\ref{S:basic_potential} involved only the instantaneous relative positions of the Earth-Moon-Sun system.   These positions are taken from an ephemeris.  In practice, there are two broad classes of ephemeris; analytical and numerical \citep{Wenzel:1997kn}.\\
 An analytical ephemeris provides the relative positions of the Moon and Sun via relatively simple polynomial relations, optimised for a given epoch.  Such analytic ephemeris have been commonly employed for ocean tide studies.   Analytic ephemeris were used initially for computational necessity and more recently for computational convenience.\\
 For modern astronomical purposes numerical ephemerides are now standard.  Prior to 1984 standard ephemeris were based upon \emph{theories}\cite[sec 8.1]{Urban:2013vl}, whereas contemporary ephemeris are created in a manner analogous to \NWP{} or operational oceanography: dynamical equations are integrated into the future, after initialisation via assimilation of past observational data.\\
-At the time of writing, the `current best estimates' for the orbits of the Moon and planets is DE421 \citep{Folkner:2008wm}.   The snapshot visualisation shown in Figure \ref{fig:VT_EG} have been calculated based on application of Equations \ref{E:M} and \ref{E:c} to output of DE421 utilising the software tools provided by NASA \cite[p]{Anonymous:vo}.\\
+At the time of writing, the `current best estimates' for the orbits of the Moon and planets is DE421 \citep{Folkner:2008wm}.   The snapshot visualisation shown in Figure \ref{fig:VTmaps} have been calculated based on application of Equations \ref{E:M} and \ref{E:c} to output of DE421 utilising the software tools provided by NASA \cite[p]{Anonymous:vo}.\\
 Any differences between modern ephemeris over ocean forecasting timescales are expected to be very small.   However, an evaluation of such differences may be a relevant undertaking in the body of this work - in particular between the best estimate and any analytic formulations employed in an ocean model.
 
 
@@ -312,6 +322,7 @@ As an aside, the nomenclature LTI is taken from engineering control theory.   It
 %-----------------%
 \subsection{Tidal Harmonics and Formalisms}
 \label{S:formalisms}
+Note the simple fact that ``\textit{many organizations have developed their own methods of tidal analysis}''\citep{IOC:2005tj}. 
 
 There is no unique approach to implementing the LTI concept of ocean tide prediction.   The different approaches are variously referred to as `methods' or `formalisms' and at a higher level share the LTI system model discussed above.  In very broad terms there are basically two categories: harmonic methods and response methods.   Within each categories there are variations that are more or less significant depending on context. 
 
@@ -642,10 +653,10 @@ The LTE evolve a simple 3 dimensional ocean state consisting of horizontal mass 
 
 Where $\mathbf{U}$ is the depth integrated horizontal transport, $\eta$ is the sea level signal, $H \gg \eta$ is mean water column depth, $f=2\Omega\sin\theta$ is the Coriolis parameter and $g$ vertical gravitation.\\
 The forcing terms on the right hand side of the momentum equation \label{E:LTE_momtm} require explanation.  
-$\mathbf{f_0}$ denotes the astronomical body forcing taking into account earth tide effects, $\mathbf{f_0} = gH\nabla\eta_{eq}$ following Equation \ref{E:VT}.  
+$\mathbf{f_0}$ denotes the astronomical body forcing taking into account earth tide effects, $\mathbf{f_0} = gH\nabla\eta_{eq}$ following Equation \ref{eq:VT}.  
 An approximation for SAL is here written as a separate forcing term to reflect the suitability of using values pre-computed from existing global tide models.   
 Alternatively $\eta_{SAL}$ can be put on the left hand side of the equation as a scaled version of $\eta$ - as is the case in \MOM{}.   
-This scalar approximation is relatively inaccurate as discussed in section \ref{S:basic_potential}.\\
+This scalar approximation is relatively inaccurate as discussed in section \ref{sec:basic_potential}.\\
 The frictional dissipation term $F$ is a particular source of complexity, especially with regard to parameterisation and linearisation.\\
 
 Compared to the dynamics represented within an \OGCM{}, these tidal hydrodynamics simulate a more `aggregated' psuedofluid in that the processes contained within parameterisations are have a higher degree of complexity - as per the schematic in Figure \ref{fig:models} \\
