@@ -67,40 +67,38 @@ The subset $V_T$ of $V$ that is relevant to ocean dynamics is formulated in geoc
 \end{equation}
 Where the potential is described only on an idealised spherical earth surface in terms of time, longitude $\lambda$ and latitude $\theta$, as a sum of functions described further below. 
 
-$P_{nm}$ are the associated Legendre polynomials of degree $n$ and order $m$.  Writing $P_{nm}(\sin(\theta))$ gives the surface spherical harmonics.   Note that some other formulations may appear to differ due to use of a co-latitude coordinate.   
-$M_{nm}$ are normalisation factors, that whilst not of direct interest here are noted to follow different conventions in some applications \cite{Anonymous:2004tm}.
-Figure \ref{fig:VTmaps} provides a visualisation of the field and decomposition into components for a snapshot in time.
-
+$P_{nm}$ are the associated Legendre polynomials of degree $n$ and order $m$.  Writing $P_{nm}(\sin(\theta))$ gives the surface spherical harmonics.  The fact that the sum begins at $n=2$ is discussed below.
+$M_{nm}$ are normalisation factors, that whilst not of direct interest here are noted to follow different conventions between applications \citep{IERS2003}.
+Figure \ref{fig:VTmaps} provides a visualisation of the field and a decomposition into spherical harmonics a single snapshot in time.
 %-------------------------------
 \begin{figure}[h]
     \begin{center}
     \includegraphics[width=\figwidthBig]{figures/maps/tidal_potential_spatial_20130101_0000.png}
-    \caption{Snapshot of global $\eta_{eq}$ field illustrating spatial decomposition into spherical harmonics.  Note the wide variation of relative magnitude}
+    \caption{Snapshot of global $\eta_{eq}$ field illustrating spatial decomposition into spherical harmonics.  Note the wide variation of relative magnitude. When comparing to formulations recall that those decompositions are per body; ie an independent set for the moon and sun. }
     \label{fig:VTmaps}
     \end{center}
 \end{figure}
 %-------------------------------
-Equation \ref{eq:VT} It is conventional to refer to $V_T$ normalised by the standard value for Earth gravity $g$ as the \emph{equilibrium tide} $\eta_{eq}$.  Conveniently, $\eta_{eq}$ has units of height.  Writing the potential as an abstract height field $\eta_{eq}$ is common in the ocean literature as it can facilitate tidy formulations; for instance \cite[Eq 9.8.3]{gill1982atmosphere}.   Use of the term `equilibrium tide' can unfortunately be a source of miscommunication, inviting confusion with actual ocean elevations or some meaningful equilibrium ocean state - which it is not.
+Equation \ref{eq:VT} and the visualisation in \ref{fig:VTmaps} quantify the potential $V_T$ normalised by the standard value for Earth gravity $g$; a quantity defined as the \emph{equilibrium tide} $\eta_{eq}$.  
+A convenience of normalising the potential field as $\eta_{eq}$ is that the quantity has units of height. But this formulation unfortunately invites confusion with actual ocean elevations; whereas the equilibrium tide really only has a very abstract and indirect connection to observed ocean tide heights.
+Specifically, whilst useful for formulating the driving force, the any direct connection to ocean response is only via the thought experiment of a shallow water idealisation of boundary-free ocean with ``no dynamic effects'' as stated by \cite[Eq 9.8.3]{gill1982atmosphere}; that is, the equilibrium tide is a useless approximation to ocean heights at all expect the longest periods \cite{Egbert:2003jd}.
 
 
-Equation \ref{eq:VT} represents very generally the spatial decomposition of a surface field over the globe.  Of itself, the formulation asserts nothing specific about the causation of the field.  It embodies no astronomy or ocean dynamics.
-
-Practical implementation of \ref{eq:VT} requires choices regarding the set of harmonics $(n,m)$ to be included and the determination of the complex weights $c_{nm}(t)$.
-
-
-In contrast to the thousands of harmonics utilised in high resolution gravity studies, for ocean tidal dynamics only a small set of $(n,m)$ is taken to be relevant.   The tidal subset is determined on the basis of relative magnitude and contribution of temporal variation at relevant scales.
+Equation \ref{eq:VT} represents the spatial decomposition of a surface potential field over the globe.  Of itself, such a formulation asserts nothing specific about the causation of the field.  It embodies no astronomy or ocean dynamics.
+Practical implementation of \ref{eq:VT} requires choices regarding the set of harmonics $(n,m)$ to be included and the determination of the time varying complex weights $c_{nm}(t)$.
 
 
-Very generally, it is only the horizontal gradient $\nabla V_T$ that can effect the distribution of ocean mass.  And furthermore, only temporal changes in this horizontal gradient will effect the non-static ocean distribution. Subsequently degrees $n=0,1$ are not relevant to ocean tides.   This is represented in Equation \ref{eq:VT} by the lower limit $n=2$ of the outer sum.
+In contrast to the thousands of harmonics utilised in high resolution gravity studies, for ocean tidal dynamics only a small set of $(n,m)$ is taken to be relevant.   What counts as a relevant ocean subset is generally determined on the basis of relative magnitude and contribution to temporal variation.
 
 
-For almost all ocean studies an upper limit of $n=2$ is taken to be sufficient, or at most $n=3$.  This choice is based on the rapid decline in relative magnitude with increasing $n$ for the luni-solar system - discussed below regarding Equation \ref{E:c}.
+It is only the horizontal gradient of the potential $\nabla V_T$ that can effect the distribution of ocean mass.   Which to be clear states that the effect of the \ATGP{} on the ocean is to slide mass side-to-side, not directly pull it up.   And furthermore, only \emph{temporal} changes in this horizontal gradient will effect the non-static ocean distribution. Subsequently degrees $n=0,1$ are not relevant to ocean tides.   This is represented in Equation \ref{eq:VT} by the lower limit $n=2$ of the outer sum.
+
+For almost all ocean studies an upper limit of $n=2$ is taken to be sufficient, or at most $n=3$.  This choice is based on the rapid decline in relative magnitude with increasing $n$ for the luni-solar system - discussed below regarding Equation \ref{eq:c}.
 
 
 
-It may also be proper to exclude at least some of $(n,m) = (2,0)$ for many ocean tidal uses.  Specifically, by having no variation in $lambda$ this largely contributes to the 'permanent tide' associated with mean dynamic topography rather than temporal variations.  Treatment of $(n,m) = (2,0)$ is worthy of special attention and care with regard to each ultimate application.  One instance is that the relatively slow temporal variations are associated with the so-called long-period tides - which includes seasonal cycles.  Also, the need to ensure complementarity treatment of $(n,m) = (2,0)$ with regard to geoid models is discussed in \cite[section 5.3.3.2]{Urban:2013vl}.
-
-
+The zonal harmonics $(n,m) = (2,0)$ for each body are of particular relevance to the slower patterns of sea level.  Specifically, by having no variation in $\lambda$ these harmonics don't vary geographically with the daily rotation of the earth.   However, the slower changes in the declination of each body do drive an ocean mass response and is associated with the both the long period and permanent tides.  
+What is considered to comprise the permanent component of the tide potential is effectively time scale and application dependant and is an important detail for geodesy and gravity studies.  \cite[section 5.3.3.2]{Urban:2013vl}.  For ocean forecasting, the role and formulation of the permanent tide only becomes relevant in the decomposition of mean sea level, and estimation of what constitutes dynamic ocean topography in geodetic reference framework.
 
 
 All of the temporal variation of $V_T$ is contained in the time series of complex scalar weights $c_{nm}(t)$.\\
@@ -116,12 +114,12 @@ It is significant that the temporal variations of the \ATGP{} for the entire glo
 The luni-solar coefficients are determined from the instantaneous positions of the Moon and Sun relative to the geocenter.  Such information is referred to as ephemerides \citep[Section 8.1]{Urban:2013vl}
 Given the positions in the geocentric reference frame $\theta,\lambda,r$ for both Moon and Sun, the coefficients are:
 \begin{align}
-\label{E:c}
+\label{eq:c}
 c_{nm}(t) &= a_{nm}(t) + ib_{nm}(t) \nonumber \\
           &= \sum_{b=\text{moon},\text{sun}}    \frac{4 \pi GM_{b}}{g r_{b}}  \frac{(2-\delta{m0})} {(2n+1)} \left(\frac{a}{r_b} \right)^n    M_{nm} P_{nm}( \sin(\theta_b) ) e^{im\lambda_b}
 \end{align}
 
-Note that $\theta,\lambda$ in Equation \ref{E:c} are equivalent to the geographic coordinates of the respective sub-body point at a given time. 
+Note that $\theta,\lambda$ in Equation \ref{eq:c} are equivalent to the geographic coordinates of the respective sub-body point at a given time. 
 Where $\delta_m0 = 1$ for $m==0$ and $\delta_m0 = 0$ for $m \neq 0$.\\
 Normalisation $M$ is given by Equation \ref{E:M}. The radial scale $a$ is conventional taken as the semi-major axis from the ellipsoidal georeference. 
 
@@ -186,7 +184,7 @@ Another phenomena effecting Earth rotation is the Free Core Nutation (FCN).  For
 The formulation of the tidal potential in Section\ref{S:basic_potential} involved only the instantaneous relative positions of the Earth-Moon-Sun system.   These positions are taken from an ephemeris.  In practice, there are two broad classes of ephemeris; analytical and numerical \citep{Wenzel:1997kn}.\\
 An analytical ephemeris provides the relative positions of the Moon and Sun via relatively simple polynomial relations, optimised for a given epoch.  Such analytic ephemeris have been commonly employed for ocean tide studies.   Analytic ephemeris were used initially for computational necessity and more recently for computational convenience.\\
 For modern astronomical purposes numerical ephemerides are now standard.  Prior to 1984 standard ephemeris were based upon \emph{theories}\cite[sec 8.1]{Urban:2013vl}, whereas contemporary ephemeris are created in a manner analogous to \NWP{} or operational oceanography: dynamical equations are integrated into the future, after initialisation via assimilation of past observational data.\\
-At the time of writing, the `current best estimates' for the orbits of the Moon and planets is DE421 \citep{Folkner:2008wm}.   The snapshot visualisation shown in Figure \ref{fig:VTmaps} have been calculated based on application of Equations \ref{E:M} and \ref{E:c} to output of DE421 utilising the software tools provided by NASA \cite[p]{Anonymous:vo}.\\
+At the time of writing, the `current best estimates' for the orbits of the Moon and planets is DE421 \citep{Folkner:2008wm}.   The snapshot visualisation shown in Figure \ref{fig:VTmaps} have been calculated based on application of Equations \ref{E:M} and \ref{eq:c} to output of DE421 utilising the software tools provided by NASA \cite[p]{Anonymous:vo}.\\
 Any differences between modern ephemeris over ocean forecasting timescales are expected to be very small.   However, an evaluation of such differences may be a relevant undertaking in the body of this work - in particular between the best estimate and any analytic formulations employed in an ocean model.
 
 
@@ -331,13 +329,13 @@ TBC
 
 Within operational authorities, tide prediction is practically synonymous with harmonic methods.  These have an especially long historical legacy in both theoretical and applied settings \citep{Cartwright:2000tt}\citep{Parker:2007wq}.   Harmonic methods of sea level prediction are very successful and important and will continue to be so, regardless of other advances.  Most notably, harmonic analyses based on tide-gauge observations are thoroughly embedded in operation centres and the wider economy.   In Australia, this conventional role is embodied by the official promulgation of the  Australian National Tide Tables \ANTT.  These tables are required by law to be carried by many marine vehicles and have broader ramifications for uses such as cadastral definitions.\\
 There are several different schools of convention that lead to various incompatabilities between operational centres. \\
-At its foundation, harmonic tidal analysis and prediction characterises the LTI system via a finite set of amplitude and phase terms that are identified empirically.  Equation \ref{E:cos} shows the LTI model with constant amplitude $A_k$ and phase lag $g_k$, other terms are discussed below.  This situation is illustrated by the following simplistic assertion from the Australian Tide Manual \citep{PCTMSL:2009vy}:
+At its foundation, harmonic tidal analysis and prediction characterises the LTI system via a finite set of amplitude and phase terms that are identified empirically.  Equation \ref{eq:cos} shows the LTI model with constant amplitude $A_k$ and phase lag $g_k$, other terms are discussed below.  This situation is illustrated by the following simplistic assertion from the Australian Tide Manual \citep{PCTMSL:2009vy}:
 \begin{quote}
 The purpose of tidal analysis is to represent the water level or current time series by a set of harmonics, or sine waves, each of them having a specific amplitude and phase.
 \end{quote}
 
 \begin{equation}
-\label{E:cos}
+\label{eq:cos}
 \eta_{tide}(t) = \sum_{k} f_k A_k \cos ( t.\omega_k + g_k + u_k)
 \end{equation}
 
@@ -388,7 +386,7 @@ Pragmatic application of the harmonic formalism to real-world data has given ris
 
 For instance, observational records are finite and typically of duration less than a harmonic analysis would nominally require.  Given the close clustering of tidal lines in frequency-space, Equation \ref{E:Axb} can be poorly conditioned for inversion.  Subsequently, practical procedures for tidal analysis must specify which frequencies to include in the basis set and then somehow account for the effects of unresolved frequencies\cite{Foreman:2009bg}.   \\
 Typically arguments regarding the relative magnitude of the harmonic components of $\eta_{eq}$ are used to prioritise candidate frequencies for inclusion. Similarly, additional constants can be inferred rather than taken directly from the inverse solution, using assumed relationships from either $\eta_{eq}$ or previous or nearby analysis. \\
-By convention, the effects of clusters of unresolved tidal frequencies are represented by modulation of the basis functions in relationships assumed to map from $\eta_{eq}$.  In equation \ref{E:cos} the modulation terms are included as $f_k$ and $u_k$. These are most common called `nodal corrections', due to close spectral spacing associated with the the lunar nodal regression (differences in $\omega_k$ of about $fract{1}{18.6}$ years.  Following Godin these very same terms are more informatively called `satellite modulations' by some authors (eg \citep{Foreman:2009bg}) in recognition that the modulation of a constituent term by a very closely spaced spectral cluster arises from terms other than $d_5$. Interestingly, modification of the tidal basis functions by nodal factors renders the analysis to be no longer strictly `harmonic' in that the basis does not consist of proper sinusoids.\\
+By convention, the effects of clusters of unresolved tidal frequencies are represented by modulation of the basis functions in relationships assumed to map from $\eta_{eq}$.  In equation \ref{eq:cos} the modulation terms are included as $f_k$ and $u_k$. These are most common called `nodal corrections', due to close spectral spacing associated with the the lunar nodal regression (differences in $\omega_k$ of about $fract{1}{18.6}$ years.  Following Godin these very same terms are more informatively called `satellite modulations' by some authors (eg \citep{Foreman:2009bg}) in recognition that the modulation of a constituent term by a very closely spaced spectral cluster arises from terms other than $d_5$. Interestingly, modification of the tidal basis functions by nodal factors renders the analysis to be no longer strictly `harmonic' in that the basis does not consist of proper sinusoids.\\
 
 
 
