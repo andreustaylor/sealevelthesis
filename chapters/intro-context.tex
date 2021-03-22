@@ -57,17 +57,25 @@ Quantified observations of sea level currently available for operational use fal
 Insitu observations from coastal tide gauges are by far the most established and studied source.    The availability of tide gauge observations is intrinsically connected to the history of sea level study and the development of forecasting techniques; the longer view of which is covered in the history of \citeauthor{Cartwright:2000tt}.
 Typical tide gauge instruments in fact measure the `air gap' between a sensor and the water surface from which a relative level is derived \citep{PCTMSL-sp9}. 
 But the very nature of why and how tide gauges are installed raises a list of special characteristics relevant to operational forecasting. These characteristics are variously considered to add complication or insight for different applications. \citeauthor{10.1175/jtech-d-18-0203.1} put it simply that ``\textit{most tide gauges are limited to deep water or sheltered harbors and omit part of the natural total sea level variability at open coasts}''.   
+%-----------------------------
+\begin{figure}[H]\centering
+  \includegraphics[width=\figwidthBig]{figures/diagrams/sealevel_cartoon.pdf}
+  \caption{Schematic illustration of insitu versus remote sea level observations}
+  \label{fig:sealevelObsCartoon}
+\end{figure}
+%-----------------------------
 Coastal locations are subject to both global and spatially localised hydrodynamic effects; in addition to influences like sediment movement, riverine phenomena and even coastal engineering works.  The limited extent to which the range of scales present in the tide gauge observations can be adequately represented by any forecast system is a fundamental characterisation discussed across chapters \ref{chp:aggregate},\ref{chp:waveguide}and \ref{chp:tideFlavours}.    
 Tide gauge observations can be mapped to certain sea level impacts and decisions, though not always directly; as for instance in \cite{Hague:2019ha}.    The fact that wave setup and swash are generally invisible to tide gauges is a notable limitation when considering impacts at the land-sea interface \citep{Serafin:2017fl}.
 Commonly tide gauge observations are also the basis of vertical reference information and geodetic derivations that are ultimately connected to the interpretation of any quantitative sea level forecast \citep{Woppelmann:2006un}\citep{AVWS2021}.
 More comprehensive observations of sea level than are possible from tide gauges is listed as a key requirement for future development by \citeauthor{10.3389/fmars.2019.00437}.    Video-based systems in particular show promise \citep{10.1175/jtech-d-18-0203.1}\cite{2018agufmep52d..26h} but as yet are far from general oeprational availability. 
 %-----------------------------
 \begin{figure}[H]\centering
-  \includegraphics[width=\figwidthBig]{figures/diagrams/sealevel_cartoon.pdf}
-  \caption{Simplified illustration of the relative nature of sea level and existing observing platforms.}
-  \label{fig:sealevelObsCartoon}
+  \includegraphics[width=\figwidthThird]{figures/images/tidegaugeEg.png}
+  \caption{Typical tide gauge (in fact two) located in a sheltered position; in this case unusually well co-located with a satellite positioning device.}
+  \label{fig:tidegauge}
 \end{figure}
 %-----------------------------
+
 Remote observations of sea level are also derived from what is effectively a very large air-gap .   The derivation from active radar return signals to a meaningful sea level value is non-trivial but very mature away from the coast \citep{Fu:2001ub}.  Operational mesoscale oceanography is heavily dependant on altimeter observations across the global ocean and is discussed further in section \ref{sec:operational_oceanography}.  
 Operational application of remote sea level observations near the coast is complicated by both the very presence of land within the sensing `footprint' as well as more powerful but shorter time and length scales of sea level variability \citep{Vignudelli:2011wl}.   Whilst this is a  rapidly advancing field, coastal altimetry effectively remains pre-operational and needs to solve the handling of fundamental details such as vertical reference datums \citep{10.3389/fmars.2020.549467}.
 The active nadir radar architecture of satellite sea level observations of the last two decades is expected to undergo a qualitative change with the planned wide-swath altimeter missions starting with SWOT \footnote{\url{https://earth.esa.int/web/eoportal/satellite-missions/s/swot}, \url{https://auswot.org/}}.   Wide swath observations of sea level remote observations promise to radically impact water level forecasting in the longer term but can not hope to become operationally relevant for some years to come. 
@@ -129,6 +137,7 @@ Despite looking away from the radical extremes of sea level, the present novel a
       %\includegraphics[height=5cm]{figures/images/goolwa-barrage-environment_sa_gov_au.jpg}
       \caption{Coastal infrastructure management. Goolwa barrages in SA are indirectly exposed to ocean sea level. Photo credit Environment SA }
   \end{subfigure}
+  \hfill
   \begin{subfigure}[t]{\figwidthHalf}
       \includegraphics[trim={0 9cm 0 2cm},clip,width=\textwidth]{figures/images/sunnyFlood_ClarkJan2018Brisbane.png}
       %\includegraphics[height=5cm]{figures/images/sunnyFlood_ClarkJan2018Brisbane.png}
