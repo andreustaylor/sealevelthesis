@@ -7,7 +7,10 @@ Tidal prediction is the oldest form of ocean prediction, and is still the most a
 %-----------------%
 \subsection{Why it is worth unpacking ocean tides}
 \label{sec:semantics}
-The topic of ocean tides is particularly rich in ambiguous terminology and the potential for miscommunication is a real risk for operational forecasting.  The need to unpack some historical background and common definitions is unavailable. 
+The topic of ocean tides is particularly rich in ambiguous and arcane terminology.  
+Moreover, it is apparent that this terminology and the underlying concepts lead to miscommunication within operational forecasting.  Operational centres like the Bureau of Meteorology increasingly bring these conventional tidal concepts into the same organisational setting as geophysically `concrete' simulations (introduced in section \ref{sec:concrete}); and the subsequent potential for confusion is what motivates the following exposition.
+\newline{}
+
 
 Tidal methods of analysing and forecasting the ocean have a long legacy in the history of western science.  Economically significant tidal sea level predictions in fact pre-date the whole modern scientific enterprise, and the evolution of the tidal perspective mirrors much of the story of classical continuum physics.
 
@@ -124,6 +127,7 @@ The same relative magnitude argument is applied to neglecting more distant celes
 
 %-----------------%
 \subsection{Special role for temporal variations}
+\label{sec:temporal}
 The temporal variation of the \ATGP{} is of special relevance to ocean tide prediction.  And inspection of equation \ref{eq:VT} show that all of this variability is contained within the coefficients $c_{nm}(t)$.  
 Any tidal method that applies $c_{nm}(t)$ from a numerical ephemeris in time-space could be said to be \emph{direct}. 
 However, transformation of $c_{nm}(t)$ into frequency-space is in fact the basis of many tidal methods.   The highly clustered frequency content of $c_{nm}(t)$ renders this transformation particularly useful.  
@@ -262,238 +266,155 @@ Considering the ocean response to tidal forcing in frequency-space is arguably j
 %-----------------%
 \subsection{Ocean as an LTI System}
 \label{sec:LTI}
-With historical hindsight it could be said that the success of tidal sea level prediction have been based on treating the ocean as a linear time invariant (LTI) system driven by the \ATGP{}.\\
-In essence, temporal variation in the \ATGP{} is an input that the LTI maps directly to an predicted ocean response.  Once such a time invariant `black box' for the ocean has been characterised,  accurate astronomical predictions can be mapped to an ocean prediction.  The details of how the LTI system is characterised and implemented distinguish the variants of tidal analysis and prediction.\\
+With historical hindsight it could be said that the success of tidal sea level prediction have been based on treating the ocean as a linear time invariant (LTI) system driven by the \ATGP{}.\footnote{The nomenclature LTI is taken from engineering control theory , and not the historically influential Liverpool Tide Institute.}
 
-
-
+In essence, the ocean response to tidal forcing is modelled as stationary in frequency space.  Once this time-invariant ``black box'' model has been characterised, astronomical empherides map linearly to sea level predictions.  The details of how the LTI system is characterised and implemented distinguish the variants of tidal analysis and prediction.
 
 Two important aspects of this broad approach were introduced in the late 1700's by Laplace \cite[chpt 7]{Cartwright:2000tt}:
 \begin{itemize}
-\item spectral banded-ness of $V_T(t)$ (classified into diurnal, semi-diurnal and long species) and the value of a stationary frequency perspective;
-\item semi-empirical analysis to characterise the stationary frequency-space outcome of complex global hydrodynamics. 
+    \item the spectral banded-ness of $V_T(t)$ and the value of a stationary frequency perspective;
+    \item application of semi-empirical analysis to simply characterise the expression of complex hydrodynamics. 
 \end{itemize}
 
-
-\BoxBegin
-Modelling the ocean as an LTI system in this manner necessarily takes a frequency-space perspective and relies on stationarity (time invariance). Jay and Kukulka \citep{Jay:2003bj} suggest that that the long history and apparent value of this perspective has $\dots$
+Modelling the ocean as an LTI system in this manner necessarily takes a frequency-space perspective and assumes model stationarity. \citet{Jay:2003bj} suggest that that the long history and apparent value of this perspective has $\dots$
 \begin{quotation}
 solidified an opinion that tidal time series (particularly those of surface elevation) are basically stationary, with non-stationary components frequently being regarded as meaningless `noise'.    
 \end{quotation}
-
-In fact, as discussed in Section \ref{SS:semantics}, time stationarity is essential to the \emph{definition} of `tidal' in most operational settings.
-\BoxEnd
-
-
+In fact, as discussed in section \ref{sec:semantics}, frequency-space stationarity is essential to the \emph{definition} of what is considered tidal in most operational settings.
+% little flow chart
 \begin{align}
-    c_{nm}(t)       \Rightarrow & \fbox{Global Ocean} \Rightarrow \mbox{observed response}                \nonumber 
+    c_{nm}(t) \Rightarrow & \fbox{Global Ocean}\Rightarrow \mbox{observed response} \nonumber
 \end{align}
 
+Time invariance of the LTI in frequency-space means that each input component maps directly to an output response at the same frequency, characterised by an amplitude and phase transformation.   As the LTI characteristics are identified via semi-empirical methods, any hydrodynamics are essentially hidden within the black box and are largely irrelevant.
 
-Time invariance of the LTI in frequency-space means that each input component maps directly to an output response at the same frequency, characterised by a amplitude and phase transformation.   As the LTI characteristics are identified via semi-empirical methods,  the complex dynamics are hidden within the `black box' and are largely irrelevant.\\
 The core of such a tidal model is schematically shown as a mapping at each distinct tidal frequency:
-
 \begin{align}
-\label{E:LTI}
-H_{k}(\theta_k) \Rightarrow & \fbox{empirical LTI system} \Rightarrow \mbox{tidal ocean $f(\theta_k)$}  %\nonumber
+    H_{k}(\theta_k) \Rightarrow & \fbox{empirical LTI system} \Rightarrow \mbox{tidal ocean $f(\theta_k)$}  %\nonumber
+    \label{eq:LTI}
 \end{align}
 
-Although the empirical determination of the LTI model largely ignores intervening dynamics, the literature investigating the natural modes of the ocean provides a relevant backdrop.  Given the picture of a LTI system forced by frequencies that are close to resonance, empirical fitting can be sensitive to details.
-\begin{quotation}
-By an unfortunate coincidence, the size of the earth, the depth of the ocean, and the rate of earth rotation are such that the frequencies of the free modes of ocean oscillation are intercalated with the frequencies of the tide-generating consitituents.\citep{Groves:1975ky}
-\end{quotation}
-
-
-
-In practice, details and embellishments built into tidal methods lead to variations regarding the precise definition of a reference input signal and characterisation of the LTI system.   Following Munk and Cartwright \citep{Munk:1966ts} there are three foci for these complexities:
+Conceptualising the global ocean in frequency space raises some peculiarities as characterised by  \citet{Groves:1975ky}: ``by an unfortunate coincidence, the size of the earth, the depth of the ocean, and the rate of earth rotation are such that the frequencies of the free modes of ocean oscillation are intercalated with the frequencies of the tide-generating consitituents''.
+For sea level, the different forecasting methods are essentially variants on the  definition of a reference input signal and manner in which the LTI system is formulated.   Following Munk and Cartwright \citep{Munk:1966ts} there are three foci for the problems associated with this conceptualisation:
 %\begin{inparaenum}[(i)]
 \begin{itemize}
-\item the background spectral continuum of ocean variation, 
-\item non-gravitational phenomena that can be considered tidal and 
+\item the spectral continuum of ocean variation;
+\item non-gravitational phenomena; 
 \item non-linear interactions.   
 \end{itemize}
 %\end{inparaenum}
-The manner in which the three `interesting effects' are incorporated distinguishes between the two primary methods of tidal sea level prediction discussed in Section \ref{S:formalisms}.
-
-
-
-As an aside, the nomenclature LTI is taken from engineering control theory.   It does not here refer to the historically influential Liverpool Tide Institute.
-
 
 %-----------------%
 \subsection{Tidal Harmonics and Formalisms}
-\label{S:formalisms}
-Note the simple fact that ``\textit{many organizations have developed their own methods of tidal analysis}''\citep{IOC:2005tj}. 
+\label{sec:formalisms}
+There is no unique approach to implementing the LTI concept of ocean tide prediction. In fact, ``\textit{many organizations have developed their own methods of tidal analysis}''\citep{IOC:2005tj}. But the different approaches or formalisms share the LTI system model discussed above.  
+In very broad terms tidal these formalisms fall into basically two categories: harmonic methods and response methods.  
+Neither of these concepts actually involve any hydrodynamics. When hydrodynamic simulations of the ocean are undertaken it seems that tidal LTI conceptualisations are at least indirectly involved in one way or another; and this will be apparent in subsequent sections dealing with hydrodynamic and spatial models. 
 
-There is no unique approach to implementing the LTI concept of ocean tide prediction.   The different approaches are variously referred to as `methods' or `formalisms' and at a higher level share the LTI system model discussed above.  In very broad terms there are basically two categories: harmonic methods and response methods.   Within each categories there are variations that are more or less significant depending on context. 
+Within operational authorities, \emph{tide prediction} is practically synonymous with the application of conventional harmonic methods. And it is here that the role of special frequencies (section \ref{sec:temporal}) has come to play a primary role.
+``Standard harmonic methods demand little accuracy in the harmonic amplitudes of the [tidal] potential, since they \textit{use only the frequencies} at which the larger amplitudes appear, and certain details on which to base nodal corrections''\cite{Cartwright:1973em} emphasis added.
+Harmonic analysis has an especially long historical legacy that provides unavoidable concepts and jargon \citep{Cartwright:2000tt}\citep{Parker:2007wq}.
+Recall that the basis for this analysis is not harmonic in the sense of an orthogonal Fourier series, but rather that it follows from the harmonic development of the \ATGP{} as described in section \ref{sec:basic_potential}. 
 
-TBC
-``\textit{Standard harmonic methods demand little accuracy in the harmonic amplitudes of the [tidal] potential, since they use only the frequencies at which the larger amplitudes appear, and certain details on which to base nodal corrections}''\cite{Cartwright:1973em}
 
-Within operational authorities, tide prediction is practically synonymous with harmonic methods.  These have an especially long historical legacy in both theoretical and applied settings \citep{Cartwright:2000tt}\citep{Parker:2007wq}.   Harmonic methods of sea level prediction are very successful and important and will continue to be so, regardless of other advances.  Most notably, harmonic analyses based on tide-gauge observations are thoroughly embedded in operation centres and the wider economy.   In Australia, this conventional role is embodied by the official promulgation of the  Australian National Tide Tables \ANTT.  These tables are required by law to be carried by many marine vehicles and have broader ramifications for uses such as cadastral definitions.\\
-There are several different schools of convention that lead to various incompatabilities between operational centres. \\
-At its foundation, harmonic tidal analysis and prediction characterises the LTI system via a finite set of amplitude and phase terms that are identified empirically.  Equation \ref{eq:cos} shows the LTI model with constant amplitude $A_k$ and phase lag $g_k$, other terms are discussed below.  This situation is illustrated by the following simplistic assertion from the Australian Tide Manual \citep{PCTMSL:2009vy}:
-\begin{quote}
-The purpose of tidal analysis is to represent the water level or current time series by a set of harmonics, or sine waves, each of them having a specific amplitude and phase.
-\end{quote}
+Harmonic methods of sea level prediction are very successful and will continue to be important for years to come, regardless of other advances.  The conventional and routine harmonic analysis of tide-gauge data provides a foundational set of products that is embedded across the whole coastal economy. Tide tables and derived tidal planes (such as LAT) provide ubiquitous references for both land and marine applications. This situation provides some of the difficulties discussed in Chapter \ref{chp:aggregate}, and is elaborated further in  Chapter \ref{chp:tideFlavours}.
 
+
+At its foundation, harmonic tidal analysis and prediction characterises the ocean response as a LTI system via a finite set of amplitude and phase terms that are identified \emph{empirically} by the application of timeseries methods.   This concept is stated a little too simply in the Australian Tide Manual as follows: ``\textit{ the purpose of tidal analysis is to represent the water level or current time series by a set of harmonics, or sine waves, each of them having a specific amplitude and phase}''\citep{PCTMSL-sp9}.
+Note the emphasis on periodicity rather than dynamics.  More problematic is the fact that this stated purpose is neither universally agreed nor implemented by any tidal agency, as the following discussion will outline.  
+Equation \ref{eq:cos} shows the LTI model with constant amplitude $A_k$ and phase lag $g_k$; other terms are discussed below.  
+%---------------------
 \begin{equation}
-\label{eq:cos}
 \eta_{tide}(t) = \sum_{k} f_k A_k \cos ( t.\omega_k + g_k + u_k)
+\label{eq:cos}
 \end{equation}
+%---------------------
+Significantly, the harmonics involved with such an analysis can only ever be a subset of tidal frequencies arising from the decomposition $c(t) = \sum_{k} H_{k} e^{-i( t\theta_{k})}$.  This limitation comes mainly from the non-orthogonality of the basis functions and the fact that all observational records are of finite length.
+In practice, conventional tide practice applies a range of elaborations and work-arounds in order to produce predictions.  Before discussing any further, the essential steps of the harmonic analysis and prediction process are  illustrated schematically in Figure \ref{fig:tidePractice} and summarised as follows:
+\begin{enumerate}
+    \item formulation of tidal constituent subset based on record length and other conventions;
+    \item empirical projection of an observation timeseries onto a discrete set of non-orthogonal basis functions;
+    \item application of conventions accounting for unresolved frequencies; 
+    \item synthesis of tidal timeseries for any time period using matching constituent and other conventions.
+\end{enumerate}.
 
 
-Significantly, the harmonics involved cannot be the full set of tidal frequencies arising from the decomposition $c(t) = \sum_{k} H_{k} e^{-i( t\theta_{k})}$.  Rather, for practical reasons the set is on the one hand truncated to a subset of `constituents', and on the other is augmented with additional `compound' or `overtide' frequencies.  Many details of implementation flow from these deviations from the simple LTI schematic \ref{E:LTI}.  Before discussing in the more detail, the main elements of harmonic analysis and prediction are summarised as follows: 
-\begin{itemize}
-\item reference input written as the harmonic equilibrium tide at Greenwhich $\eta_{eq}(t) = \sum{k} A_{k} e^{-i( t\theta_{k})}$;
-\item determination of LTI model as a discrete set of constants via empirical projection of a timeseries of sea level observations onto a discrete set of harmonic functions;
-\item conventions accounting for unresolved tidal frequencies; 
-\item synthesis of deterministic tidal timeseries (referenced to astronomical timing in $\eta_{eq}$) valid only at the observation location. 
-\end{itemize}
-
-The practical value of harmonic methods reflects the special significance and \emph{predictability} of sea level variation occurring at tidal frequencies.  This value does not rely on explicitly describing ocean dynamics.  In fact, it is asserted that the \emph{absence} of fluid dynamics is a key strength of harmonic methods.   Harmonic analysis is a specialised method of statistical pattern fitting that fundamentally requires historical observations at the place of interest.   A record of historical observations at one place is essentially all that is required, with no need for spatial information or any additional inputs whatsoever. 
-
-
-
-\begin{figure}[!h]
+The practical value of harmonic methods reflects the special significance and predictability of sea level variation occurring at tidal frequencies.  This value does not rely on explicitly describing ocean dynamics. Rather, the very \emph{absence} of fluid dynamics is a key strength of harmonic methods. 
+A record of historical observations at one place is essentially all that is required, with no need for spatial information or any additional inputs whatsoever.
+%----------------------
+\begin{figure}[H]
 	\centering
-	%\subfloat{\includegraphics[width=50mm]{figures/images/HarrisFischer_tide_machine_ParkerFig1p1}}
-	%\includegraphics[width=50mm]{figures/images/HarrisFischer_tide_machine_ParkerFig1p1}
-	\includegraphics[width=50mm]{figures/images/DHI_machine_cartwright_fig11p2.png}
-	\caption{Harris-Fischer tide machine circ. 1912 \protect{ \citep{Parker:2007wq} }}
-	\qquad
-	%\subfloat{\includegraphics[width=50mm]{figures/images/DHI_machine_cartwright_fig11p2.png}}
-    \includegraphics[width=50mm]{figures/images/DHI_machine_cartwright_fig11p2.png}
-	\caption{Gezeitenrechenmaschine at DHI circ. 1940 \protect{ \citep{Cartwright:2000tt} }}
-	\caption{Analogue tide machines embody harmonic prediction.  A finite set of fixed constants are dialled up for a port, and the handle turned to generate a prediction timeseries.}
+	\begin{subfigure}[t]{\figwidthHalf}
+	    \includegraphics[width=\textwidth]{figures/images/zetler_tidal_computer_lady_1921.png}
+	    \caption{Harris-Fischer tide machine circ. 1912 \protect{ \citep{Parker:2007wq} }}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{\figwidthHalf}
+    	\includegraphics[width=\textwidth]{figures/images/DHI_machine_cartwright_fig11p2.png}
+	    \caption{Gezeitenrechenmaschine at DHI circ. 1940 \protect{ \citep{Cartwright:2000tt} }}
+	\end{subfigure}
+	\caption{Analogue tide machines embody harmonic prediction.  A finite set of phase and amplitude values are dialled up and the handle turned to generate a prediction timeseries.}
 	\label{fig:tide_machines}
 \end{figure}
+%----------------------
+For almost all ocean-exposed locations, harmonic analysis can reduce the majority of sea level variance in a long observational timeseries to a remarkably short list of numbers; typically mapping several thousand values to a few dozen \citep{Flinchem:2000kp}.  This unique data compression could be better exploited for on-demand delivery services as suggested in chapter \ref{chp:tideFlavours}. 
 
 
-For almost all ocean-exposed locations, harmonic analysis can reduce the majority of sea level variance in a long observational timeseries to a remarkably short list of numbers - typically mapping several thousand values to a few dozen\citep{Flinchem:2000kp}.  Moreover, harmonic analysis isn't just an instance of data compression but can provide \emph{predictive} skill across lead times of many years.\\
+The standout power of some tidal variations is apparent in the spectra shown in Figure \ref{fig:obsSpectraEg}. 
+But conventional practice has developed additional terms that are not directly apparent in the \ATGP{} that have in some locations greatly improved the value of the resulting predictions; in particular for what are called the compound, shallow water or overtide terms. In this cases, hydrodynamic reasoning has been applied to select and justify additional terms that could result from the behaviour of depth limited waves and wave-wave interactions.
+Any seasonal modulation terms are analogous in the sense that the rational for the LTI model has been extended to account for observed patterns rather than derived solely from the \ATGP{}.
 
-
-
-In linear algebra terms,  a harmonic analysis can be formulated as an overdetermined inverse problem:
+Harmonic analysis can be formulated as an overdetermined inverse problem:
+%--------------------
 \begin{equation}
-\label{E:Axb}
-\M{A} \V{x}=\V{b} 
+    \label{E:Axb}   
+    \M{A} \V{x}=\V{b} 
 \end{equation}
-Where $\M{A}$ is a matrix of tidal timeseries basis functions, $\V{x}$ is the analysed tidal solution and $\V{b}$ is an observational record. Importantly, the tidal basis functions are \emph{not} a Fourier basis.   The tidal basis is developed from the combination of the harmonic decomposition of $\eta_{eq}$ and a series of conventions.  The resulting basis is neither orthogonal nor complete.  The core assumption of stationarity for the finite series of basis functions is equivalent to an assumption that the basis has infinite span in time. \\
+%--------------------
+Where $\M{A}$ is a matrix of tidal timeseries basis functions, $\V{x}$ is the analysed tidal solution and $\V{b}$ is an observational record. The tidal basis functions are developed from the combination of the harmonic decomposition of $\eta_{eq}$ and a series of conventions.  The resulting basis is neither orthogonal nor complete.  The core assumption of stationarity for the finite series of basis functions is equivalent to an assumption that the basis has infinite span in time.
+
+Practical applications of the harmonic formalism has largely evolved prior to modern cheap computing, and can appear somewhat baroque in isolation.
+
+When additional constants can be inferred rather than taken directly from the inverse solution, using assumed relationships from either $\eta_{eq}$ or previous or nearby analysis.
+
+
+The harmonic idealisation effectively operates on infinite basis functions whereas any observational record is of finite length.
+Given the close clustering of tidal lines in frequency-space, equation \ref{E:Axb} is poorly conditioned for inversion.   This matrix condition is further degraded by the presence of non-tidal variations. 
+Subsequently, practical harmonic analysis procedures must specify which frequencies to include in the basis set and then somehow account for the effects of unresolved frequencies.
+
+At the time of writing the Bureau of Meteorology process does not systematically account for the inversion quality with regard to signal:noise ratios as suggested by \citet{Foreman:2009bg}.
+This fact contributes to the potential for overfitting or projection of non-tidal signal onto standard tide predictions discussed in chapter \ref{chp:aggregate} and \ref{chp:tideFlavours}.
+
+
+Typically arguments regarding the relative magnitude of the harmonic components of $\eta_{eq}$ are used to prioritise candidate frequencies for inclusion with respect to the observational  record length. 
+By convention, the effects of clusters of unresolved tidal frequencies are represented by modulation of the basis functions in relationships assumed to map from $\eta_{eq}$.  
+In equation \ref{eq:cos} these modulation terms are included as $f_k$ and $u_k$.  These terms are misleadingly known by convention as `nodal corrections', due historically to the close spectral spacing associated with the the lunar nodal regression; differences in $\omega_k$ of about $\fract{1}{18.6}$ years.     These same terms are more informatively called `satellite modulations' by some authors in recognition that the modulation of a constituent term by a very closely spaced spectral cluster arises from terms other than $d_5$. 
+
+Importantly, this nodal modification of basis functions means that the analysis results do not simply represent amplitudes and phases for regular sinusoids.  
 
 
 
 
-% harmonic complications
-Pragmatic application of the harmonic formalism to real-world data has given rise to many conventions and work arounds, often perceived as opaque and arcane. \\
 
-For instance, observational records are finite and typically of duration less than a harmonic analysis would nominally require.  Given the close clustering of tidal lines in frequency-space, Equation \ref{E:Axb} can be poorly conditioned for inversion.  Subsequently, practical procedures for tidal analysis must specify which frequencies to include in the basis set and then somehow account for the effects of unresolved frequencies\cite{Foreman:2009bg}.   \\
-Typically arguments regarding the relative magnitude of the harmonic components of $\eta_{eq}$ are used to prioritise candidate frequencies for inclusion. Similarly, additional constants can be inferred rather than taken directly from the inverse solution, using assumed relationships from either $\eta_{eq}$ or previous or nearby analysis. \\
-By convention, the effects of clusters of unresolved tidal frequencies are represented by modulation of the basis functions in relationships assumed to map from $\eta_{eq}$.  In equation \ref{eq:cos} the modulation terms are included as $f_k$ and $u_k$. These are most common called `nodal corrections', due to close spectral spacing associated with the the lunar nodal regression (differences in $\omega_k$ of about $fract{1}{18.6}$ years.  Following Godin these very same terms are more informatively called `satellite modulations' by some authors (eg \citep{Foreman:2009bg}) in recognition that the modulation of a constituent term by a very closely spaced spectral cluster arises from terms other than $d_5$. Interestingly, modification of the tidal basis functions by nodal factors renders the analysis to be no longer strictly `harmonic' in that the basis does not consist of proper sinusoids.\\
+To the extent that the non-astronomical phenomena are regular enough to be predictably periodic, inclusion within the LTI model can be to the benefit of a tide prediction.   On the other hand, effects that are not perfectly aligned to the \ATGF{} conflict with the fundamental LTI model and necessarily present an additional risk to forecast skill.
 
 
-
-
-
-%% non gravity
-The occurrence of non-gravitational influences of sea level at tidal frequencies is a significant detail.   Non gravitational phenomena contribute to all three of Munk and Cartwright's \emph{interesting} effects cited above.  The inversion of Equation\ref{E:Axb} is a data-fitting exercise that cannot distinguish dynamical cause.  In particular, the presence of non-astronomical forces with frequency content at or very near that of the \ATGP{} can and does project onto the solution for $x$.\\
-To the extent that the non-astronomical phenomena are regular enough to be predictably periodic, inclusion within the LTI model is can be to the benefit of a tide prediction.   On the other hand, effects that are not perfectly aligned to the \ATGF{} conflict with the fundamental LTI model and necessarily present an additional risk to forecast skill.\\
 For instance with seasonal phenomena.   The harmonic decomposition of $c_{nm}(t)$ provides two relatively tiny signals at periods of 1 and 0.5 years - conventionally termed Sa and Ssa.  Despite the small amplitudes in $\eta_{eq}$ there are powerful seasonal variations in ocean observations that project onto the Sa and Ssa tidal components.   This is well recognised and `...whether the calculated values of Sa and Ssa are used or not, becomes almost a philosophical question, based on ones application' \citep[p122]{Parker:2007wq}.   Related terms that reflect seasonal modulation of semi-diurnal components can also included be included in standard harmonic analyses (eg H1 and H2 in Foreman schedule \citep{Foreman:1977ua})\\
 Perhaps more significant methodologically, is the case of diurnal and semidiurnal sea level signals driven directly by \emph{meteorology} rather than the \ATGP{}.   The tidal frequencies denoted S1 and S2 are a prominent case in point.  For instance, Ray and Ponte \citep{Ray:2003ui} evaluate \NWP{} representations of \emph{barometric} tides at these frequencies with implications for oceanographic processes.  Treatment of S1 and S2 in tidal sea level predictions is a point of difference between the harmonic and response methods.  The later going so far as to invoke a distinct input function in the form of a `radiation potential'.    The response approach is now discussed in more detail. 
 
 
-
+% APPENDIX?
 
 
 % response methods
-The \underline{response method}, and it's variations, form the primary alternative to the conventional techniques of harmonic analysis.   This consists of a generalised implementation of the LTI model, in which the ocean response to \emph{any} input sequence is characterised by a stationary `admittance' function.  The terminology was introduced by the influential paper of Munk and Cartwright \citep{Munk:1966ts}, which was apparently motivated by an application of Ockam's razor to the highly evolved historical baggage of harmonic methods.   Godin \citep{Godin:1991vx} describes the response method as `cross spectral analysis'; a LTI model is inverted from comparison of the input and output timeseries.   Whereas harmonic methods evolved well before the availability of machine computers, the response method relies on computational signal processing with discretely sampled and finite length time series. \\
-A response analysis aims to empirically characterise the LTI as a complex-valued transfer function on the basis of output coherence with the input/s. 
-\begin{quotation}
-The goal of any response formalism is to accurately predict the ocean tides by an optimum smooth function, realising that the ocean tides are mostly, although not completely, predictable.
-\end{quotation}
+The \underline{response method}, and it's variations, form the primary alternative to the conventional techniques of harmonic analysis.   This consists of a generalised implementation of the LTI model, in which the ocean response to \emph{any} input sequence is characterised by a stationary admittance function.  The terminology was introduced by the influential publication \citet{Munk:1966ts}.
+The authors claimed to be motivated by an application of Ockam's razor to the highly evolved historical baggage of harmonic methods.   
 
-Note that the outcome of a response analysis is not a single admittance curve, but rather a small number of distinct curves; typically the semi-diurnal, diurnal and long-period tides associated with degree-2 spherical harmonics $(n,m)=(2,2),(2,1),(2,0)$.\\
-Smoothness of $Z(\omega)$ within each distinct tidal band is a core principle behind methods for determining admittances.  
-
-\begin{align}
-\label{E:response}
-g(\Delta t) + \dots &\Rightarrow & \fbox{empirical admittance curves $Z$} &\Rightarrow & \mbox{$\eta(\Delta t)$}  %\nonumber
-\end{align}
-
-Once determined, admittance curves map a tidal input timeseries to an output timeseries.
-
-% admittance
-\begin{equation}
-\label{E:Z}
-\eta(t) = \sum_{n=2}^{3}\sum_{m=0}^{n}\sum_{k} H_{nmk} \text{Re} \left[ Z_{nm}(\omega)^*e^{-i(t\theta_{nmk})} \right] 
-\end{equation}
-
-
-The presence of incoherent noise in the observational timeseries means that determining $Z$ is not simply the matter of division in frequency-space.\\
-
-
-
-In order to distinguish coherent signal from incoherent noise, Munk and Cartwright introduce the \emph{convolution formalism}. The convolution technique exploited the band-concentration of tidal spectra into semi-diurnal, diurnal and long period species and the associated assumption of \emph{smooth} admittances within each of these bands.  A complex-valued admittance $Z(i\omega)$ is fitted separately to each band-limited species via a convolution operation in time-space. 
-Inversion of a smooth admittance function from tidal records can be classed as a discrete-time/continuous-frequency operation \citep{Percival:1998tw}.\\
-
-There is however, no unique manner in which to formulate the problem.  Munk and Cartwright formulated the convolution with a discrete time-kernal of `lag weights' as in equation \ref{E:lags}.   This is equivalent to modelling the smooth admittance in each band as a finite (and periodic in frequency) Fourier series.   Although no physical meaning is attributed to the periodicity of the admittance in frequency, in the context of band-concentrated tidal energy, this allows for a compact convolution kernal consisting of only a very small number of `lags`.   The design of this convolution kernal requires a choice of the number of lags $s$ and lag interval $\Delta T$.  Equivalently, this design sets the period and number of Fourier components used to model the admittance function.  For instance, in an application of this convolution formalism to altimetry data, Smith \citep{Smith:1997ut} choose $\Delta T=2$ days and $s=3$.   Note that what at face value may seem a rather long lag of 2 days relates to the \emph{bandwidth} of the tidal species rather than a timescale of tidal variation.\\
-From this perspective, a tidal signal is written as a weighted sum of past (and possibly future) values of the driving input function.  \\ 
-Tidal analysis consists of empirically determining the weights $w_{nm}$ via a least-squares minimisation on an observational timeseries.\\
-The resultant complex weights $w_{nm}$ form a time-space kernal representation of the admittance $Z(\omega)$ in equation \ref{E:Z}.   In frequency-space, the minimisation problem amounts to fitting the Fourier series to model $Z(\omega)$.\\
-
-\begin{align}
-\label{E:lags}
-\eta_{tidal}(t) &= \sum_{m=0}^{2}\sum_{s=0}^{S} w_{nm}(s)c_{nm}(t-s\Delta T)\\
-              n &= 2   \nonumber
-\end{align}
-
-The introduction of response methods in the 1960's was not motivated by a user-driven need to improve tide predictions.  It could rather been seen as a move to review the well-embedded conventions of harmonic analysis in the contemporary language of timeseries analysis and ``make explicit what the harmonic method does anyway''\citep[pp 540]{Munk:1966ts}.  In contrast to the dynamic blindness of conventional harmonic analysis, the response perspective facilitated explicit treatment of drivers other than the \ATGP{}.\\
-
-Nonlinear effects are especially significant in coastal locations.   By definition, such shallow-water tides cannot be represented by a LTI model with only $\eta_{eq}$ as an input.  The response method can incorporate nonlinearity as an additional explicit input.    For instance,  in a 2-stage process, a preliminary linear analysis determines admittances for `equivalent deep water port' which are subsequently used to produce new input timeseries of paired and tripled products \citep[pp 122]{Pugh:1996uz}.\\
-
-\begin{figure}[h]
-\begin{center}
-\includegraphics[width=\figwidthBig]{figures/diagrams/response_analysis_flowchart.png}
-\caption{Response method tidal schematic.  Nonlinear and non-gravitational inputs are explicitly formed.   Analysis consists of empirically fitting smooth admittance curves.}
-\label{fig:response}
-\end{center}
-\end{figure}
-
-Perhaps even more illustrative of the way in which a response analysis conceptualises tides is the formulation of the `radiational potential'.   This is an additional harmonic forcing series formulated to more explicitly account for the influence of atmospheric tides and other periodic solar effects on ocean observations.	  So-named due to the abstract connection with diurnal solar radiative fluxes, the radiational potential is concept is a little ad hoc in comparison to developments of the \ATGP{}.  The radiational input provided a more satisfactory formulation of observed harmonic ocean signals, S1 and S2, with amplitudes disproportionate to terms in the \ATGP{}.\\
-From a sea level forecasting perspective, the response approach could be said to have modernised the formulation and increased the concreteness of the underlying physics, but in doing so hasn't ultimately provide anything more robust and simple for routine use in operational centres.
-
-
-
-
-Fitting a Fourier series vi the convolution formalism to find each smooth admittance is not the only viable implementation of the response concept.  For instance a Green's function formulation is described by Webb\cite{Webb:1974ke} and polynomial models are evaluated by Desai \cite{Desai:1995je}. More influential though is the orthotide approach to fitting Fourier series admittances, discussed below.
-
-
-
-
-% orthotide
-A possible weakness of the original convolution formalism in equation \ref{E:lags} relates to the non-orthoganality of the harmonically decomposed $c_{nm}(t)$.  That is, unlike a Fourier series, inner products between component sinusoids comprising the tidal input are not necessarily zero.   Thus the resultant weights $w_{nm}(s)$ are dependant on details of the particular analysis, such as the number of other components included.  The weights cannot be assigned any independent meaning and are not amenable to communication.  In recognising this, Groves and Reynolds \citep {Groves:1975ky} introduced the \underline{orthotide formalism}.\\
-Orthotides are orthogalised transformations of the harmonically decomposed tidal input timeseries.
-
-\begin{align}
-c_{nm}(t) =  &\sum_{k} H_{nmk} e^{-i(\omega_{nmk} + \beta_{nml})}  \Rightarrow \sum_{l}^L \overline{\zeta}_{nml}(t)     \nonumber \\
-             &\mbox{where} \langle \overline{\zeta}_p \overline{\zeta}_q \rangle  = \delta_{pq}  \mbox{over $-\infty < t < \infty$}             \nonumber
-\end{align}
-
-A tidal timeseries is then represented as a linear sum of these orthotide functions with `orthoweights'. In essence this is no different to Munk and Cartwrights convolution, but is an improved time-space formulation of equation \label{E:Z}.  The resulting orthoweights have the attractive property of not being dependant on the number of components involved in any particular analysis, and subsequently could be said to share some of the characteristics of conventional tidal constants.
-\begin{equation}
-\label{E:orthosum}
-\eta_{tide}(t) = \sum_{n=2}^3 \sum_{m=0}^n \sum_{l}^L \overline{\zeta}_{nml}(t)
-\end{equation}
-
-Regardless of the formulation of time-space convolution, the determination of weights is equivalent to fitting smooth admittance curves - which is the ultimate goal of the response method.  The fitting process is a minimisation problem with degrees of freedom equal to the number of free parameters to be determined.    The length of timeseries and signal to noise ratio are balanced against the assumption of smoothness in $Z$.
-\begin{quotation}   
-The use of orthotides may provide some benefits to the empirical determination of ocean tide models from a short duration of observations, but is otherwise unnecessary. \dots  polynomial and orthotide, and therefore convolution, approaches to modelling the smooth admittance function provided similar results as long as they are defined by an identical number of parameters.\citep{Desai:2006wo}
-\end{quotation}
-
+Some more on this topic is addressed in Appendix \ref{appendix:response}, but is not essential to the flow of this discussion.
 
 
 %-----------------%
-\subsection{Tidal admittances in operations}
+%\subsection{Tidal admittances in operations}
 
 % LTI
 It should be re-iterated that at high level, the harmonic and response models contain the same core concept.   Both model the ocean as an LTI system responding to some type of tidal forcing and both contain assumptions about the smoothness of ocean admittance.  Indeed Le Provost in \citep[chpt6]{Fu:2001ub} groups both the standard harmonic and convolution formalism as instances of the `response' formalism on this basis. \\
@@ -518,7 +439,9 @@ Regardless of the method used for analysis, an expectation that admittance curve
 
 
 % operations
-There is an apparently wide gap between the practices of centres producing \underline{tide tables} using conventional harmonic analysis and the more varied and advanced methods used within the scientific literature and employed for global models.\\
+There is an apparently wide gap between the practices of centres producing \underline{tide tables} using conventional harmonic analysis and the more varied and advanced methods used within the scientific literature and employed for global models.
+
+
 The relative significance of non-linear effects between the vast open ocean and the coastal zone provides some explanation for this split.  As illustrated in Figure \ref{fig:response}, the manner in which nonlinear feedbacks are incorporated into the response formalism significantly reduces it's elegance in comparison to the purely linear application valid for blue-water tidal analysis.\\
 Another factor contributing to this gap is largely cultural.
 \begin{quotation}
@@ -540,37 +463,34 @@ The distinct motivations behind producing a forecast and filtering a signal can 
 
 
 
-Filtering to remove tides from an ocean signal is commonly referred to as `de-tiding'.  Filtering is a means to distinguish signal and noise.  Application of a de-tiding process categorises tidal variations as noise so as to make use of the remnant signal.   In that respect de-tiding is nominally the inverse problem to tidal analysis.   Following the discussions in Section \ref{SS:semantics}, important details regarding what should be defined as tidal then naturally depend on the context of an application.\\
-Operational oceanography in the form of \BL{} relies on de-tided altimetry observations as an important assimilation constraint.   The de-tiding process has been designed to render the observations compatible with the physics of the model, with a focus on meso-scale baroclinic variability. The current configuration of \BL{} does not assimilate tide gauge data, though in principle these insitu observations could be rendered consistent via appropriate de-tiding, for example \cite{Matsumoto:2000tg}.\\
-
-
+Filtering to remove tides from an ocean signal is commonly referred to as `de-tiding'.  Filtering is a means to distinguish signal and noise.  Application of a de-tiding process categorises tidal variations as noise so as to make use of the remnant signal.   In that respect de-tiding is nominally the inverse problem to tidal analysis.   Following the discussions in Section \ref{sec:semantics}, important details regarding what should be defined as tidal then naturally depend on the context of an application.\\
+Operational oceanography in the form of \BL{} relies on de-tided altimetry observations as an important assimilation constraint.   The de-tiding process has been designed to render the observations compatible with the physics of the model, with a focus on meso-scale baroclinic variability. The current configuration of \BL{} does not assimilate tide gauge data, though in principle these insitu observations could be rendered consistent via appropriate de-tiding, for example \cite{Matsumoto:2000tg}.
+%-------------------------
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=\figwidthFull]{figures/plots/diag_plot_014406_detide_compare_20120101.png}
-\caption{Illustration of de-tiding observations by subtraction of tide predictions.  Different `residuals' result from alternative tide predictions: [1] regional gridded tide solution, [2] harmonic prediction and [3] harmonic prediction with significant non-gravitional harmonics removed. }
-\end{center}
+    \includegraphics[width=\figwidthFull]{figures/plots/diag_plot_014406_detide_compare_20120101.png}
+    \caption{Illustration of de-tiding observations by subtraction of tide predictions.  Different `residuals' result from alternative tide predictions: [1] regional gridded tide solution, [2] harmonic prediction and [3] harmonic prediction with significant non-gravitional harmonics removed. }
+    \end{center}
 \end{figure}
-
-
+%-------------------------
 Altimetry observations are de-tided via subtraction of a tidal signal synthesised from a global model.  There is no unique manner in which to specify the correction, with many options and `flavours' available from standard sources such as RADS \citep[table 3.2]{Scharroo:2011vd}.  The details of how the tidal correction is constructed can have implications for interpretation of the final ocean forecast.   The treatment of long-period tides \citep{Egbert:2003jd} and nongravitational tides \citep{Arbic:2005gv} are highlighted as special points of interest with regard to operational sea level forecasts.\\
 
 
 
 
 In contrast to the situation with filtering, dynamical cause and effect are only relevant to stand-alone tidal forecast products insofar as they impact predictability.  From a users perspective, tide tables simply forecast sea level and ideally account for as much of the observed signal as possible.   By that measure it is proper that the tide tables include all of the reliably periodic signal regardless of cause.   
-Thus the treatment of long-period harmonics Sa and Ssa is `philosophical question' \citep{Parker:2007wq} insofar as any reliably periodic signal at these relatively low frequencies can be determined from the observational record.  It is then not surprising that even amongst Australian tide authorities treatment of long-period signals differs enough to warrant special review attention{MHL:2013perscomm}.
-
-
-TBC ref to chapter.
+Thus the treatment of long-period harmonics Sa and Ssa is `philosophical question' \citep{Parker:2007wq} insofar as any reliably periodic signal at these relatively low frequencies can be determined from the observational record.  It is then not surprising that even amongst Australian tide authorities treatment of long-period signals differs enough to warrant special review attention \citep{MHL2156}.
 
 % wavelets etc
-For completeness it should be mentioned that other analysis techniques exist in the literature that are less directly relevant to the provision of sea level forecasts.\\
+For completeness it should be mentioned that other analysis techniques exist in the literature that are less directly relevant to the provision of sea level forecasts.
+
+
 For instance, specifically tidal applications of wavelet analysis have been described as tools to provide insight into non-stationary tidal processes \citep{Flinchem:2000kp}.
 
 
 
 %-----------------%
-\subsection{Distinguishing insitu and spatial tide models}
+\subsection{Spatial tide models}
 
 Satellite altimetry motivated the extension of the empirical analysis methods discussed above to the production of regional and global atlases of ocean tides.  Indeed, tidal analysis formed an important driver and design constraint on the development of satellite altimetry missions.\\
 Global tide models are commonly employed as intermediate products for other calculations well beyond the purposes of sea level forecasting per se.  For instance in the quantification of gravity effects, orbit determination, earth rotation and even the definition of coordinate systems \citep{Anonymous:2004tm}.\\
@@ -579,45 +499,46 @@ Global tide models are commonly employed as intermediate products for other calc
 
 Meaningful tidal atlases existed prior to altimetry, most significantly that due to Schwiderski \citep{Schwiderski:1983ke}, but these necessarily suffered from a lack of validation and constraint in the deep ocean.\\
 The basic premise of a tidal atlas is to present maps of tidal admittance at discrete frequencies, typically as separate amplitude and phase diagrams.   In line with the discussion in Section \ref{sec:LTI}, the deep ocean is conceived as a LTI system that is by definition stationary.  Each component wave can also be called a partial tide.\\
-It is conventional to present atlas tidal predictions as separate maps of amplitude and phase for a single frequency.  These are also called `co-tidal' and `co-range' plots.  This visualisation fits well with the concept of the tidal ocean as a linear sum of standing waves.   The long spatial scale of these component waves and the existence of spatial nodes places special importance upon \emph{amphidromes} or \emph{amphidromic points} - nomenclature introduced by Harris in the late 19th century \cite[pp 119]{Cartwright:2000tt}.  Existence and placement of amphidromic points is an important visual metric employed to assess tidal model results \citep{foreman:2012perscomm}.  Figure \ref{fig:atlas} shows a the typical tidal atlas result with amphidromic systems apparent as radial patterns in the co-phase diagram.\\
+It is conventional to present atlas tidal predictions as separate maps of amplitude and phase for a single frequency.  These are also called `co-tidal' and `co-range' plots.  This visualisation fits well with the concept of the tidal ocean as a linear sum of standing waves.   The long spatial scale of these component waves and the existence of spatial nodes places special importance upon \emph{amphidromes} or \emph{amphidromic points} - nomenclature introduced by Harris in the late 19th century \cite[pp 119]{Cartwright:2000tt}.  Existence and placement of amphidromic points is an important visual metric employed to assess tidal model results \citep{foreman:2012perscomm}.  Figure \ref{fig:atlas} shows a the typical tidal atlas result with amphidromic systems apparent as radial patterns in the co-phase diagram.
+
+
 Modern tidal atlases are in close agreement with regard to broad patterns, but characteristically differ at the shallow water margins; the very location of most direct interest to sea level forecasts.  Figure \ref{fig:tpx_cross} illustrates the fact that modern global tide models typically agree within about 0.02m in the deep ocean, but can differ substantially in coastal and shelf regions.  
-
-
+%---------------------------
 \begin{figure}[h]
-\begin{center}
-\includegraphics[width=130mm]{figures/maps/global_m2_tpx08.png}
-\caption{Example tidal altas showing cophase and corange diagrams for a single tidal component M2.  Data source TPX08 \cite{Egbert:2002ug}  }
-\label{fig:atlas}
+    \begin{center}
+    \includegraphics[width=\figwidthBig]{figures/maps/global_m2_tpx08.png}
+    \caption{Example tidal altas showing cophase and corange diagrams for a single tidal component M2.  Data source TPX08 \cite{Egbert:2002ug}  }
+    \label{fig:atlas}
+    \end{center}
+\end{figure}
+%---------------------------
+\begin{figure}[h]
+    \begin{center}
+    \includegraphics[width=\figwidthBig]{figures/maps/map_tide_differences_tpx_xovers.png}
+    \caption{Maximum difference between tidal timeseries for 2012 at topex cross-overs near Australia.  The different solutions agree very closely in deep water, whilst the significance of shallow water effects are apparent.  Models included: CSR04\citep{Eanes:1996tr}, FES04\citep{Lyard:2006ir}, DTU10\citep{IMPROVEMENTOFGLOBA:2010tu}, GOT47, GOT48\citep{Schrama:1994vr}\citep{Ray:1999vm} }
+     \label{fig:tpx_cross}
 \end{center}
 \end{figure}
-
-
-\begin{figure}[h]
-\begin{center}
-\includegraphics[width=110mm]{figures/maps/map_tide_differences_tpx_xovers.png}
-\caption{Maximum difference between tidal timeseries for 2012 at topex cross-overs near Australia.  The different solutions agree very closely in deep water, whilst the significance of shallow water effects are apparent.  Models included: CSR04\citep{Eanes:1996tr}, FES04\citep{Lyard:2006ir}, DTU10\citep{IMPROVEMENTOFGLOBA:2010tu}, GOT47, GOT48\citep{Schrama:1994vr}\citep{Ray:1999vm} }
-\label{fig:tpx_cross}
-\end{center}
-\end{figure}
-
+%---------------------------
 
 The LTI concept embodied in tidal atlases is well suited to representing deep water tides.   Amplitudes of each partial tide are no larger than about 0.02 cm for the majority of the global ocean, compared to depths of around 4km.
-Given the underlying LTI framework, the tidal literature has naturally focused on stationary frequency-space metrics.  Intercomparison of mode1s and assessment against observations is almost always performed at a small set of dominant tidal frequencies - commonly only M2, K1, O1 and S2.\\
-Tidal atlases are in essence no different from one-dimensional tide predictions.   Preceding discussions regarding the varied formalisms [Section \ref{S:formalisms}] apply equally to regional atlases as to insitu timeseries.  Similarly to insitu tidal products, special attention is warranted regarding the treatment of signals associated with non-gravitational effects and the possible differences between a forecast model and an correction/filter.\\
+Given the underlying LTI framework, the tidal literature has naturally focused on stationary frequency-space metrics.  Intercomparison of mode1s and assessment against observations is almost always performed at a small set of dominant tidal frequencies - commonly only M2, K1, O1 and S2.
+
+
+Tidal atlases are in essence no different from one-dimensional tide predictions.   Preceding discussions regarding the varied formalisms [Section \ref{sec:formalisms}] apply equally to regional atlases as to insitu timeseries.  Similarly to insitu tidal products, special attention is warranted regarding the treatment of signals associated with non-gravitational effects and the possible differences between a forecast model and an correction/filter.
 
 
 
-Whilst some authors have presented the existence of repeat-orbit altimetry observations as effectively being `thousands of tide gauges', reduction of these observations via tidal analysis requires many special considerations.  For instance, infrequent but regular observation of any one surface coordinate places special importance on aliasing effects.\\
+Whilst some authors have presented the existence of repeat-orbit altimetry observations as effectively being `thousands of tide gauges', reduction of these observations via tidal analysis requires many special considerations.  For instance, infrequent but regular observation of any one surface coordinate places special importance on aliasing effects.
 
 
 
-Despite the general equivalence, a point of practical difference is the treatment of the non-linear effects significant in shallow water.\\
+Despite the general equivalence, a point of practical difference is the treatment of the non-linear effects significant in shallow water.
 In contrast to the apparent convergence of surface tide models in the open ocean, shelf and coastal regions are problematic.   In shallow waters wavelengths shorten and nonlinear interactions between partial tides can become very prominent.  \\
-A strength of conventional 1-dimension analyses of coastal tide gauges has been the incorporation of shallow water compound tides.  It is not atypical in Australian locations to include dozens of nonlinear frequencies in a harmonic analyses.   Nonlinear signals observed at a tide gauge are often due to complex very localised dynamics, and the spatial projection beyond the observation point is non-trivial.  Understandably, global tidal atlases have generally focussed attention on the linear deep water signal and have poorly represented or ignored coastal nonlinearties.  The nonlinear M4 signal (associated with self-interaction of M2 waves) is perhaps the only such partial tide to be included in many modern atlases and is observable with altimetry \cite{Ray:2010jm}.\\
+A strength of conventional 1-dimension analyses of coastal tide gauges has been the incorporation of shallow water compound tides.  It is not atypical in Australian locations to include dozens of nonlinear frequencies in a harmonic analyses.   Nonlinear signals observed at a tide gauge are often due to complex very localised dynamics, and the spatial projection beyond the observation point is non-trivial.  Understandably, global tidal atlases have generally focussed attention on the linear deep water signal and have poorly represented or ignored coastal nonlinearties.  The nonlinear M4 signal (associated with self-interaction of M2 waves) is perhaps the only such partial tide to be included in many modern atlases and is observable with altimetry \cite{Ray:2010jm}.
 
 
-
-As a forecast product, tidal atlases have nothing like the broad economic integration of conventional coastal tide tables.  The Australian Bureau of Meteorology does not promulgate official tide predictions away from insitu observation locations. \\
+As a forecast product, tidal atlases have nothing like the broad economic integration of conventional coastal tide tables.  The Australian Bureau of Meteorology does not promulgate official tide predictions away from insitu observation locations. 
 For the contemporary operation setting, tidal atlases are primarily relevant as an intermediate product to enable satellite observations.
 
 
@@ -628,12 +549,12 @@ This international effort quickly split into two main approaches: the so-called 
 \end{quotation}
 
 
-
-
 %%-----------------%
 %\subsection{Global tide solutions and data assimilation}
 
 TBC!! 
+
+
 No global tidal atlas can be purely empirical - the spatial and temporal coverage of observations is too sparse.\\
 Schwiderski's pre-altimetry solutions relied heavily on global compilations of harmonic constants for mainly coastal tide gauges, from which spatial maps were created via a `hydrodynamic interpolation' method that would in hindsight be considered an application of data assimilation \cite[pp822]{Egbert:1994wz}.\\
 Now with around 20 years of altimetry data, all the highly evolved global tidal models or \emph{tidal solutions} in use all employ data assimilation in some manner.  That is, they make some combined use of dynamic models and observational data.  This includes a reliance on supporting geophysical models and corrections implied by the use of altimetry observations.\\
@@ -643,15 +564,15 @@ Now with around 20 years of altimetry data, all the highly evolved global tidal 
 The dynamics relevant to tidal sea level are conventional written as the Laplace Tidal Equations (LTE) - for instance \cite[9.8]{gill1982atmosphere} and \cite{Hendershott:1981ub}.   
 Via a series of assumptions, the LTE are a set of depth integrated shallow water equations in a rotating thin shell.  Advection is neglected altogether.\\
 The LTE evolve a simple 3 dimensional ocean state consisting of horizontal mass transport and sea level perturbation. In time domain, the LTE can be written following the notation and discussion of \cite[pp185]{Egbert:2002ug}:
-
+%----------------------
 % LTE in time-domain
 \begin{align}
-\label{E:LTE_momtm}
-\frac{\delta \mathbf{U} }{ \delta t} + f\vec{k} \times \mathbf{U} + gH\nabla \eta  + \mathbf{F} &= \mathbf{f_0} + gH \nabla \eta_{SAL} \\
-\label{E:LTE_cont}
-\frac{\delta \mathbf{\eta} }{\delta t} &= -\nabla.\mathbf{U} 
+    \label{E:LTE_momtm}
+    \frac{\delta \mathbf{U} }{ \delta t} + f\vec{k} \times \mathbf{U} + gH\nabla \eta  + \mathbf{F} &= \mathbf{f_0} + gH \nabla \eta_{SAL} \\
+    \label{E:LTE_cont}
+    \frac{\delta \mathbf{\eta} }{\delta t} &= -\nabla.\mathbf{U} 
 \end{align}
-
+%----------------------
 Where $\mathbf{U}$ is the depth integrated horizontal transport, $\eta$ is the sea level signal, $H \gg \eta$ is mean water column depth, $f=2\Omega\sin\theta$ is the Coriolis parameter and $g$ vertical gravitation.\\
 The forcing terms on the right hand side of the momentum equation \label{E:LTE_momtm} require explanation.  
 $\mathbf{f_0}$ denotes the astronomical body forcing taking into account earth tide effects, $\mathbf{f_0} = gH\nabla\eta_{eq}$ following Equation \ref{eq:VT}.  
@@ -670,7 +591,7 @@ Linearisation is important in the tidal context to facilitate transformation of 
 
 
 Again following the notation of \cite[pp186]{Egbert:2002ug}, the LTE at a single tidal frequency $\omega$ can be written:
-
+%----------------------
 % LTE in freq-domain
 \begin{align}
 \label{E:LTE_momtm_w}
@@ -683,14 +604,14 @@ Again following the notation of \cite[pp186]{Egbert:2002ug}, the LTE at a single
        -f              & i\omega + \kappa  
                         \end{array} \right]   \nonumber
 \end{align}
-
+%----------------------
 Where $\kappa$ is a linearised approximation for the dissipative stress.   Frequency-space forcing terms $f_u, f_\eta$ are written in both equations for generality with regard to data assimilation (inversion).  This frequency-space approach is common to other data assimilative tidal models such as FES \cite[pp395]{Lyard:2006ir}.\\
 Nonlinear terms can be incorporated but complicate the formulation of any inversion.
 
 
+Whilst numerically solving the LTE is quite tractable and comparatively simple, significant uncertainties prevent a direct `free' or `forward' model from producing accurate forecasts.  Hence the importance of data assimilation or generalised inversion methods.  Solving the LTE is complicated by spare observations and ``$\dots$ the need for accurate open boundary conditions and bottom topography, the need for approximate parameterisations of dissipation in the tidal equations, solid earth effects, and the effects of ocean stratification on the barotropic tides, which may be difficult to account for without full 3D modelling of baroclinic tidal currents''\citep[183]{Egbert:2002ug}.
 
-Whilst numerically solving the LTE is quite tractable and comparatively simple, significant uncertainties prevent a direct `free' or `forward' model from producing accurate forecasts.  Hence the importance of data assimilation or generalised inversion methods.  Solving the LTE is complicated by spare observations and ``$\dots$ the need for accurate open boundary conditions and bottom topography, the need for approximate parameterisations of dissipation in the tidal equations, solid earth effects, and the effects of ocean stratification on the barotropic tides, which may be difficult to account for without full 3D modelling of baroclinic tidal currents''\citep[183]{Egbert:2002ug}.\\
-A comparative description of data assimilation methods in the context of tide models is laid out by Egbert and Bennet \cite{Egbert:1996vr}.\\   
+A comparative description of data assimilation methods in the context of tide models is laid out by Egbert and Bennet \cite{Egbert:1996vr}.
 
 
 
@@ -699,18 +620,18 @@ Summaries that categorise the many global tide models on the basis of design cho
 %   ??  Application of the LTE is not restricted to the barotropic surface tide.   The formulation can be extended to represent stationary internal tidal modes via use of equivalent-depths .\\
 % Energy cascades.??\\
 
-The barotropic hydrodynamics used in global tide models has proven to be an appropriate level of aggregation when the aim is to map tidal patterns of surface elevation.  The LTE provide a tractable means of doing so given the incomplete spatial and temporal coverage of observations.\\
-But consideration of tidal dynamics naturally raises the topic of \emph{internal tides} and the separability of stationary barotropic tides from other ocean dynamics.\\
+The barotropic hydrodynamics used in global tide models has proven to be an appropriate level of aggregation when the aim is to map tidal patterns of surface elevation.  The LTE provide a tractable means of doing so given the incomplete spatial and temporal coverage of observations.
+
+But consideration of tidal dynamics naturally raises the topic of \emph{internal tides} and the separability of stationary barotropic tides from other ocean dynamics.
 \begin{quotation}
 Barotropic tides generate internal tides, and internal tides in turn feed back onto the barotropic tides. Inferences from altimetry-constrained barotropic tide models show that about one-third of global tidal energy dissipation occurs in regions of rough topography, where internal tides are generated \dots{}. Internal tide generation thus acts as a damping mechanism for the barotropic tides.\citep[pp22]{Arbic:hy}
 \end{quotation}
-Depth integrated barotropic LTE relegate the effect of internal mechanisms on surface elevation to parameterisations.  Dissipative stress $F$ in \label{E:LTE_momtm} stands for all losses of energy from the barotropic pseudofluid.  Given the reality of ocean stratification, these losses notably include conversion form the barotropic to higher baroclinic modes \cite[pp121] {gill1982atmosphere}. \\
+Depth integrated barotropic LTE relegate the effect of internal mechanisms on surface elevation to parameterisations.  Dissipative stress $F$ in \label{E:LTE_momtm} stands for all losses of energy from the barotropic pseudofluid.  Given the reality of ocean stratification, these losses notably include conversion form the barotropic to higher baroclinic modes \cite[pp121] {gill1982atmosphere}.
 
 
+For the present topic of sea level forecasting, internal modes are ostensibly of interest insofar as they impact the prediction of surface elevation.  Internal waves at tidal frequencies do have an observable surface signature albeit relatively small \cite{Ray:2011tj}.
 
-For the present topic of sea level forecasting, internal modes are ostensibly of interest insofar as they impact the prediction of surface elevation.  Internal waves at tidal frequencies do have an observable surface signature albeit relatively small \cite{Ray:2011tj}.\\
-More importantly for forecasting is the effect of the internal ocean state on the prediction of barotropic surface elevation.  A-periodic variation of the internal density structure of the ocean is of particular relevance as   conventional tidal analysis relies upon periodicity for predictability.     The tidal view of the ocean as a LTI system driven by the \ATGP{} is very useful, but with the caveat that ``the ocean is a physically complex and noisy filter.  In consequence, tidal harmonics are not strictly constant \citep[197]{Ray:2010jm}''.\\
-
+More importantly for forecasting is the effect of the internal ocean state on the prediction of barotropic surface elevation.  A-periodic variation of the internal density structure of the ocean is of particular relevance as   conventional tidal analysis relies upon periodicity for predictability.     The tidal view of the ocean as a LTI system driven by the \ATGP{} is very useful, but with the caveat that ``the ocean is a physically complex and noisy filter.  In consequence, tidal harmonics are not strictly constant \citep[197]{Ray:2010jm}''.
 
 
 Whilst stratification and internal mechanisms are very coarsely parameterised in dedicated tidal models, the internal structure of the ocean is a primary focus of \OGCM{}s.   The following section addresses the intersection of \OGCM{}s and tidal forcing with regard to sea level forecasts.
