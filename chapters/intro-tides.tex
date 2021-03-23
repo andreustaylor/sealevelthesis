@@ -88,52 +88,113 @@ Equation \ref{eq:VT} represents the spatial decomposition of a surface potential
 Practical implementation of \ref{eq:VT} requires choices regarding the set of harmonics $(n,m)$ to be included and the determination of the time varying complex weights $c_{nm}(t)$.
 
 
-In contrast to the thousands of harmonics utilised in high resolution gravity studies, for ocean tidal dynamics only a small set of $(n,m)$ is taken to be relevant.   What counts as a relevant ocean subset is generally determined on the basis of relative magnitude and contribution to temporal variation.
+Only a small set of $(n,m)$ is taken to be relevant for ocean tidal dynamics; in contrast to the thousands of terms utilised for some earth gravity studies. What counts as a relevant ocean subset is generally determined on the basis of the relative magnitude of the terms and the nature of the temporal variation in geographic coordinates.
 
-
-It is only the horizontal gradient of the potential $\nabla V_T$ that can effect the distribution of ocean mass.   Which to be clear states that the effect of the \ATGP{} on the ocean is to slide mass side-to-side, not directly pull it up.   And furthermore, only \emph{temporal} changes in this horizontal gradient will effect the non-static ocean distribution. Subsequently degrees $n=0,1$ are not relevant to ocean tides.   This is represented in Equation \ref{eq:VT} by the lower limit $n=2$ of the outer sum.
-
-For almost all ocean studies an upper limit of $n=2$ is taken to be sufficient, or at most $n=3$.  This choice is based on the rapid decline in relative magnitude with increasing $n$ for the luni-solar system - discussed below regarding Equation \ref{eq:c}.
+It is only the horizontal gradient of the potential $\nabla V_T$ that can drive changes in the distribution of ocean mass.   Which to be clear states that the effect of the \ATGP{} on the ocean is to slide mass side-to-side, not directly pull it up.   And furthermore, only \emph{temporal} changes in this horizontal gradient will effect the non-static ocean distribution. Subsequently degrees $n=0,1$ are not relevant to ocean tides.   This is represented in equation \ref{eq:VT} by the lower limit $n=2$ of the outer sum.
+For almost ocean tide applications an upper limit of $n=2$ is taken to be sufficient, or at most $n=3$; again in contrast to some earth gravity studies.  This choice is based on the rapid decline in relative magnitude of each harmonic with increasing $n$ for the luni-solar system - discussed below regarding equation \ref{eq:c}.
 
 
 
 The zonal harmonics $(n,m) = (2,0)$ for each body are of particular relevance to the slower patterns of sea level.  Specifically, by having no variation in $\lambda$ these harmonics don't vary geographically with the daily rotation of the earth.   However, the slower changes in the declination of each body do drive an ocean mass response and is associated with the both the long period and permanent tides.  
-What is considered to comprise the permanent component of the tide potential is effectively time scale and application dependant and is an important detail for geodesy and gravity studies.  \cite[section 5.3.3.2]{Urban:2013vl}.  For ocean forecasting, the role and formulation of the permanent tide only becomes relevant in the decomposition of mean sea level, and estimation of what constitutes dynamic ocean topography in geodetic reference framework.
+What is considered to comprise the \emph{permanent} component of the tide potential is effectively time scale and application dependant and is an important detail for geodesy and gravity studies.  \cite[section 5.3.3.2]{Urban:2013vl}.  For ocean forecasting, the role and formulation of the permanent tide becomes relevant in the decomposition of mean sea level, and estimation of what constitutes dynamic ocean topography in a consistent geodetic reference framework \citep{Filmer:2018cu}\cite{10.1007/bf02520477}.
 
 
-All of the temporal variation of $V_T$ is contained in the time series of complex scalar weights $c_{nm}(t)$.\\
-It is significant that the temporal variations of the \ATGP{} for the entire globe can thus represented by a small number of scalar timeseries - a single complex timeseries for each spherical harmonic included.  For the typical set of harmonics used for ocean tides $(n,m)=(2,1),(2,2)$ this represents a significant compression of spatial information.  The normalisation used in the determination of $c_{nm}(t)$ must be consistent with \ref{E:M}.\\
-
-\begin{figure}[h]
-\begin{center}
-\includegraphics[width=\figwidthBig]{figures/plots/tidal_coeff_timeseries_2days.png}
-\caption{Snapshot of time varying coefficients $c_{nm}(t)$.  In the upper panel, classification of $c_{2m}$ into long, diurnal and semi-diurnal `species' is evident.  Note the much smaller magnitude of higher degree harmonics.}
-\end{center}
-\end{figure}
-
-The luni-solar coefficients are determined from the instantaneous positions of the Moon and Sun relative to the geocenter.  Such information is referred to as ephemerides \citep[Section 8.1]{Urban:2013vl}
-Given the positions in the geocentric reference frame $\theta,\lambda,r$ for both Moon and Sun, the coefficients are:
+All of the temporal variation of $V_T$ is contained in the time series of complex scalar weights $c_{nm}(t)$.
+It is significant that these temporal variations of the \ATGP{} for the entire globe can thus represented by a small number of scalar timeseries - a single complex timeseries for each spherical harmonic included.  For the typical set of harmonics used for ocean tides $(n,m)=(2,1),(2,2)$ this represents a significant compression of spatial information.  
+Given the positions in the geocentric reference frame $\theta,\lambda,r$ for both moon and sun, the coefficients are:
 \begin{align}
 \label{eq:c}
 c_{nm}(t) &= a_{nm}(t) + ib_{nm}(t) \nonumber \\
-          &= \sum_{b=\text{moon},\text{sun}}    \frac{4 \pi GM_{b}}{g r_{b}}  \frac{(2-\delta{m0})} {(2n+1)} \left(\frac{a}{r_b} \right)^n    M_{nm} P_{nm}( \sin(\theta_b) ) e^{im\lambda_b}
+          &= \sum_{b=\text{moon},\text{sun}}    \frac{4 \pi GM_{b}}{g r_{b}}  \frac{(2-\delta_{m0})} {(2n+1)} \left(\frac{a}{r_b} \right)^n    M_{nm} P_{nm}( \sin(\theta_b) ) e^{im\lambda_b}
 \end{align}
-
+The normalisation used in the determination of $c_{nm}(t)$ must be consistent with that used for equation \ref{q:VT}.
 Note that $\theta,\lambda$ in Equation \ref{eq:c} are equivalent to the geographic coordinates of the respective sub-body point at a given time. 
-Where $\delta_m0 = 1$ for $m==0$ and $\delta_m0 = 0$ for $m \neq 0$.\\
+Where $\delta_m0 = 1$ for $m==0$ and $\delta_{m0} = 0$ for $m \neq 0$.\\
 Normalisation $M$ is given by Equation \ref{E:M}. The radial scale $a$ is conventional taken as the semi-major axis from the ellipsoidal georeference. 
-
-
-
+%---------------------
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=\figwidthBig]{figures/plots/tidal_coeff_timeseries_2days.png}
+\caption{Snapshot of time varying coefficients $c_{nm}(t)$.  In the upper panel, classification of $c_{2m}$ into long (red) , diurnal (blue) and semi-diurnal (black) species is evident.  Note the much smaller magnitude of higher degree harmonics.}
+\end{center}
+\end{figure}
+%---------------------
 The rapid decay of the scaling term $\left(\frac{a}{r_b} \right)^n$ with n is the basis for excluding higher degree harmonics from ocean tide applications.  In the case of the Moon, the magnitude of the $n=3$ potential field is more than 2 orders of magnitude smaller than $n=2$.  The associated force also decays, but not quite so rapidly due to the decreasing spatial length scales of the higher harmonics.  This decay is apparent in the colorbars of Figure \ref{fig:VTmaps}\\
 The same relative magnitude argument is applied to neglecting more distant celestial masses from formulation of $\eta_{eq}$.
 
+%-----------------%
+\subsection{Special role for temporal variations}
+The temporal variation of the \ATGP{} is of special relevance to ocean tide prediction.  And inspection of equation \ref{eq:VT} show that all of this variability is contained within the coefficients $c_{nm}(t)$.  
+Any tidal method that applies $c_{nm}(t)$ from a numerical ephemeris in time-space could be said to be \emph{direct}. 
+However, transformation of $c_{nm}(t)$ into frequency-space is in fact the basis of many tidal methods.   The highly clustered frequency content of $c_{nm}(t)$ renders this transformation particularly useful.  
+Transformation of $c_{nm}(t)$ into frequency space is the basis for \underline{harmonic developments} of the \ATGP{}. Whilst there have been different approaches to performing this development, the common representation is given in Equation \ref{E:harmonic} following \citep{Desai:2006wo} and \citep[Eq 13]{Cartwright:1971iz}.
+Furthermore, the ephemeris details for the celestial bodies can be modelled with relatively simple polynomial functions of time; discussed further below. 
+
+
+It is this harmonic decomposition of the \ATGP{} that leads to the conventional ocean tide practice of harmonic analysis.
+%----------------
+\begin{equation}
+    c_{nm}(t) = \sum_{k} H_{nmk} e^{-i( t\theta_{nmk})} = \sum_{k} H_{nmk} e^{-i( t\omega_{nmk} + \beta_{nmk})}
+    \label{E:harmonic}
+\end{equation}
+%----------------
+The index $k$ represents a discrete series of tidal components; potentially expanded out to hundreds of terms.  Each component is associated with a discrete point in complex frequency-space with amplitude $H$, frequency $\omega$ and phase $\beta$.
+
+Despite a common misconception, it is important to emphasise that equation \ref{E:harmonic} does not represent a Fourier series.  The finite sequence of frequencies $\omega_{nmk}$ are derived from the relative motions of the earth-moon-sun system and do not provide either an orthogonal set of sinusoids nor a complete basis.
+
+Despite not being orthogonal, the harmonic decomposition does provide a special list of frequencies that can be ranked by a scalar magnitude. 
+
+\citet{Doodson:1921kt} introduced a novel and influential system of notation for specifying $\theta_{nmk}$ based on a laborious harmonic decomposition of $V_T$ using Brown's lunar theory; that is, a polynomial model for the lunar ephemeris.  
+In the Doodson formulation, all the relevant astronomical information is summarised by code of 6 small integers; together called the Doodson number or argument numbers.   Each position in the code is associated with an fundamental astronomical concept as summarised in Table \ref{T:doodson}.  Doodson codes are in common use across the tidal literature and provide the only useful means of describing tidal components beyond the small number associated with traditional Darwin names such as M2, K1, O1, S2.
+Of these traditional names \citet{10.1016/b978-0-444-53802-4.00058-0} correctly states that `` [whilst] it is convenient to have a shorthand way of referring to these harmonics; unfortunately, the standard names,  now totally entrenched, ... simply have to be learned as is.''.
+
+There has been some variation of conventions with regard to the exact formulation of Doodson numbers.  One such detail is the avoidance of negative integers in the code by the addition of the arbitrary constant 5 to all integers except $d_1$.   A less common variation involves the use of solar-hour in place of lunar hour $\tau$.  
+In essence the Doodson codes provide a compact unique specification, or in practice \emph{definition} of frequencies relevant to tidal methods.
+
+Whereas the Doodson codes provide a reliable way to describe these tidal frequencies, the mapping to traditional names is unfortunately not always consistent and can lead to errors if transferring parameter data between software platforms; this issue is taken up in chapter \ref{chp:tideFlavours}.
+
+
+\begin{table}[htp]
+\caption{Doodson astronomical arguments.  Small integer combinations of these six numbers $d_1 d_2 d_3 d_4 d_5 d_6$ are used to classify tidal components.  Recall that longitudes are celestial, not geographic, coordinates}
+\begin{center} 
+\begin{tabular}{|c|c|c|}
+\hline
+Description                            & Argument          & Period\\
+\hline
+Mean lunar hour                        & $\tau$            & $\sim$ 1 day      \\
+Moon mean longitude                    & $s$               & $\sim$ 27 days    \\  
+Sun mean longitude                     & $h$               & $\sim$ 1 year     \\
+Longitude of lunar perigee             & $p$               & $\sim$ 8.85 years \\
+Negative longitude of mean lunar node  & $N^\prime$        & $\sim$ 18.6 years \\
+Longitude of Sun mean perigee          & $p_1$             & $\sim$ 20000 years\\
+\hline
+\end{tabular} 
+\end{center}
+\label{T:doodson}
+\end{table}
+
+
+Equation \ref{E:doodson} gives the angular argument for a single tidal component $k$ as a function of the 6 astronomical arguments.   As discussed above, the astronomical arguments embody an analytical ephemeris for the Moon and Sun rather than a direct numerical description of these positions.  Polynomial functions of time can be used to estimate each of the 6 arguments close to a given epoch.  The phase adjustment $\delta$ is a convention applied such that the each term in \ref{E:harmonic} is written as a cosine, rather than the mixture of sine and cosine terms that naturally follow from the underlying spherical harmonics.
+
+\begin{align}
+\label{E:doodson}
+\theta_{nmk}  &= \left[ d_1 , d_2 , d_3 , d_4 , d_5 ,d_6 , \delta(n,m)  \right] \cdot \left[ \tau , s  , h , p , N^\prime , p_1 , \frac{\pi}{2}   \right]   \\
+          d_1 &\equiv m \nonumber \\
+              & \mbox{ (nb ignoring integer offset 5 often added to $d_2d_3d_4d_5d_6$)} \nonumber
+\end{align}
+
+\begin{equation}
+\delta(n,m)  =     \begin{array}{ll}
+                    1 & \mbox{if $n+m$ odd}  \\
+                    0 & \mbox{if $n+m$ even} 
+                    \end{array}             
+\end{equation}
 
 
 %-----------------%
-\subsection{Phenomena included in the \ATGP{}}
+\subsection{Other aspects relevant to global coordinates}
 \label{S:ATGP_extras}
-The essential development of the \ATGP{} in Section\ref{S:basic_potential} is standard.  However, progressing beyond the basic development towards an ocean forecasting application raises several issues of significance that depend on the details of the application.\\
+The essential development of the \ATGP{} in Section\ref{sec:basic_potential} is standard.  However, progressing beyond the basic development towards an ocean forecasting application raises several issues of significance that depend on the details of the application.\\
 
 
 \underline{Solid Earth deformation and vertical reference.}  \\
@@ -181,84 +242,26 @@ Another phenomena effecting Earth rotation is the Free Core Nutation (FCN).  For
 
 
 
-The formulation of the tidal potential in Section\ref{S:basic_potential} involved only the instantaneous relative positions of the Earth-Moon-Sun system.   These positions are taken from an ephemeris.  In practice, there are two broad classes of ephemeris; analytical and numerical \citep{Wenzel:1997kn}.\\
-An analytical ephemeris provides the relative positions of the Moon and Sun via relatively simple polynomial relations, optimised for a given epoch.  Such analytic ephemeris have been commonly employed for ocean tide studies.   Analytic ephemeris were used initially for computational necessity and more recently for computational convenience.\\
-For modern astronomical purposes numerical ephemerides are now standard.  Prior to 1984 standard ephemeris were based upon \emph{theories}\cite[sec 8.1]{Urban:2013vl}, whereas contemporary ephemeris are created in a manner analogous to \NWP{} or operational oceanography: dynamical equations are integrated into the future, after initialisation via assimilation of past observational data.\\
-At the time of writing, the `current best estimates' for the orbits of the Moon and planets is DE421 \citep{Folkner:2008wm}.   The snapshot visualisation shown in Figure \ref{fig:VTmaps} have been calculated based on application of Equations \ref{E:M} and \ref{eq:c} to output of DE421 utilising the software tools provided by NASA \cite[p]{Anonymous:vo}.\\
-Any differences between modern ephemeris over ocean forecasting timescales are expected to be very small.   However, an evaluation of such differences may be a relevant undertaking in the body of this work - in particular between the best estimate and any analytic formulations employed in an ocean model.
+The formulation of the tidal potential in Section\ref{sec:basic_potential} involved only the instantaneous relative positions of the Earth-Moon-Sun system.   These positions are taken from an ephemeris.  In practice, there are two broad classes of ephemeris; analytical and numerical \citep{Wenzel:1997kn}.
 
 
-
-%-----------------%
-\subsection{Special role for temporal variations}
-The \ATGP{} varies in time.  Variations over forecasting timescales of several days are most relevant to the present discussion, though it worth noting that much longer astronomical timescales play a role in quantification.\\
-Just how these temporal changes are formulated is fundamental to the different tidal methods.   In short, the temporal changes can be written in time-space or frequency-space.\\
+An analytical ephemeris provides the relative positions of the Moon and Sun via relatively simple polynomial relations, optimised for a given epoch.  Such analytic ephemeris have been commonly employed for ocean tide studies.   Analytic ephemeris were used initially for computational necessity and more recently for computational convenience.
 
 
+For modern \emph{astronomical} purposes numerical ephemerides are now standard.  Prior to 1984 standard ephemeris were based upon \emph{theories}\cite[sec 8.1]{Urban:2013vl}, whereas contemporary ephemeris are created by the application of dynamical equations integrated into the future, after initialisation via assimilation of past observational data.
 
-All the time variation in Equation \ref{E:V_T} is contained in the coefficients $c_{nm}(t)$.  A tidal method based on $c_{nm}(t)$ derived from a numerical ephemeris could be said to be \emph{direct}.\\
-A direct application of $c_{nm}(t)$ is at face value conceptually consistent with modern numerical ephemeris.\\
-
-
-
-Alternatively, transformation of $c_{nm}(t)$ in to frequency-space is the basis of many tidal methods.   The highly clustered frequency content of $c_{nm}(t)$ renders this transformation particularly useful.  The spectral content of $c_{nm}(t)$ is not strictly a stationary line spectrum but is very nearly so for relevant timescales.\\
-Transformation of $c_{nm}(t)$ into frequency space is the basis for \underline{harmonic developments} of the \ATGP{}. Whilst there have been different approaches to performing this development, the common representation is given in Equation \ref{E:harmonic} following \citep{Desai:2006wo} and \citep[Eq 13]{Cartwright:1971iz}.\\
-As with much of the tidal nomenclature, the possible confusion of the distinct concepts of `harmonic decomposition' with `harmonic analysis' is worth noting.
-\begin{equation}
-\label{E:harmonic}
-c_{nm}(t) = \sum_{k} H_{nmk} e^{-i( t\theta_{nmk})} = \sum_{k} H_{nmk} e^{-i( t\omega_{nmk} + \beta_{nmk})}
-\end{equation}
+At the time of writing, the current best estimates for the orbits of the Moon and planets is DE421 \citep{Folkner:2008wm}.   The snapshot visualisation shown in Figure \ref{fig:VTmaps} were calculated based on the application \ref{eq:c} to output of DE421.
 
 
-The index $k$ represents a discrete series of hundreds of tidal components.  Each component is associated with a discrete point in complex frequency-space with amplitude $H$, frequency $\omega$ and phase $\beta$.
-It is important to emphasise that Equation \ref{E:harmonic} does not represent a Fourier series.  The sequences of frequencies $\omega_{nmk}$ are derived from the orbital motions of the Earth-Moon-Sun system and do not result in an orthogonal set of sinusoids.\\
+The direct application of modern numerical ephemeris to global ocean tide simulations has been demonstrated by for instance \cite{Weis:2008ex} and \cite{10.1007/s10236-016-1016-1}.
+However the attractive properties of this approach appear yet to have outweighed the benefits of conceptual and implementation simplicity offered by conventional decomposition approaches.   The ability to isolate named constituents for evaluation is valued for inter-comparisons such as that of \cite{Stammer:2014vh}
+A more accurate ephemeris is likely of less significance to ocean tide hydrodynamics than the conceptual approach regarding the extent to which forcing and response are viewed in frequency space \citep{10.17125/gov2018.ch13}.
 
-
-Doodson \citep{Doodson:1921kt} introduced a novel and influential system of notation for specifying $\theta_{nmk}$ based on his laborious harmonic decomposition of $V_T$ using Brown's lunar theory.  In the Doodson formulation, all the relevant astronomical information is summarised by code of 6 small integers; together called the `Doodson number' or `argument numbers'.   Each position in the code is associated with an fundamental astronomical concept as summarised in Table \ref{T:doodson}.  Doodson codes are in common use across the tidal literature and provide the only useful means of describing tidal components beyond the very small number associated with traditional Darwin names M2, K1, O1, S2 etc.\\
-There has been some variation of conventions with regard to the exact formulation of Doodson numbers.  One such detail is the avoidance of negative integers in the code by the addition of the arbitrary constant 5 to all integers except $d_1$.   A less common variation involves the use of solar-hour in place of lunar hour $\tau$.  In the context of ocean tide prediction, the attribution of codes to harmonics is not consistent, but this is discussed in later sections. \\
-In essence the Doodson codes provide a compact unique specification, or in practice \emph{definition} of frequencies relevant to tidal methods.
-
-
-\begin{table}[htp]
-\caption{Doodson astronomical arguments.  Small integer combinations of these six numbers $d_1 d_2 d_3 d_4 d_5 d_6$ are used to classify tidal components.}
-\begin{center} 
-\begin{tabular}{|c|c|c|}
-\hline
-Description                            & Argument          & Period\\
-\hline
-Mean lunar hour                        & $\tau$            & $\sim$ 1 day      \\
-Moon mean longitude                    & $s$               & $\sim$ 27 days    \\  
-Sun mean longitude                     & $h$               & $\sim$ 1 year     \\
-Longitude of lunar perigee             & $p$               & $\sim$ 8.85 years \\
-Negative longitude of mean lunar node  & $N^\prime$        & $\sim$ 18.6 years \\
-Longitude of Sun mean perigee          & $p_1$             & $\sim$ 20000 years\\
-\hline
-\end{tabular} 
-\end{center}
-\label{T:doodson}
-\end{table}
-
-
-Equation \ref{E:doodson} gives the angular argument for a single tidal component $k$ as a function of the 6 astronomical arguments.   As discussed above, the astronomical arguments embody an analytical ephemeris for the Moon and Sun rather than a direct numerical description of these positions.  Polynomial functions of time can be used to estimate each of the 6 arguments close to a given epoch.  The phase adjustment $\delta$ is a convention applied such that the each term in \ref{E:harmonic} is written as a cosine, rather than the mixture of sine and cosine terms that naturally follow from the underlying spherical harmonics.
-
-\begin{align}
-\label{E:doodson}
-\theta_{nmk}  &= \left[ d_1 , d_2 , d_3 , d_4 , d_5 ,d_6 , \delta(n,m)  \right] \cdot \left[ \tau , s  , h , p , N^\prime , p_1 , \frac{\pi}{2}   \right]   \\
-          d_1 &\equiv m \nonumber \\
-              & \mbox{ (nb ignoring integer offset 5 often added to $d_2d_3d_4d_5d_6$)} \nonumber
-\end{align}
-
-\begin{equation}
-\delta(n,m)  =     \begin{array}{ll}
-                    1 & \mbox{if $n+m$ odd}  \\
-                    0 & \mbox{if $n+m$ even} 
-                    \end{array}             
-\end{equation}
-
+Considering the ocean response to tidal forcing in frequency-space is arguably just as foundational to tide prediction and sea level studies as the \ATGP{}; and this topic is addressed next.  
 
 %-----------------%
 \subsection{Ocean as an LTI System}
-\label{S:LTI}
+\label{sec:LTI}
 With historical hindsight it could be said that the success of tidal sea level prediction have been based on treating the ocean as a linear time invariant (LTI) system driven by the \ATGP{}.\\
 In essence, temporal variation in the \ATGP{} is an input that the LTI maps directly to an predicted ocean response.  Once such a time invariant `black box' for the ocean has been characterised,  accurate astronomical predictions can be mapped to an ocean prediction.  The details of how the LTI system is characterised and implemented distinguish the variants of tidal analysis and prediction.\\
 
@@ -575,7 +578,7 @@ Global tide models are commonly employed as intermediate products for other calc
 
 
 Meaningful tidal atlases existed prior to altimetry, most significantly that due to Schwiderski \citep{Schwiderski:1983ke}, but these necessarily suffered from a lack of validation and constraint in the deep ocean.\\
-The basic premise of a tidal atlas is to present maps of tidal admittance at discrete frequencies, typically as separate amplitude and phase diagrams.   In line with the discussion in Section \ref{S:LTI}, the deep ocean is conceived as a LTI system that is by definition stationary.  Each component wave can also be called a partial tide.\\
+The basic premise of a tidal atlas is to present maps of tidal admittance at discrete frequencies, typically as separate amplitude and phase diagrams.   In line with the discussion in Section \ref{sec:LTI}, the deep ocean is conceived as a LTI system that is by definition stationary.  Each component wave can also be called a partial tide.\\
 It is conventional to present atlas tidal predictions as separate maps of amplitude and phase for a single frequency.  These are also called `co-tidal' and `co-range' plots.  This visualisation fits well with the concept of the tidal ocean as a linear sum of standing waves.   The long spatial scale of these component waves and the existence of spatial nodes places special importance upon \emph{amphidromes} or \emph{amphidromic points} - nomenclature introduced by Harris in the late 19th century \cite[pp 119]{Cartwright:2000tt}.  Existence and placement of amphidromic points is an important visual metric employed to assess tidal model results \citep{foreman:2012perscomm}.  Figure \ref{fig:atlas} shows a the typical tidal atlas result with amphidromic systems apparent as radial patterns in the co-phase diagram.\\
 Modern tidal atlases are in close agreement with regard to broad patterns, but characteristically differ at the shallow water margins; the very location of most direct interest to sea level forecasts.  Figure \ref{fig:tpx_cross} illustrates the fact that modern global tide models typically agree within about 0.02m in the deep ocean, but can differ substantially in coastal and shelf regions.  
 
