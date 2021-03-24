@@ -1,49 +1,57 @@
 \section{Mesoscale operational oceanography}
 \label{sec:operational_oceanography}
 
-Mesoscale ocean prediction moved into operations across the early 2000s in a manner that lagged and imitated the path of NWP \citep{Harper:2008ub}. Operational oceanography is `big science' \citep{Petersen:2012tr} in the sense that it fundamentally relies on the coordination of large organisations, global networks and capital. \\
+Mesoscale ocean prediction moved into operations across the early 2000s in a manner that lagged and imitated the path of \NWP \citep{Harper:2008ub}. Operational oceanography is similarly a big science enterprise \citep{Petersen:2012tr} in the sense that it fundamentally relies on the coordination of large organisations, global networks and capital. 
+The size and nature of this type of prediction stands in stark contrast to the ``small'' well-established practices of conventional tide prediction introduced in section \ref{sec:tide_intro}.
 Starting in 1997, the international collaboration of the Global Ocean Data Assimilation Experiment \GODAE{} serves as a historical reference point:
-
-\begin{quote}
-  The central idea of \GODAE{} - to demonstrate the feasibility and utility of real-time, global ocean forecasting - was based on the experiences of the meteorological community in \dots{} FGGE. \citep{Bell:2009uv}
-\end{quote}
-
+``\textit{the central idea of \GODAE{} - to demonstrate the feasibility and utility of real-time, global ocean forecasting - was based on the experiences of the meteorological community in \dots{} FGGE}'' \citep{Bell:2009uv}.
+From this original feasibility demonstration, the enterprise of mesoscale ocean forecasting has matured to the extent that \cite{10.1080/1755876x.2019.1685834} could review over 15 years of operational services in Australia.  
+Compared to conventional tide prediction, sea level of itself is not the target of mesoscale forecasting; let alone coastal sea level.   But the manner in which sea level and tides are handled in systems like \BL{} is worthy of exploration in order to underpin subsequent chapters that go into methods for combining and evaluating operational forecasts. 
 
 %-----------------%
 \subsection{Ocean general circulation models}
-
-Since \GODAE{}, Ocean General Circulation Models (\OGCM{}s) are a key component in operational oceanography.\\
-
-An \OGCM{} simulates the physical ocean state via time-stepping a mixed boundary-/initial-condition problem.\citep{Griffies:2004vs}.\\
-A distinction between \emph{resolved} and \emph{unresolved} scales is paramount.  `Sensitive dependence on initial conditions in this turbulent flow \dots{} severely limits predictive capabilities [and] motivates a formulation of averaged or mean field fluid equations' \citep[Sec 2.5]{Griffies:2004vs}.\\
-
-
-Information cascades between turbulent scales places importance on sub-grid scale (SGS) parameterisations; and raises broad questions of representiveness.\\
+Ocean General Circulation Models (\OGCM{}s) are now a key component in oceanographic forecasting, but are only rendered operationally useful by the use of a global observation network and data assimilation to routinely maintain alignment with reality.
+An \OGCM{} simulates the physical ocean state via time step integrating a mixed boundary-condition/initial-condition problem.
+In contrast to the tidal LTI conception of the ocean described in section \ref{sec:LTI}, an \OGCM{} conceives the global ocean as a turbulent continuum fluid; and the time and length scales of this turbulence effectively have no lower bound. The simulation thus needs to represent information cascades between turbulent scales as well as account for unresolved processes with sub-grid scale (SGS) parameterisations.
+The distinction between resolved and unresolved scales is paramount.  ``Sensitive dependence on initial conditions in this turbulent flow \dots{} severely limits predictive capabilities [and] motivates a formulation of averaged or mean field fluid equations'' \citep[Sec 2.5]{Griffies:2004vs}.
+Furthermore, this raises broad questions of how to interpret the output of a numerical ocean simulation.
 Griffies perceives an \OGCM{} as representing the averaged motion of an infinite ensemble of hypothetical oceans; the imagined spread being proportional to the scales of SGS parameterisation.
-Alternatively, Stevens casts \OGCM{}s into the class of geophysical `pseudofluid' simulations \citep{Stevens:2001kb}. Of which he notes comparisons with observational data are prone to interpretational nuance and are ``too often ad hoc, uncritical, and/or irrelevant''\citep[pp 286]{Stevens:2001kb}. \\
-
+Alternatively, \citet{Stevens:2001kb} casts \OGCM{}s into the class of geophysical ``pseudofluid'' simulations. Of which he notes comparisons with observational data are prone to interpretational nuance and are ``too often ad hoc, uncritical, and/or irrelevant''\citep[pp 286]{Stevens:2001kb}. 
+Figure \ref{fig:ogcmScales} illustrates very schematically the place of \OGCM{} variants in the context of turbulence simulations.   The exclusion or explicit representation of tidal dynamics are shown as changes in SGS complexity; these are discussed further below.
+%----------------------------------
 \begin{figure}[h]\centering
-  \includegraphics[width=120mm]{figures/diagrams/model_types_schematic.png}
-  \caption{Schematic illustration of place of \OGCM{}s in terms of SGS parameterisation of the broad scale range of a turbulent ocean.  For reference, methods from turbulence studies are included: Direct Numerical Simulation and Large Eddy Simulation. Following \citep[fig 5.2]{Petersen:2012tr} and \citep{Stevens:2001kb}.  Inclusion of explicit tides is tentatively placed as a reduction of parameterisation without increased spatial scale resolution.}
-  \label{fig:models}
+  \includegraphics[width=\figwidthBig]{figures/diagrams/ogcm_scales.pdf}
+  \caption{Schematic illustration of place of \OGCM{}s in terms of the sub-grid-scale (SGS) parameterisation of the broad scale range of a turbulent ocean.  For reference, methods from turbulence studies are included: Direct Numerical Simulation and Large Eddy Simulation. Following \citep[fig 5.2]{Petersen:2012tr} and \citep{Stevens:2001kb}.  Explicit tides in an OGCM represent a reduction of parameterisation without a large change in spatial scale resolution.}
+  \label{fig:ogcmScales}
 \end{figure}
-
-Common to `big science' simulation practice \citep{Petersen:2012tr} an \OGCM{} embodies a large amount of collective and accumulated programming effort in many lines of computer code; too much for any one person to understand in detail. \\
-
-
-
+%----------------------------------
+Common to `big science' simulation practice more generally \citep{Petersen:2012tr} any real \OGCM{}, including \BL{}, embodies a significant accumulation of human effort in the very many lines of computer code.  In contrast to typical tidal analysis tools, the software behind a mesoscale ocean forecast is effectively too much for any one person to understand in detail.
 %-----------------%
 \subsection{Ocean observations and data assimilation}
-Data assimilation is the framework for combining information from ocean observations and the chaotic dynamics embodied by an \OGCM{}; usefully viewed from a Bayesian perspective\citep{Zaron:2011ft}.\\
-Despite the growth of \GOOS{} \citep{Komen:1999ch}, the ocean is fundamentally under-observed for the purposes of physical state estimation.\\
+Data assimilation is the model-data-fusion framework by which the initial conditions for each \OCGM{} forecast are determined.
+This processing step can be usefully viewed from a Bayesian perspective in which ``the system implements an optimality criterion which defines how to best combine dynamics and observations, given an hypothesized error model for both.'' \citep{10.1007/978-94-007-0332-2_13}.
+Subsequently the availability of near-real-time observations of the global ocean has played a critical role in enabling operational mesoscale forecasting.  Expansion of ocean observation coverage of recent decades largely mirrors the maturation of abundant satellite communications.  But despite the growth of what has been called the global ocean observation system \GOOS{} \citep{Komen:1999ch}, the ocean remains fundamentally under-observed for the purposes of physical state estimation.   Satellite-based surface observations of the ocean are the most abundant, whilst the ocean depths are sampled by comparatively sparse insitu profiles.
+
+Tide gauges observations are fundamental to conventional tide prediction, but are in contrast often totally excluded from mesoscale data assimilation.   The fact that \BL{} does \emph{not} assimilate any sea level data from tide gauges is relevant to the aggregated forecast design described in chapter\ref{chp:aggregate}.      
+Sea level close to coast lines in a mesoscale ocean simulation is primarily an expression of the simulated fluid dynamics rather than an observationally constrained parameter.
+
+Whilst tide gauges are excluded, sea level observations derived from satellite mounted radar instruments have played a pivotal role in the evolution of ocean forecasting \citep{Fu:2001ub}.  Moreover, the forecast skill associated with the assimilation of satellite altimeter data has been shown to be of particular significance by  \cite{10.5194/os-13-1077-2017} and others.
+In contrast to the still water level observed by a tide gauge, it is primarily a sea level anomaly (SLA) quantity that is derived from the altimeters and used to constrain the \OGCM{}. Figure \ref{altimeterEg} illustrates the nature of the along-track nadir coverage of a single satellite altimeter.
+These SLA observations are not however applied to constrain the ocean state in the vicinity of coastal tide gauges; and in the case of \BL{} are excluded from the assimilation process for regions where the depth is less than 200m or close to a land mass.   This reflects that fact that the derivation of sea level quantities from satellite altimeters is particularly challenging in shallow water and near coastal boundaries \citep{Woodworth:2011bf}.    Although an active area of development, coastal altimetry data streams are not yet used to constrain operational mesoscale systems.
+%----------------------------------
+\begin{figure}[h]\centering
+  \includegraphics[width=\figwidthHalf]{figures/maps/altimeterCoverageEg.png}
+  \caption{Illustration of spatial coverage of satellite altimeter; single day of Saral in May 2020}
+  \label{fig:altimeterEg}
+\end{figure}
+%----------------------------------
+SLA is a meaningfuo quantity only in reference to  ....
 
 
-Satellite-based ocean altimetry provides a data stream of special significance to contemporary ocean forecasting \citep{Fu:2001ub}. \\
-Derivation of sea level quantities from satellite mounted radar instruments is particularly challenging in shallow water and near coastal boundaries \citep{Woodworth:2011bf}. 
 Altimetry has directly enabled contrasting scientific developments in global tides (eg.\citet{Egbert:1996vr},  \citet{Lefevre:2011dg}) and mesoscale ocean variability (eg.  \citet{Wunsch:1998bq}, \citet{Chelton:vi}).
 
  
-% segue into OGCM
+% segue into tides in OGCM
 %--------------------------------------------------
 %--------------------------------------------------
 \subsection{Treatment of tides in nominally non-tidal \OGCM{}s}
