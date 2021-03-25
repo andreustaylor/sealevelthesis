@@ -1,6 +1,13 @@
 
 \chapter{More on tidal formalisms}
-\label{appendix:response}
+\label{appendix:tideFormalisms}
+
+% APPENDIX?
+%Here Munk and Cartwright's aphorism from the 1960's regarding tidal analysis is illustrative:
+%\begin{quote}
+%  \dots predicting and learning are in a sense orthogonal, and the most interesting effects are those that cause the most trouble with a forecasting: the continuum, the nongravitational tides, and the non-linear interactions.\citep{Munk:1966ts} 
+%\end{quote}
+
 
 \section{Response}
 Godin \citep{Godin:1991vx} describes the response method as `cross spectral analysis'; a LTI model is inverted from comparison of the input and output timeseries.   
@@ -65,6 +72,16 @@ From a sea level forecasting perspective, the response approach could be said to
 
 %\subsection{Variants}
 Fitting a Fourier series vi the convolution formalism to find each smooth admittance is not the only viable implementation of the response concept.  For instance a Green's function formulation is described by \citet{Webb:1974ke} and polynomial models are evaluated by \citet{Desai:1995je}. More influential though is the orthotide approach to fitting Fourier series admittances, discussed below.
+
+
+
+% harmonics == admitance
+Consistent with this equivalence, it is common within the literature to refer to harmonic constants \emph{as} admittances.   A harmonic constant is seen as a sample from the admittance curve at an exact frequency. For instance Smith\cite{Smith:1997ut} provides the simple conversion to sample $Z(\omega_{nmk})$ and scale by the \ATGP{} amplitude $H_{nmk}$.
+Furthermore, harmonic constants remain the lingua franca of ocean tide discussions. Regardless of the detail behind any particular method, results are almost universally transformed into conventional amplitude and phase values for intercomparisons.
+
+
+% inference and smooth
+Regardless of the method used for analysis, an expectation that admittance curves $Z(\omega)$ should not contain discontinuities or sharp changes (the `credo of smoothness') is commonly evoked to enhance the spectral content upon the \emph{synthesis} of a tidal timeseries.  Following an analysis performed to determine admittances at a relatively small number of frequencies, $Z{\omega}$ is interpolated or extrapolated in frequency-space to infer additional spectral information.   The design of such an inference process can treat frequencies on a case-by-case basis distinguishing between component admittance curves (for instance \citep[pp 268]{Fu:2001ub}).
 
 
 

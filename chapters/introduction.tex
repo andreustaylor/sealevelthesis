@@ -124,6 +124,8 @@ The scope of the present study is intentionally focused on the overlap of tidal 
 It is worth emphasising that this focus is well away from the representation of extreme events like tsunami and tropical cyclone surge events.   Plainly, the ability to skillfully forecast such extreme sea level phenomena is of great significance and is relevant to operational forecasting. \citet{McInnes:2016km} provides an overview of sea level extremes as a natural hazard in Australia.    
 In fact, the substantial and productive research effort directed to sea level extremes as a hazard has understandably de-prioritised the details of compatibility for forecasts between more \emph{mundane} sea level fluctuations; and this gap is the focus of the present document. 
 
+% MORE - on despite the value of ROAM etc, local downscaling isnt neccesiarily the whole picture for operational forecasting ... reality of a national agency and general scope ....but also the forecast horizon ...
+
 \begin{figure}[H]\centering
   \includegraphics[width=\figwidthBig]{figures/diagrams/scales_focus.pdf}
   \caption{Focus on mesoscale and tidal scales overlap}
@@ -158,7 +160,7 @@ This framework is also applicable to the use of sea level as a input into river 
 Aside from direct applications, the second reason for given for the relevance of the present scope is as a contribution to the wider goal of developing seamless forecast services; and this is discussed further in the next seciton. 
 
 %--------------------------------------------------
-\subsection{Problems for seamless forecasts}
+\subsection{Seamless forecasts?}
 \label{sec:concrete}
 Over the past decade, the evolution of operational oceanography has increasingly brought dynamic geophysical fluid modelling into the same organisational setting as tide prediction\citep{10.1080/1755876x.2019.1685834};  bringing two perspectives on how to conceptualise and forecast sea level into something akin to a \citet{Galison:1996uc} `trading zone'.  \citet{Jayne:2001tr} for instance highlight the ``vexing problems'' arising from applying frequency-domain tide theory into time-domain ocean simulations.
 
@@ -168,15 +170,14 @@ More broadly, operational forecasting is carried out against a background of eve
 
 The Bureau's \textit{Research and Development Plan 2020-2030} places this tendency towards increasingly concrete simulation models within the limitations of operational capacity by describing a trade-off between the four dimensions of resolution, complexity, duration/ensemble size and observations. 
 Of special relevance to the present study is the objective of developing \emph{seamless} services.  ``\textit{Seamless services mean consistent forecasts to users even where the source of the forecast model has changed – for instance, at the transition from ten-day numerical weather prediction to multi-week forecasts}'' \citep{BOM2020}.
+Although intuitive enough, designating such a multi-scale service to be ``seamless'' extends the original application of the term from simply an architecture in which to make climate projections \cite{10.1175/bams-87-9-1195}.   
 
-The derivation of seamless services from sea level forecasts raises some unique challenges associated with the qualitatively distinct properties of conventional tide prediction and dynamic fluid simulations.
-Instead of a just managing the transition from higher to lower fidelity with forecast range, a useful seamless sea level forecast will likely need to manage transitions between tide-resolving and tide-excluding simulations against a time-scale-spanning reference tide prediction.  
 
+The derivation of seamless services from sea level forecasts raises some unique challenges associated with the qualitatively distinct properties of conventional tide prediction and dynamic fluid simulations.   
+Instead of a just managing the transition from higher to lower fidelity with forecast range, a useful seamless sea level forecast will likely need to manage transitions between tide-resolving and tide-excluding simulations against a time-scale-spanning reference tide prediction.  And this transition doesn't fit neatly in the chain-of-scales metaphor used to promote the seamless ideal \cite{10.1175/bams-87-9-1195}.
+
+
+% mention ROAM and surge ...emphasis why small downscale is great but not the whole answer
 
 Working towards seamless sea level forecasts will thus require conceptual clarity about what constitutes ``tidal'' sea level in each context and means by which to identify, characterise and combine the scales of predictability offered by an evolving but an imperfect suite of operational systems.  
 It is the conceptual basis for this goal of seamless sea level forecasting that underpins the sections that follow.
-
-%Here Munk and Cartwright's aphorism from the 1960's regarding tidal analysis is illustrative:
-%\begin{quote}
-%  \dots predicting and learning are in a sense orthogonal, and the most interesting effects are those that cause the most trouble with a forecasting: the continuum, the nongravitational tides, and the non-linear interactions.\citep{Munk:1966ts} 
-%\end{quote}
