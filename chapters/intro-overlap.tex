@@ -5,35 +5,48 @@
 
 \subsection{Direction of ocean sea level forecasting development}
 
-\cite{10.3389/fmars.2019.00437} summarises the current state and direction towards comprehensive coastal ....
+\cite{10.3389/fmars.2019.00437} summarises the current state and direction towards comprehensive systems for monitoring and predicting sea level:
+\begin{quote}
+(i) the use of realistic numerical models to resolve the processes that govern the ocean dynamics; (ii) the use of observations, which combined with statistical techniques are used to identify space and time patterns and extrapolate them into the future , and (iii) the hybrid approach, which combines the first two in a wide variety of ways.
+\end{quote} 
 
- ``(i) the use of realistic numerical models to resolve the processes that govern the ocean dynamics; (ii) the use of observations, which combined with statistical techniques are used to identify space and time patterns and extrapolate them into the future , and (iii) the hybrid approach, which combines the first two in a wide variety of ways.''
- 
- ...
+Nested models of increasing resolution may indeed be the natural architecture for coastal sea level forecasting.  
+But in contrast to the status of \BL{}, operational realisation of such a capability is not imminent nor guaranteed.
 
-Whatever the promise of inclusion of explicit tides within \OGCM{}s scientifically, application to operational sea level forecasts is not well explored or justified.
-Operational forecast systems must balance a unique set of motivations quite distinct from other \OGCM{}-based simulations.  \\
-Nested models of increasing resolution may be appear the obvious direction for coastal sea level forecasting.  But in contrast to the status of \BL{}, operational realisation of such a capability is not imminent nor guaranteed.
+TBC - but even with dowscaling resolving short wavelenght and localised is very challanging.
+Requires not only very good bathy, but also sedimentaion and parameterisation of drag etc.
+ref to old Foreman.
+Eg even COMPAS surface tides are poor, compared to standard tides.
 
-
-Two broad directions are identified with regard to the prospects for \OGCM{}-based operational sea level forecasts:
-\begin{enumerate}
-\item \underline{Aggregation}: the \OGCM{} is used to forecast a nontidal quantity that is subsequently aggregated with tide predictions and other forecast products;
-\item \underline{Integrated simulations}: the \OGCM{} is used to forecast as much of the sea level signal as is feasible and is used directly.
-\end{enumerate}
-These equally apply to the realistic scenario of employing a spatially nested set of simulations in that \obc{}s may be provided by either aggregation or integration.\\
+Hence - in contrast to the better simulation across scales, what skill is there is the scales already in production?
+Hybrids present one way into "seamless".
+Eg MOS, trained systems etc.
+Star
 
 
-Some form of aggregation does appear most promising for \emph{routine} forecasts in the current operational setting.  
-This assertion is based on consideration of the highly evolved specialisations of forecasting methods as well as organisational realities of system development.\\
-Caveats aside, for periodic signals direct output from a dynamic model is unlikely to approach the ability of harmonic methods to predict complex local and nonlinear effects.   The fundamentals of conventional tide predictions reasonably provide the reference for sea level forecasts more generally. \\
+Caveats aside, for periodic signals direct output from a dynamic model is unlikely to approach the ability of harmonic methods to predict complex local and nonlinear effects.   The fundamentals of conventional tide predictions reasonably provide the reference for sea level forecasts more generally.
 
 
 
-More inclusive physical simulations and aggregation are not however mutually exclusive.  
-And one promising concept involves aggregation \emph{and} a tide-resolving \OGCM{}.  The premise is that an \OGCM{} will only ever represent a compromised tidal signal, but inclusion of these dynamics will produce a net gain for the nontidal flow.\\
-An operational reference for such an approach is found in the design of the UK Storm Tide Warning Service (now titled UK Coastal Monitoring and Forecasting) \cite{Horsburg:2009ui}.   Although the UK system is based on depth integrated surge models, rather than an \OGCM{}, the aggregation of hydrodynamic models and tide predictions is instructive.\\   
+...one promising concept involves aggregation \emph{and} a tide-resolving \OGCM{}.  The premise is that an \OGCM{} will only ever represent a compromised tidal signal, but inclusion of these dynamics will produce a net gain for the nontidal flow.
 
+
+An operational reference for such an approach is found in the design of the UK Storm Tide Warning Service (now titled UK Coastal Monitoring and Forecasting) \cite{Horsburg:2009ui}.   Although the UK system is based on depth integrated surge models, rather than an \OGCM{}, the aggregation of hydrodynamic models and tide predictions is instructive. 
+
+
+
+%Whatever the promise of inclusion of explicit tides within \OGCM{}s scientifically, operational forecast systems must balance a unique set of motivations quite distinct from other \OGCM{}-based simulations. 
+
+%Two broad directions are identified with regard to the prospects for \OGCM{}-based operational sea level forecasts:
+%\begin{enumerate}
+%\item \underline{Aggregation}: the \OGCM{} is used to forecast a nontidal quantity that is subsequently aggregated with tide predictions and other forecast products;
+%\item \underline{Integrated simulations}: the \OGCM{} is used to forecast as much of the sea level signal as is feasible and is used directly.
+%\end{enumerate}
+%These equally apply to the realistic scenario of employing a spatially nested set of simulations in that \obc{}s may be provided by either aggregation or integration.\\
+
+
+%Aggregation of heterogensous does appear most promising for routine forecasts in the current operational setting.  
+%This assertion is based on consideration of the highly evolved specialisations of forecasting methods as well as organisational realities of system development.\\
  
 
 
