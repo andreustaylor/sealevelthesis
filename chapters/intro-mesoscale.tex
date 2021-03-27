@@ -53,7 +53,7 @@ These SLA observations are not however applied to constrain the ocean state in t
 \end{figure}
 %----------------------------------
 SLA is a meaningful quantity to the extent that it is an anomaly from some reference, and that reference involves a spatial tide prediction; as introduced above in section \ref{sec:spatialTides}.
-The role of tide predictions in mesoscale forecasts, and the handling of tides more generally, are taken up in the following sections.
+The role of tides in mesoscale forecasts is taken up in the following sections.
 %--------------------------------------------------
 \subsection{Treatment of tides in nominally non-tidal \OGCM{}s}
 \label{sec:tides_ogcm}
@@ -63,41 +63,24 @@ Moreover, the skill of spatial harmonic tide models in representing surface tide
 \BL{} is a ``non-tidal'' system in that \ATGP{} forcing is not applied, and in contrast to local downscaled simulations, there are no lateral open boundary conditions. Not only does the mesoscale simulation exclude the gravitational tidal body forcing, it also excludes the surface boundary application of atmospheric pressure.   
 Surface pressure is excluded as a forcing term for analogous time and length scale reasons as the tides.  And in fact for the barotropic mode the pressure and tidal forcing can be formulated in an identical manner as adjustments to the spatial gradient of the surface elevation as in \citet[Eq9.9.5]{gill1982atmosphere}.
 
-The state variable quantifying surface elevation carried by the model is thus a peculiar sea level anomaly (SLA) that it a rather abstract  ....
-which in itself is a rather abstract quantity. 
+The state variable quantifying surface elevation carried by the model is thus a peculiar sea level anomaly (SLA) which in itself is a rather abstract quantity. 
 Using the \citet{Stevens:2001kb} nomenclature, \BL{} simulates an aggregated pseudofluid system with a qualified relationship to the actual ocean.
 
 
-
 From that background, recent publications indicate a motivation towards more dynamic representation of the effects of ocean tides.   This is indicative of pervasive goal across numerical simulation practice to increase model concreteness by reducing the role of parameterisations \cite[section 5.3]{Petersen:2012tr}; a reduction of system aggregation \citep{Stevens:2001kb}.\\
-Similarly, Griffies describes the ``general trend in ocean climate modelling towards reducing many of the common approximations'' \citep[pp20] {Griffies:2004vs}.
-It could be said that the modelling community perceives parameterisations as a compromise that should ideally be replaced with explicit physics when computing power allows.  In spite of this, operational justification is a separate matter.
+Similarly, Griffies describes the ``general trend in ocean climate modelling towards reducing many of the common approximations'' \citep[pp20] {Griffies:2004vs}.   It could be said that the modelling community perceives parameterisations as a compromise that should ideally be replaced with explicit physics when computing power allows.
 
 % split 
-Timescales for depth-integrated barotropic and depth-dependant baroclinic ocean state are quite distinct and the design of \OGCM{}s have been influenced by this distinction. \\
+The timescales targeted by a mesoscale simulation are slow relative to surface tides.
+Given the focus on estimating the slower baroclinic evolution on the three dimensional ocean state, operational ocean models following \GODAE{} take numerical approaches that employ some special treatment for the faster barotropic hydrodynamics. 
 %rigid ild
-One approach has been to make the so-called `rigid-lid' approximation \cite[pp128]{gill1982atmosphere}. 
-The rigid-lid by definition cannot represent explicit barotropic tides, and has other ramifications for ocean forecasting \cite[pp19]{Griffies:2004vs}.
-
-
+Earlier models avoided direct representation of surface height variations by making the so-called `rigid-lid' approximation \citep[pp128]{gill1982atmosphere} which leads to other ramifications for ocean forecasting discussed by \cite[pp19]{Griffies:2004vs}.
 % split explicit
-A compromise strategy employed in \MOM{} (and other \OGCM{}s) is the so-called `split-explicit' scheme.    
-In essence, cheap shallow-water barotropic dynamics are timestepped many times for each relatively expensive update of the full depth-dependant ocean state.  
-
-Thus \MOM{} at face value is capable of representing barotropic surface tides.   However, there are several high level arguments against doing so.
-
-One reason is the aims to which the model is being employed.  Much of the development of \OGCM{}s has been focused at climate times-scales, tipping the balance of away from the accuracy of high frequency sea level signals.   
-Furthermore, in comparison to highly tuned tidal altases, simple and general barotropic can't be expected to achieve similar skill.
-
-
-Filtered altimetry observations provide great value in observing and forecasting mesoscale eddies.
-Treating tides as noise is reasonable insofar as the effects on the mesoscale structure are small relative to other source of error.
-
-
-Decomposition of the dynamics into tractable categories for simulation is not aggregation per se, but it certainly does have implications for the role of parameterisations.  
-
-From the perspective of \emph{users} of ocean forecasts there is basically no inherent value in decomposition.   
- 
+\MOM{} does carry a free surface height as a state variable by employing a `split-explicit' timestepping scheme.    
+In essence, this approach timesteps a computationally cheap shallow-water representation of barotropic dynamics many times for each relatively expensive update of the full depth-dependant ocean state.  
+Thus, by representing the barotropic free surface dynamics of the ocean, a mesoscale \OCGM{} like \BL{} could in principle simulate the global tides.
+But tidal forcing is not applied in \BL{} and there are several high level arguments against doing so.
+   
 %-----------------%
 \subsection{Motivation to explicitly simulate tidal effects}
 
@@ -121,17 +104,32 @@ Following great advances with the explicit simulation of tides using HYCOM,   \c
 Further discussion of the details and progress towards explicit resolution of tides in \OCGM{}s is relegated to Appendix \ref{appendix:globalTides}
 To date, the motivation to include tides in \BL{} remains far from the operational schedule.
 
-
-
-TBC comments about separating skill of model appraaoches ....how this fits with seamless plans....
-
-
+%TBC comments about separating skill of model appraaoches ....how this fits with seamless plans....
 
 %-----------------%
 \subsection{Representation of coastal boundaries}
 
-The 
+
+Special relevance to the present discussion is the representation of coastal sea level.
+
+So how is the coast actually simulated?
+
+Regular grid
+Arakawa-B
+Compared to high-resolution 
+no wet-dry
+no sediment movement
+
+Staggered grid has some special considerations:
+- time stepping involves spatial gradients and templates
+- gives rise to null mode
+- application of smoother to mitigate
+
+
 Figure \ref{fig:map_masks} shows the \BL{} coastal discretisation.
+Nomincally around 10km 
+features like port phillip excluded
+
 
 %---------------------------
 \begin{figure}[h]
@@ -142,6 +140,9 @@ Figure \ref{fig:map_masks} shows the \BL{} coastal discretisation.
     \label{fig:atlas}
 \end{figure}
 
+ocean forecasts are inherently scale limited ....figure \ref{fig:ogcmScales}
+So at best mesoscale represent phenomena operating at length scales of several 10s of km.
+But after demonstrating that these scales are actually relevant to operational sea level forecasts in chapter \ref{chp:aggregate}  ....go on to 
 Special role of coastally trapped signals in Australia  
 ....taken up in Chapter \ref{chp:waveguide}
 
