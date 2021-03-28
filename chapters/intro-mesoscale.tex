@@ -1,7 +1,8 @@
 \section{Mesoscale operational oceanography}
 \label{sec:mesoscaleOperational}
-Tide prediction has effectively been in routine operations for several decades.
-More recently, mesoscale ocean prediction moved into operations across the early 2000s in a manner that lagged and imitated the path of \NWP \citep{Harper:2008ub}. And like modern weather forecasting, operational oceanography is similarly a big science enterprise \citep{Petersen:2012tr} in the sense that it fundamentally relies on the coordination of large organisations, global networks and capital. 
+Tide prediction has effectively been part of routine operations for several decades; whether or not the term ``operational'' has been applied.
+Starting in the early 2000s, mesoscale ocean prediction has become operational in a manner that lagged and imitated the path of \NWP \citep{Harper:2008ub} rather than tide prediction. 
+And like modern weather forecasting, operational oceanography is similarly a big science enterprise \citep{Petersen:2012tr} in the sense that it fundamentally relies on the coordination of large organisations, global networks and capital. 
 The size and nature of this type of prediction stands in stark contrast to the ``small'' well-established practices of conventional tide prediction introduced in section \ref{sec:tidesOverview}.
 The international Global Ocean Data Assimilation Experiment \GODAE{} serves as a historical reference point for how mesoscale prediction came into operational agencies like the Bureau:
 ``\textit{the central idea of \GODAE{} - to demonstrate the feasibility and utility of real-time, global ocean forecasting - was based on the experiences of the meteorological community in \dots{} FGGE}'' \citep{Bell:2009uv}.
@@ -31,10 +32,10 @@ Figure \ref{fig:ogcmScales} illustrates very schematically the place of \OGCM{} 
   \label{fig:ogcmScales}
 \end{figure}
 %----------------------------------
-Common to `big science' simulation practice more generally \citep{Petersen:2012tr} any real \OGCM{}, including \BL{}, embodies a significant accumulation of human effort in the very many lines of computer code.  In contrast to typical tidal analysis tools, the software behind a mesoscale ocean forecast is effectively too much for any one person to understand in detail.
+Common to big science simulation practice more generally \citep{Petersen:2012tr} any real \OGCM{}, including \BL{}, embodies a significant accumulation of human effort in the very many lines of computer code.  In contrast to typical tidal analysis tools, the software behind a mesoscale ocean forecast is effectively too much for any one person to understand in detail.
 %-----------------%
 \subsection{Data assimilation and sea level observation}
-Data assimilation is the model-data-fusion framework by which the initial conditions for each \OCGM{} forecast are determined.
+Data assimilation is the model-data-fusion framework by which the initial conditions for each \OGCM{} forecast are determined.
 This processing step can be usefully viewed from a Bayesian perspective in which ``the system implements an optimality criterion which defines how to best combine dynamics and observations, given an hypothesized error model for both.'' \citep{10.1007/978-94-007-0332-2_13}.
 Subsequently the availability of near-real-time observations of the global ocean has played a critical role in enabling operational mesoscale forecasting.  Expansion of ocean observation coverage of recent decades largely mirrors the maturation of abundant satellite communications.  But despite the growth of what has been called the global ocean observation system \GOOS{} \citep{Komen:1999ch}, the ocean remains fundamentally under-observed for the purposes of physical state estimation.   Satellite-based surface observations of the ocean are the most abundant, whilst the ocean depths are sampled by comparatively sparse insitu profiles.
 
@@ -42,7 +43,7 @@ Subsequently the availability of near-real-time observations of the global ocean
 Tide gauges observations are fundamental to conventional tide prediction, but are in contrast often totally excluded from mesoscale data assimilation.   The fact that \BL{} does \emph{not} assimilate any sea level data from tide gauges is relevant to the aggregated forecast design described in chapter\ref{chp:aggregate}.      
 Sea level close to coast lines in a mesoscale ocean simulation is primarily an expression of the simulated fluid dynamics rather than an observationally constrained parameter.
 
-Whilst tide gauges are excluded, sea level observations derived from satellite mounted radar instruments have played a pivotal role in the evolution of ocean forecasting \citep{Fu:2001ub}.  Moreover, the forecast skill associated with the assimilation of satellite altimeter data has been shown to be of particular significance by  \cite{10.5194/os-13-1077-2017} and others.
+Whilst tide gauges are excluded from assimilation, sea level observations derived from satellite mounted radar instruments are a crucial input and have played a pivotal role in the evolution of ocean forecasting in general \citep{Fu:2001ub}.  Moreover, the forecast skill associated with the assimilation of satellite altimeter data has been shown to be of particular significance by  \cite{10.5194/os-13-1077-2017} and others.
 In contrast to the still water level observed by a tide gauge, it is primarily a sea level anomaly (SLA) quantity that is derived from the altimeters and used to constrain the \OGCM{}. Figure \ref{altimeterEg} illustrates the nature of the along-track nadir coverage of a single satellite altimeter.
 These SLA observations are not however applied to constrain the ocean state in the vicinity of coastal tide gauges; and in the case of \BL{} are excluded from the assimilation process for regions where the depth is less than 200m or close to a land mass.   This reflects that fact that the derivation of sea level quantities from satellite altimeters is particularly challenging in shallow water and near coastal boundaries \citep{Woodworth:2011bf}.    Although an active area of development, coastal altimetry data streams are not yet used to constrain operational mesoscale forecast  systems.
 %----------------------------------
@@ -76,7 +77,7 @@ Given the focus on estimating the slower baroclinic evolution on the three dimen
 %rigid ild
 Earlier models avoided direct representation of surface height variations by making the so-called `rigid-lid' approximation \citep[pp128]{gill1982atmosphere} which leads to other ramifications for ocean forecasting discussed by \cite[pp19]{Griffies:2004vs}.
 % split explicit
-\MOM{} does carry a free surface height as a state variable by employing a `split-explicit' timestepping scheme.    
+The ocean model underlying \BL{}, \MOM{} \citep{Griffies:2008vh}, does carry a free surface height as a state variable by employing a `split-explicit' timestepping scheme.    
 In essence, this approach timesteps a computationally cheap shallow-water representation of barotropic dynamics many times for each relatively expensive update of the full depth-dependant ocean state.  
 Thus, by representing the barotropic free surface dynamics of the ocean, a mesoscale \OCGM{} like \BL{} could in principle simulate the global tides.
 But tidal forcing is not applied in \BL{} and there are several high level arguments against doing so.
@@ -98,53 +99,62 @@ Overall the tendency of geophysical simulation is towards every higher fidelity 
 \end{itemize}
 These aims do not necessarily motivate an accurate simulation of the sea surface elevation.
 Rather, in the spirit of Figure \ref{fig:ogcmScales}, it is a configuration with regard to what processes are relegated to sub-gridscale parameterisations.
-Thus in the \OFAM{} simulations of \cite{Schiller:2004fv},  it was reasonable to include only a small subset of tidal constituents and effectively ignore realistic astronomical phase information.  In contrast to a standard tide prediction,  the aim in this case was ultimately to improve the broad spatial distribution in which tidal currents influence mixing and water mass formation.
-\cite{Arbic:2004wz} highlighted the `inordinately large' magnitudes allocated to drag parameterisations in tide simulations and the important role for barotropic to baroclinic energy  energy conversion.  
-Following great advances with the explicit simulation of tides using HYCOM,   \cite{10.1016/j.ocemod.2019.02.008} still rely on tidal parameterisations for subgrid conversion processes in the form of depth-dependant M2 wave drag term.
-Further discussion of the details and progress towards explicit resolution of tides in \OCGM{}s is relegated to Appendix \ref{appendix:globalTides}
-To date, the motivation to include tides in \BL{} remains far from the operational schedule.
 
-%TBC comments about separating skill of model appraaoches ....how this fits with seamless plans....
+Thus in the \OFAM{} simulations of \cite{Schiller:2004fv},  it was reasonable to include only a small subset of tidal constituents and effectively ignore realistic astronomical phase information.  In contrast to a standard tide prediction,  the aim in this case was ultimately to improve the broad spatial distribution in which tidal currents influence mixing and water mass formation.
+
+\cite{Arbic:2004wz} has highlighted the `inordinately large' magnitudes allocated to drag parameterisations in tide simulations generally, and the fact that large scale tidal simulations have to somehow account for the important role of barotropic to baroclinic energy conversion.   This conversion must be fully parameterised for a depth integrated simulation, but for a tidal \OCGM{} with baroclinic dynamics the line between what is explicitly modelled and what is parameterised is redefined.  
+
+Inclusion of tidal motions within the HYCOM \OGCM{} has advanced substantially and been shown to benefit the representation of certain baroclinic ocean structures  \cite{10.1016/j.ocemod.2019.02.008}.    But this trajectory towards higher fidelity still relies on careful and tidally-specific parameterisation methods to account for unresolved processes; such as by the depth-dependant M2 ``wave drag'' term \citep{Jayne:2001tr}.
+
+Some further discussion of explicit resolution of tides in \OCGM{}s is not included in Appendix \ref{appendix:globalTides}
+
+
+
+To date, the inclusion of explicit tides in \BL{} remains far from the Australian operational schedule.
+But given the trajectory of operational forecasting more widely, the question of how to handle the boundary between tidal and non-tidal simulations will require continual revision.
+One operational reference point for handling questions about differing representation of tides across numerical systems is provided from outside the \OGCM{} context; with the design of the United Kingdom Storm Tide Warning Service \footnote{now titled UK Coastal Monitoring and Forecasting}\cite{Horsburgh:2008gw}.   In this design the weather forecast simulation includes tides in order to account for non-linear interactions between the tidal and nontidal sea level effects; however this total water forecast is not applied directly, but is differenced with a tide-only simulation to derive a forecast surge (or residual) signal.   This configuration allows for both the simulation of interaction effects but the continued use of an established or superior representation of the tidal component.
+
+
+Arguably the challenge presented by higher fidelity operational ocean forecasts is in how to usefully exploit these inherently incomplete and approximate representations;  
+\textit{while a model can never be “truth,” a model might be ranked from very useful, to useful, to somewhat useful to, ﬁnally, essentially useless} \citep{10.1007/978-0-387-22456-5_1}.
+The ability to rank usefulness and design forecast products will always be a function of the application, regardless of progress towards ever more concrete simulations.
 
 %-----------------%
 \subsection{Representation of coastal boundaries}
-
-
-Special relevance to the present discussion is the representation of coastal sea level.
-
-So how is the coast actually simulated?
-
-Regular grid
-Arakawa-B
-Compared to high-resolution 
-no wet-dry
-no sediment movement
-
-Staggered grid has some special considerations:
-- time stepping involves spatial gradients and templates
-- gives rise to null mode
-- application of smoother to mitigate
-
-
-Figure \ref{fig:map_masks} shows the \BL{} coastal discretisation.
-Nomincally around 10km 
-features like port phillip excluded
-
-
+The numerical representation of the land/sea boundary is of special interest for the present focus on coastal sea level.
+Model design choices that allow for the tractable representation of mesoscale ocean circulation properties stand in contrast to those that would specifically target coastal processes.
+The image in Figure \ref{fig:oceanmapsMaskDetail} illustrates how the \BL{} spatial grid discretizes the Australian coast into approximately 10km steps.  A more national view is shown later in Figure \ref{fig:map_masks}.
+At face value this resolution may appear too coarse to usefully simulate the water level at a coastal location; let alone within an shallow embayment such as Port Phillip Bay shown in the image.    But the length scales that can be represented rather lead to an expectation that the useful timescales of the simulation will be limited in some related way.   Chapter \ref{chp:aggregate} demonstrates that there is qualified value at the scales represented.
 %---------------------------
-\begin{figure}[h]
+\begin{figure}[H]
+    \begin{center}
+    \includegraphics[width=\figwidthBig]{figures/images/oceanmapsMaskVic.png}
+    \caption{Horizontal land/sea mask detail over south eastern Australia near Melbourne. The $0.1^{\circ}$ regular grid approximates the coast in ~10km steps and totally excludes features like Port Phillip Bay.}
+    \end{center}
+    \label{fig:oceanmapsMaskDetail}
+\end{figure}
+%---------------------------
+But for the present document there are details beyond a nominal length scale that are worthy of explication.
+
+Firstly, \BL{} simulates the ocean state on a regular Arakawa-B staggered horizontal grid.
+This grid carries a fixed allocation of the land/sea mask, so there is no time evolution of where the coast is located as there could be in a system with the feature commonly called wetting-drying.
+Furthermore, the system uses a fixed bathymetry and takes no account of sediment transport or any other active change to the lower boundary.
+
+The staggered B-grid complicates how the coastal boundary is represented as there are effectively two horizontal grids that each determine what is wet and what is dry.
+In particular, the sea level anomaly quantity ($\eta_t$) is quantified on the `T' or tracer cell grid.    However, in order to integrate the shallow water equations forward in time information is exchanged with velocity values carried on the `U' grid; and furthermore each timestep involves a spatial operation over a stencil of neighbouring cell points. 
+The numerical implementation in \BL{} of the barotropic hydrodynamics leads the existence of a so-call checkerboard null-mode; a numerical artefact that can allow aphysical spatial discontinuities in sea level to grow.   To mitigate this null-mode, a spatial smoothing step is included within the fast barotropic integration.
+%---------------------------
+\begin{figure}[H]
     \begin{center}
     \includegraphics[width=\figwidthBig]{figures/diagrams/mom_BT_stencils_extra.png}
-    \caption{\OFAM{} Arakawa-B horizontal grid.  }
+    \caption{Arakawa-B horizontal grid stencil illustrations relevant to the baroptropic mode of \BL{}; the forecast sea level anomaly includes both barotropic and baroclinic contributions}
     \end{center}
     \label{fig:atlas}
 \end{figure}
-
-ocean forecasts are inherently scale limited ....figure \ref{fig:ogcmScales}
-So at best mesoscale represent phenomena operating at length scales of several 10s of km.
-But after demonstrating that these scales are actually relevant to operational sea level forecasts in chapter \ref{chp:aggregate}  ....go on to 
-Special role of coastally trapped signals in Australia  
-....taken up in Chapter \ref{chp:waveguide}
+%---------------------------
+These spatial considerations simply suggest that at best \BL{} should be able to simulate phenomena operating at length scales of several tens of kilometers.
+But there are hydrodynamic processes that are inherently coastal, for which the relevant length scales are likely not isotropic and are more naturally cast in coordinates related to the coast itself.    
+This topic is taken up in Chapter \ref{chp:waveguide} with regard to the representation of coastally trapped phenomena.
 
 
 

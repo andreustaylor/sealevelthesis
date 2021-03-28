@@ -110,7 +110,7 @@ Given the positions in the geocentric reference frame $\theta,\lambda,r$ for bot
 c_{nm}(t) &= a_{nm}(t) + ib_{nm}(t) \nonumber \\
           &= \sum_{b=\text{moon},\text{sun}}    \frac{4 \pi GM_{b}}{g r_{b}}  \frac{(2-\delta_{m0})} {(2n+1)} \left(\frac{a}{r_b} \right)^n    M_{nm} P_{nm}( \sin(\theta_b) ) e^{im\lambda_b}
 \end{align}
-The normalisation used in the determination of $c_{nm}(t)$ must be consistent with that used for equation \ref{q:VT}.
+The normalisation used in the determination of $c_{nm}(t)$ must be consistent with that used for equation \ref{eq:VT}.
 Note that $\theta,\lambda$ in Equation \ref{eq:c} are equivalent to the geographic coordinates of the respective sub-body point at a given time. 
 Where $\delta_m0 = 1$ for $m==0$ and $\delta_{m0} = 0$ for $m \neq 0$.\\
 Normalisation $M$ is given by Equation \ref{E:M}. The radial scale $a$ is conventional taken as the semi-major axis from the ellipsoidal georeference. 
@@ -178,7 +178,7 @@ Longitude of Sun mean perigee          & $p_1$             & $\sim$ 20000 years\
 \end{table}
 
 
-Equation \ref{E:doodson} gives the angular argument for a single tidal component $k$ as a function of the 6 astronomical arguments.   As discussed above, the astronomical arguments embody an analytical ephemeris for the Moon and Sun rather than a direct numerical description of these positions.  Polynomial functions of time can be used to estimate each of the 6 arguments close to a given epoch.  The phase adjustment $\delta$ is a convention applied such that the each term in \ref{E:harmonic} is written as a cosine, rather than the mixture of sine and cosine terms that naturally follow from the underlying spherical harmonics.
+Equation \ref{E:doodson} gives the angular argument for a single tidal component $k$ as a function of the 6 astronomical arguments.   As discussed above, the astronomical arguments embody an analytical ephemeris for the Moon and Sun rather than a direct numerical description of these positions.  Polynomial functions of time can be used to estimate each of the 6 arguments close to a given epoch.  The phase adjustment $\delta$ is a convention applied such that the each term in equation \ref{E:harmonic} is written as a cosine, rather than the mixture of sine and cosine terms that naturally follow from the underlying spherical harmonics.
 
 \begin{align}
 \label{E:doodson}
@@ -457,7 +457,7 @@ Indeed, the design and motivation for satellite altimetry missions have been to 
 Meaningful tidal atlases existed prior to altimetry, most significantly that due to Schwiderski \citep{Schwiderski:1983ke}, but these necessarily suffered from a lack of validation and constraint in the deep ocean.
 
 
-Global tide models are employed for a range of purposes beyond sea level forecasting,often as an intermediate step or a correction, for applications in gravity, orbit determination, earth rotation and even the definition of coordinate systems \citep{Anonymous:2004tm}.
+Global tide models are employed for a range of purposes beyond sea level forecasting,often as an intermediate step or a correction, for applications in gravity, orbit determination, earth rotation and even the definition of coordinate systems \citep{IERS2003}.
 
 Most importantly for the present discussion, global tide models are employed to \underline{filter}, or de-tide, sea level observations from near-real-time altimetry as a data assimilation constraint on mesoscale ocean forecast modells; discussed in section \ref{sec:mesoscaleOperational}
 
@@ -540,7 +540,7 @@ The tidal view of the ocean as a LTI system driven by the \ATGP{} is very useful
 Whilst stratification and all internal hydrodynamic mechanisms are very coarsely parameterised in global tide models, the internal structure of the ocean is a primary focus of \OGCM{}s, and this forecasting perspective is discusssed in section \ref{sec:mesoscaleOceangraphy}.  Some further detail on on modeling global tides is also included in Appendix \ref{appendix:globalTides}.
 
 %-----------------%
-\subsection{Operations needs more than one ocean tide}
+\subsection{Operational need for multiple tide concepts}
 The above sections have portrayed the ways that ocean tides have come to be employed for operational forecasts.
 In the simplest terms, there are two operational conceptions of ocean tides actually are;
 \begin{itemize}
