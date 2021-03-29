@@ -1,120 +1,72 @@
-%-----------------%
 \section{Exploiting existing predictability}
-\label{S:fc_prospects}
+\label{sec:exploitingPredictability}
+%--------------------
+\subsection{Unresolved processes and overlap}
+All sea level forecasting systems are realised via design choices regarding what processes are in scope and the manner in which they are represented.
+In the above sections, two operational approaches were contrasted; tide prediction and scale-limited hydrodynamic ocean circulation simulation.
+To a first approximation these forecast types are conceptually complimentary; one being tidal and the other non-tidal, one in which the ocean is characterised by a time-invariant admittance and other by the evolution of a turbulent fluid. 
+Each approach necessarily must account for the impact of unresolved processes on the target representation.
 
 
-\subsection{Direction of ocean sea level forecasting development}
+There are reasons to look critically at the nominal separation of these tidal and non-tidal forecast approaches.
+Most simply, the fact that more than one conceptualisation of what comprises tidal sea level is in use operationally requires at a minimum semantic care to avoid misunderstanding.
+More fundamentally, the boundary between resolved and unresolved will be redefined as simulation systems are updated and improved.  Hydrodynamic simulation in particular is set to continue in a direction of ever-higher fidelity and concreteness.
 
-\cite{10.3389/fmars.2019.00437} summarises the current state and direction towards comprehensive systems for monitoring and predicting sea level:
+The motivation to explicitly represent tides in \OGCM{}s provides a clear case where the separation between tidal and nontidal would require revision.   
+But some representation overlap of this nature is already present and is taken up in chapter \ref{chp:tideFlavours}.
+
+
+Increasing simulation fidelity, moving processes from unresolved to resolved, is of itself not necessarily beneficial for forecast value.
+Forecast value is ultimately found in the predictability of an actionable quantity.  
+
+
+Consider by analogy the case of spectral wind wave forecasting. 
+Wave forecasting is like tide prediction essentially a stand-alone bespoke numerical forecasting method.   Operational wave forecasts represent the sea level variability within certain time and length scale limits as a time-evolving spatial map of spectra. Bulk spectral properties such as significant wave height are usefully predictable out to several days and are in wide use for navigation and other applications.   However, these predictable spectral properties are not directly observable sea level per se.   Increasing simulation concreteness to the degree of forecasting waves in a phase-resolving framework (as in the littoral forecasts described by \cite{10.1080/1755876x.2019.1685834}) is not yet tractable for large domains over long forecasts; and may not ultimately prove to offer any more actionable value for many applications than the existing spectral approach does.
+
+
+
+Conventional tidal analysis has established a unique manner in which to extract a specific type of predictability from historical point observations.
+The projection (fitting) process is designed to sift out patterns of variability that have been sufficiently coherent with the temporal variability of the \ATGP{}; without any knowledge of the environment beyond the forecast location.
+
+But extension of tidal analysis beyond insitu observation points necessarily intersects with hydrodyamics; which in turn includes drawing a boundary between resolved and parameterised processes.  
+
+A key tool for handling unresolved processes in both operational mesoscale ocean forecasting and global tide spatial solutions is data assimilation; optimally \textit{fitting the data and the dynamics ``well enough''} \citep{Egbert:1994wz}. 
+What the target of this well-enough is not isomorphic between the two forecasting approaches.
+Whereas global tide solutions seek an optimal time-unvarying balance between simplified shallow water dynamics and observations in tidal frequency space, the mesoscale forecast requires a best-guess initial condition for the ocean circulation state.  
+Despite the difference in detail, both are similar in that they draw trade-offs to provide an overall spatially consistent optimal representation.   Neither are optimised for a single location or user.
+
+Operational sea level forecasting in contrast, could be considered as an isolated and targeted activity for which additional assimilation or data-driven approaches could be applied in order to extract the most relevant predictability. 
+
+%--------------------
+\subsection{Sea level forecast development}
+\cite{10.3389/fmars.2019.00437} review and summarise the current state and direction of coastal sea level monitoring and prediction.   These authors emphasise the complex mix of processes and ``our limited capacity to predict [sea level] at the coast on relevant spatial and temporal scale''.
+Their motivation towards \emph{comprehensive} systems is essentially the same as what has here been termed seamless services. 
+They name three directions for development:
 \begin{quote}
 (i) the use of realistic numerical models to resolve the processes that govern the ocean dynamics; (ii) the use of observations, which combined with statistical techniques are used to identify space and time patterns and extrapolate them into the future , and (iii) the hybrid approach, which combines the first two in a wide variety of ways.
 \end{quote} 
 
-Nested models of increasing resolution may indeed be the natural architecture for coastal sea level forecasting.  
-But in contrast to the status of \BL{}, operational realisation of such a capability is not imminent nor guaranteed.
+Arguably, the current state of the first of these directions is represented at the mesoscale by \BL{}.   The second direction starts with the established practices of conventional tidal analysis.
 
-TBC - but even with dowscaling resolving short wavelenght and localised is very challanging.
-Requires not only very good bathy, but also sedimentaion and parameterisation of drag etc.
-ref to old Foreman.
-Eg even COMPAS surface tides are poor, compared to standard tides.
-
-Hence - in contrast to the better simulation across scales, what skill is there is the scales already in production?
-Hybrids present one way into "seamless".
-Eg MOS, trained systems etc.
-Star
+One instance of the third hybrid direction is explored in chapter \ref{chp:aggregate} with the direct combination of existing operational systems.
+Managing any such hybrid forecasting system across future evolution of the operational suite will involve more than just the transitions from higher to lower fidelity with forecast range.  Rather, more qualitative transitions will be involved between tide-resolving and tide-excluding simulations against a time-scale-spanning reference tide prediction.  Arguably this trajectory doesn't fit so neatly in the chain-of-scales metaphor used to promote the seamless ideal \cite{10.1175/bams-87-9-1195}.
 
 
-Caveats aside, for periodic signals direct output from a dynamic model is unlikely to approach the ability of harmonic methods to predict complex local and nonlinear effects.   The fundamentals of conventional tide predictions reasonably provide the reference for sea level forecasts more generally.
+As new dynamic ocean forecasting systems progress as candidates for inclusion in the operational suite, there will be a continual need to characterise and evaluate the representation of sea level provided.  Given the broad mixture of time and length scales expressed in coastal sea level, no model evaluation can hope to be based on a singular metric.    The value of focusing some evaluation directly on coastal propagation is taken up in chapter \ref{chp:waveguide}.
 
 
 
-...one promising concept involves aggregation \emph{and} a tide-resolving \OGCM{}.  The premise is that an \OGCM{} will only ever represent a compromised tidal signal, but inclusion of these dynamics will produce a net gain for the nontidal flow.
+But from the operational perspective there is more to sea level forecasting development than the quantification of the skill of the forecasts themselves.
+One such aspect is the unique established role of conventional tide prediction.   The use of products such as tide tables is not only deeply embedded into day-to-day activities of coastal communities, but is to varying degrees built into legislation (eg \citep{AusNavAct2012}).   Any improvements to sea level forecasting will be carried out against a background of the concept of an ``official'' tide prediction and associated spatial references like chart datum and highest astronomical tide (HAT).    
+This general topic is taken up in chapter \ref{chp:tideFlavours}.
 
 
-An operational reference for such an approach is found in the design of the UK Storm Tide Warning Service (now titled UK Coastal Monitoring and Forecasting) \cite{Horsburg:2009ui}.   Although the UK system is based on depth integrated surge models, rather than an \OGCM{}, the aggregation of hydrodynamic models and tide predictions is instructive. 
-
-
-
-%Whatever the promise of inclusion of explicit tides within \OGCM{}s scientifically, operational forecast systems must balance a unique set of motivations quite distinct from other \OGCM{}-based simulations. 
-
-%Two broad directions are identified with regard to the prospects for \OGCM{}-based operational sea level forecasts:
-%\begin{enumerate}
-%\item \underline{Aggregation}: the \OGCM{} is used to forecast a nontidal quantity that is subsequently aggregated with tide predictions and other forecast products;
-%\item \underline{Integrated simulations}: the \OGCM{} is used to forecast as much of the sea level signal as is feasible and is used directly.
-%\end{enumerate}
-%These equally apply to the realistic scenario of employing a spatially nested set of simulations in that \obc{}s may be provided by either aggregation or integration.\\
-
-
-%Aggregation of heterogensous does appear most promising for routine forecasts in the current operational setting.  
-%This assertion is based on consideration of the highly evolved specialisations of forecasting methods as well as organisational realities of system development.\\
- 
-
-
-\subsection{Treatment of unresolved processes}
-
-
-TBC - some analogy with spectral wave models and phase resolving.
-... at a much small scale
-... impact and value really in the total water height and actual waves
-... but user ingest and interpretation may only be tractiable in the simplified world of Hs Tp
-... tides in some way the same as a spectral wave ,but with phase  ...even though the actual impact or appplication ultimately requires full sea level ...
+The primary role of insitu observations presents several mundane but fundamental challenges for operational forecasting.
+Managing basic metadata and quality control for near-real-time sea level observations is a non-trivial task, which is rendered all the more difficult by the heterogeneity operators and instruments in the Australian context.    Tide gauge instruments are installed and operated by a wide variety of private and public organisations, and given the huge spatial extent of the Australian coast any available observation source is potentially valuable. 
+This situation can be contrasted against the significant progress in collating global datasets of research quality archives, or even the efforst to expand monitoring beyond these traditional instruments as discussed in \citet{10.3389/fmars.2019.00348}.
 
 
 
-and contrasting applications of data assimilation
-
-highlight and contrast the role of DA in 
-\begin{itemize}
-    \item global tide solutions in freq space
-    \item mesoscale in time space
-    \item downstream bias conrrection and MOS
-\end{itemize}
-
-No forward model is useful by itself.
-
-Initial conditions and/or boundary conditions 
-
-Application of DA not unlike the training data in ML ...it all depends on what the target is.
-
-\subsubsection{Handling observations and skill measures}
-Operational relevance of mixed-quality tide gauges.
-
-The evolving national network - distinguished from uniform or curated climate data.
-
-
-Datums!
-
-Tide gauges and altimeters.    
-
-
-Data driven and ML
-
-
-Assessing forecast goodness
-
-tidal "constants"
-
-timeseries
-
-bias
-
-Special role for "official" promulgated tides -
-
-\subsection{Predictability characterisation and benchmarks}
-
-Conventional tides as a benchmark and reference ...more like a literal benchmark
-
-
-Existing operational forecast system as benchmark for future developments.
-
-
-Peterson and motivation toward conreteness.
-
-
-TBC
-
-Taken up in Chapter \ref{chp:aggregate}
-
-
-
-
+Finally, working towards seamless sea level forecasts in an operational setting will require conceptual clarity about the types of predictability offered by an evolving but imperfect suite of operational systems. 
+This collection of operational capabilities will inevitably evolve, and almost certainly never be cleanly complimentary; but the operational requirement for the best available sea level forecast is immediate and ongoing. 
+Thus there is value is establishing benchmarks for the forecast value available immediately from existing systems and for preparing the way for the introduction of ever more ``concrete'' prognostic simulations.
