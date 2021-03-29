@@ -228,7 +228,7 @@ The ``\textit{possibility that ... non-tidal power is leaking into the Mm and Mf
 
 It is notable that long period signals in Australian sea level studies have always been subject to careful ``non-tidal'' treatment. For instance Haigh \cite{Haigh:2013bn} and Pattiaratchi \cite{Pattiaratchi2018} ensure that long period signals are appropriately filtered, fit or replaced to account for the representational limits of the respective models when interpreting results against observations.
 
-\begin{figure}[H]\centering
+\begin{figure}[h]\centering
     \begin{subfigure}[b]{\figwidthHalf}
         \includegraphics[width=\textwidth]{figures/maps/AustRegionDiff_SA.pdf}
         \caption{SA}
@@ -263,7 +263,7 @@ in place of a physical tide estimate that excludes nominally weather dominated c
 For these evaluations no bias correction was applied and sample means over approximately 3 years of 1-hourly data are removed.  Whilst the predictive skill characteristics varies between locations, the change from the double-counting scenario (`A' in the figures) to the physical tide scenario (`B') systematically reduces excess variance and improves correlation.
 
 
-\begin{figure}[H]\centering
+\begin{figure}[h]\centering
     % Taylor
     \begin{subfigure}[b]{\figwidthBig}
         \includegraphics[width=\textwidth]{figures/plots/taylorDoubleCount.pdf}
@@ -312,10 +312,66 @@ Figure \ref{fig:complexEvolution} shows how these `constants' have evolved over 
 
 %----------------------------------
 % table
-\input{tableFocusStations} 
+%\input{tableFocusStations} 
+\begin{table}\centering
+\begin{tabular}{ r|p{1cm}|p{1.2cm}|c|c|c }
+Name 
+ & ANTT 
+ & BoM 
+ & web  
+ & port type
+ & Obs for 2022
+  \\ 
+\hline
+Mornington Island 
+ & 63540 
+ & 529020 
+ & Y 
+ & Secondary 
+ & 30/06/2007 - 31/12/2016
+ \\
+Christmas Island  
+ & 46290 
+ & 200970 
+ & Y 
+ & Secondary 
+ & 04/08/2009 - 31/12/2018
+ \\
+Point Murat       
+ & 62430 
+ & 005096 
+ & Y 
+ & Secondary 
+ & 13/05/2008 - 31/12/2019
+ \\
+Geraldton         
+ & 62290 
+ & 008314 
+ & Y
+ & Primary   
+ & 01/01/1985 - 31/12/2019
+ \\
+Cape Jervis       
+ & 61561 
+ & 523757 
+ & N 
+ & Secondary
+ & 29/05/2014 - 31/12/2019
+ \\
+Lord Howe Island  
+ & 57720 
+ & 200854  
+ & Y 
+ & Secondary 
+ & 02/08/1994 - 31/12/2019
+ \\
+\end{tabular}
+\label{tab:sites}
+\end{table}
+
 %----------------------------------
 
-\begin{figure}[H]\centering
+\begin{figure}[h]\centering
     % B
     \begin{subfigure}[b]{\figwidthHalf}
         \includegraphics[width=\textwidth]{figures/plots/complex_\Ba.pdf}\caption{\Bname{}}

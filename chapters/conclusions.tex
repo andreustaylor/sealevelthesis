@@ -7,7 +7,8 @@ As such, all evaluations treated here have intentionally not pursued higher fide
 As a thesis with publication, much of the body of this document has been published as, or is in preparation for peer-reviewed academic papers.
 %------------------------
 \section{Findings summary}
-In answer to the research questions posed in \ref{Sec:intro} the findings of this thesis are summarises as follows:
+In answer to the research questions posed in chapter \ref{chp:introduction},  the findings of this thesis are summarised as follows:\\
+
 \input{chapters/findings-summary-paragraph}     % <<-- external file
 
 %------------------------
@@ -18,43 +19,45 @@ Indeed the development of more seamless services is a strategic goal of the Aust
 The present focus on sea level forecasting allows for a twist on the chain image to highlight the unusual place in which the LTI tidal admittance approach can be located relative to the geophysical fluid suite of simulations.
 Figure \ref{fig:forecastScalesChain} schematically shows that tide prediction in general can provide very long horizon prognoses of short time scale fluctuations in sea level; of course subject to many caveats.
 %------------------------------
-\begin{figure}[H]\centering
+\begin{figure}[h]\centering
         \includegraphics[width=\figwidthFull]{figures/diagrams/scales_with_chain.pdf} 
-        \caption{Tide prediction can sit awkwardly with the seamless chain of scales analogy; following Figure \ref{fig:forecastScalesAll} and \citep{10.1175/bams-89-4-459}}
+        \caption{Tide prediction can sit awkwardly with the seamless chain-of-scales analogy and highlights an ongoing role for system heterogeneity; following Figure \ref{fig:forecastScalesAll} and \citep{10.1175/bams-89-4-459}}
         \label{fig:forecastScalesChain}
 \end{figure}
 %------------------------------
-The intention behind this picture is to emphasise that multi-scale prediction need not be shoe-horned into the tidy cascade of a single consistent earth system simulation framework.
-Although the idea of a single simulation code-base and forecasting framework is attractive on many fronts  \footnote{\url{https://research.csiro.au/access/what/}}, consideration of the status of sea level and tide prediction provides at least one case in which some sort of exception is sure to be required based on the unique value offered by legacy products.  
+The intention behind this imagery is to emphasise that multi-scale prediction need not be shoe-horned into the tidy cascade of a single consistent earth system simulation framework.
+Although a consistent framework and a single simulation code-base is very attractive on multiple fronts  \footnote{\url{https://research.csiro.au/access/what/}}, consideration of the status of sea level and tide prediction provides at least one case in which some sort of exception is sure to be required based on the unique value offered by particular mechanisms and legacy products.  
 
-Operational reality is expected to always consist to a some degree of a suite of systems that are not cleanly compatiable ....
-
-Numerical forecasts from agencies like the Australian Bureau of Meteorology have arguably been under-utilised as a result of system heterogeneity.   It is not self-evident how to take into account the prognostic information ostensibly available in non-tidal sea level anomaly, storm surge and tide-table products; whereas all could be simultaneously issued to the public. 
-
-.... some lessons for any blended information from climate, short term and long term forecasts for decision making is in 
+Operational forecasting today, when viewed holistically, is based on a suite of systems that are not cleanly compatible.
+The prognostic potential of Australian Bureau of Meteorology has arguably not been fully realised to some degree as a result of system heterogeneity.  Consider how the forecast information published variously as maps of non-tidal sea level anomaly, storm surge warnings and tide-table products cannot self-evidently be synthesized and directly interpreted in relation to observable sea level.
+And whilst progress towards ever more concrete and consistent earth simulations will continue apace, there is sure to be an ongoing operational requirement to handle inhomogeneity and system transitions in manner that actually provides useful forecast value. And in line with the final recommendation of \cite{10.1175/bams-89-4-459}, realising that value will require ``\textit{closer and wider cooperation between the scientific community, stakeholders, policy- and decision-makers to ensure that sea level products are accessible and are used correctly and appropriately...}''. 
 
 %------------------------
 \section{Next steps}
-Australia ....versus OS.
+The will be ongoing opportunities to improve sea level forecast services as the operational suite of simulation systems improve, but any innovation will necessarily be interpreted by users against the background of conventional tide predictions.
 
-Primacy of observational data and metadata
+Whilst this body of work intentionally restricted focus to the Australian setting, some of the higher level  characterisations will be translatable to other shores.  Especially the basic conceptual overlap between aspects of conventional tide prediction and hydrodynamic simulation.
+The federated jurisdiction combined with the vast expanse of the Australian coast tips the balance of operational challenges towards delivering a more universal, as opposed to highly targeted, approach to forecasting.   As a jurisdictional contrast is available in the case of South Korea, where a dense network of weather and marine observations are maintained under the same auspices as the forecasting agency (eg   
+\citep{10.1007/s10236-015-0820-3}).
+The vast Australian coast also raises the significance of large scale coastal propagation, and moreover highlights the problem of observation sparsity.
 
-Expansion to more heterogenous and diverse quality data ...video etc
+
+There remains a primary role for \underline{tide gauge observations} to underpin sea level forecasting across the board.
+Expansion of the observation capabilities to new platforms, be it video \citep{10.1175/jtech-d-18-0203.1} or wide swath altimetry, will not side-step the ongoing role for tide gauges.
+\cite{Keysers:we} emphasised the need for not only a denser network of observations around the Australian coast, but a national repository and ongoing curation of sea level observations and survey connections to support the needs of precision positioning.   
+That call is effectively mirrored for forecasting applications in the recommendations of \cite{10.1175/bams-89-4-459}.
+As yet, there is no such Australian coordination; at least not in the sense of seamlessly serving real-time and survey applications.
+There is an obvious opportunity to better align the capabilities of the conventional tide service, operational forecasting and spatial survey to maintain a foundational public resource.  Whilst small steps have been taken in that direction by the Intergovernmental Committee on Surveying and Mapping \footnote{\url{https://www.icsm.gov.au/}}, progress would be a great enabler for improved sea level forecast services.
 
 
-Seamless ...
 
-Microservice architecture 
-...foundational prediction systems 
-...accessible and machine-readable 
-...contrast to highly targeted vertical stack like ROAM   ...better to ensure value can be extracted and 
 
-Historical legacy and user adapatation ...
 
-All in the context of repairing whilst on 
+Finally, consideration of how tides and sea level fit within the operational setting of the Bureau of Meteorology corroborates the need for a concept of forecasting services that juxtaposes the chain-of-scales model; namely the so-called `micro-service' architecture \citep{BCG2020}.
+Quite apart from the vision for an all-encompassing multi-scale earth system simulation, the extraction of value from forecasts more generally appears to be on a fast trajectory towards the downstream combination of heterogeneous inputs for bespoke decision support applications.
+Ensuring that forecast outputs of all sorts are machine-readable, discoverable and well-characterised will facilitate the development of improved sea level applications both within and external to the operational agency itself.    
 
-Something about keeping up connection and dialogue with academic and cutting edge ....bluelink collaboration ...not just user pull ...
-
+%is increasingly relevant to government services and is embodied by programs such as  \url{api.gov.au}) and the International Hydrographic Organisations  navigation-focused exchange specifications (\url{http://s100.iho.int}).
 
 
 
