@@ -1,47 +1,41 @@
 \chapter{Conclusion}
 \label{chp:conclusions}
+This desktop study was motivated by the consideration of sea level from within the Australian Bureau of Meteorology, and certain conceptual problems identified behind operational developments.
+Exploration of the intersection of conventional tide prediction and operational mesoscale ocean forecasts within the agency has highlighted nuanced issues of representation, system compatibility and user expectation that are relevant to the strategic direction towards ``seamless'' services.
+As such, all evaluations treated here have intentionally not pursued higher fidelity coastal simulations, but instead directed attention to some less-studied aspects of evaluating and exploiting predictability with established operational systems.   
 
-This body of work was motivated by specific conceptual problems identified beneath the forecasting of sea level at the Australian Bureau of Meteorology.  The intersection of conventional tide prediction and operational mesoscale ocean forecasts within the agency is problematic with regard to issues of representation, system compatibility and user expectation.
-This desktop study has intentionally not pursued higher resolution simulations, but instead directed attention to some less-studied aspects of evaluating and exploiting established operational systems.   Such as perspective is relevant to the planned development of multi-model seamless services.   
-%\emph{%
-%Is the operationalisation of high resolution coastal simulations a prerequisite for providing regular sea level forecasts?  Despite comparatively low coastal resolution, can \BL{} directly provide useful prognosis of non-tidal coastal sea level and with what limitations? }
-%\emph{Are point-by-point tide-gauge observations the only relevant basis on which to compare and assess heterogeneous sea level forecast simulations? 
-%Why is the role of coastally trapped waves prominent in the oceanographic literature but seemingly absent from operational forecasting?}
-%\emph{Has numerical simulation rendered conventional tide prediction redundant for operations?  How can the unique traditional function of tide prediction compliment nominally non-tidal ocean forecasts and future seamless prediction systems? }
-Much of the body of this thesis has been published in a series of peer-reviewed articles.
+As a thesis with publication, much of the body of this document has been published as, or is in preparation for peer-reviewed academic papers.
 %------------------------
 \section{Findings summary}
-In answer to the research questions posed in \ref{Sec:intro} the following points summarise the thesis findings:
-%-------------
-% external file
-\input{chapters/findings-summary-list}
-%-------------
+In answer to the research questions posed in \ref{Sec:intro} the findings of this thesis are summarises as follows:
+\input{chapters/findings-summary-paragraph}     % <<-- external file
 
 %------------------------
-\section{Heterogeneous simulations, compatibility and seamless services}
-
-Numerical forecasts from agencies like the Australian Bureau of Meteorology have arguably been under-utilised as a result of system heterogeneity.   It is not self-evident how to take into account the prognostic information ostensibly available in non-tidal sea level anomaly, storm surge and tide-table products; whereas all could be simultaneously issued to the public. 
-Likewise, blending the information from climate, short term and long term forecasts for decision making is in general fraught with details of compatibility and continuity.
-
-Seamless apparently coined or at least promoted early on by \citet{10.1175/bams-89-4-459}.
-Whereas the original focus was on multi-scale physical compatibility, the notion has been extended to service ...towards seamless services \cite{BOM2020}
-
-general pursuit of "seamless" is current \cite{10.1127/metz/2020/1048}
-
-
-
-This thessiu 
-
-The cascade of simulatied scales and incremental move to higher fidelity `contrete' simulations  ...
-perhaps related spectral wave forecasts to phase resolving ....
-
+\section{Heterogeneous simulations and seamless services}
+The original coinage of "seamless" prediction in the context of climate projections has evolved to now encompass the more general goal of prediction across time and length scales \citep{10.1127/metz/2020/1048}.
+Indeed the development of more seamless services is a strategic goal of the Australian Bureau of Meteorology \cite{BOM2020}.
+\cite{10.1175/bams-89-4-459} illustrated the concept with a schematic chain of scales reaching from the small and fast out to the large and slow.
+The present focus on sea level forecasting allows for a twist on the chain image to highlight the unusual place in which the LTI tidal admittance approach can be located relative to the geophysical fluid suite of simulations.
+Figure \ref{fig:forecastScalesChain} schematically shows that tide prediction in general can provide very long horizon prognoses of short time scale fluctuations in sea level; of course subject to many caveats.
+%------------------------------
+\begin{figure}[H]\centering
+        \includegraphics[width=\figwidthFull]{figures/diagrams/scales_with_chain.pdf} 
+        \caption{Tide prediction can sit awkwardly with the seamless chain of scales analogy; following Figure \ref{fig:forecastScalesAll} and \citep{10.1175/bams-89-4-459}}
+        \label{fig:forecastScalesChain}
+\end{figure}
+%------------------------------
+The intention behind this picture is to emphasise that multi-scale prediction need not be shoe-horned into the tidy cascade of a single consistent earth system simulation framework.
+Although the idea of a single simulation code-base and forecasting framework is attractive on many fronts  \footnote{\url{https://research.csiro.au/access/what/}}, consideration of the status of sea level and tide prediction provides at least one case in which some sort of exception is sure to be required based on the unique value offered by legacy products.  
 
 Operational reality is expected to always consist to a some degree of a suite of systems that are not cleanly compatiable ....
 
+Numerical forecasts from agencies like the Australian Bureau of Meteorology have arguably been under-utilised as a result of system heterogeneity.   It is not self-evident how to take into account the prognostic information ostensibly available in non-tidal sea level anomaly, storm surge and tide-table products; whereas all could be simultaneously issued to the public. 
 
+.... some lessons for any blended information from climate, short term and long term forecasts for decision making is in 
 
 %------------------------
 \section{Next steps}
+Australia ....versus OS.
 
 Primacy of observational data and metadata
 
@@ -60,6 +54,7 @@ Historical legacy and user adapatation ...
 All in the context of repairing whilst on 
 
 Something about keeping up connection and dialogue with academic and cutting edge ....bluelink collaboration ...not just user pull ...
+
 
 
 
