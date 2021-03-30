@@ -43,7 +43,7 @@ Differing treatment of the intermediate parts of this flow chart, the geophysica
 \begin{figure}[h]
     \begin{center}
     \includegraphics[width=\figwidthFull]{figures/diagrams/tidal_force_flowchart.pdf}
-    \caption{Ocean tide flow chart (following Agnew \citep{Agnew:2011ub}.  Reference to the \ATGP{} is common to tidal analysis and prediction methods, whilst the treatment of tidal/non-tidal connections can differ markedly.}
+    \caption{Ocean tide flow chart (following Agnew \citep{10.1016/b978-0-444-53802-4.00058-0}.  Reference to the \ATGP{} is common to tidal analysis and prediction methods, whilst the treatment of tidal/non-tidal connections can differ markedly.}
     \label{fig:tideForceFlow}
     \end{center}
 \end{figure}
@@ -54,7 +54,7 @@ Before expanding on the role of the tidal forcing, the recent work of \cite{10.1
 The centrality of the tidal generating potential to sea level forecasting warrants further elaboration, in order to later explicate the manner in which conventional and dynamic sea level forecasts respectively represent tides. 
 
 The \ATGP{} is a mathematical abstraction founded on a consideration of the classical gravitational field near the Earth surface. The temporal variations of gravity in the vicinity of this surface are developed as a function of the \emph{geocentric} relative positions of the celestial bodies.
-For ocean tide applications, only the two celestial bodies, the moon and sun, are considered relevant on the basis of relative contribution to the perceived gravity field changes. It follows that the information required for computation of this lunisolar tidal potential is encapsulated in the celestial positions (ie ephemeris) of the moon and sun alone \citep{Agnew:2011ub}.
+For ocean tide applications, only the two celestial bodies, the moon and sun, are considered relevant on the basis of relative contribution to the perceived gravity field changes. It follows that the information required for computation of this lunisolar tidal potential is encapsulated in the celestial positions (ie ephemeris) of the moon and sun alone \citep{10.1016/b978-0-444-53802-4.00058-0}.
 
 
 The full gravity field is defined as a scalar potential in space fulfilling the Laplace equation $\Delta V=0$ \citep[sec 5.3.1]{Urban:2013vl}.  The spatial field $V(\theta,\lambda,r)$ can be formulated in spherical geocentric (ie fixed earth) coordinates as a weighted sum of surface spherical harmonics. As a potential field, contributions from each mass element can be computed separately and linearly superposed.
@@ -205,7 +205,7 @@ The essential development of the \ATGP{} in Section\ref{sec:basic_potential} is 
 The basic spatial perspective behind the development of the \ATGP{} is the thin shell approximation.  Geocentric coordinates are used.  This is appropriate for writing the potential in general form.  However, when considering the response of ocean dynamics, a vertical relative to the ocean floor is dynamically relevant.  There is a vertical movement of the ocean floor in geocentric coordinates associated with the \ATGP{} of comparable magnitude to the ocean tide which is quantitatively significant to dynamic models \citep{Hendershott:1981ub} and \citep[pp.336]{gill1982atmosphere}.
 
 
-This elastic response of the earth can considered to be essentially instantaneous compared to ocean timescales.  Furthermore, the elastic re-distibution of mass associated with this 'earth tide' itself modifies the gravitational field.    By treating the Earth as "spherical, non-rotating, elastic, and isotropic" the solid body response can be encapsulated by a small number of dimensionless Love numbers \citep{Agnew:2011ub}.  In the present context each spherical harmonic degree has a single body tide Love number $h_n$ and `induced free space potential' Love number $k_n$ \citep[Sec 5.3.3]{Urban:2013vl}. This has the convenience of formulating the combined \emph{direct} effects of the solid earth response to the \ATGP{} as a modification to the magnitude of $\eta_{eq}$.  It is noted that ``the Love numbers for the diurnal tides differ from those for the semi-diurnal and long-period tides because of the free-core nutation resonance'' \citep{Arbic:2004wz}.
+This elastic response of the earth can considered to be essentially instantaneous compared to ocean timescales.  Furthermore, the elastic re-distibution of mass associated with this 'earth tide' itself modifies the gravitational field.    By treating the Earth as "spherical, non-rotating, elastic, and isotropic" the solid body response can be encapsulated by a small number of dimensionless Love numbers \citep{10.1016/b978-0-444-53802-4.00058-0}.  In the present context each spherical harmonic degree has a single body tide Love number $h_n$ and `induced free space potential' Love number $k_n$ \citep[Sec 5.3.3]{Urban:2013vl}. This has the convenience of formulating the combined \emph{direct} effects of the solid earth response to the \ATGP{} as a modification to the magnitude of $\eta_{eq}$.  It is noted that ``the Love numbers for the diurnal tides differ from those for the semi-diurnal and long-period tides because of the free-core nutation resonance'' \citep{Arbic:2004wz}.
 The conceptually related, but more complicated, effects of the moving ocean mass itself is discussed below.
 
 \begin{equation}
