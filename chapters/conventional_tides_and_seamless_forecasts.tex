@@ -113,7 +113,7 @@ Even if the unique properties of conventional tide products seem to guarantee so
 
 
 %--------------------------
-\subsection{Precedent for data differentiation in remote observations and other forecasts}
+\subsection{Precedents for data differentiation}
 
 Most simply, the distinction between a forecast and an ``analysis'' would not be possible if an automated tidal service provided a single all-purpose synthesised signal.
 This distinction is obvious to users of weather forecast data and other oceanographic products \footnote{(eg \url{https://marine.copernicus.eu/})} but arguably tidal predictions have to date maintained an exceptional product status; tides a thought of as more akin to the manifestation of a Platonic form than just another \textit{model} output \citep{Jay:2003bj} \citep{10.1029/2018rg000636}.
@@ -150,12 +150,12 @@ The nature of tidal analysis is such that the distinction is best not conceptual
  
 
 \begin{figure}[H]\centering
-    \begin{subfigure}[b]{\figwidthHalf}
+    \begin{subfigure}[b]{\figwidthBig}
         \includegraphics[trim={0 0 0 1cm},clip,width=\textwidth]{figures/maps/locations_SaAmp.pdf} 
         \caption{Over 650 mixed-quality stations on record based on heterogeneous inputs}
     \end{subfigure}
-    
-    \begin{subfigure}[b]{\figwidthHalf}
+    \\
+    \begin{subfigure}[b]{\figwidthBig}
         \includegraphics[trim={0 0 0 1cm},clip,width=\textwidth]{figures/maps/locations_SaPhaAnyM2Update.pdf} 
         \caption{Only 132 stations with recently updated analyses. Named locations as per text.}
     \end{subfigure}
@@ -217,7 +217,7 @@ As an example of the practical implications of such compatibility, consider the 
 
 
 %------------------------------------------------
-\section{Problem 2: double-counting when combining tides with other forecasts}
+\section{Problem 2: double-counting in hybrids}
 \label{Sec:DoubleCount}
 A practical implication of facilitating downstream applications to access tidal data is the risk of ``double-counting'' signal; especially when hybridising tide data with physical models. 
 Williams \cite{10.5194/os-2020-107} described this risk and made evaluations based on the tidal analysis of global barotropic ocean simulations for single one year period. 
@@ -287,7 +287,7 @@ For these evaluations no bias correction was applied and sample means over appro
 
 
 %------------------------------------------------
-\section{Problem 3: `constants' are not really constant}
+\section{Problem 3: constants are not really constant}
 \label{Sec:Evolution}
 The final problem to motivate the proposed split of tidal data service types is the manner in which tidal parameters vary historically with each annual update.
 Australian tidal agencies do not systematically publish the parameters associated with the annual tidal production cycle; expect for the subset of constituent values at select sites that are supplied with the nautical publications \cite{austides}.  The following evaluation is believed to be the first account of the temporal evolution of parameters behind these official predictions.  
@@ -485,7 +485,7 @@ Each is discussed further in the subsequent sections.
     \label{tab:typesSummary}
 %\end{specialtable}
 \end{table}
-These proposed incremental changes for the conventional service should not be confused with the vital role of global repositories of sea level \textit{observations} such as  \url{www.gloss-sealevel.org}, \url{uhslc.soest.hawaii.edu} and \url{www.gesla.org}.    The starting premise of this discussion is the ongoing and embedded role of the national agency for conventional tidal services.    
+These proposed incremental changes for the conventional service should not be confused with the vital role of global repositories of sea level \textit{observations} \footnote{such as \url{www.gloss-sealevel.org}, \url{uhslc.soest.hawaii.edu} and \url{www.gesla.org}}.    The starting premise of this discussion is the ongoing and embedded role of the national agency for conventional tidal services.    
 Similarly, global simulation repositories like that described by \citeauthor{10.3389/fmars.2020.00263}
 serve an important but different role.
 
