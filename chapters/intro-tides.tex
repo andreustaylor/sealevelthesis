@@ -14,12 +14,12 @@ Moreover, it is apparent that this terminology and the underlying concepts lead 
 
 Tidal methods of analysing and forecasting the ocean have a long legacy in the history of western science.  Economically significant tidal sea level predictions in fact pre-date the whole modern scientific enterprise, and the evolution of the tidal perspective mirrors much of the story of classical continuum physics.
 
-The \cite{Cartwright:2000tt} telling of the history of ocean tide science is illustrative. Remarkably, and perhaps typically, this scientific history of tides never even attempts to pin down a definition of what tide really should mean.  This surely deliberate exclusion stands in stark contrast to the minutiae of historical approaches and formulations and that the history covers.  The absence of definition may be read as an assertion that the \emph{history itself} is the only meaningful way to frame the scope of tidal science.
+The \cite{Cartwright:2000tt} telling of the history of ocean tide science is illustrative. Remarkably, and perhaps typically, this scientific history of tides never even attempts to pin down a definition of what tide really should mean.  This surely deliberate exclusion stands in stark contrast to the minutiae of historical approaches and formulations and that the history covers.  The absence of definition may be read as an assertion that the history itself is the only meaningful way to frame the scope of tidal science.
 \cite{Pugh:1996uz} at least addresses the question of definition explicitly and in doing so casts a very wide net that catches almost anything that can be considered periodic.
 \begin{quote}
 Although any definition of tides will be somewhat arbitrary, it must emphasize this periodic and regular nature of the motion, whether that motion be of the sea surface level, currents, atmospheric pressure or earth movements. We define tides as periodic movements which are directly related in amplitude and phase to some periodic geophysical force \ldots.
 \end{quote}
-It is notable that whilst for Pugh \emph{periodicity} is a key feature of anything that is `tidal', he does not lock this periodicity to astronomy.  Pugh's pragmatic definition appears to be designed to best accommodate the conventional methods of harmonic analysis and sea level prediction that are so well established in operational agencies. Whilst this periodicity-stressing definition sensibly reflects the context of Pugh's text, it is certainly not the only working conceptualisation of what constitutes ocean tides; either within the operational forecasting context or in academic settings. 
+It is notable that whilst for Pugh periodicity is a key feature of anything that is `tidal', he does not lock this periodicity to astronomy.  Pugh's pragmatic definition appears to be designed to best accommodate the conventional methods of harmonic analysis and sea level prediction that are so well established in operational agencies. Whilst this periodicity-stressing definition sensibly reflects the context of Pugh's text, it is certainly not the only working conceptualisation of what constitutes ocean tides; either within the operational forecasting context or in academic settings. 
 
 In contrast to the periodic definition, most modern authors place the tidal potential in a defining role. Such an emphasis on the tidal potential or Astronomical Tide Generating Forces \ATGP{} reflects a greater regard for dynamics and inputs, as opposed to observed outputs, that is more complimentary to the wider field of geophysical fluid dynamics.  
 \cite{Hendershott:1981ub} treats ocean tides as that subset of oceanographic long waves driven by the \ATGP{}.  Notably his discussion is careful with the distinction between dynamics and `practical tide prediction'. But even Henderscott's primarily dynamical perspective is imbued with the cultural interplay of physics and pragmatic prediction; as illustrated by his inclusion of the rather aphysical radiational potential concept associated with the \cite{Munk:1966ts} response method tradition.
@@ -29,7 +29,7 @@ The centrality of \ATGP{} be the approach employed in the present work as well.
 
 
 Further on semantic issues, it is worth highlighting the extent to which the subject of ocean tides raises ostensibly oxymoronic terminology.  
-Geophysists can define an \emph{a-periodic} pole tide on the basis of the dynamic connection to gravitational body forces associated with astronomical motions.   And valid discussion of \emph{non-stationary} tides \cite{Ray:2011tj}, \emph{quasi-periodic} tidal phenomena \citep{Flinchem:2000kp} or \emph{storm} tides \cite{Horsburgh:2008gw} in the literature and operational products each conceptually clash with the perspective of conventional harmonic analysis.  
+Geophysists can define an a-periodic pole tide on the basis of the dynamic connection to gravitational body forces associated with astronomical motions.   And valid discussion of non-stationary tides \cite{Ray:2011tj}, quasi-periodic tidal phenomena \citep{Flinchem:2000kp} or storm tides \cite{Horsburgh:2008gw} in the literature and operational products each conceptually clash with the perspective of conventional harmonic analysis.  
 A comparable semantic disconnect can arise in circumstances where a tidal prediction exceeds the designated Highest Astronomical Tide.   
 Each of these definitions are sensible in context, but can potentially be a source of miscommunication with the development and delivery of operational forecasts.    Chapter \ref{chp:tideFlavours} proposes measures to partially mitigate such problems.
 
@@ -53,7 +53,7 @@ Before expanding on the role of the tidal forcing, the recent work of \cite{10.1
 \subsection{Basic development of the \ATGP{}}  \label{sec:basic_potential}
 The centrality of the tidal generating potential to sea level forecasting warrants further elaboration, in order to later explicate the manner in which conventional and dynamic sea level forecasts respectively represent tides. 
 
-The \ATGP{} is a mathematical abstraction founded on a consideration of the classical gravitational field near the Earth surface. The temporal variations of gravity in the vicinity of this surface are developed as a function of the \emph{geocentric} relative positions of the celestial bodies.
+The \ATGP{} is a mathematical abstraction founded on a consideration of the classical gravitational field near the Earth surface. The temporal variations of gravity in the vicinity of this surface are developed as a function of the geocentric relative positions of the celestial bodies.
 For ocean tide applications, only the two celestial bodies, the moon and sun, are considered relevant on the basis of relative contribution to the perceived gravity field changes. It follows that the information required for computation of this lunisolar tidal potential is encapsulated in the celestial positions (ie ephemeris) of the moon and sun alone \citep{10.1016/b978-0-444-53802-4.00058-0}.
 
 
@@ -82,7 +82,7 @@ Figure \ref{fig:VTmaps} provides a visualisation of the field and a decompositio
     \end{center}
 \end{figure}
 %-------------------------------
-Equation \ref{eq:VT} and the visualisation in \ref{fig:VTmaps} quantify the potential $V_T$ normalised by the standard value for Earth gravity $g$; a quantity defined as the \emph{equilibrium tide} $\eta_{eq}$.  
+Equation \ref{eq:VT} and the visualisation in \ref{fig:VTmaps} quantify the potential $V_T$ normalised by the standard value for Earth gravity $g$; a quantity defined as the equilibrium tide $\eta_{eq}$.  
 A convenience of normalising the potential field as $\eta_{eq}$ is that the quantity has units of height. But this formulation unfortunately invites confusion with actual ocean elevations; whereas the equilibrium tide really only has a very abstract and indirect connection to observed ocean tide heights.
 Specifically, whilst useful for formulating the driving force, the any direct connection to ocean response is only via the thought experiment of a shallow water idealisation of boundary-free ocean with ``no dynamic effects'' as stated by \cite[Eq 9.8.3]{gill1982atmosphere}; that is, the equilibrium tide is a useless approximation to ocean heights at all expect the longest periods \cite{Egbert:2003jd}.
 
@@ -93,13 +93,13 @@ Practical implementation of \ref{eq:VT} requires choices regarding the set of ha
 
 Only a small set of $(n,m)$ is taken to be relevant for ocean tidal dynamics; in contrast to the thousands of terms utilised for some earth gravity studies. What counts as a relevant ocean subset is generally determined on the basis of the relative magnitude of the terms and the nature of the temporal variation in geographic coordinates.
 
-It is only the horizontal gradient of the potential $\nabla V_T$ that can drive changes in the distribution of ocean mass.   Which to be clear states that the effect of the \ATGP{} on the ocean is to slide mass side-to-side, not directly pull it up.   And furthermore, only \emph{temporal} changes in this horizontal gradient will effect the non-static ocean distribution. Subsequently degrees $n=0,1$ are not relevant to ocean tides.   This is represented in equation \ref{eq:VT} by the lower limit $n=2$ of the outer sum.
+It is only the horizontal gradient of the potential $\nabla V_T$ that can drive changes in the distribution of ocean mass.   Which to be clear states that the effect of the \ATGP{} on the ocean is to slide mass side-to-side, not directly pull it up.   And furthermore, only temporal changes in this horizontal gradient will effect the non-static ocean distribution. Subsequently degrees $n=0,1$ are not relevant to ocean tides.   This is represented in equation \ref{eq:VT} by the lower limit $n=2$ of the outer sum.
 For almost ocean tide applications an upper limit of $n=2$ is taken to be sufficient, or at most $n=3$; again in contrast to some earth gravity studies.  This choice is based on the rapid decline in relative magnitude of each harmonic with increasing $n$ for the luni-solar system - discussed below regarding equation \ref{eq:c}.
 
 
 
 The zonal harmonics $(n,m) = (2,0)$ for each body are of particular relevance to the slower patterns of sea level.  Specifically, by having no variation in $\lambda$ these harmonics don't vary geographically with the daily rotation of the earth.   However, the slower changes in the declination of each body do drive an ocean mass response and is associated with the both the long period and permanent tides.  
-What is considered to comprise the \emph{permanent} component of the tide potential is effectively time scale and application dependant and is an important detail for geodesy and gravity studies.  \cite[section 5.3.3.2]{Urban:2013vl}.  For ocean forecasting, the role and formulation of the permanent tide becomes relevant in the decomposition of mean sea level, and estimation of what constitutes dynamic ocean topography in a consistent geodetic reference framework \citep{Filmer:2018cu}\cite{10.1007/bf02520477}.
+What is considered to comprise the permanent component of the tide potential is effectively time scale and application dependant and is an important detail for geodesy and gravity studies.  \cite[section 5.3.3.2]{Urban:2013vl}.  For ocean forecasting, the role and formulation of the permanent tide becomes relevant in the decomposition of mean sea level, and estimation of what constitutes dynamic ocean topography in a consistent geodetic reference framework \citep{Filmer:2018cu}\cite{10.1007/bf02520477}.
 
 
 All of the temporal variation of $V_T$ is contained in the time series of complex scalar weights $c_{nm}(t)$.
@@ -153,7 +153,7 @@ In the Doodson formulation, all the relevant astronomical information is summari
 Of these traditional names \citet{10.1016/b978-0-444-53802-4.00058-0} correctly states that `` [whilst] it is convenient to have a shorthand way of referring to these harmonics; unfortunately, the standard names,  now totally entrenched, ... simply have to be learned as is.''.
 
 There has been some variation of conventions with regard to the exact formulation of Doodson numbers.  One such detail is the avoidance of negative integers in the code by the addition of the arbitrary constant 5 to all integers except $d_1$.   A less common variation involves the use of solar-hour in place of lunar hour $\tau$.  
-In essence the Doodson codes provide a compact unique specification, or in practice \emph{definition} of frequencies relevant to tidal methods.
+In essence the Doodson codes provide a compact unique specification, or in practice definition of frequencies relevant to tidal methods.
 
 Whereas the Doodson codes provide a reliable way to describe these tidal frequencies, the mapping to traditional names is unfortunately not always consistent and can lead to errors if transferring parameter data between software platforms; this issue is taken up in chapter \ref{chp:tideFlavours}.
 
@@ -205,7 +205,7 @@ The essential development of the \ATGP{} in Section\ref{sec:basic_potential} is 
 The basic spatial perspective behind the development of the \ATGP{} is the thin shell approximation.  Geocentric coordinates are used.  This is appropriate for writing the potential in general form.  However, when considering the response of ocean dynamics, a vertical relative to the ocean floor is dynamically relevant.  There is a vertical movement of the ocean floor in geocentric coordinates associated with the \ATGP{} of comparable magnitude to the ocean tide which is quantitatively significant to dynamic models \citep{Hendershott:1981ub} and \citep[pp.336]{gill1982atmosphere}.
 
 
-This elastic response of the earth can considered to be essentially instantaneous compared to ocean timescales.  Furthermore, the elastic re-distibution of mass associated with this 'earth tide' itself modifies the gravitational field.    By treating the Earth as "spherical, non-rotating, elastic, and isotropic" the solid body response can be encapsulated by a small number of dimensionless Love numbers \citep{10.1016/b978-0-444-53802-4.00058-0}.  In the present context each spherical harmonic degree has a single body tide Love number $h_n$ and `induced free space potential' Love number $k_n$ \citep[Sec 5.3.3]{Urban:2013vl}. This has the convenience of formulating the combined \emph{direct} effects of the solid earth response to the \ATGP{} as a modification to the magnitude of $\eta_{eq}$.  It is noted that ``the Love numbers for the diurnal tides differ from those for the semi-diurnal and long-period tides because of the free-core nutation resonance'' \citep{Arbic:2004wz}.
+This elastic response of the earth can considered to be essentially instantaneous compared to ocean timescales.  Furthermore, the elastic re-distibution of mass associated with this 'earth tide' itself modifies the gravitational field.    By treating the Earth as "spherical, non-rotating, elastic, and isotropic" the solid body response can be encapsulated by a small number of dimensionless Love numbers \citep{10.1016/b978-0-444-53802-4.00058-0}.  In the present context each spherical harmonic degree has a single body tide Love number $h_n$ and `induced free space potential' Love number $k_n$ \citep[Sec 5.3.3]{Urban:2013vl}. This has the convenience of formulating the combined direct effects of the solid earth response to the \ATGP{} as a modification to the magnitude of $\eta_{eq}$.  It is noted that ``the Love numbers for the diurnal tides differ from those for the semi-diurnal and long-period tides because of the free-core nutation resonance'' \citep{Arbic:2004wz}.
 The conceptually related, but more complicated, effects of the moving ocean mass itself is discussed below.
 
 \begin{equation}
@@ -249,7 +249,7 @@ The formulation of the tidal potential in Section\ref{sec:basic_potential} invol
 An analytical ephemeris provides the relative positions of the Moon and Sun via relatively simple polynomial relations, optimised for a given epoch.  Such analytic ephemeris have been commonly employed for ocean tide studies.   Analytic ephemeris were used initially for computational necessity and more recently for computational convenience.
 
 
-For modern \emph{astronomical} purposes numerical ephemerides are now standard.  Prior to 1984 standard ephemeris were based upon \emph{theories}\cite[sec 8.1]{Urban:2013vl}, whereas contemporary ephemeris are created by the application of dynamical equations integrated into the future, after initialisation via assimilation of past observational data.
+For modern astronomical purposes numerical ephemerides are now standard.  Prior to 1984 standard ephemeris were based upon \emph{theories}\cite[sec 8.1]{Urban:2013vl}, whereas contemporary ephemeris are created by the application of dynamical equations integrated into the future, after initialisation via assimilation of past observational data.
 
 At the time of writing, the current best estimates for the orbits of the Moon and planets is DE421 \citep{Folkner:2008wm}.   The snapshot visualisation shown in Figure \ref{fig:VTmaps} were calculated based on the application \ref{eq:c} to output of DE421.
 
@@ -277,7 +277,7 @@ Modelling the ocean as an LTI system in this manner necessarily takes a frequenc
 \begin{quotation}
 solidified an opinion that tidal time series (particularly those of surface elevation) are basically stationary, with non-stationary components frequently being regarded as meaningless `noise'.    
 \end{quotation}
-In fact, as discussed in section \ref{sec:semantics}, frequency-space stationarity is essential to the \emph{definition} of what is considered tidal in most operational settings.
+In fact, as discussed in section \ref{sec:semantics}, frequency-space stationarity is essential to the definition of what is considered tidal in most operational settings.
 % little flow chart
 \begin{align}
     c_{nm}(t) \Rightarrow & \fbox{Global Ocean}\Rightarrow \mbox{observed response} \nonumber
@@ -308,7 +308,7 @@ There is no unique approach to implementing the LTI concept of ocean tide predic
 In very broad terms tidal these formalisms fall into basically two categories: harmonic methods and response methods.  
 Neither of these concepts actually involve any hydrodynamics. When hydrodynamic simulations of the ocean are undertaken it seems that tidal LTI conceptualisations are at least indirectly involved in one way or another; and this will be apparent in subsequent sections dealing with hydrodynamic and spatial models. 
 
-Within operational authorities, \emph{tide prediction} is practically synonymous with conventional harmonic methods. And it is here that the role of special frequencies (section \ref{sec:temporal}) has come to play a primary role.
+Within operational authorities, tide prediction is practically synonymous with conventional harmonic methods. And it is here that the role of special frequencies (section \ref{sec:temporal}) has come to play a primary role.
 ``Standard harmonic methods demand little accuracy in the harmonic amplitudes of the [tidal] potential, since they \textit{use only the frequencies} at which the larger amplitudes appear, and certain details on which to base nodal corrections''\cite{Cartwright:1973em} emphasis added.
 Recall that the basis for this analysis is not harmonic in the sense of an orthogonal Fourier series, but rather that it follows from the harmonic development of the \ATGP{} as described in section \ref{sec:basic_potential}.    Here again the historical legacy of tidal terminology lends itself to misunderstanding \citep{Cartwright:2000tt}\citep{Parker:2007wq}.
 
@@ -325,7 +325,7 @@ The conventional harmonic tide representation of a timeseries is given in equati
 \label{eq:cos}
 \end{equation}
 %---------------------
-Significantly, the harmonics involved with such an analysis can only ever be a \emph{subset} of tidal frequencies arising from the decomposition $c(t) = \sum_{k} H_{k} e^{-i( t\theta_{k})}$.  This limitation comes mainly from the non-orthogonality of the basis functions and the fact that all observational records are of finite length.
+Significantly, the harmonics involved with such an analysis can only ever be a subset of tidal frequencies arising from the decomposition $c(t) = \sum_{k} H_{k} e^{-i( t\theta_{k})}$.  This limitation comes mainly from the non-orthogonality of the basis functions and the fact that all observational records are of finite length.
 Conventional tide practice applies a range of elaborations and work-arounds in order to select the set of analysed components and produce predictions.  
 Before discussing any further, the essential steps of the harmonic analysis and prediction process are  illustrated schematically in Figure \ref{fig:tidePractice} and summarised as follows:
 \begin{enumerate}
@@ -335,7 +335,7 @@ Before discussing any further, the essential steps of the harmonic analysis and 
     \item synthesis of tidal timeseries by applying matching conventions.
 \end{enumerate}
 
-The practical value of harmonic methods reflects the special significance of sea level variation occurring at tidal frequencies. This value does not rely on simulating ocean dynamics. Rather, the very \emph{absence} of fluid dynamics is a key strength of harmonic methods. 
+The practical value of harmonic methods reflects the special significance of sea level variation occurring at tidal frequencies. This value does not rely on simulating ocean dynamics. Rather, the very absence of fluid dynamics is a key strength of harmonic methods. 
 A record of historical observations at one place is essentially all that is required, with no need for spatial information or any additional inputs whatsoever.
 
 For almost all ocean-exposed locations, harmonic analysis can reduce the majority of sea level variance in a long observational timeseries to a remarkably short list of numbers; typically mapping several thousand values to a few dozen \citep{Flinchem:2000kp}.  This unique data compression could be better exploited for on-demand delivery services as suggested in chapter \ref{chp:tideFlavours}. 
@@ -397,14 +397,14 @@ On the other hand, broadband effects that simply project some colour onto tidal 
 More basically, it is not clear that users of tide predictions are always cognisant of exactly what phenomena conventional predictions represent.    This issue partly motivates chapter \ref{chp:tideFlavours}.
 Consider for now the case of seasonal phenomena.   The harmonic decomposition of $c_{nm}(t)$ provides two relatively tiny signals at periods of 1 and 0.5 years - conventionally termed Sa and Ssa.  Despite the insignificance of seasonal terms in the forcing $\eta_{eq}$, conventional predictions frequently assign  disproportionately large values to account for observed patterns.  
 Terms that reflect non-tidal seasonal modulation of semi-diurnal components can also be included in standard predictions;such as H1 and H2 in the \citet{Foreman:1977ua} schedule 
-And there are also  diurnal and semidiurnal sea level signals driven directly by meteorology  but coherent with the \ATGP{}. \citet{Ray:2003ui} evaluate \NWP{} representations of \emph{barometric} tides (ie atmospheric tides) at these frequencies with implications for oceanographic processes.  
+And there are also  diurnal and semidiurnal sea level signals driven directly by meteorology  but coherent with the \ATGP{}. \citet{Ray:2003ui} evaluate \NWP{} representations of barometric tides (ie atmospheric tides) at these frequencies with implications for oceanographic processes.  
 
 
 Treatment of meteorological versus gravitational influences on observed sea level for terms such as Sa, Ssa, S1 and S2 are a point of difference between conventional harmonic analysis and response methods.  
 The \underline{response method}, and it's variations, form a distinct branch of academic tidal analysis that stand in contrast to conventional techniques of harmonic analysis.   This consists of a generalised implementation of the LTI model, in which the ocean response to any input sequence is characterised by empirically determined admittance functions using more general timeseries analysis methods.  
 \citet{Munk:1966ts} in fact claimed to be motivated by an application of Ockam's razor to the highly evolved historical baggage of harmonic methods.   
 It could be said that response methods simply reflect what physical oceanographers have thought of as `tides' for decades.  This is why harmonic constants are now thought of as just one representation of the idea of a tidal admittance. 
-\citep[pp 198]{Cartwright:2000tt} provides the following explanation for why the ostensibly modern response \emph{techniques} have not displaced conventional practice: 
+\citep[pp 198]{Cartwright:2000tt} provides the following explanation for why the ostensibly modern response techniques have not displaced conventional practice: 
 \begin{quotation}
     $\dots$ the improvement in predictable variance is numerically small compared with the natural noise in sea level.   Because of this, and the fact that the Response Method is harder for a routine operator to grasp, it has never been adopted for ordinary tide-table production. It remains essentially a research tool for specialists. 
 \end{quotation}
