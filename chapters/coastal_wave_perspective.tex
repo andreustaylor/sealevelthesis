@@ -120,7 +120,7 @@ This situation motivates the application of an algorithmic method to realise a s
 Fundamentally, such an algorithm is a means of defining a coastal path and associated local horizontal directions given a well-defined length scale.
 For the present demonstration, a version of the traditional `divider walk' \citep{Xu:1993} algorithm provided a tractable approach to develop a path using the Geospatial Data Abstraction library GDAL \citep{gdal}. 
 The path used was based on a relatively high resolution ($\sim$250m) coastline dataset independent from the forecast models themselves.
-Figure \ref{fig:mandelbrot_lengths} demonstrates the dependence of waveguide length on divider scale by multiple applications of the algorithm.  The dependence results in an estimate of an effective fractal dimension of $\sim$1.08, comparable to those summarised in \cite{MA2016}.
+Figure \ref{fig:mandelbrot_lengths} demonstrates the dependence of waveguide length on divider scale by multiple applications of the algorithm.  The dependence results in an estimate of an effective fractal dimension of $\sim$1.08, comparable to those summarised in \citep{MA2016}.
 %----------------------------
 % coastline length 
 \begin{figure}[H]\centering
@@ -256,7 +256,7 @@ Several steps of processing were applied to obtain comparable adjusted residuals
 %--------------------------------------------------------------------------
 \section{Viewing operational data in CTW coordinates}
 
-CTWs around the Australian mainland have been recently discussed in the context of general primitive equation ocean models by \citet{Woodham:2013cl} and \citet{Liao:2018jd}; and in the north west of Australia by \cite{Maxime:2019jc}.  The models discussed are closely related to the operational OceanMAPS system. 
+CTWs around the Australian mainland have been recently discussed in the context of general primitive equation ocean models by \citet{Woodham:2013cl} and \citet{Liao:2018jd}; and in the north west of Australia by \citep{Maxime:2019jc}.  The models discussed are closely related to the operational OceanMAPS system. 
 In line with the previous literature, these papers address propagation speeds but not how distances between sample locations where measured.
 We assert that propagation quantities are rendered more meaningful in this context when the propagation path is made explicit.
 The explicit waveguide path approach described in Section \ref{sec:ctw_waveguide} facilitates the generation of new guidance to focus attention on coastal patterns and helps clarify the attribution of propagation quantities.  
@@ -269,7 +269,7 @@ In contrast, essentially flat (i.e. not propagating) patterns that rise and fall
 This projection approach is not limited to a single model or quantity; Figure \ref{fig:collate_g} illustrates an application to several forecast sources sharing a single base date.
 A novel aspect of the application to surface winds (a vector quantity) is the decomposition into waveguide-based components - in which the directions are directly related to the length scale specified.
 Surface winds are the primary driver of synoptic-scale sea level anomalies and the present inter-comparison is founded on identical atmospheric forcing source being applied to both models. As noted in Section \ref{sec:roms} the 2D surge forecasts are restricted to 3 days.
-Broad correspondence of wind stress ($\tau$) and sea level patterns can be seen, especially along the southern shelves as described by \cite{McInnes:2003vl}.
+Broad correspondence of wind stress ($\tau$) and sea level patterns can be seen, especially along the southern shelves as described by \citep{McInnes:2003vl}.
 In contrast a relatively regular diurnal pattern is notable in the tropical sections.
 %----------------------------
 % forecast collection of Hovmullers
