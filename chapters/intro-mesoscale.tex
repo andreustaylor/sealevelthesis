@@ -29,7 +29,7 @@ Figure \ref{fig:ogcmScales} illustrates very schematically the place of \OGCM{} 
 \begin{figure}[h]\centering
   \includegraphics[width=\figwidthBig]{figures/diagrams/ogcm_scales.pdf}
   \caption{Schematic place of \OGCM{}s in terms of sub-grid-scale parameterisations.}
-  {Schematic illustration of place of \OGCM{}s in terms of the sub-grid-scale (SGS) parameterisation of the broad scale range of a turbulent ocean.  For reference, methods from turbulence studies are included: Direct Numerical Simulation and Large Eddy Simulation. Following \citep[fig 5.2]{Petersen:2012tr} and \citep{Stevens:2001kb}.  Explicit tides in an OGCM represent a reduction of parameterisation without a large change in spatial scale resolution.}
+  {Simulation of a turbulent ocean requires design choices regarding scales represented.  The schematic indicates the relative place of \OGCM{}s in contrast to simluations including Direct Numerical Simulation and Large Eddy Simulation. Following \citep[fig 5.2]{Petersen:2012tr} and \citep{Stevens:2001kb}.  Explicit tides in an OGCM represent a reduction of parameterisation without a large change in spatial scale resolution.}
   \label{fig:ogcmScales}
 \end{figure}
 %----------------------------------
@@ -50,8 +50,8 @@ These SLA observations are not however applied to constrain the ocean state in t
 %----------------------------------
 \begin{figure}[h]\centering
   \includegraphics[width=\figwidthHalf]{figures/maps/altimeterCoverageEg.png}
-  \caption{Spatial coverage of one satellite altimeter.}
-          {Illustration of the typical spatial coverage pattern of a satellite altimeter. The along-ground track accumulated over a single day by Saral in May 2020 is shown. Observations near the coast are excluded from assimilation.}
+  \caption{Typical spatial coverage of a satellite altimeter.}
+          {The along-ground track accumulated over a single day by Saral in May 2020 is shown. Observations near the coast are excluded from assimilation.}
   \label{fig:altimeterEg}
 \end{figure}
 %----------------------------------
@@ -131,7 +131,7 @@ At face value this resolution may appear too coarse to usefully simulate the wat
 \begin{figure}[H]
     \includegraphics[width=\figwidthBig]{figures/images/oceanmapsMaskVic.png}
     \caption{Horizontal land/sea mask detail.}
-            {Horizontal land/sea mask detail over south eastern Australia near Melbourne. The $0.1^{\circ}$ regular grid approximates the coast in ~10km steps and totally excludes features like Port Phillip Bay.}
+            {Focus on region of south eastern Australia near Melbourne. The $0.1^{\circ}$ regular grid approximates the coast in ~10km steps and totally excludes features like Port Phillip Bay.}
     \label{fig:oceanmapsMaskDetail}
 \end{figure}
 %---------------------------
@@ -149,7 +149,7 @@ The numerical implementation in \BL{} of the barotropic hydrodynamics leads the 
     \begin{center}
     \includegraphics[width=\figwidthBig]{figures/diagrams/mom_BT_stencils_extra.png}
     \caption{Arakawa-B horizontal grid stencil illustrations.}
-            {Arakawa-B horizontal grid stencil illustrations relevant to the baroptropic mode of \BL{}; the forecast sea level anomaly includes both barotropic and baroclinic contributions}
+            {These stencils are relevant to the baroptropic mode updates of \BL{} and indicate the abstracted representation of the coastal boundary. The full forecast sea level anomaly includes both barotropic and baroclinic contributions}
     \end{center}
     \label{fig:gridStencil}
 \end{figure}
