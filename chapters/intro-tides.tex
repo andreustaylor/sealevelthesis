@@ -222,7 +222,7 @@ Together these effects are lumped together as self-attraction and loading \SAL{}
 Similar effects that vary on tidal timescales are also associated with the time varying distribution of atmospheric mass as well land-based loading from ice,snow and soil moisture.  The value of explicitly distinguishing non-ocean \SAL{} in the context of ocean forecasting is not known, and no publications appear to address this in detail.  It is likely that practical evaluation of \SAL{} for ocean modelling implicitly accounts for some atmospheric effects - especially for the ocean tide associated with pressure forcing S1 and S2.
 
 
-Similarly to body tide effects, it is possible to formulate \SAL{} as a scaled modification to the \ATGF{}.  This is very convenient, but known to be associated with significant inaccuracies \citep{Ray:1998jl}.  The present distribution of \MOM{} makes this so called `$\beta$' approximation.\\
+Similarly to body tide effects, it is possible to formulate \SAL{} as a scaled modification to the astronomical tidal forces.  This is very convenient, but known to be associated with significant inaccuracies \citep{Ray:1998jl}.  The present distribution of \MOM{} makes this so called `$\beta$' approximation.\\
 An evaluation of intermediate methods to parameterise SAL is described by Stepanov and Hughes \citep{Stepanov:2004up}
 In contrast to the $\beta$ scaling approximation, it appears to be quite reasonable to consider \SAL{} as separate pre-calculated body forcing rather than a scaling of $\eta_{eq}$. 
 \begin{quotation}
@@ -238,7 +238,7 @@ A special case is the \underline{pole tide}. Geocentric coordinates align the po
 \begin{quotation}
 Polar motion of the Earth is almost completely described by two harmonic variations of the location of the instantaneous rotation pole with respect to the mean rotation pole: an elliptical motion at an annual period, and an almost circular motion at a period of 14 months. The 14-month variation is a free mode of the Earth referred to as the Chandler wobble and has amplitudes that vary with time. \citep{Desai:2002ev}
 \end{quotation}
-The gravitational effect due to polar motion can be formulated similarly to the \ATGF{} as a potential field decomposed into spherical harmonics.
+The gravitational effect due to polar motion can be formulated similarly to the tidal forces as a potential field decomposed into spherical harmonics.
 Pole tide effects are included as corrections to altimetry products, but are ignored in standard tide table production.\\
 Another phenomena effecting Earth rotation is the Free Core Nutation (FCN).  For the present ocean tidal purposes the FCN will be considered relevant only with regard to the solid earth tides.  The FCN is a factor in defining the  Love numbers in the diurnal band.   Related to this, Desai and Wahr note that the definition of the K1 $[1 1 0 0 0]$ input amplitude used for solid earth tide algorithms can be inappropriate for ocean applications if compensation for the effects of the FCN resonance are included\citep{Desai:1995je}.
 
@@ -493,9 +493,8 @@ Given the underlying LTI framework, the tidal literature has naturally focused o
 
 Summaries that categorise the many global tide models on the basis of design choices, parameterisations and data assimilation methods are given in \citep{Ardalan:2008gs} and \citep{Matsumoto:2000tg}. 
 
-Tidal atlases are in essence no different from one-dimensional tide predictions.    Discussions above on the topic of formalisms apply equally to global atlases as to insitu timeseries.  
-And similarly to insitu tidal products, special attention is warranted regarding the treatment of signals associated with non-gravitational effects and the possible differences between a forecast model and an correction/filter.
-
+Tidal atlases are in essence spatial extensions of insitu tide predictions and subsequently each solution is formulated in terms of a particular tidal formalism.  
+Similarly, interpretation of any tidal atlas warrants special attention to be given to the representation of signals associated with non-gravitational effects.   This topic is discussed further in chapter \ref{chp:tideFlavours}.
 
 
 Some authors have gone so far to presented the existence of repeat-orbit altimetry observations as effectively being `thousands of tide gauges', but reduction of these observations via tidal analysis requires many special considerations. Most obviously is that ground-path of these orbits results in repeated but infrequent samples of any fixed point; and subsequently frequency aliasing is a primary limitation on tidal analysis methods..
@@ -533,7 +532,7 @@ This formulation excludes a direct representation of internal tides, despite the
 \begin{quote}
     Barotropic tides generate internal tides, and internal tides in turn feed back onto the barotropic tides. Inferences from altimetry-constrained barotropic tide models show that about one-third of global tidal energy dissipation occurs in regions of rough topography, where internal tides are generated \dots{}. Internal tide generation thus acts as a damping mechanism for the barotropic tides.\citep[pp22]{Arbic:hy}
 \end{quote}
-Depth integrated barotropic LTE relegate the effect of internal mechanisms on surface elevation to parameterisations.  The dissipative stress term ($F$ in eq \label{E:LTE_momtm}) stands for all losses of energy from the barotropic simulation.  Given the reality of ocean stratification, this loss term accounts for the conversion of barotropic to higher baroclinic modes in any global solution \citep[pp121] {gill1982atmosphere}.
+Depth integrated barotropic LTE relegate the effect of internal mechanisms on surface elevation to parameterisations.  The dissipative stress term (F in equation \ref{eq:LTE_momtm}) stands for all losses of energy from the barotropic simulation.  Given the reality of ocean stratification, this loss term accounts for the conversion of barotropic to higher baroclinic modes in any global solution \citep[pp121] {gill1982atmosphere}.
 Internal waves at tidal frequencies do have an observable surface signature albeit relatively small \citep{Ray:2011tj}.   
 And for sea level forecasting, internal modes are ostensibly of interest insofar as they impact the prediction of surface elevation.  
 Internal tides are in general not stationary and not as predictable as surface tides \citep{Nash:2012}.  The extent to which aperiodic internal modes can be separated from surface tides is a measure of the value core stationarity model of  tide prediction.

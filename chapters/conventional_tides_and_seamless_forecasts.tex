@@ -50,10 +50,10 @@ At the same time, earth system model forecasting continues to increase in sophis
 Within this context, coastal sea level is the subject of a diverse range of productive development activity often centred on high resolution numerical simulations and real-time observations \citep{10.3389/fmars.2019.00437}. 
 
 
-Despite all the advances in earth system modelling, conventional tide prediction remains a unique and persistent form of forecast that is well-suited to on-demand delivery.  Tide predictions are an input to many systems, have relatively tiny data volumes and are built on a conceptual foundation that allows for cheap synthesis of timeseries at arbitrary times.    There are several examples of on-demand machine-readable tidal data service such as  \footnote{Eg \url{https://tidesandcurrents.noaa.gov/tide_predictions.html}} but nothing yet from an Australian agency and none that are known to distinguish variants for different applications.
+Despite all the advances in earth system modelling, conventional tide prediction remains a unique and persistent form of forecast that is well-suited to on-demand delivery.  Tide predictions are an input to many systems, have relatively tiny data volumes and are built on a conceptual foundation that allows for cheap synthesis of timeseries at arbitrary times.    There are several examples of on-demand machine-readable tidal data service \footnote{such as  \url{https://tidesandcurrents.noaa.gov/tide_predictions.html}} but nothing yet from an Australian agency and none that are known to distinguish variants for different applications.
 
 
-Automated delivery of conventional tidal data raises the attractive potential to synthesise tidal timeseries at any arbitrary times as required by an application; whether that time be in the past or the future.   But there is a risk that a naive implementation of such a service may unfortunately re-enforce conceptions that tidal sea levels are an uncomplicated and singular thing.    
+Automated delivery of conventional tidal data raises the attractive potential to synthesise tidal timeseries at any arbitrary times as required by an application; whether that time be in the past or the future.   But there is a risk that a naive implementation of such a service may unfortunately re-enforce conceptions that tidal sea levels are an uncomplicated data type without what could be called a range of ``flavours''.
 Whilst the precise details of tidal data may be irrelevant for many applications, the following discussion highlights why tidal data would be better treated like other analysis and forecast services by clearly distinguishing some variants or data ``flavours''. 
 Appropriate distinction of tidal data types would clarify the compatibility of the content whilst allowing developers and users to remain relatively isolated from backend details and processing improvements on the part of the supplying agency.
 
@@ -371,6 +371,7 @@ Lord Howe Island
  & 02/08/1994 - 31/12/2019
  \\
 \end{tabular}
+\caption{Selected tidal stations for focus.}
 \label{tab:sites}
 \end{table}
 
@@ -403,7 +404,8 @@ Lord Howe Island
     \begin{subfigure}[b]{\figwidthHalf}
         \includegraphics[width=\textwidth]{figures/plots/complex_\Ga.pdf} \caption{\Gname{}}
     \end{subfigure}
-    \caption{Evolution of annual updates to select constituents at focus sites displayed as both phasors and smaller timeseries of amplitude and phase.  Annual results are not independent due to accumulating input data. Relatively radical changes reflect the power of quasi-periodic variability at these frequencies as well as the heterogeneous record quality on which analyses are based} 
+    \caption{Evolution of select tidal constituents at focus sites.}
+    {Evolution of annual updates to select constituents at the focus sites listed in table \ref{tab:sites} displayed as both phasors and smaller timeseries of amplitude and phase.  Annual results are not independent due to accumulating input data. Relatively radical changes reflect the power of quasi-periodic variability at these frequencies as well as the heterogeneous record quality on which analyses are based} 
     \label{fig:complexEvolution}
 \end{figure}   
 
@@ -460,7 +462,7 @@ Adding any complexity to operational systems is generally undesirable and a good
     \item provide rankable quality measures
 \end{itemize}
 
-With these motivations in mind, the following tidal data categories are proposed.   Emphasis is placed on conveying the need for \textit{any} signal split rather than exact wording and finer details.  Importantly, such a change could be made as an incremental shift without significant technological change; but would open the path to ongoing improvements in the respective categories. 
+With these motivations in mind, a minimal set of tidal data categories are proposed and listed in table \ref{tab:typesSummary}.   Emphasis is placed on conveying the need for \textit{any} signal split rather than exact wording and finer details.  Importantly, such a change could be made as an incremental shift without significant technological change; but would open the path to ongoing improvements in the respective categories. 
 Each is discussed further in the subsequent sections.
 
 %\begin{specialtable}[H]\centering
@@ -491,7 +493,7 @@ Each is discussed further in the subsequent sections.
     \label{tab:typesSummary}
 %\end{specialtable}
 \end{table}
-These proposed incremental changes for the conventional service should not be confused with the vital role of global repositories of sea level \textit{observations} \footnote{such as \url{www.gloss-sealevel.org}, \url{uhslc.soest.hawaii.edu} and \url{www.gesla.org}}.    The starting premise of this discussion is the ongoing and embedded role of the national agency for conventional tidal services.    
+These proposed incremental changes for the conventional service should not be confused with the vital role of global repositories of sea level observations \footnote{such as \url{www.gloss-sealevel.org}, \url{uhslc.soest.hawaii.edu} and \url{www.gesla.org}}.    The starting premise of this discussion is the ongoing and embedded role of the national agency for conventional tidal services.    
 Similarly, global simulation repositories like that described by \citeauthor{10.3389/fmars.2020.00263}
 serve an important but different role.
 

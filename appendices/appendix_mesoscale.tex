@@ -5,9 +5,9 @@ Following chapter \ref{sec:spatialTides}, the Laplace Tidal Equations (LTE) evol
 %----------------------
 % LTE in time-domain
 \begin{align}
-    \label{E:LTE_momtm}
+    \label{eq:LTE_momtm}
     \frac{\delta \mathbf{U} }{ \delta t} + f\vec{k} \times \mathbf{U} + gH\nabla \eta  + \mathbf{F} &= \mathbf{f_0} + gH \nabla \eta_{SAL} \\
-    \label{E:LTE_cont}
+    \label{eq:LTE_cont}
     \frac{\delta \mathbf{\eta} }{\delta t} &= -\nabla.\mathbf{U} 
 \end{align}
 %----------------------
@@ -61,7 +61,7 @@ Summaries that categorise the many global tide models on the basis of design cho
 %\label{S:numerical_impl}
 The motivations for explicitly representing tides within an \OGCM{} where introduced in section \ref{sec:mesoscaleOperational}
 The astronomical tidal forcing can be conceptualised as a relatively smooth global surface field that varies in time. 
-Subsequently, perhaps the he most significant design choice for numerical implementation regards how to formulated the time variation of this field.
+Subsequently, perhaps the most significant design choice for numerical implementation regards how to formulated the time variation of this field.
 At face value, the \emph{direct formulation} provides the most unmediated and accurate representation of $\eta_{eq}$. Given spherical harmonics $(n,m) \in (2,0) , (2,1) , (2,2)$, the full global tidal forcing can be pre-computed $c_{nm}(t)$ as 6 real valued time series and simple trigonometric functions of location.
 This approach has the advantage of accurately representing the \ATGP{} and facilitates incorporation of best-practice pre-computed SAL corrections \citep{Egbert:2002ug}. 
 Furthermore, this approach could offer consistent numerical formulation with other barotropic forcing fields.
