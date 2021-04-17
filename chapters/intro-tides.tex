@@ -42,7 +42,7 @@ Differing treatment of the intermediate parts of this flow chart, the geophysica
 %-----------------
 \begin{figure}[!hbt] \centering
     \includegraphics[width=\figwidthFull]{figures/diagrams/tidal_force_flowchart.pdf}
-    \caption{Ocean tide flow chart.}{Schematic following Agnew \citep{agnew2015}.  Reference to the \ATGP{} is common to tidal analysis and prediction methods, whilst the treatment of tidal/non-tidal connections can differ markedly.}
+    \caption{Ocean tide flow chart.}{Schematic following \citet{agnew2015}.  Reference to the \ATGP{} is common to tidal analysis and prediction methods, whilst the treatment of tidal/non-tidal connections can differ markedly.}
     \label{fig:tideForceFlow}
 \end{figure}
 %-----------------
@@ -106,9 +106,9 @@ Given the positions in the geocentric reference frame $\theta,\lambda,r$ for bot
 c_{nm}(t) &= a_{nm}(t) + ib_{nm}(t) \nonumber \\
           &= \sum_{b=\text{moon},\text{sun}}    \frac{4 \pi GM_{b}}{g r_{b}}  \frac{(2-\delta_{m0})} {(2n+1)} \left(\frac{a}{r_b} \right)^n    M_{nm} P_{nm}( \sin(\theta_b) ) e^{im\lambda_b}
 \end{align}
-The normalisation used in the determination of $c_{nm}(t)$ must be consistent with that used for equation \ref{eq:VT}.
+Where $c_{nm}(t)$ are timeseries of complex numbers equivalently written as pairs of real values $a_{nm}$ and $b_{nm}$ with $i=\sqrt{-1}$.  The normalisation factors $M_{nm}$ are to be consistent with those used for equation \ref{eq:VT}.
 Note that $\theta,\lambda$ in Equation \ref{eq:c} are equivalent to the geographic coordinates of the respective sub-body point at a given time. 
-Where $\delta_m0 = 1$ for $m==0$ and $\delta_{m0} = 0$ for $m \neq 0$.\\
+Integer $\delta_{m0} = 1$ for $m==0$ and $\delta_{m0} = 0$ for $m \neq 0$.\\
 Normalisation factors $M$ are not important to detail here beyond noting that the choice of convention can be relevant to interpretation. The radial scale $a$ is conventional taken as the semi-major axis from the ellipsoidal georeference. 
 %---------------------
 \begin{figure}[!hbt] \centering
@@ -133,15 +133,14 @@ Furthermore, the ephemeris details for the celestial bodies can be modelled with
 It is this harmonic decomposition of the \ATGP{} that leads to the conventional ocean tide practice of harmonic analysis.
 %----------------
 \begin{equation}
-    c_{nm}(t) = \sum_{k} H_{nmk} e^{-i( t\theta_{nmk})} = \sum_{k} H_{nmk} e^{-i( t\omega_{nmk} + \beta_{nmk})}
+    c_{nm}(t) = \sum_{k} H_{nmk} e^{-i(\theta_{nmk})} = \sum_{k} H_{nmk} e^{-i( t\omega_{nmk} + \beta_{nmk})}
     \label{E:harmonic}
 \end{equation}
 %----------------
-The index $k$ represents a discrete series of tidal components; potentially expanded out to hundreds of terms.  Each component is associated with a discrete point in complex frequency-space with amplitude $H$, frequency $\omega$ and phase $\beta$.
+The index $k$ represents a discrete series of tidal components; potentially expanded out to hundreds of terms.  Each component is associated with a discrete point in complex frequency-space with amplitude $H$ and angular argument $\theta_{nmk}$.   For the relevant celestial bodies this argument can further decomposed to time variations at a fixed frequency $\omega$ relative to a reference phase $\beta$.  
 
 Despite a common misconception, it is important to emphasise that equation \ref{E:harmonic} does not represent a Fourier series.  The finite sequence of frequencies $\omega_{nmk}$ are derived from the relative motions of the earth-moon-sun system and do not provide either an orthogonal set of sinusoids nor a complete basis.
-
-Despite not being orthogonal, the harmonic decomposition does provide a special list of frequencies that can be ranked by a scalar magnitude. 
+Whilst not an orthogonal set, the harmonic decomposition does provide a special list of frequencies that can be ranked by the scalar magnitudes $H_{nmk}$. 
 
 \citet{Doodson:1921kt} introduced a novel and influential system of notation for specifying $\theta_{nmk}$ based on a laborious harmonic decomposition of $V_T$ using Brown's lunar theory; that is, a polynomial model for the lunar ephemeris.  
 In the Doodson formulation, all the relevant astronomical information is summarised by code of 6 small integers; together called the Doodson number or argument numbers.   Each position in the code is associated with an fundamental astronomical concept as summarised in Table \ref{T:doodson}.  Doodson codes are in common use across the tidal literature and provide the only useful means of describing tidal components beyond the small number associated with traditional Darwin names such as M2, K1, O1, S2.
@@ -177,19 +176,20 @@ Longitude of Sun mean perigee          & $p_1$             & $\sim$ 20000 years\
 Equation \ref{E:doodson} gives the angular argument for a single tidal component $k$ as a function of the 6 astronomical arguments.   As discussed above, the astronomical arguments embody an analytical ephemeris for the Moon and Sun rather than a direct numerical description of these positions.  Polynomial functions of time can be used to estimate each of the 6 arguments close to a given epoch.  The phase adjustment $\delta$ is a convention applied such that the each term in equation \ref{E:harmonic} is written as a cosine, rather than the mixture of sine and cosine terms that naturally follow from the underlying spherical harmonics.
 
 \begin{align}
-\label{E:doodson}
-\theta_{nmk}  &= \left[ d_1 , d_2 , d_3 , d_4 , d_5 ,d_6 , \delta(n,m)  \right] \cdot \left[ \tau , s  , h , p , N^\prime , p_1 , \frac{\pi}{2}   \right]   \\
-          d_1 &\equiv m \nonumber \\
-              & \mbox{ (nb ignoring integer offset 5 often added to $d_2d_3d_4d_5d_6$)} \nonumber
-\end{align}
-
-\begin{equation}
-\delta(n,m)  =     \begin{array}{ll}
+    \label{E:doodson}
+    \theta_{nmk}  &= \left[d_1, d_2, d_3, d_4, d_5, d_6, \delta(n,m) \right] \cdot \left[\tau, s, h, p, N^\prime, p_1, \frac{\pi}{2}   \right]   \nonumber \\
+          d_1 &\equiv m \nonumber\\
+%\end{align} 
+%\begin{equation}
+    \delta(n,m) &=  \begin{array}{ll}
                     1 & \mbox{if $n+m$ odd}  \\
                     0 & \mbox{if $n+m$ even} 
                     \end{array}             
-\end{equation}
+%\end{equation}
+\end{align} 
 
+Terms are all described in the immediately preceding text.
+Some authors formulate these code equivalently by adding an integer offset of 5 to $d_2d_3d_4d_5d_6$ so as to avoid negative numbers.
 
 %-----------------%
 \subsection{Other aspects relevant to global coordinates}
@@ -201,13 +201,15 @@ The essential development of the \ATGP{} in Section\ref{sec:basic_potential} is 
 The basic spatial perspective behind the development of the \ATGP{} is the thin shell approximation.  Geocentric coordinates are used.  This is appropriate for writing the potential in general form.  However, when considering the response of ocean dynamics, a vertical relative to the ocean floor is dynamically relevant.  There is a vertical movement of the ocean floor in geocentric coordinates associated with the \ATGP{} of comparable magnitude to the ocean tide which is quantitatively significant to dynamic models \citep{Hendershott:1981ub} and \citep[pp.336]{gill1982atmosphere}.
 
 
-This elastic response of the earth can considered to be essentially instantaneous compared to ocean timescales.  Furthermore, the elastic re-distibution of mass associated with this 'earth tide' itself modifies the gravitational field.    By treating the Earth as "spherical, non-rotating, elastic, and isotropic" the solid body response can be encapsulated by a small number of dimensionless Love numbers \citep{agnew2015}.  In the present context each spherical harmonic degree has a single body tide Love number $h_n$ and `induced free space potential' Love number $k_n$ \citep[Sec 5.3.3]{Urban:2013vl}. This has the convenience of formulating the combined direct effects of the solid earth response to the \ATGP{} as a modification to the magnitude of $\eta_{eq}$.  It is noted that ``the Love numbers for the diurnal tides differ from those for the semi-diurnal and long-period tides because of the free-core nutation resonance'' \citep{Arbic:2004wz}.
-The conceptually related, but more complicated, effects of the moving ocean mass itself is discussed below.
-
+This elastic response of the earth can considered to be essentially instantaneous compared to ocean timescales.  Furthermore, the elastic re-distibution of mass associated with this 'earth tide' itself modifies the gravitational field.    By treating the Earth as "spherical, non-rotating, elastic, and isotropic" the solid body response can be encapsulated by a small number of dimensionless Love numbers \citep{agnew2015}.  In the present context each spherical harmonic degree has a single body tide Love number $h_n$ and `induced free space potential' Love number $k_n$ \citep[Sec 5.3.3]{Urban:2013vl}. This has the convenience of formulating the combined direct effects of the solid earth response to the \ATGP{} as a modification to the magnitude of $\eta_{eq}$ shown in equation \ref{eq:love}.  
 \begin{equation}
-\eta_{eq} = -(1+k_n-h_n) \frac{V_T}{g} \sim 0.7 \frac{V_T}{g}
-\end{equation} 
+    \eta_{eq} = -(1+k_n-h_n) \frac{V_T}{g} \sim 0.7 \frac{V_T}{g}
+    \label{eq:love}
+\end{equation}
+Where the effect of the Love numbers $k_n$ and $h_n$ is to effectively reduce the nominal magnitude of the equilibrium tide by around $30\%$. 
+It is notable that ``the Love numbers for the diurnal tides differ from those for the semi-diurnal and long-period tides because of the free-core nutation resonance'' \citep{Arbic:2004wz}.
 
+The conceptually related, but more complicated, effects of the moving ocean mass itself is discussed below.
 
 \underline{Treatment of self attraction and loading.} \\
 The tidal movement of ocean mass has an effect on the solid Earth, and reflexively on the gravitational potential acting on the ocean itself.
@@ -317,9 +319,10 @@ Note the emphasis on periodicity rather than dynamics.  More problematic is the 
 The conventional harmonic tide representation of a timeseries is given in equation \ref{eq:cos}.  At face value involves a linear sum of sinusoids with amplitude $A_k$ and phase lag $g_k$ parameters considered to be constants that characterise the LTI system; other terms and complications are discussed below.  
 %---------------------
 \begin{equation}
-\eta_{tide}(t) = \sum_{k} f_k A_k \cos ( t.\omega_k + g_k + u_k)
-\label{eq:cos}
+    \eta_{tide}(t) = \sum_{k} f_k A_k \cos ( t.\omega_k + g_k + u_k)
+    \label{eq:cos}
 \end{equation}
+Where $\eta_{tide}$ is the time varying tidal signal, $A_k$ and $\omega_k$ are the nominal tidal amplitude and frequency, $g_k$ is a reference phase argument (dependant on the ephemeris epoch) and conventional adjustments $f_k$ and $u_k$ to account for finite record length and are discussed below. 
 %---------------------
 Significantly, the harmonics involved with such an analysis can only ever be a subset of tidal frequencies arising from the decomposition $c(t) = \sum_{k} H_{k} e^{-i( t\theta_{k})}$.  This limitation comes mainly from the non-orthogonality of the basis functions and the fact that all observational records are of finite length.
 Conventional tide practice applies a range of elaborations and work-arounds in order to select the set of analysed components and produce predictions.  
