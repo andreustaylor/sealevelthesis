@@ -43,7 +43,7 @@ This discussion makes the case that conventional tide prediction services will b
 
 \subsection{Modern data micro-services and earth system modelling}
 National forecasting agencies are increasingly providing machine-readable online data to support the diverse downstream economy of value-adding applications.
-This `micro-service' architecture \citep{BCG2020} is increasingly relevant to government services and is embodied by programs such as  \url{api.gov.au}) and the International Hydrographic Organisations  navigation-focused exchange specifications (\url{http://s100.iho.int}).
+This `micro-service' architecture \citep{BCG2020} is increasingly relevant to government services across the board \footnote{\url{api.gov.au}} and more specifically for tides to the International Hydrographic Organisations navigation-focused exchange specifications \footnote{\url{http://s100.iho.int}}.
 
  
 At the same time, earth system model forecasting continues to increase in sophistication along the dimensions of representational 'concreteness' \citep{Petersen:2012kp}, forecast duration, assimilation of observations and combination into seamless services \citep{BOM2020}.
@@ -100,7 +100,8 @@ The pragmatic role of experts in managing what is now commonly  called ``data wr
  
 \begin{figure}[!hbt] \centering
         \includegraphics[width=\figwidthFull]{figures/diagrams/tideSchematic.pdf} 
-        \caption{Schematic to illustrate how a conventional tidal process manages heterogeneous data sources on an annual update cycle.  Official tide requirements are not identical to those of all data users.  Dotted lines indicate the potential for on-demand synthesis.}
+        \caption{Conventional operational tide prediction update process}
+        {Schematic illustrates how a conventional tidal process manages heterogeneous data sources on an annual update cycle.  Official tide requirements are not identical to those of all data users.  Dotted lines indicate the potential for on-demand synthesis.}
         \label{fig:tidePractice}
 \end{figure}   
 
@@ -128,7 +129,7 @@ Similarly, whilst remote observations of sea level anomalies (SLA) are a critica
 
 
 %------------------------------------------------
-\section{Problem 1: tide models and standard predictions don't have a shared aim}
+\section{Problem 1: different conceptions of tidal}
 \label{Sec:OfficialGlobal}
 Standard tide predictions and spatial (eg gridded) tide solutions are in parallel use within ocean forecasting but do not aim to represent exactly the same phenomena.    The potential for this to be problematic is apparent in the case of global tide solutions. 
 Global tide solutions are a foundational oceanographic product that in rough approximation extends the tradition of tidal analysis well away from tide gauges.   Similar to conventional tidal techniques, these solutions conceptualise the ocean as a linear-time-invariant (LTI) system forced by the tidal gravity patterns. Whilst production of the solution typically involves a hydrodynamic component\citep{Egbert:2002ug}, the result is effectively the spatial equivalent to a set of static conventional tidal parameters.   The surface height predictions from global tide solutions allow for the decomposition of remote ocean observations into tidal and nontidal components, but are also widely used for other extension applications.
@@ -151,16 +152,17 @@ The nature of tidal analysis is such that the distinction is best not conceptual
  
 % Amp
 \begin{figure}[!hbt] \centering
-    \includegraphics[trim={0 0 0 1cm},clip,width=\figwidthFull]{figures/maps/locations_SaAmp.pdf} 
+    \includegraphics[trim={0 0 0 1cm},clip,width=\figwidthBig]{figures/maps/locations_SaAmp.pdf} 
     \caption{Amplitude of \textbf{Sa} at analysis locations}
     {Amplitude of \textbf{Sa} at analysis locations. Over 650 mixed-quality stations are on record.}
     \label{fig:SaAmp}
 \end{figure}
+
 % Pha
 \begin{figure}[!hbt] \centering
-    \includegraphics[trim={0 0 0 1cm},clip,width=\\figwidthFull]{figures/maps/locations_SaPhaAnyM2Update.pdf} 
+    \includegraphics[trim={0 0 0 1cm},clip,width=\figwidthBig]{figures/maps/locations_SaPhaAnyM2Update.pdf} 
     \caption{Phase of \textbf{Sa} at analysis locations}
-    {Phase of \textbf{Sa} at analysis locations. Compared to Figure\ref{fig:SaAmp}, only 132 stations have recently updated analyses. Location names used in text are also shown. Note that there are different conventions for allocating Doodson codes that influence interpretation of these phase values \citep[10.4]{PCTMSL-sp9}}
+    {Compared to Figure\ref{fig:SaAmp}, only 132 stations have recently updated analyses. Location names used in text are also shown. Note that there are different conventions for allocating Doodson codes that influence interpretation of these phase values \citep[10.4]{PCTMSL-sp9}}
     \label{fig:SaPha}
 \end{figure}   
 
@@ -215,7 +217,7 @@ As an example of the practical implications of such compatibility, consider the 
     \end{subfigure}
     
     \caption{Representational agreement between global tide model and port tides}
-    {Representational agreement between global TPXO tide model and 'official' port tides is improved by total removal of weather dominated constituents from the later.   Predictions relative to MSL.  Metric is unitless - see Figure \ref{fig:SaAmp} for \textbf{Sa} amplitudes.}
+    {Consistency between TPXO tide model and 'official' port tides is improved by total removal of weather dominated constituents from the later.   Predictions relative to MSL.  Metric is unitless - see Figure \ref{fig:SaAmp} for \textbf{Sa} amplitudes.}
     \label{fig:improveOtps}
 \end{figure}   
 
@@ -257,7 +259,8 @@ It is notable that long period signals in Australian sea level studies have alwa
         \includegraphics[width=\textwidth]{figures/maps/AustRegionDiff_S1.pdf}
         \caption{S1}
     \end{subfigure}
-    \caption{Fraction of tidal amplitude attributed to wind and pressure effects from Williams\citep{10.5194/os-2020-107}.  Based only on amplitude and ignoring magnitudes $<1$cm.  As a starting estimate, the observational-based standard analysis of these constituents could be categorised as primarily non-astronomical.}
+    \caption{Fraction of tidal amplitude attributed to wind and pressure effects}
+    {Data from supplementary material provided by \citet{10.5194/os-2020-107}, based only on amplitude and ignoring magnitudes $<1$cm.  As a starting estimate, the observational-based standard analysis of these constituents could be categorised as primarily non-astronomical.}
     \label{fig:williamsFraction}
 \end{figure}
 
@@ -266,15 +269,15 @@ Figure \ref{fig:aggStats} summarises the impact of applying the full standard ti
 in place of a physical tide estimate that excludes nominally weather dominated constituents.
 For these evaluations no bias correction was applied and sample means over approximately 3 years of 1-hourly data are removed.  Whilst the predictive skill characteristics varies between locations, the change from the double-counting scenario (`A' in the figures) to the physical tide scenario (`B') systematically reduces excess variance and improves correlation.
 
-
 \begin{figure}[!hbt] \centering
     % Taylor
-    \begin{subfigure}[b]{\figwidthBig}
-        \includegraphics[width=\textwidth]{figures/plots/taylorDoubleCount.pdf}
-        \caption{Skill decay summary for exclusion of select constituents}
-        {Skill decay summary of impact of excluding constituents to mitigate double counting across many tide gauge locations. Normalised relative to observations \citep{Taylor:2000wp}. Each `comet' traces 7 forecast days.  Change from A to B marked for first day.}   
-    \end{subfigure}
-    \\
+        \includegraphics[width=\figwidthBig]{figures/plots/taylorDoubleCount.pdf}
+        \caption{Forecast skill decay contrasting two tide prediction variants.}
+        {Full forecasts based on linear superposition. Summary of the skill impact due to excluding constituents discussed in the text, across many tide gauge locations. Normalised relative to respective observations \citep{Taylor:2000wp}. Each `comet' traces 7 forecast days.  Change from A to B marked for first day.}   
+        \label{fig:aggStatsComet}
+\end{figure}   
+
+\begin{figure}[!hbt] \centering
     % D
     \begin{subfigure}[b]{\figwidthHalf}
         \includegraphics[width=\textwidth]{figures/plots/ObsError_\Db.png}
@@ -285,10 +288,9 @@ For these evaluations no bias correction was applied and sample means over appro
         \includegraphics[width=\textwidth]{figures/plots/ObsError_\Gb.png}
         \caption{Day-1 errors \Gname{}}
     \end{subfigure}
-    
-    \caption{Forecast model linearly superposed with two variants of the standard tide prediction.}
-    {Forecast model sea level linearly superposed with two variants of the standard tide prediction: [A] all constituents (official) and [B] exclusion of nominally weather dominated (weather-free).  Operational data for $\sim3$ years. Record means removed.} 
-    \label{fig:aggStats}
+    \caption{Forecast error distribution examples.}
+    {Variants shown are [A] all constituents (official) and [B] exclusion of nominally weather dominated (weather-free).  Operational data for $\sim3$ years. Record means removed.} 
+    \label{fig:aggStatsPdf}
 \end{figure}   
 
 
@@ -406,7 +408,7 @@ Lord Howe Island
         \includegraphics[width=\textwidth]{figures/plots/complex_\Ga.pdf} \caption{\Gname{}}
     \end{subfigure}
     \caption{Evolution of select tidal constituents at focus sites.}
-    {Evolution of annual updates to select constituents at the focus sites listed in table \ref{tab:sites} displayed as both phasors and smaller timeseries of amplitude and phase.  Annual results are not independent due to accumulating input data. Relatively radical changes reflect the power of quasi-periodic variability at these frequencies as well as the heterogeneous record quality on which analyses are based} 
+    {Histories of annual updates for sites listed in table \ref{tab:sites} displayed as both phasors and smaller timeseries of amplitude and phase.  Annual results are not independent due to accumulating input data. Relatively radical changes reflect the power of quasi-periodic variability at these frequencies as well as the heterogeneous record quality on which analyses are based} 
     \label{fig:complexEvolution}
 \end{figure}   
 
@@ -433,7 +435,8 @@ changes in this offset across all Australian primary and secondary ports relativ
 
 \begin{figure}[!hbt] \centering
     \includegraphics[width=\figwidthFull]{figures/plots/Z0_evolution.pdf}
-        \caption{Evolution of zero frequency levels used for annual tide predictions at primary and secondary ports. Changes relative to arbitrary zero year of 2011. Variations reflect the heterogeneity of sources and potential for offset discontinuities with on-demand data delivery}
+        \caption{Evolution of zero frequency levels used for annual tide predictions at primary and secondary ports.}
+        {Changes are shown relative to arbitrary zero year of 2011. Variations reflect the heterogeneity of sources and potential for offset discontinuities with on-demand data delivery}
     \label{fig:z0Evolution}
 \end{figure}   
 
@@ -445,12 +448,13 @@ Figure \ref{fig:tideHistoryTs} illustrates the difference for the case of  \Dnam
 
 \begin{figure}[!hbt] \centering
     \includegraphics[width=\figwidthFull]{figures/plots/piecewiseTide_62430.pdf}
-        \caption{Contrast between concatenated standard predictions and a hindcast based on approximate ``weather-free'' tidal parameters at \Dname{}.  Note the intentional discontinuities in official predictions associated with annual updates and growing input record length.}
+        \caption{Contrast between concatenated standard predictions and a hindcast.}
+        {Site \Dname{}. The hindcast shown is based on the approximate ``weather-free'' tidal parameters.  Note the intentional discontinuities in official predictions associated with annual updates and growing input record length.}
     \label{fig:tideHistoryTs}
 \end{figure}   
 
 %------------------------------------------------
-\section{Proposed split of content types for an automated tidal data service}
+\section{Proposed split of routine tidal content}
 \label{Sec:proposed}
 The above sections have characterised the place of conventional tidal practice alongside operational oceanography within a forecasting agency and described three problems that could impact the value of a singular implementation of a machine-readable tidal data service.   From this starting point, the current section proposes a direction by which the conventional service may incrementally adapt to modern requirements.  This proposal is written from the premise that the very notion that anything other than a singular tide prediction is required represents a significant conceptual shift for conventional practice.
 Adding any complexity to operational systems is generally undesirable and a good data service just ``does what it says on the box''.  But considering the diverse uses for synthesised tidal signals and the problems outlined above, the following aims for a data service are put forward: 

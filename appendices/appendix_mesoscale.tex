@@ -8,7 +8,7 @@ Following chapter \ref{sec:spatialTides}, the Laplace Tidal Equations (LTE) evol
     \label{eq:LTE_momtm}
     \frac{\delta \mathbf{U} }{ \delta t} + f\vec{k} \times \mathbf{U} + gH\nabla \eta  + \mathbf{F} &= \mathbf{f_0} + gH \nabla \eta_{SAL} \\
     \label{eq:LTE_cont}
-    \frac{\delta \mathbf{\eta} }{\delta t} &= -\nabla.\mathbf{U} 
+    \frac{\delta \eta }{\delta t} &= -\nabla.\mathbf{U} 
 \end{align}
 %----------------------
 Where $\mathbf{U}$ is the depth integrated horizontal transport, $\eta$ is the sea level signal, $H \gg \eta$ is mean water column depth, $f=2\Omega\sin\theta$ is the Coriolis parameter and $g$ vertical gravitation.\\
@@ -29,15 +29,15 @@ Again following the notation of \cite[pp186]{Egbert:2002ug}, the LTE at a single
 %----------------------
 % LTE in freq-domain
 \begin{align}
-\label{E:LTE_momtm_w}
-\mathbf{\Omega} \mathbf{U} + gH\nabla \eta &= f_u \\
-\label{E:LTE_cont_w}
-\nabla.\mathbf{U} + i\omega\eta &= f_\eta\\
-\mbox{where   } \Omega             &=
-\left[ \begin{array}{cc} 
+    \label{E:LTE_momtm_w}
+    \mathbf{\Omega} \mathbf{U} + gH\nabla \eta &= f_u \\
+    \label{E:LTE_cont_w}
+    \nabla.\mathbf{U} + i\omega\eta &= f_\eta\\
+    \mbox{where   } \Omega          &=
+    \left[ \begin{array}{cc} 
       i\omega + \kappa & f \\ 
-       -f              & i\omega + \kappa  
-                        \end{array} \right]   \nonumber
+            -f         & i\omega + \kappa  
+            \end{array} \right]   \nonumber
 \end{align}
 %----------------------
 Where $\kappa$ is a linearised approximation for the dissipative stress.   Frequency-space forcing terms $f_u, f_\eta$ are written in both equations for generality with regard to data assimilation (inversion).  This frequency-space approach is common to other data assimilative tidal models such as FES \cite[pp395]{Lyard:2006ir}.\\
@@ -49,13 +49,7 @@ Whilst numerically solving the LTE is quite tractable and comparatively simple, 
 A comparative description of data assimilation methods in the context of tide models is laid out by Egbert and Bennet \cite{Egbert:1996vr}.
 
 
-
-Summaries that categorise the many global tide models on the basis of design choices, parameterisations and data assimilation methods are given in \cite{Ardalan:2008gs} and \cite{Matsumoto:2000tg}. \\
-
-%   ??  Application of the LTE is not restricted to the barotropic surface tide.   The formulation can be extended to represent stationary internal tidal modes via use of equivalent-depths .\\
-% Energy cascades.??\\
-
-
+Summaries that categorise the many global tide models on the basis of design choices, parameterisations and data assimilation methods are given in \cite{Ardalan:2008gs} and \cite{Matsumoto:2000tg}. 
 %-----------------%
 \section{Implementation of tidal forcing in \OGCM{}s }
 %\label{S:numerical_impl}
@@ -101,8 +95,9 @@ Whilst this is a reasonable optimisation given relatively slow forcing timescale
 By employing the temporal harmonic approach to representing the tidal force, $\eta_{eq}$ can be updated algebraically at the barotropic timestep, without requiring relatively expensive file input/output.
 
 
+
 %-----------------%
-\subsection{Complications for tidal sea level}
+%\subsection{Complications for tidal sea level}
 The impact of lateral boundaries and shallow water effects on representing global tides is a topic that arises in time-stepped forward models.
 In a barotropic simulation forced directly by tidal ephemerides \cite{Weis:2008ex}, the authors indicate that solutions for \emph{deep-water} partial tides are significantly influenced by the explicit simulation of broad-band tidal spectrum.   
 (It is notable that this simulation did not include a `wave drag' term - but the authors cite this exclusion as a likely source of error \citep[pp5]{Weis:2008ex})
