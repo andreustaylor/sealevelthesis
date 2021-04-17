@@ -26,7 +26,7 @@ Griffies perceives an \OGCM{} as representing the averaged motion of an infinite
 Alternatively, \citet{Stevens:2001kb} casts \OGCM{}s into the class of geophysical ``pseudofluid'' simulations. Of which he notes comparisons with observational data are prone to interpretational nuance and are ``too often ad hoc, uncritical, and/or irrelevant''\citep[pp 286]{Stevens:2001kb}. 
 Figure \ref{fig:ogcmScales} illustrates very schematically the place of \OGCM{} variants in the context of turbulence simulations.   The exclusion or explicit representation of tidal dynamics are shown as changes in SGS complexity; these are discussed further below.
 %----------------------------------
-\begin{figure}[h]\centering
+\begin{figure}[!hbt] \centering
   \includegraphics[width=\figwidthBig]{figures/diagrams/ogcm_scales.pdf}
   \caption{Schematic place of \OGCM{}s in terms of sub-grid-scale parameterisations.}
   {Simulation of a turbulent ocean requires design choices regarding scales represented.  The schematic indicates the relative place of \OGCM{}s in contrast to simluations including Direct Numerical Simulation and Large Eddy Simulation. Following \citep[fig 5.2]{Petersen:2012tr} and \citep{Stevens:2001kb}.  Explicit tides in an OGCM represent a reduction of parameterisation without a large change in spatial scale resolution.}
@@ -48,7 +48,7 @@ Whilst tide gauges are excluded from assimilation, sea level observations derive
 In contrast to the still water level observed by a tide gauge, it is primarily a sea level anomaly (SLA) quantity that is derived from the altimeters and used to constrain the \OGCM{}. Figure \ref{altimeterEg} illustrates the nature of the along-track nadir coverage of a single satellite altimeter.
 These SLA observations are not however applied to constrain the ocean state in the vicinity of coastal tide gauges; and in the case of \BL{} are excluded from the assimilation process for regions where the depth is less than 200m or close to a land mass.   This reflects that fact that the derivation of sea level quantities from satellite altimeters is particularly challenging in shallow water and near coastal boundaries \citep{Woodworth:2011bf}.    Although an active area of development, coastal altimetry data streams are not yet used to constrain operational mesoscale forecast  systems.
 %----------------------------------
-\begin{figure}[h]\centering
+\begin{figure}[!hbt] \centering
   \includegraphics[width=\figwidthHalf]{figures/maps/altimeterCoverageEg.png}
   \caption{Typical spatial coverage of a satellite altimeter.}
           {The along-ground track accumulated over a single day by Saral in May 2020 is shown. Observations near the coast are excluded from assimilation.}
@@ -128,7 +128,7 @@ Model design choices that allow for the tractable representation of mesoscale oc
 The image in Figure \ref{fig:oceanmapsMaskDetail} illustrates how the \BL{} spatial grid discretizes the Australian coast into approximately 10km steps.  A more national view is shown later in Figure \ref{fig:map_masks}.
 At face value this resolution may appear too coarse to usefully simulate the water level at a coastal location; let alone within an shallow embayment such as Port Phillip Bay shown in the image.    But the length scales that can be represented rather lead to an expectation that the useful timescales of the simulation will be limited in some related way.   Chapter \ref{chp:aggregate} demonstrates that there is qualified value at the scales represented.
 %---------------------------
-\begin{figure}[H]
+\begin{figure}[!hbt] \centering
     \includegraphics[width=\figwidthBig]{figures/images/oceanmapsMaskVic.png}
     \caption{Horizontal land/sea mask detail.}
             {Focus on region of south eastern Australia near Melbourne. The $0.1^{\circ}$ regular grid approximates the coast in ~10km steps and totally excludes features like Port Phillip Bay.}
@@ -145,12 +145,10 @@ The staggered B-grid complicates how the coastal boundary is represented as ther
 In particular, the sea level anomaly quantity ($\eta_t$) is quantified on the `T' or tracer cell grid.    However, in order to integrate the shallow water equations forward in time information is exchanged with velocity values carried on the `U' grid; and furthermore each timestep involves a spatial operation over a stencil of neighbouring cell points. 
 The numerical implementation in \BL{} of the barotropic hydrodynamics leads the existence of a so-call checkerboard null-mode, a numerical artefact that can allow aphysical spatial discontinuities in sea level to grow.   To mitigate this null-mode a spatial smoothing step is included within the fast barotropic integration. Figure \ref{fig:gridStencil} summarises schematically the grid stencil operators involved in the barotropic update cycle.
 %---------------------------
-\begin{figure}[H]
-    \begin{center}
+\begin{figure}[!hbt] \centering
     \includegraphics[width=\figwidthBig]{figures/diagrams/mom_BT_stencils_extra.png}
     \caption{Arakawa-B horizontal grid stencil illustrations.}
             {These stencils are relevant to the baroptropic mode updates of \BL{} and indicate the abstracted representation of the coastal boundary. The full forecast sea level anomaly includes both barotropic and baroclinic contributions}
-    \end{center}
     \label{fig:gridStencil}
 \end{figure}
 %---------------------------

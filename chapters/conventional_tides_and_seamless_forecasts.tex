@@ -98,7 +98,7 @@ Conventional tidal analysis at port locations can be characterised as a slow-mot
 Figure \ref{fig:tidePractice} portrays the unique way that conventional tidal practice can transform heterogeneous historical records into a consistent timeseries product at arbitrary time sampling.
 The pragmatic role of experts in managing what is now commonly  called ``data wrangling'' and merging non-uniform and auxiliary sources is a notable contrast to fully automated systems.
  
-\begin{figure}[H]\centering
+\begin{figure}[!hbt] \centering
         \includegraphics[width=\figwidthFull]{figures/diagrams/tideSchematic.pdf} 
         \caption{Schematic to illustrate how a conventional tidal process manages heterogeneous data sources on an annual update cycle.  Official tide requirements are not identical to those of all data users.  Dotted lines indicate the potential for on-demand synthesis.}
         \label{fig:tidePractice}
@@ -150,15 +150,15 @@ Even if this intentional difference is known to specialists, downstream users of
 The nature of tidal analysis is such that the distinction is best not conceptualised as simply high versus low frequency, but rather physical versus periodic.   The periodic but not gravitationally forced patterns have historically been termed `radiational' tides \citep{agnew2015}.  So the situation outlined for the long period tides also exists for the generally tiny but weather-dominated daily constituent \textbf{S1} \citep{Ray:2004ts}.
  
 % Amp
-\begin{figure}[h]{\figwidthFull}
-    \includegraphics[trim={0 0 0 1cm},clip,width=\textwidth]{figures/maps/locations_SaAmp.pdf} 
+\begin{figure}[!hbt] \centering
+    \includegraphics[trim={0 0 0 1cm},clip,width=\figwidthFull]{figures/maps/locations_SaAmp.pdf} 
     \caption{Amplitude of \textbf{Sa} at analysis locations}
     {Amplitude of \textbf{Sa} at analysis locations. Over 650 mixed-quality stations are on record.}
     \label{fig:SaAmp}
 \end{figure}
 % Pha
-\begin{figure}[h]{\figwidthFull}
-    \includegraphics[trim={0 0 0 1cm},clip,width=\textwidth]{figures/maps/locations_SaPhaAnyM2Update.pdf} 
+\begin{figure}[!hbt] \centering
+    \includegraphics[trim={0 0 0 1cm},clip,width=\\figwidthFull]{figures/maps/locations_SaPhaAnyM2Update.pdf} 
     \caption{Phase of \textbf{Sa} at analysis locations}
     {Phase of \textbf{Sa} at analysis locations. Compared to Figure\ref{fig:SaAmp}, only 132 stations have recently updated analyses. Location names used in text are also shown. Note that there are different conventions for allocating Doodson codes that influence interpretation of these phase values \citep[10.4]{PCTMSL-sp9}}
     \label{fig:SaPha}
@@ -189,7 +189,7 @@ The \textit{total removal} of the selected constituent terms consistently improv
 As an example of the practical implications of such compatibility, consider the role of conventional tidal planes such as Highest and Lowest Astronomical Tide (HAT and LAT).  Whereas these planes are derived at port locations based on standard predictions that include radiational tides, any spatial extension of the planes that involves a physical tide model risks systematic disagreements of order 10-20cm.  
 
 
-\begin{figure}[H]\centering    
+\begin{figure}[!hbt] \centering
     \begin{subfigure}[b]{\figwidthHalf}
         \includegraphics[trim={0 0 0 1cm},clip,width=\textwidth]{figures/maps/otpsPortCompare_Improve2020_105_diffRmse.pdf}
         \caption{Improvement metric due to all exclusions}
@@ -232,7 +232,7 @@ The ``\textit{possibility that ... non-tidal power is leaking into the Mm and Mf
 
 It is notable that long period signals in Australian sea level studies have always been subject to careful ``non-tidal'' treatment. For instance Haigh \citep{Haigh:2013bn} and Pattiaratchi \citep{Pattiaratchi2018} ensure that long period signals are appropriately filtered, fit or replaced to account for the representational limits of the respective models when interpreting results against observations.
 
-\begin{figure}[h]\centering
+\begin{figure}[!hbt] \centering
     \begin{subfigure}[b]{\figwidthHalf}
         \includegraphics[width=\textwidth]{figures/maps/AustRegionDiff_SA.pdf}
         \caption{Sa}
@@ -267,7 +267,7 @@ in place of a physical tide estimate that excludes nominally weather dominated c
 For these evaluations no bias correction was applied and sample means over approximately 3 years of 1-hourly data are removed.  Whilst the predictive skill characteristics varies between locations, the change from the double-counting scenario (`A' in the figures) to the physical tide scenario (`B') systematically reduces excess variance and improves correlation.
 
 
-\begin{figure}[h]\centering
+\begin{figure}[!hbt] \centering
     % Taylor
     \begin{subfigure}[b]{\figwidthBig}
         \includegraphics[width=\textwidth]{figures/plots/taylorDoubleCount.pdf}
@@ -378,7 +378,7 @@ Lord Howe Island
 
 %----------------------------------
 
-\begin{figure}[h]\centering
+\begin{figure}[!hbt] \centering
     % B
     \begin{subfigure}[b]{\figwidthHalf}
         \includegraphics[width=\textwidth]{figures/plots/complex_\Ba.pdf}\caption{\Bname{}}
@@ -431,7 +431,7 @@ The official Australian nautical predictions are accompanied by an explanation t
 The elevation of MSL relative to \textit{prediction datum} (PD)is updated annually for Australian predictions for multiple reasons.   One is to account for global sea level trends across the prediction sites inclusive of locations for which no recent observations are available.   Other reasons include the redefinition or relocation of PD at a port.  Figure \ref{fig:z0Evolution} summarises the actual historical 
 changes in this offset across all Australian primary and secondary ports relative to the arbitrary reference year of 2011.   It is evident that older predictions and lower quality secondary ports are most susceptible to larger step changes.
 
-\begin{figure}[H]\centering
+\begin{figure}[!hbt] \centering
     \includegraphics[width=\figwidthFull]{figures/plots/Z0_evolution.pdf}
         \caption{Evolution of zero frequency levels used for annual tide predictions at primary and secondary ports. Changes relative to arbitrary zero year of 2011. Variations reflect the heterogeneity of sources and potential for offset discontinuities with on-demand data delivery}
     \label{fig:z0Evolution}
@@ -443,7 +443,7 @@ But looking back at official data is exactly what some users of an automated dat
 Compare this to an application where the aim is simply to estimate the tidal water level variability component  for a historical period regardless of what was official or available at the time.
 Figure \ref{fig:tideHistoryTs} illustrates the difference for the case of  \Dname{}.  The evolving long period characteristics of the official annual updates can be compared to panel [c] in Figure \ref{fig:complexEvolution} recalling that these operational values represent a growing input record and a independent observations such in the studies of Devin \citep{10.1002/2017jc013165}. 
 
-\begin{figure}[H]\centering
+\begin{figure}[!hbt] \centering
     \includegraphics[width=\figwidthFull]{figures/plots/piecewiseTide_62430.pdf}
         \caption{Contrast between concatenated standard predictions and a hindcast based on approximate ``weather-free'' tidal parameters at \Dname{}.  Note the intentional discontinuities in official predictions associated with annual updates and growing input record length.}
     \label{fig:tideHistoryTs}

@@ -40,12 +40,10 @@ The \ATGP{} is an abstraction developed from positional astronomy and classical 
 Figure \ref{fig:tideForceFlow} schematically illustrates the conceptual connections from positional astronomy, to the \ATGP{} and geophysics through to observed sea level .  
 Differing treatment of the intermediate parts of this flow chart, the geophysical modelling, effectively comprise the alternative approaches to sea level forecasting.  Of special relevance to the present focus are the details of any decomposition of observed sea level into tidal and non-tidal categories.   The dotted lines connecting nominally non-tidal components indicate that the gravitationally forced response is not the sole factor in discussions of tidal sea level. 
 %-----------------
-\begin{figure}[h]
-    \begin{center}
+\begin{figure}[!hbt] \centering
     \includegraphics[width=\figwidthFull]{figures/diagrams/tidal_force_flowchart.pdf}
     \caption{Ocean tide flow chart.}{Schematic following Agnew \citep{agnew2015}.  Reference to the \ATGP{} is common to tidal analysis and prediction methods, whilst the treatment of tidal/non-tidal connections can differ markedly.}
     \label{fig:tideForceFlow}
-    \end{center}
 \end{figure}
 %-----------------
 Before expanding on the role of the tidal forcing, the recent work of \citep{10.1016/j.oceaneng.2020.107013} is worth mentioning.   Regardless of the finer details, this observation-based machine learning application to tide prediction is still founded on the connection between positional astronomy and sea level, but simply makes the connection more indirect by relying on easily accessible moon phase data.
@@ -74,12 +72,10 @@ $P_{nm}$ are the associated Legendre polynomials of degree $n$ and order $m$.  W
 $M_{nm}$ are normalisation factors, that whilst not of direct interest here are noted to follow different conventions between applications \citep{IERS2003}.
 Figure \ref{fig:VTmaps} provides a visualisation of the field and a decomposition into spherical harmonics a single snapshot in time.
 %-------------------------------
-\begin{figure}[h]
-    \begin{center}
+\begin{figure}[!hbt] \centering
     \includegraphics[width=\figwidthBig]{figures/maps/tidal_potential_spatial_20130101_0000.png}
     \caption{Snapshot of global $\eta_{eq}$ field.}{This visualisation illustrates the spatial decomposition into spherical harmonics.  Note the wide variation of relative magnitudes between panels. When comparing to formulations recall that those decompositions are per body; ie an independent set for the moon and sun. }
     \label{fig:VTmaps}
-    \end{center}
 \end{figure}
 %-------------------------------
 Equation \ref{eq:VT} and the visualisation in \ref{fig:VTmaps} quantify the potential $V_T$ normalised by the standard value for Earth gravity $g$; a quantity defined as the equilibrium tide $\eta_{eq}$.  
@@ -115,12 +111,10 @@ Note that $\theta,\lambda$ in Equation \ref{eq:c} are equivalent to the geograph
 Where $\delta_m0 = 1$ for $m==0$ and $\delta_{m0} = 0$ for $m \neq 0$.\\
 Normalisation factors $M$ are not important to detail here beyond noting that the choice of convention can be relevant to interpretation. The radial scale $a$ is conventional taken as the semi-major axis from the ellipsoidal georeference. 
 %---------------------
-\begin{figure}[h]
-\begin{center}
-\includegraphics[width=\figwidthBig]{figures/plots/tidal_coeff_timeseries_2days.png}
-\caption{Snapshot of time varying coefficients for the \ATGP{}}
+\begin{figure}[!hbt] \centering
+    \includegraphics[width=\figwidthBig]{figures/plots/tidal_coeff_timeseries_2days.png}
+    \caption{Snapshot of time varying coefficients for the \ATGP{}}
 {A short sample of the time varying coefficients $c_{nm}(t)$.  In the upper panel, classification of $c_{2m}$ into long (red), diurnal (blue) and semi-diurnal (black) species is evident.  Note the much smaller magnitude of higher degree harmonics.}
-\end{center}
 \end{figure}
 %---------------------
 The rapid decay of the scaling term $\left(\frac{a}{r_b} \right)^n$ with n is the basis for excluding higher degree harmonics from ocean tide applications.  In the case of the Moon, the magnitude of the $n=3$ potential field is more than 2 orders of magnitude smaller than $n=2$.  The associated force also decays, but not quite so rapidly due to the decreasing spatial length scales of the higher harmonics.  This decay is apparent in the colorbars of Figure \ref{fig:VTmaps}\\
@@ -347,8 +341,7 @@ The standout power of some tidal variations is apparent in the spectra shown in 
 But conventional practice has developed additional terms that are not directly apparent in the \ATGP{} that have in some locations greatly improved the value of the resulting predictions; in particular for what are called the compound, shallow water or overtide terms. In this cases, hydrodynamic reasoning has been applied to select and justify additional terms that could result from the behaviour of depth limited waves and wave-wave interactions.
 Any seasonal modulation terms are analogous in the sense that the rational for the LTI model has been extended to account for observed patterns rather than derived solely from the \ATGP{}.
 %----------------------
-\begin{figure}[H]
-	\centering
+\begin{figure}[!hbt] \centering
 	\begin{subfigure}[t]{\figwidthHalf}
 	    \includegraphics[width=\textwidth]{figures/images/zetler_tidal_computer_lady_1921.png}
 	    \caption{Harris-Fischer tide machine circ. 1912 \protect{ \citep{Parker:2007wq} }}
@@ -440,7 +433,7 @@ As noted above, the current configuration of \BL{} does not assimilate tide gaug
 Figure \ref{fig:residualExample} illustrates how observations de-tided for different purposes produce roughly similar but certainly not identical anomaly signals. 
 
 %-------------------------
-\begin{figure}[h]
+\begin{figure}[!hbt] \centering
     \includegraphics[width=\figwidthFull]{figures/plots/diag_plot_014406_detide_compare_20120101.png}
     \caption{Observations de-tided using alternate references.}{Different `residuals' result from alternative tide predictions: [1] regional gridded tide solution, [2] harmonic prediction and [3] harmonic prediction with significant non-gravitional harmonics removed. }
     \label{fig:residualExample}
@@ -468,13 +461,13 @@ Figure \ref{fig:atlas} shows a typical tidal atlas map for a single constituent 
 
 Modern tidal atlases are in close agreement with regard to broad patterns, but characteristically differ at the shallow water margins; the very location of most direct interest to sea level forecasts.  Figure \ref{fig:tpx_cross} illustrates the fact that modern global tide models typically agree within about 0.02m in the deep ocean, but can differ substantially in coastal and shelf regions.  
 %---------------------------
-\begin{figure}[h]
+\begin{figure}[!hbt] \centering
     \includegraphics[width=\figwidthBig]{figures/maps/global_m2_tpx08.png}
     \caption{Tidal cophase and corange diagram.}{Example spatial snapshot for a single tidal component M2.  Data source TPX08 \citep{Egbert:2002ug}  }
     \label{fig:atlas}
 \end{figure}
 %---------------------------
-\begin{figure}[h]
+\begin{figure}[!hbt] \centering
     \includegraphics[width=\figwidthBig]{figures/maps/map_tide_differences_tpx_xovers.png}
     \caption{Tide solution differences at topex cross-overs near Australia.}{Maximum absolute differences between tidal timeseries at topex cross-overs for a 1 year period. The different solutions agree very closely in deep water, whilst the significance of shallow water effects are apparent.  Models included: CSR04\citep{Eanes:1996tr}, FES04\citep{Lyard:2006ir}, DTU10\citep{IMPROVEMENTOFGLOBA:2010tu}, GOT47, GOT48\citep{Schrama:1994vr}\citep{Ray:1999vm} }
     \label{fig:tpx_cross}
