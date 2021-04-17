@@ -24,7 +24,7 @@ It is notable that whilst for Pugh periodicity is a key feature of anything that
 In contrast to the periodic definition, most modern authors place the tidal potential in a defining role. Such an emphasis on the tidal potential or Astronomical Tide Generating Forces \ATGP{} reflects a greater regard for dynamics and inputs, as opposed to observed outputs, that is more complimentary to the wider field of geophysical fluid dynamics.  
 \citep{Hendershott:1981ub} treats ocean tides as that subset of oceanographic long waves driven by the \ATGP{}.  Notably his discussion is careful with the distinction between dynamics and `practical tide prediction'. But even Henderscott's primarily dynamical perspective is imbued with the cultural interplay of physics and pragmatic prediction; as illustrated by his inclusion of the rather aphysical radiational potential concept associated with the \citep{Munk:1966ts} response method tradition.
 The Australian Tide Manual \citep{PCTMSL-sp9} similarly reflects the historical intertwining of tidal physics and practical prediction methods; such that any forcing physics simply provides a backdrop to the singular focus on harmonic prediction.   
-A step removed from ocean prediction, \citep{10.1016/b978-0-444-53802-4.00058-0} provides a modern physical perspective that both emphasises the core role of the tidal forcing (in this case for earth tides) whilst adopting the well established terminology derived from the long history of ocean tide prediction. A similar emphasis on the physical forcing within the historical perspective is taken by \citep{Flinchem:2000kp} in a  discussion of analysis methods associated with non-stationarity in ocean tide patterns.
+A step removed from ocean prediction, \citep{agnew2015} provides a modern physical perspective that both emphasises the core role of the tidal forcing (in this case for earth tides) whilst adopting the well established terminology derived from the long history of ocean tide prediction. A similar emphasis on the physical forcing within the historical perspective is taken by \citep{Flinchem:2000kp} in a  discussion of analysis methods associated with non-stationarity in ocean tide patterns.
 The centrality of \ATGP{} be the approach employed in the present work as well.
 
 
@@ -43,7 +43,7 @@ Differing treatment of the intermediate parts of this flow chart, the geophysica
 \begin{figure}[h]
     \begin{center}
     \includegraphics[width=\figwidthFull]{figures/diagrams/tidal_force_flowchart.pdf}
-    \caption{Ocean tide flow chart.}{Ocean tide flow chart (following Agnew \citep{10.1016/b978-0-444-53802-4.00058-0}.  Reference to the \ATGP{} is common to tidal analysis and prediction methods, whilst the treatment of tidal/non-tidal connections can differ markedly.}
+    \caption{Ocean tide flow chart.}{Ocean tide flow chart (following Agnew \citep{agnew2015}.  Reference to the \ATGP{} is common to tidal analysis and prediction methods, whilst the treatment of tidal/non-tidal connections can differ markedly.}
     \label{fig:tideForceFlow}
     \end{center}
 \end{figure}
@@ -54,7 +54,7 @@ Before expanding on the role of the tidal forcing, the recent work of \citep{10.
 The centrality of the tidal generating potential to sea level forecasting warrants further elaboration, in order to later explicate the manner in which conventional and dynamic sea level forecasts respectively represent tides. 
 
 The \ATGP{} is a mathematical abstraction founded on a consideration of the classical gravitational field near the Earth surface. The temporal variations of gravity in the vicinity of this surface are developed as a function of the geocentric relative positions of the celestial bodies.
-For ocean tide applications, only the two celestial bodies, the moon and sun, are considered relevant on the basis of relative contribution to the perceived gravity field changes. It follows that the information required for computation of this lunisolar tidal potential is encapsulated in the celestial positions (ie ephemeris) of the moon and sun alone \citep{10.1016/b978-0-444-53802-4.00058-0}.
+For ocean tide applications, only the two celestial bodies, the moon and sun, are considered relevant on the basis of relative contribution to the perceived gravity field changes. It follows that the information required for computation of this lunisolar tidal potential is encapsulated in the celestial positions (ie ephemeris) of the moon and sun alone \citep{agnew2015}.
 
 
 The full gravity field is defined as a scalar potential in space fulfilling the Laplace equation $\Delta V=0$ \citep[sec 5.3.1]{Urban:2013vl}.  The spatial field $V(\theta,\lambda,r)$ can be formulated in spherical geocentric (ie fixed earth) coordinates as a weighted sum of surface spherical harmonics. As a potential field, contributions from each mass element can be computed separately and linearly superposed.
@@ -151,7 +151,7 @@ Despite not being orthogonal, the harmonic decomposition does provide a special 
 
 \citet{Doodson:1921kt} introduced a novel and influential system of notation for specifying $\theta_{nmk}$ based on a laborious harmonic decomposition of $V_T$ using Brown's lunar theory; that is, a polynomial model for the lunar ephemeris.  
 In the Doodson formulation, all the relevant astronomical information is summarised by code of 6 small integers; together called the Doodson number or argument numbers.   Each position in the code is associated with an fundamental astronomical concept as summarised in Table \ref{T:doodson}.  Doodson codes are in common use across the tidal literature and provide the only useful means of describing tidal components beyond the small number associated with traditional Darwin names such as M2, K1, O1, S2.
-Of these traditional names \citet{10.1016/b978-0-444-53802-4.00058-0} correctly states that `` [whilst] it is convenient to have a shorthand way of referring to these harmonics; unfortunately, the standard names,  now totally entrenched, ... simply have to be learned as is.''.
+Of these traditional names \citet{agnew2015} correctly states that `` [whilst] it is convenient to have a shorthand way of referring to these harmonics; unfortunately, the standard names,  now totally entrenched, ... simply have to be learned as is.''.
 
 There has been some variation of conventions with regard to the exact formulation of Doodson numbers.  One such detail is the avoidance of negative integers in the code by the addition of the arbitrary constant 5 to all integers except $d_1$.   A less common variation involves the use of solar-hour in place of lunar hour $\tau$.  
 In essence the Doodson codes provide a compact unique specification, or in practice definition of frequencies relevant to tidal methods.
@@ -206,7 +206,7 @@ The essential development of the \ATGP{} in Section\ref{sec:basic_potential} is 
 The basic spatial perspective behind the development of the \ATGP{} is the thin shell approximation.  Geocentric coordinates are used.  This is appropriate for writing the potential in general form.  However, when considering the response of ocean dynamics, a vertical relative to the ocean floor is dynamically relevant.  There is a vertical movement of the ocean floor in geocentric coordinates associated with the \ATGP{} of comparable magnitude to the ocean tide which is quantitatively significant to dynamic models \citep{Hendershott:1981ub} and \citep[pp.336]{gill1982atmosphere}.
 
 
-This elastic response of the earth can considered to be essentially instantaneous compared to ocean timescales.  Furthermore, the elastic re-distibution of mass associated with this 'earth tide' itself modifies the gravitational field.    By treating the Earth as "spherical, non-rotating, elastic, and isotropic" the solid body response can be encapsulated by a small number of dimensionless Love numbers \citep{10.1016/b978-0-444-53802-4.00058-0}.  In the present context each spherical harmonic degree has a single body tide Love number $h_n$ and `induced free space potential' Love number $k_n$ \citep[Sec 5.3.3]{Urban:2013vl}. This has the convenience of formulating the combined direct effects of the solid earth response to the \ATGP{} as a modification to the magnitude of $\eta_{eq}$.  It is noted that ``the Love numbers for the diurnal tides differ from those for the semi-diurnal and long-period tides because of the free-core nutation resonance'' \citep{Arbic:2004wz}.
+This elastic response of the earth can considered to be essentially instantaneous compared to ocean timescales.  Furthermore, the elastic re-distibution of mass associated with this 'earth tide' itself modifies the gravitational field.    By treating the Earth as "spherical, non-rotating, elastic, and isotropic" the solid body response can be encapsulated by a small number of dimensionless Love numbers \citep{agnew2015}.  In the present context each spherical harmonic degree has a single body tide Love number $h_n$ and `induced free space potential' Love number $k_n$ \citep[Sec 5.3.3]{Urban:2013vl}. This has the convenience of formulating the combined direct effects of the solid earth response to the \ATGP{} as a modification to the magnitude of $\eta_{eq}$.  It is noted that ``the Love numbers for the diurnal tides differ from those for the semi-diurnal and long-period tides because of the free-core nutation resonance'' \citep{Arbic:2004wz}.
 The conceptually related, but more complicated, effects of the moving ocean mass itself is discussed below.
 
 \begin{equation}
@@ -412,7 +412,7 @@ But Cartwright's explanation isn't quite the whole story.
 There are benefits for routine production resilience when the product consists of a short list of named parameter values.   The conventions of harmonic constants provide a level of simple intuition that, regardless of prediction skill, are relatively easy to manage in a routine production schedule.
 Much more fundamental is the question of the purpose for conducting an tidal analysis at all; and chapter \ref{chp:tideFlavours} argues that delivery of tidal services would be much improved by design choices that do not allow for any ambiguity in this regard.   
 Response methods, and its modern extensions such as the orthotide formalism or tidal wavelet techniques, do not target the same outcome as conventional tide prediction.   All may find a useful place in the operational setting as long as relevance for the application is clear. 
-Some more on the topic of alternatives to harmonic analysis are addressed in Appendix \ref{appendix:response}, but are not essential to the flow of this discussion.
+Some additional comments on the topic of tidal formalisms are included as Appendix \ref{appendix:tideFormalisms}, but are not essential to the flow of this discussion.
 
 
 For emphasis, it restated the harmonic and response models contain the same core concept.   Both model the ocean as an LTI system responding to some type of tidal forcing.   Furthermore, both apply assumptions about the smoothness of ocean admittance functions; in the use of inference in the case of harmonic methods.  Indeed \citep[chpt6]{Fu:2001ub} groups both the standard harmonic and convolution formalism as instances of the `response' formalism on this basis.
@@ -459,13 +459,13 @@ Meaningful tidal atlases existed prior to altimetry, most significantly that due
 
 Global tide models are employed for a range of purposes beyond sea level forecasting,often as an intermediate step or a correction, for applications in gravity, orbit determination, earth rotation and even the definition of coordinate systems \citep{IERS2003}.
 
-Most importantly for the present discussion, global tide models are employed to \underline{filter}, or de-tide, sea level observations from near-real-time altimetry as a data assimilation constraint on mesoscale ocean forecast modells; discussed in section \ref{sec:mesoscaleOperational}
+Most importantly for the present discussion, global tide models are employed to filter, or ``de-tide'', sea level observations from near-real-time altimetry as a data assimilation constraint on mesoscale ocean forecast modells.   This topic is discussed further in section \ref{sec:mesoscaleOperational}.
 
 
 The typical visualisation of a tidal atlas is in the form of maps of time-invariant tidal amplitude and phase for a sequence of named constituents; regardless of whether a harmonic method was actually employed to produce the solution.   Each map describes a component wave or ``partial tide''.  These are maps are also called `co-tidal' and `co-range' plots.
 In line with the discussion in section \ref{sec:LTI}, whole ocean is conceived as a LTI system. 
 The long spatial scale of these component waves and the existence of spatial nodes places special importance upon amphidromes or amphidromic points - nomenclature introduced by Harris in the late 19th century \citep[pp 119]{Cartwright:2000tt}.  Existence and placement of amphidromic points is an important visual metric employed to assess tidal model results.  
-Figure \ref{fig:atlas} shows a the typical tidal atlas map for a single constituent with amphidromic systems apparent as radial patterns in the co-phase diagram.
+Figure \ref{fig:atlas} shows a typical tidal atlas map for a single constituent with amphidromic systems apparent as radial patterns in the co-phase diagram.
 
 Modern tidal atlases are in close agreement with regard to broad patterns, but characteristically differ at the shallow water margins; the very location of most direct interest to sea level forecasts.  Figure \ref{fig:tpx_cross} illustrates the fact that modern global tide models typically agree within about 0.02m in the deep ocean, but can differ substantially in coastal and shelf regions.  
 %---------------------------
@@ -532,7 +532,7 @@ This formulation excludes a direct representation of internal tides, despite the
     Barotropic tides generate internal tides, and internal tides in turn feed back onto the barotropic tides. Inferences from altimetry-constrained barotropic tide models show that about one-third of global tidal energy dissipation occurs in regions of rough topography, where internal tides are generated \dots{}. Internal tide generation thus acts as a damping mechanism for the barotropic tides.\citep[pp22]{Arbic:hy}
 \end{quote}
 Depth integrated barotropic LTE relegate the effect of internal mechanisms on surface elevation to parameterisations.  The dissipative stress term (F in equation \ref{eq:LTE_momtm}) stands for all losses of energy from the barotropic simulation.  Given the reality of ocean stratification, this loss term accounts for the conversion of barotropic to higher baroclinic modes in any global solution \citep[pp121] {gill1982atmosphere}.
-Internal waves at tidal frequencies do have an observable surface signature albeit relatively small \citep{Ray:2011tj}.   
+Internal waves at tidal frequencies do have an observable surface signature albeit relatively small \citep{Ray:2011tj}.  
 For sea level forecasting, internal modes are ostensibly of interest insofar as they impact the prediction of surface elevation.  
 Internal tides are in general not stationary and not as predictable as surface tides \citep{Nash:2012}.  The extent to which aperiodic internal modes can be separated from surface tides is a measure of the value core stationarity model of  tide prediction.
 The tidal view of the ocean as a LTI system driven by the \ATGP{} is very useful, but with the caveat that ``the ocean is a physically complex and noisy filter.  In consequence, tidal harmonics are not strictly constant \citep[197]{Ray:2010jm}''.  

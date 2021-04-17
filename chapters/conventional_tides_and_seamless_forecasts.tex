@@ -139,7 +139,7 @@ For instance, the national inter-tidal extent mapping exercise of \citet{10.3390
 Various Australian studies of water level \citep{Haigh:2013bn}\citep{Pattiaratchi2018} and more recently currents \citep{10.5194/os-2020-107} all apply timeseries synthesised from global model solutions to provide model boundary conditions at what ever time period is required.    Such simulations add value at the time and length scales afforded by higher spatial resolution, but the longer scales require special handling that bring to attention the manner in which the aims of physical models and standard predictions differ.
 
 \subsection{Intentional differences - especially for long period tides}
-Harmonic developments of the tidal potential include relatively a weak species referred to as the long period tides.  Some of the long period constituents are known by conventional names such as \textbf{Sa}, \textbf{Ssa}, \textbf{Mm},\textbf{Msf} and \textbf{Mf}; see \citep[table 4] {10.1016/b978-0-444-53802-4.00058-0}.
+Harmonic developments of the tidal potential include relatively a weak species referred to as the long period tides.  Some of the long period constituents are known by conventional names such as \textbf{Sa}, \textbf{Ssa}, \textbf{Mm},\textbf{Msf} and \textbf{Mf}; see \citep[table 4]{agnew2015}.
 Conventional tidal prediction applies essentially the same statistical fitting procedure to the long period tides as to the more familiar higher frequency tidal periods; though usually with some inclusion caveats based on the observational record. 
 But regardless of record length, the treatment of long period tides highlight a difference in the aims of conventional tide prediction and modern tide models.   Namely the extent to which it is desirable to fit patterns that are primarily the result of non-astronomical phenomena.
 Parker's tide manual states that ``\textit{whether the calculated values of Sa and Ssa are used or not, becomes almost a philosophical question...and may not represent the annual cycle for a particular year very well anyway}''  \citep[Section 3.7]{Parker:2007wq} 
@@ -147,22 +147,21 @@ Parker's tide manual states that ``\textit{whether the calculated values of Sa a
 Physical approaches to the quantifying global long period tides \citep{Egbert:1994wz} do not result in amplitudes anything like those resulting for conventional tide gauge records; especially for when relatively short records and significant nontidal power noise is involved.   Amplitudes of over 20cm are attributed to long period tides in places along the Australian coast as shown in Figure \ref{fig:SaAmp}. In contrast to the aim of physical attribution, when an annual forecast of sea level is the target it is understandable that \textit{any} pattern found to be periodic enough to project onto the tidal basis functions is included in the synthesis of the prediction. 
 
 Even if this intentional difference is known to specialists, downstream users of an automated tidal data service are at risk of building in needless representational error if the distinction is not designed clearly into the service.
-The nature of tidal analysis is such that the distinction is best not conceptualised as simply high versus low frequency, but rather physical versus periodic.   The periodic but not gravitationally forced patterns have historically been termed `radiational' tides \citep{10.1016/b978-0-444-53802-4.00058-0}.  So the situation outlined for the long period tides also exists for the generally tiny but weather-dominated daily constituent \textbf{S1} \citep{Ray:2004ts}.
+The nature of tidal analysis is such that the distinction is best not conceptualised as simply high versus low frequency, but rather physical versus periodic.   The periodic but not gravitationally forced patterns have historically been termed `radiational' tides \citep{agnew2015}.  So the situation outlined for the long period tides also exists for the generally tiny but weather-dominated daily constituent \textbf{S1} \citep{Ray:2004ts}.
  
-
-\begin{figure}[H]\centering
-    \begin{subfigure}[b]{\figwidthBig}
-        \includegraphics[trim={0 0 0 1cm},clip,width=\textwidth]{figures/maps/locations_SaAmp.pdf} 
-        \caption{Over 650 mixed-quality stations on record based on heterogeneous inputs}
-    \end{subfigure}
-    \\
-    \begin{subfigure}[b]{\figwidthBig}
-        \includegraphics[trim={0 0 0 1cm},clip,width=\textwidth]{figures/maps/locations_SaPhaAnyM2Update.pdf} 
-        \caption{Only 132 stations with recently updated analyses. Named locations as per text.}
-    \end{subfigure}
-    \caption{Amplitude and phase of \textbf{Sa} at analysis locations}
-    {Amplitude and phase of seasonal component \textbf{Sa} at locations with tidal analysis records.  Note Sa Doodson difference and initial phase \citep[10.4]{PCTMSL-sp9}}
+% Amp
+\begin{figure}[h]{\figwidthFull}
+    \includegraphics[trim={0 0 0 1cm},clip,width=\textwidth]{figures/maps/locations_SaAmp.pdf} 
+    \caption{Amplitude of \textbf{Sa} at analysis locations}
+    {Amplitude of \textbf{Sa} at analysis locations. Over 650 mixed-quality stations are on record.}
     \label{fig:SaAmp}
+\end{figure}
+% Pha
+\begin{figure}[h]{\figwidthFull}
+    \includegraphics[trim={0 0 0 1cm},clip,width=\textwidth]{figures/maps/locations_SaPhaAnyM2Update.pdf} 
+    \caption{Phase of \textbf{Sa} at analysis locations}
+    {Phase of \textbf{Sa} at analysis locations. Compared to Figure\ref{fig:SaAmp}, only 132 stations have recently updated analyses. Location names used in text are also shown. Note that there are different conventions for allocating Doodson codes that influence interpretation of these phase values \citep[10.4]{PCTMSL-sp9}}
+    \label{fig:SaPha}
 \end{figure}   
 
 In contrast to conventional tidal analysis, the widely used Oregon State University Tide Prediction Software \citep{Egbert:2002ug} [hereafter \textbf{TPXO}] totally excludes Sa, Ssa, Msf and S1; but both include Mm and Mf.  Subsequently any application that brings both type of prediction into the same context, even if indirectly, requires some caution to avoid representational inconsistency. 
@@ -204,10 +203,12 @@ As an example of the practical implications of such compatibility, consider the 
         \includegraphics[width=\textwidth]{figures/plots/compareTides_\Fa_Full2020.pdf} 
         \caption{\Fname{} comparing standard tides to TPXO}
     \end{subfigure}
+    \hfill{}
     \begin{subfigure}[b]{\figwidthThird}
         \includegraphics[width=\textwidth]{figures/plots/compareTides_\Fa_2020_201.pdf} 
         \caption{\Fname{} excluding only annual \textbf{Sa}}
     \end{subfigure}
+    \hfill{}
     \begin{subfigure}[b]{\figwidthThird}
         \includegraphics[width=\textwidth]{figures/plots/compareTides_\Fa_2020_105.pdf} 
         \caption{\Fname{} excluding all constituents discussed}
@@ -234,23 +235,23 @@ It is notable that long period signals in Australian sea level studies have alwa
 \begin{figure}[h]\centering
     \begin{subfigure}[b]{\figwidthHalf}
         \includegraphics[width=\textwidth]{figures/maps/AustRegionDiff_SA.pdf}
-        \caption{SA}
+        \caption{Sa}
     \end{subfigure}
     \begin{subfigure}[b]{\figwidthHalf}
         \includegraphics[width=\textwidth]{figures/maps/AustRegionDiff_SSA.pdf}
-        \caption{SSA}
+        \caption{Ssa}
     \end{subfigure}
     \begin{subfigure}[b]{\figwidthHalf}
         \includegraphics[width=\textwidth]{figures/maps/AustRegionDiff_MM.pdf}
-        \caption{MM}
+        \caption{Mm}
     \end{subfigure}
     \begin{subfigure}[b]{\figwidthHalf}
         \includegraphics[width=\textwidth]{figures/maps/AustRegionDiff_MSF.pdf}
-        \caption{MSF}
+        \caption{Msf}
     \end{subfigure}
     \begin{subfigure}[b]{\figwidthHalf}
         \includegraphics[width=\textwidth]{figures/maps/AustRegionDiff_MF.pdf}
-        \caption{MF}
+        \caption{Mf}
     \end{subfigure}
     \begin{subfigure}[b]{\figwidthHalf}
         \includegraphics[width=\textwidth]{figures/maps/AustRegionDiff_S1.pdf}
@@ -300,18 +301,18 @@ Australian tidal agencies do not systematically publish the parameters associate
 Conventional tidal parlance reflects an effective aim for the annual analysis that is to better identify a time-invariant admittance relationship characterised by a set of constants; constants that ideally wouldn't change if only we knew them well enough. Flinchem characterises this as old clockwork and  line-spectrum framework \citep{Flinchem:2000kp}. 
 
 In contrast, Colosi and Munk assert that ``\textit{variability in the values of tidal `constants' should be the rule rather than the exception!}'' \citep{Colosi:2006va}
-The expectation of temporal instability for tidal constants has recently been further elaborated by  \citeauthor{10.1029/2018rg000636} and \citeauthor{10.1002/2017jc013165} amongst others.    This reasonable characterisation obviously presents some level of conceptual incompatibility with standard practice.
+The expectation of temporal instability for tidal constants has recently been further elaborated by  \citet{10.1029/2018rg000636} and \citet{10.1002/2017jc013165} amongst others.    This reasonable characterisation obviously presents some level of conceptual incompatibility with standard practice.
 
 Inspection of annual changes across the archive of analysis parameters first and foremost highlights the wide range of sources and heterogeneous inputs managed to produce tide tables - as characterised in Figure \ref{fig:tidePractice}.    Whilst the ability to derive value from such a range is a great strength of conventional practice, the resulting predictions  should be accompanied by rankable quality measures as proposed in Section \ref{Sec:proposed}.
 The evolution of tidal parameters across the archive is addressed below in two parts relevant to a prospective automated tidal data service:  updates to nominally weather-dominated harmonics and then updates to the separation of MSL from prediction datum.
 
 Of all the sites on the archive, only a subset are based on tide gauges stations that are both in operation and supplying data to the agency for analysis. When new observations are available the annual analysis typically extends the length of record analysed.   The analysis of a continually accumulating record is consistent with the aim of better fitting a set of constants; but is in contrast to studies specifically investigating non-stationary tidal evolution such as Devin \citep{10.1002/2017jc013165}.
-As an indication of how actively updated tidal parameters actually are, the full set of well over 600 tidal locations was reduced to around 130 that had any change to the 5 significant figures attributed to M2 amplitude since 2011 - this shown by the reduction in sites between panels in Figure \ref{fig:SaAmp}.
+As an indication of how actively updated tidal parameters actually are, the full set of well over 600 tidal locations was reduced to around 130 that had any change to the 5 significant figures attributed to M2 amplitude since 2011 - this shown by the reduction in sites between Figures \ref{fig:SaAmp} and \ref{fig:SaPha} .
 
 
 %--------------------------
 \subsection{Harmonics}
-To illustrate the evolution of nominally weather-dominated constituents, a set of six tide prediction sites spanning the Australia region are selected and detailed in Table \ref{tab:sites}.  The map in Figure  \ref{fig:SaAmp} panel [b] summarises the locations.
+To illustrate the evolution of nominally weather-dominated constituents, a set of six tide prediction sites spanning the Australia region are selected and detailed in Table \ref{tab:sites}.  The map in Figure  \ref{fig:SaPha} indicates the geographic location of these sites.
 Each of these sites have recent forecasting relevance and real time observations but are in some way challenging from a conventional tidal prediction perspective.   These are mainly \textit{secondary ports} in which the observational record is known to be less than ideal. 
 Figure \ref{fig:complexEvolution} shows how these `constants' have evolved over the last decade at the selected sites.   Overall the changes reflect the projection of quasi-periodic signals and growing record length.  
 
@@ -415,7 +416,7 @@ Intra-seasonal power and variability is notable at the two sites located in the 
 Of the selected sites, Geraldton shows the smoothest and least significant changes.  Given that it is both a \textit{primary port} and based on the longest observational record it may at face value appear to represent the true tidal pattern. But the strong seasonality of the Leeuwin current described by \citeauthor{Ridgway:2004kb} provides an attribution that relies neither on the gravitational tidal forcing nor a barotropic ocean response to weather forcing. % NOTE - anything about the tide gauge boat impact  to add?
 This connection is supported by recent attribution studies of sea level along the WA coast, in which historical observations are decomposed using a hybrid tidal and filtering approach to highlight the ``\textit{interesting connection between the probability of extreme sea level events with the large-scale dynamics of an ocean boundary current system}'' \citep{10.1029/2020ef001620}.
 
-Lord Howe Island is located within the eddy the field associated with the East Australian Current and subject to relatively powerful and slow sea level variations.    The parameters fit by the standard tide prediction are quite small and would appear to thus be correctly rejecting the projection of these  non-periodic variations.   However, this site is has been recorded as problematic for the utility of some tide predictions ``\textit{...due to persistent yet sporadically changing ocean levels ...at similar frequencies to the SA and SSA constituents [such that] forecasting can then result in errors greater than the actual residual}''\citep{MHL2156}.  The problematic predictions were not based on the analysis of the NTU but rather on a practice of fitting tides to shorter records motivated by the aim of better prediction a useful mean sea level (MSL) for year ahead in the context of inter-annual variability.
+Lord Howe Island is located within the eddy the field associated with the East Australian Current and subject to relatively powerful and slow sea level variations.    The parameters fit by the standard tide prediction are quite small and would appear to thus be correctly rejecting the projection of these  non-periodic variations.   However, this site is has been recorded as problematic for the utility of some tide predictions ``\textit{...due to persistent yet sporadically changing ocean levels ...at similar frequencies to the Sa and Ssa constituents [such that] forecasting can then result in errors greater than the actual residual}''\citep{MHL2156}.  The problematic predictions were not based on the analysis of the NTU but rather on a practice of fitting tides to shorter records motivated by the aim of better prediction a useful mean sea level (MSL) for year ahead in the context of inter-annual variability.
 
 %--------------------------
 \subsection{Mean sea level}
