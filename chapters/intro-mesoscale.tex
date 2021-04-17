@@ -145,7 +145,7 @@ Furthermore, the system uses a fixed bathymetry and takes no account of sediment
 
 The staggered B-grid complicates how the coastal boundary is represented as there are effectively two horizontal grids that each determine what is wet and what is dry.
 In particular, the sea level anomaly quantity ($\eta_t$) is quantified on the `T' or tracer cell grid.    However, in order to integrate the shallow water equations forward in time information is exchanged with velocity values carried on the `U' grid; and furthermore each timestep involves a spatial operation over a stencil of neighbouring cell points. 
-The numerical implementation in \BL{} of the barotropic hydrodynamics leads the existence of a so-call checkerboard null-mode; a numerical artefact that can allow aphysical spatial discontinuities in sea level to grow.   To mitigate this null-mode, a spatial smoothing step is included within the fast barotropic integration.
+The numerical implementation in \BL{} of the barotropic hydrodynamics leads the existence of a so-call checkerboard null-mode, a numerical artefact that can allow aphysical spatial discontinuities in sea level to grow.   To mitigate this null-mode a spatial smoothing step is included within the fast barotropic integration. Figure \ref{fig:gridStencil} summarises schematically the grid stencil operators involved in the barotropic update cycle.
 %---------------------------
 \begin{figure}[H]
     \begin{center}
@@ -153,7 +153,7 @@ The numerical implementation in \BL{} of the barotropic hydrodynamics leads the 
     \caption{Arakawa-B horizontal grid stencil illustrations.}
             {Arakawa-B horizontal grid stencil illustrations relevant to the baroptropic mode of \BL{}; the forecast sea level anomaly includes both barotropic and baroclinic contributions}
     \end{center}
-    \label{fig:atlas}
+    \label{fig:gridStencil}
 \end{figure}
 %---------------------------
 These spatial considerations simply suggest that \BL{} should be able to simulate phenomena operating at length scales of several tens of kilometers.
