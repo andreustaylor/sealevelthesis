@@ -75,7 +75,7 @@ Variations in coastal \emph{still water level} \citep{Pugh:2014di} reflect a div
 \citet{10.1007/s10712-019-09531-1} recently reviewed this diverse mix of physical phenomena present in the observations and note that ``\textit{it is mistake to think that coastal sea level variability always has a ‘local’ forcing (although it often does).}''. 
 Figure \ref{fig:sealevelScales} provides a schematic summary of the physical time and length scales of broad classes of these phenomena that contribute to ocean water level variations, taking inspiration from similar diagrams in \citet{10.1007/s10712-019-09531-1} and \citet{Chelton:2001ws}.
 %-----------------------------
-\begin{figure}[H]\centering
+\begin{figure}[!hbt]\centering
   \includegraphics[width=\figwidthFull]{figures/diagrams/scales_time_length.pdf}
   \caption{Scales of processes contributing to observable coastal sea level.}{Schematic illustration of the relative time and length scales of the wide range of physical processes involved.}
   \label{fig:sealevelScales}
@@ -86,14 +86,16 @@ The visual differentiation of tides from the other phenomena in Figure \ref{fig:
 How the varying balance of phenomena is expressed in observed sea level is illustrated by the spectra shown in Figure \ref{fig:obsSpectraEg} for two Australian locations.   Variability at nominally tidal frequencies is a striking feature at nearly all coastal locations;  ``the [tidal] constituent lines emerge from the noise background as trees from the grass'' \citep{godin:1972}.
 Observed power at tidal frequencies does not however provide a direct attribution to tidal forcing and the extent to which this matters for forecasting applications is a conceptual theme addressed in chapter \ref{chp:tideFlavours}.
 %-----------------------------
-\begin{figure}[H]\centering
+\begin{figure}[!hbt]\centering
     \begin{subfigure}[b]{\figwidthFull}
-        \includegraphics[trim={0 0 0 1cm},clip,width=\textwidth]{figures/plots/plot_14072.png} 
+        %\includegraphics[trim={0 0 0 1cm},clip,width=\textwidth]{figures/plots/plot_14072.png} 
+        \includegraphics[trim={0 0 0 2cm},clip,width=\textwidth]{figures/plots/014072_verify_Pxx.pdf}
         \caption{Darwin in Northern Australia - large diurnal tide}
     \end{subfigure}
     
     \begin{subfigure}[b]{\figwidthFull}
-        \includegraphics[trim={0 0 0 1cm},clip,width=\textwidth]{figures/plots/plot_109504.png} 
+        %\includegraphics[trim={0 0 0 1cm},clip,width=\textwidth]{figures/plots/plot_109504.png} 
+        \includegraphics[trim={0 0 0 2cm},clip,width=\textwidth]{figures/plots/109504_verify_Pxx.pdf}
         \caption{Esperence in Southern Australia - powerful synoptic signal}
     \end{subfigure}
     \caption{Spectral estimates from two coastal tide gauges.}{Shown to contrast the varying balance of frequencies evident in sea level fluctuations at different locations. Hourly data, black = observations, red = tidal residual and nominally tidal frequencies are shown with shading. Generally characterised as mixed spectra \citep{Percival:1998tw} in the sense that prominent tidal spectral lines appear to be embedded in a background continuum of coloured variability.}
@@ -107,7 +109,7 @@ Insitu observations from coastal tide gauges are by far the most established and
 Typical tide gauge instruments in fact measure the `air gap' between a sensor and the water surface from which a relative level is derived \citep{PCTMSL-sp9}. 
 But the very nature of why and how tide gauges are installed raises a list of special characteristics relevant to operational forecasting. These characteristics are variously considered to add complication or insight for different applications. \citeauthor{10.1175/jtech-d-18-0203.1} put it simply that ``\textit{most tide gauges are limited to deep water or sheltered harbors and omit part of the natural total sea level variability at open coasts}''.   
 %-----------------------------
-\begin{figure}[H]\centering
+\begin{figure}[!hbt]\centering
   \includegraphics[width=\figwidthBig]{figures/diagrams/sealevel_cartoon.pdf}
   \caption{Schematic illustration of insitu versus remote sea level observations}
   \label{fig:sealevelObsCartoon}
@@ -118,7 +120,7 @@ Tide gauge observations can be mapped to certain sea level impacts and decisions
 Commonly tide gauge observations are also the basis of vertical reference information and geodetic derivations that are ultimately connected to the interpretation of any quantitative sea level forecast \citep{Woppelmann:2006un}\citep{AVWS2021}.
 More comprehensive observations of sea level than are possible from tide gauges is listed as a key requirement for future development by \citeauthor{10.3389/fmars.2019.00437}.    Video-based systems in particular show promise \citep{10.1175/jtech-d-18-0203.1}\citep{2018agufmep52d..26h} but as yet are far from general oeprational availability. 
 %-----------------------------
-\begin{figure}[H]\centering
+\begin{figure}[!hbt]\centering
   \includegraphics[width=\figwidthThird]{figures/images/tidegaugeEg.png}
   \caption{Typical tide gauge installation.}{This image in fact shows two co-located tide gauges at a typical sheltered position. Morever, this installation is also co-located with a satellite positioning device.}
   \label{fig:tidegauge}
@@ -154,7 +156,7 @@ Unfortunately the documentation of operational systems is partial and inconsiste
 
 When considering the suite of forecasting systems that ostensibly forecast sea level variations, there is a basic trade-off between temporal fidelity and prognostic range.    Figure \ref{fig:forecastScalesAll} illustrates this schematically.    The schematic reflects the fact that the physical representation of sea level in a long range climate model intentionally parameterises or excludes phenomena associated with sharp gradients in both space and time in order to provide a very long forecast.  Similarly, simulations that aim to resolve highly local and fast coastal sea level phenomena provide relatively short forecasts.    
 (\ref{sec:tidesOverview}.    
-\begin{figure}[H]\centering
+\begin{figure}[!hbt]\centering
   \includegraphics[width=\figwidthBig]{figures/diagrams/scales.pdf}
   \caption{Forecasting suite schematic showing overlapping scales.}
   \label{fig:forecastScalesAll}
@@ -178,7 +180,7 @@ In fact, the substantial and productive research effort directed to sea level ex
 
 This scope also intentionally excludes outputs from nested downscaling of mesoscale forecasts, although these too have some operational applicability.   In fact, a key use of the  \BL{} system is in the provision of open boundary conditions for relocatable regional simulations as described by \citep{10.1080/1755876x.2019.1685834} and \citep{10.1007/978-3-319-15994-2_23}.  As it stands, there is no routine downscaling of mesoscale ocean forecasts carried out operationally by the Australian Bureau of Meteorology; some discussion of prospects is taken up in sections \ref{sec:exploitingPredictability} and  \ref{chp:conclusions}. 
 
-\begin{figure}[H]\centering
+\begin{figure}[!hbt]\centering
   \includegraphics[width=\figwidthBig]{figures/diagrams/scales_focus.pdf}
   \caption{Focus on mesoscale and tidal scales overlap}
   \label{fig:forecastScalesFocus}
@@ -186,7 +188,7 @@ This scope also intentionally excludes outputs from nested downscaling of mesosc
 
 Despite looking away from localised and radical extremes of sea level, the present novel and restricted scope is relevant and important for essentially two  reasons: (1) the are a range of applications in which a longer horizon forecast of essentially ``tidal'' sea level is valued over short range forecast of extremes; and (2) the goal of seamless forecasting will inevitably require conceptual clarity regarding tides to interpret and merge information from numerical systems that are not cleanly complimentary. 
 
-\begin{figure}[H]\centering
+\begin{figure}[!hbt]\centering
   \begin{subfigure}[t]{\figwidthHalf}
       \includegraphics[width=\textwidth]{figures/images/goolwa_ewe_island-environment_sa_gov_au.jpg}
       %\includegraphics[height=5cm]{figures/images/goolwa-barrage-environment_sa_gov_au.jpg}
