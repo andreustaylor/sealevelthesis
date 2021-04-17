@@ -16,5 +16,6 @@ for cmd in 's/{Meteorology, Bureau of}/{{Bureau of Meteorology}}/' \
     cp -v tmpOsxSed ${fileTgt}
 done
 
+echo "!! now check {{}}} for Melbourne Water and GDAL !!"
 #sed  -i' ' 's/{Service, Australian Hydrographic}/{Australian Hydrographic Office}/' ${fileTgt}
 #sed  -i' ' 's/{Australia, Commonwealth of}/{Commonwealth of Australia}/' ${fileTgt}
