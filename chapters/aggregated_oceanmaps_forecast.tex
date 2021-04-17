@@ -137,7 +137,7 @@ Bias correction $b$ is a fixed value across each forecast.
 \centering
 \includegraphics[width=1.0\textwidth]{figures/diagrams/aggSL_schematic_abstract.png}
 \caption{Schematic configuration of aggregation system.}
-{Schematic illustration of aggregation configuration.  Source systems are heterogeneous but mapped onto time series that can be directly compared against 1-hourly observations.  (\textbf{SYNTH}) indicates tidal synthesis, (\textbf{SLA}) sea level anomaly from OceanMAPS, (\textbf{LIB}) local inverse barometer approximation based on atmospheric pressure forecast, (\textbf{BIAS}) non-causal filter bias correction scheme. }
+{Source systems are heterogeneous but mapped onto time series that can be directly compared against 1-hourly observations.  (\textbf{SYNTH}) indicates tidal synthesis, (\textbf{SLA}) sea level anomaly from OceanMAPS, (\textbf{LIB}) local inverse barometer approximation based on atmospheric pressure forecast, (\textbf{BIAS}) non-causal filter bias correction scheme. }
 \label{fig:aggSL}
 \end{figure}   
 
@@ -188,7 +188,7 @@ A manual exception for cell selection is applied to the Port Phillip case to ens
     \centering
     \includegraphics[width=1.0\textwidth]{figures/maps/omaps_masks.png}
     \caption{Coastal discretisation map and details.}
-    {Illustration of coastal discretisation.  Red coloured grid cells indicate ocean model bathymetry the inner extent of which is the model coastline.  The thick blue line indicates the edge of the atmospheric model land/sea mask.  Most small scale features and embayments at tide gauge locations are only approximated at scales above~10 km in the ocean and~80 km in the atmosphere. }
+    {Red coloured grid cells indicate ocean model bathymetry the inner extent of which is the effective model coastline.  The thick blue line indicates the edge of the atmospheric model land/sea mask.  Most small scale features and embayments at tide gauge locations are only approximated at scales above~10 km in the ocean and~80 km in the atmosphere. }
     \label{fig:map_masks}
 \end{figure}  
 
@@ -262,8 +262,8 @@ It~is~foreseeable that the number of sites could expand significantly in the fut
 \begin{figure}[H]
     \centering
     \includegraphics[width=1.0\textwidth]{figures/maps/omaps_bathy_and_eta.png}
-    \caption{Geographic overview of sites in the Australia region.}
-    {Geographic overview of Australia region.  Ocean model bathymetry is indicated by grey background shading.  Colour contours illustrate the `spin up' model mean dynamic topography referenced below.  Tide gauge locations are identified with sequential numbers with order chosen to loosely align with anti-cyclonic coastal wave propagation direction. Regional groupings are referenced in subsequent results.}
+    \caption{Geographic overview of evaluation sites in the Australia region.}
+    {Ocean model bathymetry is indicated by grey background shading.  Colour contours illustrate the `spin up' model mean dynamic topography referenced below.  Tide gauge locations are identified with sequential numbers with order chosen to loosely align with anti-cyclonic coastal wave propagation direction. Regional groupings are referenced in subsequent results.}
     \label{fig:map_locations}
 \end{figure}  
 
@@ -297,7 +297,7 @@ Of interest is the fact that the embayment in which the observations are taken i
     \centering
     \includegraphics[width=\figwidthFull]{figures/plots/586204_verify_ts.pdf}
     \caption{Example time series at Melbourne.}
-    {Example time series record for location at Melbourne (\textbf{22} in Figure \ref{fig:map_locations} ); Upper panel shows total still water levels relative to conventional tidal benchmarks. Lower panel shows error signals and bias correction evolution.  Errors (residuals) are shown overlaid for standard tides and aggregate forecasts (`aggSL').  An~overall reduction in error variance is apparent between standard tides and aggregate forecasts.}
+    {Location (\textbf{22} in Figure \ref{fig:map_locations} ); Upper panel shows total still water levels relative to conventional tidal benchmarks. Lower panel shows error signals and bias correction evolution.  Errors (residuals) are shown overlaid for standard tides and aggregate forecasts (`aggSL').  An~overall reduction in error variance is apparent between standard tides and aggregate forecasts.}
 \label{fig:ts_melb}
 \end{figure}   
 
@@ -320,7 +320,7 @@ At all three locations the aggregated forecasts offer `quality' in the sense of 
     \caption{}
     \end{subfigure}
     \caption{Forecast error distributions at selected locations.}
-    {Forecast error distributions at selected contrasting locations. Skill improvement over standard harmonic tides is driven by different aspects of the generic aggregation process. (\textbf{a}) shows skill gain due to forecast signals associated with mid-latitudee weather (\textbf{b}) shows the practical problem of mismatched reference datums between real-time observational data and tide predictions (see Section~\ref{sec:bias_more}), (\textbf{c}) is a location at which longer period deviations from tide predictions are relatively powerful. (\textbf{a}) Site 13, Mid-latitude weather; (\textbf{b}) Site 43, Tide datum mismatch; (\textbf{c}) Site 3, Long period anomalies.}
+    {Skill improvement over standard harmonic tides is driven by different aspects of the generic aggregation process. (\textbf{a}) shows skill gain due to forecast signals associated with mid-latitudee weather (\textbf{b}) shows the practical problem of mismatched reference datums between real-time observational data and tide predictions (see Section~\ref{sec:bias_more}), (\textbf{c}) is a location at which longer period deviations from tide predictions are relatively powerful. (\textbf{a}) Site 13, Mid-latitude weather; (\textbf{b}) Site 43, Tide datum mismatch; (\textbf{c}) Site 3, Long period anomalies.}
 
     \label{fig:pdf}
 \end{figure}   
@@ -342,7 +342,7 @@ At all three locations the aggregated forecasts offer `quality' in the sense of 
     \end{subfigure}
     
     \caption{Relative error metrics at selected locations.}
-    {Relative error metrics at select locations as per Figure \ref{fig:pdf}. RMSE at increasing forecast lead times is normalised and plotted relative to the standard tidal residual---such that a lower value represents greater accuracy. Error growth with forecast age is evident. (\textbf{a}) As per (a) in Figure \ref{fig:pdf}; (\textbf{b}) As per (b) in Figure \ref{fig:pdf}; (\textbf{c}) As per (c) in Figure \ref{fig:pdf}.}
+    {Following identical layout as Figure \ref{fig:pdf}. RMSE at increasing forecast lead times is normalised and plotted relative to the standard tidal residual---such that a lower value represents greater accuracy. Error growth with forecast age is evident. (\textbf{a}) As per (a) in Figure \ref{fig:pdf}; (\textbf{b}) As per (b) in Figure \ref{fig:pdf}; (\textbf{c}) As per (c) in Figure \ref{fig:pdf}.}
     \label{fig:rms}
 \end{figure}   
 
@@ -420,8 +420,8 @@ Following Equation (\ref {eq:aggSL}).  Where $\hat{h(t)}$ is sea level de-tided 
         \caption{}
     \end{subfigure}
     %--------
-    \caption{Taylor diagrams summarising skill evolution.}{Taylor diagrams summarising dynamic skill evolution across 7-day forecasts.
-    Each `comet' describes average statistics for one location.
+    \caption{Taylor diagrams summarising skill evolution.}
+    {Summary of dynamic skill evolution across 7-day forecasts where each `comet' describes average statistics for one location.
     Panels are divided according to regions shown in Figure~\ref{fig:map_locations}.
     Statistics are derived from filtered time series, not total sea level, and are normalised relative to the reference observations. (\textbf{a}) Indian; (\textbf{b}) Gulf of Carpentaria; (\textbf{c}) North West; (\textbf{d}) South West; (\textbf{e}) Great Aust Bight; (\textbf{f}) Bass Strait; (\textbf{g}) Tasmania; (\textbf{h}) South East; (\textbf{i}) East; (\textbf{j}) North East; (\textbf{k}) Torres Stait; (\textbf{l})~Tasman Sea. }
     \label{fig:taylors}
@@ -449,10 +449,9 @@ A red symbol indicates that aggregated forecast RMSE score is lower (better) tha
     \begin{subfigure}[b]{0.45\textwidth}
         \includegraphics[width=\textwidth]{figures/maps/plot_map_rms_score_day_7.png}
     \end{subfigure}
-    \caption{Summary map for RMS error reduction.}{Summary map showing which forecast source provides best information on average with regard to RMS error reduction. Red symbols at locations where aggregated forecast is best, blue for `tide + persisted residual' and black for standard tides.  Forecast lead times of 0--24 h are shown in left panel, and 144--168 h on the right.}
+    \caption{Summary map for RMS error reduction.}{Icons reflect which forecast source provides best information on average with regard to RMS error reduction. Red symbols at locations where aggregated forecast is best, blue for `tide + persisted residual' and black for standard tides.  Forecast lead times of 0--24 h are shown in left panel, and 144--168 h on the right.}
     \label{fig:map_rms}
 \end{figure}   
-
 
 
 %-------------------------------------------------------------------------
@@ -475,7 +474,7 @@ Figure \ref{fig:bias_mean} shows the correspondence between model MDT ($\eta_{sp
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.5\textwidth]{figures/plots/aggSL_bias_breakdown_plot_1.png}
-\caption{Mean bias correction versus model  MDT surface.}{Magnitude of the temporal mean of bias correction matched against model MDT surface at each location. An arbitrary mismatch threshold of 10 cm is used to highlight apparent outliers.}
+\caption{Mean bias correction versus model MDT surface.}{Magnitude of the temporal mean of bias correction history matched against model MDT surface at each location. An arbitrary mismatch threshold of 10 cm is used to highlight apparent outliers.}
 \label{fig:bias_mean}
 \end{figure}   
 
@@ -520,7 +519,7 @@ The single station located Torres Strait is a stand-out exception.  The~sea leve
 \begin{figure}[H]
 \centering
 \includegraphics[width=1.0\textwidth]{figures/plots/aggSL_bias_breakdown_plot_2.png}
-\caption{Temporal signal from bias correction.}{Temporal signal from bias correction histories after subtraction of respective mean offsets.  Absolute values less than 0.01 m are shown as white.  A degree of coherence is apparent between adjacent sites within the regional groupings-shown on map in Figure \ref{fig:map_locations}. } 
+\caption{Temporal signal from bias correction.}{The time-varying component of the bias correction signal after subtraction of respective mean offsets.  Absolute values less than 0.01 m are shown as white.  A degree of coherence is apparent between adjacent sites within the regional groupings-shown on map in Figure \ref{fig:map_locations}. } 
 \label{fig:bias_time}
 \end{figure}  
 

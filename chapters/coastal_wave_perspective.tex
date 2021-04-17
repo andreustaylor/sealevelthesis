@@ -38,8 +38,8 @@ Numerical forecasts of sea level anomaly fields are commonly viewed as topograph
 % map guidance
 \begin{figure}[H]\centering
     \includegraphics[width=\figwidthBig]{figures/maps/omaps_chart_anim_eg.png}
-    \caption{OceanMAPS SLA chart from the Bureau's public website.}{OceanMAPS SLA chart from the Bureau's public website;
-              whilst moving patterns are often noticeable when animated, these displays do not inherently focus on coastal aspects of the forecast.  \protect\citep{urlBOM_SLA:2018} }
+    \caption{OceanMAPS SLA chart from the Bureau's public website.}
+    {Whilst moving patterns are often discernable when animated, these displays do not inherently focus on coastal aspects of the forecast.  \protect\citep{urlBOM_SLA:2018} }
     \label{fig:oldcharts}
 \end{figure}  
 %----------------------------
@@ -75,8 +75,8 @@ This situation allows for the hybrid of propagation mechanisms involving gravity
 % coord system
 \begin{figure}[H]\centering
     \includegraphics[width=\figwidthFull]{figures/diagrams/ctw_coords.png}
-    \caption{Coastally trapped wave idealised coordinates.}{Coastally trapped wave idealised coordinates and bathymetry profile. 
-              Uniform and large scale in the longshore direction, with a coastal boundary and bathymetry either flat or monotonically increasing offshore. In the southern hemisphere CTWs propagate with the coast on the left. The term CTW covers the range of Kelvin and continental shelf wave mechanisms.  Following \protect\citep{Dale:2001dn}. }
+    \caption{Idealised coordinates for coastally trapped waves.}
+    {Uniform and large scale in the longshore direction, with a coastal boundary and bathymetry either flat or monotonically increasing offshore. In the southern hemisphere CTWs propagate with the coast on the left. The term CTW covers the range of Kelvin and continental shelf wave mechanisms.  Following \protect\citep{Dale:2001dn}. }
     \label{fig:ctw_typical}
 \end{figure}  
 %----------------------------
@@ -123,7 +123,7 @@ Figure \ref{fig:mandelbrot_lengths} demonstrates the dependence of waveguide len
 % coastline length 
 \begin{figure}[h]
     \includegraphics[width=\figwidthHalf]{figures/plots/mandelbrot_lengths.png}
-    \caption{Waveguide length dependence on scale.}{Total lengths of waveguide paths as a function of fixed divider scales, from which an effective fractal dimension of $\sim$1.08 is derived.  
+    \caption{Waveguide length dependence on scale.}{Total lengths of the Australian waveguide path realised as a function of fixed divider scales, from which an effective fractal dimension of $\sim$1.08 is derived.  
 All walk the same anti-cyclonic direction around the coast from an arbitrary start point near Darwin to and end point at Cape York. 
 The final divider length in each case is allowed to vary in order to ensure identical start and end points.}
     \label{fig:mandelbrot_lengths}
@@ -149,7 +149,7 @@ Signal expressions around Tasmania or any smaller islands are not addressed.
 \begin{figure}[h]
     \includegraphics[width=\figwidthHalf]{figures/maps/map_overview.png}
     \caption{Coastal waveguide path realisation used for this study.}
-    {A coastal waveguide path around the Australian mainland with anticyclonic direction indicated (southern hemisphere). For this realisation, segment lengths $\protect\propto$ a Rossby Radius of Deformation measure. Across-shore directions (short dark lines) are only locally orthogonal to the path but provide a means to assign a distance coordinate to model samples. The start point is arbitrary and Tasmania is excluded. Locations are named to assist cross-referencing in subsequent figures.}
+    {The path steps around the Australian mainland with anticyclonic direction indicated (southern hemisphere). For this realisation, segment lengths $\protect\propto$ a Rossby Radius of Deformation measure. Across-shore directions (short dark lines) are only locally orthogonal to the path but provide a means to assign a distance coordinate to model samples. The start point is arbitrary and Tasmania is excluded. Locations are named to assist cross-referencing in subsequent figures.}
     \label{fig:CTW_path}
 \end{figure}  
 %----------------------------
@@ -210,7 +210,7 @@ Concatenated OceanMAPS data for the period are shown in Figure \ref{fig:hov_eg}.
 \begin{figure}[H]\centering
     \includegraphics[width=\figwidthFull]{figures/plots/concat_sla_day0_full.png}
     \caption{Concatenated first day of OceanMAPS SLA forecasts.} 
-    {Concatenated first day of OceanMAPS SLA forecasts for the comparison period, timeseries at each position centred by removal of sample mean. Note the distance units are meters and range to $\sim$11000km}
+    {Timeseries data for each position have first been centred by removal of the sample mean. Note the distance units are meters and range to $\sim$11000km}
     \label{fig:hov_eg}
 \end{figure} 
 %----------------------------
@@ -269,7 +269,7 @@ In contrast a relatively regular diurnal pattern is notable in the tropical sect
 \begin{figure}[H]\centering
     \includegraphics[width=\figwidthFull]{figures/plots/collate_g.png}
     \caption{Single forecast instance visualisation.}
-    {A single forecast with basedate 2018-05-12.  Each field is shown on a separate axis with identical time and space limits, feint contours indicate pendulum days to highlight changing inertial periods over the large latitude range. (a) longshore wind stress $\tau_{along}$ units Pa (b) onshore wind stress $\tau_{on}$ units Pa (c) Surge [3-day lead time only] (d) OceanMAPS.}
+    {Each field is shown on a separate axis with identical time and space limits, feint contours indicate pendulum days to highlight changing inertial periods over the large latitude range. (a) longshore wind stress $\tau_{along}$ units Pa (b) onshore wind stress $\tau_{on}$ units Pa (c) Surge [3-day lead time only] (d) OceanMAPS.}
     \label{fig:collate_g}
 \end{figure}  
 %----------------------------
@@ -292,7 +292,7 @@ Apparently anti-cyclonic movement is prominent along the zonally-aligned souther
 \begin{figure}[H]\centering
     \includegraphics[width=\figwidthBig]{figures/plots/concatC_U_gstr_lag_000.png}
     \caption{Cross-correlation at lag of zero hours for $\tau_{along}$.}
-    {Cross-correlation at lag of zero hours: $\tau_{along}$ lagging (a) $\tau_{along}$ (b) $\tau_{on}$}
+    {$\tau_{along}$ lagging (a) $\tau_{along}$ (b) $\tau_{on}$}
     \label{fig:Clag0U}
 \end{figure}
 %----------------------------
@@ -324,14 +324,14 @@ Contrasts between the models are evident on the east coast north of Sydney that 
 \begin{figure}[H]\centering
     \includegraphics[width=\figwidthBig]{figures/plots/concatC_sla_lag_066.png}
     \caption{\CAPTIONb{} for OceanMAPS}
-    {\CAPTIONb{}: OceanMAPS response lagging (a) $\tau_{along}$ (b) $\tau_{on}$} 
+    {OceanMAPS response lagging (a) $\tau_{along}$ (b) $\tau_{on}$} 
     \label{fig:Clag66sla}
 \end{figure}
 
 \begin{figure}[H]\centering
     \includegraphics[width=\figwidthBig]{figures/plots/concatC_surgeg_lag_066.png}
     \caption{\CAPTIONb{} for Surge}
-    {\CAPTIONb{}: Surge response lagging (a) $\tau_{along}$ (b) $\tau_{on}$} 
+    {Surge response lagging (a) $\tau_{along}$ (b) $\tau_{on}$} 
     \label{fig:Clag66surge}
 \end{figure}
 %-------------------------------------------
@@ -346,20 +346,18 @@ Differences between the interpolated tide observations, OceanMAPS and Surge fore
 \begin{figure}[H]\centering
     \includegraphics[width=\figwidthFull]{figures/plots/interpTdiff_obs_sla_day0_d0.png}
     \caption{SLA differences - Tide gauges versus OceanMAPS.}
-    {\CAPTIONc{} - Tide gauges versus OceanMAPS.}
     \label{fig:diff_tide_omaps}
 \end{figure}
 
 \begin{figure}[H]\centering
     \includegraphics[width=\figwidthFull]{figures/plots/interpTdiff_obs_surgeg_day0_d0.png}
-    \caption{\CAPTIONc{} - Tide gauges versus Surge.}
     \label{fig:diff_tide_surge}
 \end{figure}
 
 \begin{figure}[H]\centering
     \includegraphics[width=\figwidthFull]{figures/plots/interpRdiff_sla_surgeg_day0.png}
     \caption{SLA differences - OceanMAPS versus Surge.}
-    {\CAPTIONc{} - OceanMAPS versus Surge. Patterns of anticyclonic propagation are apparent and indicative of systemic differences in representation between the models. These features are set against the slower seasonal patterns of difference.}
+    {Patterns of anticyclonic propagation are apparent and indicative of systemic differences in representation between the models. These features are set against the slower seasonal patterns of difference.}
     \label{fig:diff_omaps_surge}
 \end{figure}
 %----------------------------
@@ -382,7 +380,7 @@ On this measure, OceanMAPS notably out-performs the Surge forecast along the eas
 \begin{figure}[H]\centering
     \includegraphics[width=\figwidthFull]{figures/plots/plot_skill_path_mebs.png}
     \caption{Forecast skill along the waveguide.}
-    {Forecast skill along the waveguide. Mean absolute error for SLA at tide gauge locations. Forecasts are categorised into lead times of 0-24 hours (day-0), 24-48 hours (day-1) and 48-72 hours (day-2). Lower error indicates better overall skill for the 1 year period. OceanMAPS outperforms Surge along the populated east coast. Forecast skill decay with lead time is evident in both models - except for the apparent unusual inversion in the north west.}
+    {Mean absolute error for SLA at tide gauge locations. Forecasts are categorised into lead times of 0-24 hours (day-0), 24-48 hours (day-1) and 48-72 hours (day-2). Lower error indicates better overall skill for the 1 year period. OceanMAPS outperforms Surge along the populated east coast. Forecast skill decay with lead time is evident in both models - except for the apparent unusual inversion in the north west.}
     \label{fig:skill_mebs}
 \end{figure}
 %----------------------------
