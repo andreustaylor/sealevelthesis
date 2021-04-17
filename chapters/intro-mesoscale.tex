@@ -81,7 +81,7 @@ Earlier models avoided direct representation of surface height variations by mak
 % split explicit
 The ocean model underlying \BL{}, \MOM{} \citep{Griffies:2008vh}, does carry a free surface height as a state variable by employing a `split-explicit' timestepping scheme.    
 In essence, this approach timesteps a computationally cheap shallow-water representation of barotropic dynamics many times for each relatively expensive update of the full depth-dependant ocean state.  
-Thus, by representing the barotropic free surface dynamics of the ocean, a mesoscale \OCGM{} like \BL{} could in principle simulate the global tides.
+Thus, by representing the barotropic free surface dynamics of the ocean, a mesoscale \OGCM{} like \BL{} could in principle simulate the global tides.
 But tidal forcing is not applied in \BL{} and there are several high level arguments against doing so.
    
 %-----------------%
@@ -104,11 +104,11 @@ Rather, in the spirit of Figure \ref{fig:ogcmScales}, it is a configuration with
 
 Thus in the \OFAM{} simulations of \citep{Schiller:2004fv},  it was reasonable to include only a small subset of tidal constituents and make tailered adjustments to better match the astronomical phase information.  In contrast to a standard tide prediction,  the aim in this case was ultimately to improve the broad spatial distribution in which tidal currents influence mixing and water mass formation.
 
-\citep{Arbic:2004wz} has highlighted the `inordinately large' magnitudes allocated to drag parameterisations in tide simulations generally, and the fact that large scale tidal simulations have to somehow account for the important role of barotropic to baroclinic energy conversion.   This conversion must be fully parameterised for a depth integrated simulation, but for a tidal \OCGM{} with baroclinic dynamics the line between what is explicitly modelled and what is parameterised is redefined.  
+\citep{Arbic:2004wz} has highlighted the `inordinately large' magnitudes allocated to drag parameterisations in tide simulations generally, and the fact that large scale tidal simulations have to somehow account for the important role of barotropic to baroclinic energy conversion.   This conversion must be fully parameterised for a depth integrated simulation, but for a tidal \OGCM{} with baroclinic dynamics the line between what is explicitly modelled and what is parameterised is redefined.  
 
 Inclusion of tidal motions within the HYCOM \OGCM{} has advanced substantially and been shown to benefit the representation of certain baroclinic ocean structures  \citep{10.1016/j.ocemod.2019.02.008}.    But this trajectory towards higher fidelity still relies on careful and tidally-specific parameterisation methods to account for unresolved processes; such as by the depth-dependant M2 ``wave drag'' term \citep{Jayne:2001tr}.
 
-Some further comments on the explicit resolution of tides in \OCGM{}s is included in Appendix \ref{appendix:globalTides}
+Some further comments on the explicit resolution of tides in \OGCM{}s is included in Appendix \ref{appendix:globalTides}
 
 
 
