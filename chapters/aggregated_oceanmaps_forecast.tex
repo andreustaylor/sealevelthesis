@@ -40,8 +40,7 @@ All models are wrong, but some are useful \citep{Box:1979wz}; and some are opera
 Forecast systems that enjoy ongoing and reliable operational support are of particular relevance to users.
 Existing operational systems also set a relevant benchmark for the justification of the development of new~systems.  
 
-\begin{figure}[H]
-\centering
+\begin{figure}[!hbt] \centering
 \includegraphics[width=1\textwidth]{figures/plots/forecast_eg.png}
 \caption{Sea level forecast display.}{Illustrative sea level forecast for St Kilda at Melbourne, Australia.  Sequential 7-day forecasts are shown overlaid in shades of blue.  Observed sea level is shown in black and standard tide prediction in green.  Red horizontal lines indicate conventional tidal planes LAT, MSL and HAT.  Some spread is apparent between forecast updates.  Sea level is not especially extreme, but is forecast to cross the reference HAT in coming days.}
 \label{fig:fc_eg}
@@ -133,8 +132,7 @@ h(t) = \eta_{T}(t) - \eta_{HA}(t) + \eta_{SLA}(t) + \eta_{LIB}(t) + b(t0)
 where $h(t)$ is the aggregated sea level value at forecast time $t$.  
 Signal components $\eta$ correspond to inputs in schematic Figure \ref{fig:aggSL} and subscripts $T$ and $HA$ indicate tide and harmonic adjustment respectively.    
 Bias correction $b$ is a fixed value across each forecast.
-\begin{figure}[H]
-\centering
+\begin{figure}[!hbt] \centering
 \includegraphics[width=1.0\textwidth]{figures/diagrams/aggSL_schematic_abstract.png}
 \caption{Schematic configuration of aggregation system.}
 {Source systems are heterogeneous but mapped onto time series that can be directly compared against 1-hourly observations.  (\textbf{SYNTH}) indicates tidal synthesis, (\textbf{SLA}) sea level anomaly from OceanMAPS, (\textbf{LIB}) local inverse barometer approximation based on atmospheric pressure forecast, (\textbf{BIAS}) non-causal filter bias correction scheme. }
@@ -184,8 +182,7 @@ The representation of the coast is illustrated in Figure \ref{fig:map_masks}.
 
 In order to map the gridded $\eta_{SLA}$ field to a tide gauge location, a generic one-to-one `nearest coastal neighbour' algorithm is applied.
 A manual exception for cell selection is applied to the Port Phillip case to ensure alignment with the single bay entrance. 
-\begin{figure}[H]
-    \centering
+\begin{figure}[!hbt] \centering
     \includegraphics[width=1.0\textwidth]{figures/maps/omaps_masks.png}
     \caption{Coastal discretisation map and details.}
     {Red coloured grid cells indicate ocean model bathymetry the inner extent of which is the effective model coastline.  The thick blue line indicates the edge of the atmospheric model land/sea mask.  Most small scale features and embayments at tide gauge locations are only approximated at scales above~10 km in the ocean and~80 km in the atmosphere. }
@@ -259,8 +256,7 @@ Evaluation results are presented based on aggregate sea level forecasts produced
 Evaluation is restricted to a series of point locations.  These locations correspond to tide gauges from which real-time information was reported into the operational centre over the study period.  An overview map of these locations is shown in Figure \ref{fig:map_locations}.
 The inconsistent coastal distance between locations is an outcome of human population distribution and inter-organisational arrangements.
 It~is~foreseeable that the number of sites could expand significantly in the future.
-\begin{figure}[H]
-    \centering
+\begin{figure}[!hbt] \centering
     \includegraphics[width=1.0\textwidth]{figures/maps/omaps_bathy_and_eta.png}
     \caption{Geographic overview of evaluation sites in the Australia region.}
     {Ocean model bathymetry is indicated by grey background shading.  Colour contours illustrate the `spin up' model mean dynamic topography referenced below.  Tide gauge locations are identified with sequential numbers with order chosen to loosely align with anti-cyclonic coastal wave propagation direction. Regional groupings are referenced in subsequent results.}
@@ -293,8 +289,7 @@ The time series shown in Figure \ref{fig:ts_melb} is included as an example of a
 This location is subject to relatively powerful sea level variations associated with mid-latitude weather.
 Of interest is the fact that the embayment in which the observations are taken is not represented at all in the ocean model.  This indicates the large influence of sea level outside of the bay at these timescales. 
 
-\begin{figure}[H]
-    \centering
+\begin{figure}[!hbt] \centering
     \includegraphics[width=\figwidthFull]{figures/plots/586204_verify_ts.pdf}
     \caption{Example time series at Melbourne.}
     {Location (\textbf{22} in Figure \ref{fig:map_locations} ); Upper panel shows total still water levels relative to conventional tidal benchmarks. Lower panel shows error signals and bias correction evolution.  Errors (residuals) are shown overlaid for standard tides and aggregate forecasts (`aggSL').  An~overall reduction in error variance is apparent between standard tides and aggregate forecasts.}
@@ -305,8 +300,7 @@ Of interest is the fact that the embayment in which the observations are taken i
 Contrasting behaviour is illustrated in Figures \ref{fig:pdf} and \ref{fig:rms} by means of error statistics.
 At all three locations the aggregated forecasts offer `quality' in the sense of matching observations; but for different reasons and different degress of potential value. 
 
-\begin{figure}[H]
-    \centering
+\begin{figure}[!hbt] \centering
     \begin{subfigure}{0.30\textwidth}
     \includegraphics[width=0.9\textwidth]{figures/plots/0013_verify_pdf.png}
     \caption{}
@@ -326,8 +320,7 @@ At all three locations the aggregated forecasts offer `quality' in the sense of 
 \end{figure}   
 
 
-\begin{figure}[H]
-    \centering
+\begin{figure}[!hbt] \centering
     \begin{subfigure}{0.30\textwidth}
     \includegraphics[width=0.9\textwidth]{figures/plots/0013_rms_growth.png}
     \caption{}
@@ -364,8 +357,7 @@ All statistics are centered and normalised relative to the reference observation
 
 Following Equation (\ref {eq:aggSL}).  Where $\hat{h(t)}$ is sea level de-tided using a band-limited tidal time series.  
 
-\begin{figure}[H]
-\centering
+\begin{figure}[!hbt] \centering
     %------ 1
     \begin{subfigure}{0.30\textwidth}
         \includegraphics[width=\textwidth]{figures/plots/taylor_diag_res_Indian.png}
@@ -441,8 +433,8 @@ Torres Strait stands out for general poor performance and will be the subject of
 \subsection{Skill summary: comparison against `tide + persisted residual'}
 Based on the relative RMSE evaluation shown in Figure \ref{fig:rms} a traffic-light summary map of results is shown in Figure \ref{fig:map_rms}.
 A red symbol indicates that aggregated forecast RMSE score is lower (better) than that of the reference `tide + persisted residual' for the specified forecast lead time, a blue symbol indicates the opposite.  Where neither is better than standard tides, a black symbol is allocated.   
-\begin{figure}[H]
-    \centering
+
+\begin{figure}[!hbt] \centering
     \begin{subfigure}[b]{0.45\textwidth}
         \includegraphics[width=\textwidth]{figures/maps/plot_map_rms_score_day_1.png}
     \end{subfigure}
@@ -471,8 +463,7 @@ The mean bias correction is primarily aligned with the ocean model representatio
 Such a reference surface in model space is the most common strategy used in the assimilation of altimetry observations, which are themselves constructed as anomalies from a reference surface in observation space. For OceanMAPS this surface was derived from a long free `spin up' run of the model \citep{Oke:2013fm}. 
 Figure \ref{fig:bias_mean} shows the correspondence between model MDT ($\eta_{spinup}$) and the \textit{negative} of the bias correction mean.   The wider spatial distribution of MDT is indicated by contours in Figure \ref{fig:map_locations}.
 
-\begin{figure}[H]
-\centering
+\begin{figure}[!hbt] \centering
 \includegraphics[width=0.5\textwidth]{figures/plots/aggSL_bias_breakdown_plot_1.png}
 \caption{Mean bias correction versus model MDT surface.}{Magnitude of the temporal mean of bias correction history matched against model MDT surface at each location. An arbitrary mismatch threshold of 10 cm is used to highlight apparent outliers.}
 \label{fig:bias_mean}
@@ -516,10 +507,9 @@ In this visualisation it is apparent that the time varying signal has relatively
 The single station located Torres Strait is a stand-out exception.  The~sea level signal at this location is the subject of further investigation, but for the present purpose will be disregarded as not valid.  
 
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=1.0\textwidth]{figures/plots/aggSL_bias_breakdown_plot_2.png}
-\caption{Temporal signal from bias correction.}{The time-varying component of the bias correction signal after subtraction of respective mean offsets.  Absolute values less than 0.01 m are shown as white.  A degree of coherence is apparent between adjacent sites within the regional groupings-shown on map in Figure \ref{fig:map_locations}. } 
+\begin{figure}[!hbt] \centering
+    \includegraphics[width=1.0\textwidth]{figures/plots/aggSL_bias_breakdown_plot_2.png}
+    \caption{Temporal signal from bias correction.}{The time-varying component of the bias correction signal after subtraction of respective mean offsets.  Absolute values less than 0.01 m are shown as white.  A degree of coherence is apparent between adjacent sites within the regional groupings-shown on map in Figure \ref{fig:map_locations}. } 
 \label{fig:bias_time}
 \end{figure}  
 
