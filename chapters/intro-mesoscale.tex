@@ -2,14 +2,14 @@
 \label{sec:mesoscaleOperational}
 Tide prediction has effectively been part of routine operations for several decades; whether or not the term ``operational'' has been applied.
 Starting in the early 2000s, mesoscale ocean prediction has become operational in a manner that lagged and imitated the path of \NWP \citep{Harper:kb} rather than tide prediction. 
-And like modern weather forecasting, operational oceanography is similarly a big science enterprise \citep{Petersen:2012tr} in the sense that it fundamentally relies on the coordination of large organisations, global networks and capital. 
+Like modern weather forecasting, operational oceanography is similarly a big science enterprise \citep{Petersen:2012tr} in the sense that it fundamentally relies on the coordination of large organisations, global networks and capital. 
 The size and nature of this type of prediction stands in stark contrast to the ``small'' well-established practices of conventional tide prediction introduced in section \ref{sec:tidesOverview}.
 The international Global Ocean Data Assimilation Experiment \GODAE{} serves as a historical reference point for how mesoscale prediction came into operational agencies like the Bureau:
 ``\textit{the central idea of \GODAE{} - to demonstrate the feasibility and utility of real-time, global ocean forecasting - was based on the experiences of the meteorological community in \dots{} FGGE}'' \citep{Bell:2009uv}.
 From this original feasibility demonstration, the enterprise of mesoscale ocean forecasting has continued to mature across many national weather agencies; and the Australian case is documented by \citep{10.1080/1755876x.2019.1685834} in reviewing over 15 years of operational services.
 
 
-In contrast to conventional tide prediction, sea level of itself is not the target of mesoscale forecasting; let alone coastal sea level.   But sea surface elevation is an important state variable for which forecasts are produced.  What these forecasts represent is not self-evident. And the manner in which sea level and tides are handled in systems like \BL{} is worthy of exposition in order to underpin the subsequent chapters describing methods for combining and evaluating sea level derived from these operational forecasts. 
+In contrast to conventional tide prediction, sea level of itself is not the target of mesoscale forecasting; let alone coastal sea level.   But sea surface elevation is an important state variable for which forecasts are produced.  What these forecasts actually represent is not self-evident.  The manner in which sea level and tides are handled in systems like \BL{} is worthy of exposition in order to underpin the subsequent chapters describing methods for combining and evaluating sea level derived from these operational forecasts. 
   
 %-----------------%
 \subsection{Ocean general circulation models}
@@ -64,7 +64,7 @@ Operational \OGCM{}s in the \GODAE{} genealogy have intentionally focused on non
 In this view, much tidal variability is just the fast propagation of long wave length noise; a background sloshing of the barotropic ocean state not obviously connected to the evolution of eddies and boundary currents.
 Moreover, the skill of spatial harmonic tide models in representing surface tides over the deep ocean facilitates the use of de-tided or filtered altimeter observations to constrain a mesoscale non-tidal simulation. In effect, the fluid simulation is split across two qualitatively distinct modelling approaches; an LTI frequency-space tidal ocean and a time-stepped turbulent mesoscale.  
 \BL{} is a ``non-tidal'' system in that \ATGP{} forcing is not applied, and in contrast to local downscaled simulations, there are no lateral open boundary conditions. Not only does the mesoscale simulation exclude the gravitational tidal body forcing, it also excludes the surface boundary application of atmospheric pressure.   
-Surface pressure is excluded as a forcing term for analogous time and length scale reasons as the tides.  And in fact for the barotropic mode the pressure and tidal forcing can be formulated in an identical manner as adjustments to the spatial gradient of the surface elevation as in \citet[Eq9.9.5]{gill1982atmosphere}.
+Surface pressure is excluded as a forcing term for analogous time and length scale reasons as the tides.  In fact, for the barotropic mode the pressure and tidal forcing can be formulated in an identical manner as adjustments to the spatial gradient of the surface elevation as in \citet[equation 9.9.5]{gill1982atmosphere}.
 
 The state variable quantifying surface elevation carried by the model is thus a peculiar sea level anomaly (SLA) which in itself is a rather abstract quantity. 
 Using the \citet{Stevens:2001kb} nomenclature, \BL{} simulates an aggregated pseudofluid system with a qualified relationship to the actual ocean.

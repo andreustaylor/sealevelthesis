@@ -8,7 +8,7 @@
 \subsection{Why it is worth unpacking ocean tides}
 \label{sec:semantics}
 The topic of ocean tides is particularly rich in ambiguous and arcane terminology.  
-Moreover, it is apparent that this terminology and the underlying concepts lead to miscommunication within operational forecasting.  And as operational centres like the Bureau of Meteorology increasingly bring these conventional tidal concepts into the same setting as geophysically `concrete' simulations (introduced in section \ref{sec:concrete}) the need for clarity is amplified.  This potential for confusion is motivates the following exposition of relevant concepts built into the practices of ocean tide prediction.
+Moreover, it is apparent that this terminology and the underlying concepts lead to miscommunication within operational forecasting.  As operational centres like the Bureau of Meteorology increasingly bring these conventional tidal concepts into the same setting as geophysical simulations that are ever-more `concrete' (introduced in section \ref{sec:concrete}) the need for clarity is amplified.  This potential for confusion is motivates the following exposition of relevant concepts built into the practices of ocean tide prediction.
 \newline{}
 
 
@@ -29,8 +29,8 @@ The centrality of \ATGP{} be the approach employed in the present work as well.
 
 
 Further on semantic issues, it is worth highlighting the extent to which the subject of ocean tides raises ostensibly oxymoronic terminology.  
-Geophysists can define an a-periodic pole tide on the basis of the dynamic connection to gravitational body forces associated with astronomical motions.   And valid discussion of non-stationary tides \citep{Ray:2011tj}, quasi-periodic tidal phenomena \citep{Flinchem:2000kp} or storm tides \citep{Horsburgh:2008gw} in the literature and operational products each conceptually clash with the perspective of conventional harmonic analysis.  
-A comparable semantic disconnect can arise in circumstances where a tidal prediction exceeds the designated Highest Astronomical Tide.   
+Consider the naming of the a-periodic pole tide, non-stationary tides \citep{Ray:2011tj}, quasi-periodic tidal phenomena \citep{Flinchem:2000kp} or storm tides \citep{Horsburgh:2008gw} each conceptually clashes with the periodic and stationary perspective of conventional harmonic analysis.Put simply, if tides are thought of as period motions how can they be a-periodic?  
+A comparable semantic disconnect can arise in circumstances where a tidal prediction exceeds the designated Highest Astronomical Tide level.   
 Each of these definitions are sensible in context, but can potentially be a source of miscommunication with the development and delivery of operational forecasts.    Chapter \ref{chp:tideFlavours} proposes measures to partially mitigate such problems.
 
 %-----------------%
@@ -93,7 +93,7 @@ Practical implementation of \ref{eq:VT} requires choices regarding the set of ha
 
 Only a small set of $(n,m)$ is taken to be relevant for ocean tidal dynamics; in contrast to the thousands of terms utilised for some earth gravity studies. What counts as a relevant ocean subset is generally determined on the basis of the relative magnitude of the terms and the nature of the temporal variation in geographic coordinates.
 
-It is only the horizontal gradient of the potential $\nabla V_T$ that can drive changes in the distribution of ocean mass.   Which to be clear states that the effect of the \ATGP{} on the ocean is to slide mass side-to-side, not directly pull it up.   And furthermore, only temporal changes in this horizontal gradient will effect the non-static ocean distribution. Subsequently degrees $n=0,1$ are not relevant to ocean tides.   This is represented in equation \ref{eq:VT} by the lower limit $n=2$ of the outer sum.
+It is only the horizontal gradient of the potential $\nabla V_T$ that can drive changes in the distribution of ocean mass.   Which to be clear states that the effect of the \ATGP{} on the ocean is to slide mass side-to-side, not directly pull it up.   Furthermore, only temporal changes in this horizontal gradient will effect the non-static ocean distribution. Subsequently degrees $n=0,1$ are not relevant to ocean tides.   This is represented in equation \ref{eq:VT} by the lower limit $n=2$ of the outer sum.
 For almost ocean tide applications an upper limit of $n=2$ is taken to be sufficient, or at most $n=3$; again in contrast to some earth gravity studies.  This choice is based on the rapid decline in relative magnitude of each harmonic with increasing $n$ for the luni-solar system - discussed below regarding equation \ref{eq:c}.
 
 
@@ -129,7 +129,7 @@ The same relative magnitude argument is applied to neglecting more distant celes
 %-----------------%
 \subsection{Primary role for temporal variations}
 \label{sec:temporal}
-The temporal variation of the \ATGP{} is of special relevance to ocean tide prediction.  And inspection of equation \ref{eq:VT} show that all of this variability is contained within the coefficients $c_{nm}(t)$.  
+The temporal variation of the \ATGP{} is of special relevance to ocean tide prediction.  Inspection of equation \ref{eq:VT} shows that all of this variability is contained within the coefficients $c_{nm}(t)$.  
 Any tidal method that applies $c_{nm}(t)$ from a numerical ephemeris in time-space could be said to be \emph{direct}. 
 However, transformation of $c_{nm}(t)$ into frequency-space is in fact the basis of many tidal methods.   The highly clustered frequency content of $c_{nm}(t)$ renders this transformation particularly useful.  
 Transformation of $c_{nm}(t)$ into frequency space is the basis for \underline{harmonic developments} of the \ATGP{}. Whilst there have been different approaches to performing this development, the common representation is given in Equation \ref{E:harmonic} following \citep{Desai:2006wo} and \citep[Eq 13]{Cartwright:1971iz}.
@@ -309,7 +309,7 @@ There is no unique approach to implementing the LTI concept of ocean tide predic
 In very broad terms tidal these formalisms fall into basically two categories: harmonic methods and response methods.  
 Neither of these concepts actually involve any hydrodynamics. When hydrodynamic simulations of the ocean are undertaken it seems that tidal LTI conceptualisations are at least indirectly involved in one way or another; and this will be apparent in subsequent sections dealing with hydrodynamic and spatial models. 
 
-Within operational authorities, tide prediction is practically synonymous with conventional harmonic methods. And it is here that the role of special frequencies (section \ref{sec:temporal}) has come to play a primary role.
+Within operational authorities, tide prediction is practically synonymous with conventional harmonic methods. It is here that the role of special frequencies (section \ref{sec:temporal}) has come to play a primary role.
 ``Standard harmonic methods demand little accuracy in the harmonic amplitudes of the [tidal] potential, since they \textit{use only the frequencies} at which the larger amplitudes appear, and certain details on which to base nodal corrections''\citep{Cartwright:1973em} emphasis added.
 Recall that the basis for this analysis is not harmonic in the sense of an orthogonal Fourier series, but rather that it follows from the harmonic development of the \ATGP{} as described in section \ref{sec:basic_potential}.    Here again the historical legacy of tidal terminology lends itself to misunderstanding \citep{Cartwright:2000tt}\citep{Parker:2007wq}.
 
@@ -397,8 +397,7 @@ On the other hand, broadband effects that simply project some colour onto tidal 
 
 More basically, it is not clear that users of tide predictions are always cognisant of exactly what phenomena conventional predictions represent.    This issue partly motivates chapter \ref{chp:tideFlavours}.
 Consider for now the case of seasonal phenomena.   The harmonic decomposition of $c_{nm}(t)$ provides two relatively tiny signals at periods of 1 and 0.5 years - conventionally termed Sa and Ssa.  Despite the insignificance of seasonal terms in the forcing $\eta_{eq}$, conventional predictions frequently assign  disproportionately large values to account for observed patterns.  
-Terms that reflect non-tidal seasonal modulation of semi-diurnal components can also be included in standard predictions;such as H1 and H2 in the \citet{Foreman:1977ua} schedule 
-And there are also  diurnal and semidiurnal sea level signals driven directly by meteorology  but coherent with the \ATGP{}. \citet{Ray:2003ui} evaluate \NWP{} representations of barometric tides (ie atmospheric tides) at these frequencies with implications for oceanographic processes.  
+Terms that reflect non-tidal seasonal modulation of semi-diurnal components can also be included in standard predictions;such as H1 and H2 in the \citet{Foreman:1977ua} scheduTThere are also  diurnal and semidiurnal sea level signals driven directly by meteorology  but coherent with the \ATGP{}. \citet{Ray:2003ui} evaluate \NWP{} representations of barometric tides (ie atmospheric tides) at these frequencies with implications for oceanographic processes.  
 
 
 Treatment of meteorological versus gravitational influences on observed sea level for terms such as Sa, Ssa, S1 and S2 are a point of difference between conventional harmonic analysis and response methods.  
@@ -534,7 +533,7 @@ This formulation excludes a direct representation of internal tides, despite the
 \end{quote}
 Depth integrated barotropic LTE relegate the effect of internal mechanisms on surface elevation to parameterisations.  The dissipative stress term (F in equation \ref{eq:LTE_momtm}) stands for all losses of energy from the barotropic simulation.  Given the reality of ocean stratification, this loss term accounts for the conversion of barotropic to higher baroclinic modes in any global solution \citep[pp121] {gill1982atmosphere}.
 Internal waves at tidal frequencies do have an observable surface signature albeit relatively small \citep{Ray:2011tj}.   
-And for sea level forecasting, internal modes are ostensibly of interest insofar as they impact the prediction of surface elevation.  
+For sea level forecasting, internal modes are ostensibly of interest insofar as they impact the prediction of surface elevation.  
 Internal tides are in general not stationary and not as predictable as surface tides \citep{Nash:2012}.  The extent to which aperiodic internal modes can be separated from surface tides is a measure of the value core stationarity model of  tide prediction.
 The tidal view of the ocean as a LTI system driven by the \ATGP{} is very useful, but with the caveat that ``the ocean is a physically complex and noisy filter.  In consequence, tidal harmonics are not strictly constant \citep[197]{Ray:2010jm}''.  
 Whilst stratification and all internal hydrodynamic mechanisms are very coarsely parameterised in global tide models, the internal structure of the ocean is a primary focus of \OGCM{}s, and this forecasting perspective is discusssed in section \ref{sec:mesoscaleOceangraphy}.  Some further detail on on modeling global tides is also included in Appendix \ref{appendix:globalTides}.

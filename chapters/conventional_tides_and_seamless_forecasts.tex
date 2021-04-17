@@ -91,8 +91,8 @@ A notable aspect of national tide services is the special status of promulgating
 
 Conventional tidal analysis has some unique and attractive features from an operational maintenance perspective.
 At face value, the practice is robust to data-stream indeterminacy,  and has established methods for exploiting heterogeneous, poor quality and historical observations to produce useful predictions.  
-Annual batch-mode production schedules are far less demanding than real-time continual forecast systems. 
-And harmonic methods compresses results to a few dozen human-readable parameters that are amenable to routine quality checking and error detection. 
+Operational support of an annual batch-mode production schedule is far less demanding than real-time continual forecast systems. 
+Furthermore, the fact that harmonic methods compress results to a few dozen human-readable parameters that are amenable to routine quality checking and error detection is also operationally attractive. 
 Conventional tidal analysis at port locations can be characterised as a slow-motion data-driven method that is somewhat physics-free; especially when compared to modern hydrodynamic simulations. 
 
 Figure \ref{fig:tidePractice} portrays the unique way that conventional tidal practice can transform heterogeneous historical records into a consistent timeseries product at arbitrary time sampling.
@@ -554,7 +554,5 @@ This article has put the case that an appropriate clarification of tidal data ty
 There is of course a very long history of proposals for refinements or up-ending of tide prediction techniques \citep{Cartwright:2000tt}\citep{Jay:2003bj}, but this is in contrast a proposal for an incremental shift in thinking for an established and valuable \textit{service}.
 The magnitude of the signals and discontinuties are overall rather small at only $\sim10-20cm$.   But scales like this are worth some attention when considering the operational role for forewarning of nuisance flooding \citep{Devlin:2017hu}\citep{10.1071/es19024} and in potentially in complimenting future remote observation platforms \footnote{\url{auswot.org}} and coastal forecasting \citep{10.3389/fmars.2019.00437}.
 
-%And anything that helps progress the clarity of refrence datums in the coastal zone would be most welcome ..
-%Perhaps analogous to Devin and Zaron Jay etc nudging progress not by discarding the traditions of tidal analysis, but subtly adapting to primfacie contrasting ideas: 'nonstationary tides' or 'tidal variablity' etvc.
 This proposal has intentionally not promoted the promulgation of tidal analysis parameters and has instead focused on the value of timeseries.   Whilst the publication of parameters would of itself be desirable in terms of transparency, these are less likely to directly deliver the value required by downstream applications.    Most simply because the interpretation and application of tidal constants requires consistency between the analysis and synthesis software. Consider for instance the inconsistent designation of \textbf{Sa} to Doodson numbers \texttt{[0 0 1 0 0 0]} and \texttt{[0 0 1 0 0 ‐1]} between tools \citep{PCTMSL-sp9}.  Let alone the manner in which energy is variously projected onto named constituent groups as a function of record length.  
 Providing timeseries would directly serve many direct downstream applications as well as allowing specialist users to `back out' parameters in their own analysis framework as required and in isolation from the details of tools in use by the supplier.
