@@ -1,48 +1,38 @@
 %-----------------------------------------
 \begin{frame}
-\frametitle{Tidal systems in operations}
-
-\begin{minipage}{0.45\textwidth}
-    \begin{figure}      
-    \includegraphics[height=0.4\textheight]{figures/images/IDO59001_2021_SA_TP006.pdf}
-    \end{figure}
-    forecast and filter?
-    tsunami, 
-\end{minipage}
-
-\hfill
-
-\begin{minipage}{0.45\textwidth}
-    \begin{figure}      
-     \includegraphics[width=\textwidth]{figures/images/IDYOC300.Aus.SLACur.168.png}
-    \end{figure}
-    altimeters - corrections
-\end{minipage}
-
-
+\frametitle{Role for tides across operations}
+\centering
+no longer stand-alone predictions only\\
+ocean, surge, tsunami, river, AI etc  ... forecasts versus filters\\
+constraint from common use of "official" tides as reference
+\vfill{}
+%\includegraphics[trim={4cm 4cm 0 0 5cm},clip,width=0.4\textwidth]{figures/images/IDO59001_2021_SA_TP006.pdf}
+\includegraphics[height=0.3\textheight]{figures/plots/tide_eg_gero.png}
+\hfill{}
+\includegraphics[height=0.3\textheight]{figures/images/IDYOC300.Aus.SLACur.168.png}
 \end{frame}
 %-----------------------------------------
 \begin{frame}
 \frametitle{Forecasts, physics, filters}
-
-      \begin{figure}      
-        \includegraphics[width=\textwidth]{figures/plots/piecewiseTide_62430.pdf}
-      \end{figure}
-
+\centering
+\includegraphics[width=\textwidth]{figures/plots/piecewiseTide_62430.pdf}
       \begin{itemize}
-          \item standard annual tables - discontinuous
+          \item standard annual tables are discontinuous
+          \item poor choice for historical filter
+          \item poor choice for physical attribution
           \item contrast purpose and context
       \end{itemize}
-
 \end{frame}
 %-----------------------------------------
 \begin{frame}
-\frametitle{Global versus ``standard'' tides}
+\frametitle{Spatial models versus standard tides}
 \begin{columns}
-    \begin{column}{0.7\textwidth}
-      \begin{figure}      
-        \includegraphics[width=\textwidth]{figures/maps/portsdiffRmseRatioNoLong.png}
-      \end{figure}
+    \begin{column}{0.7\textwidth}      
+    Different targets.\\
+    Highlighted by mismatch at least "astronomical"\\
+    Standard tides mixed quality too\\
+    \hfill{}
+    \includegraphics[width=\textwidth]{figures/maps/otpsPortCompare_Improve2020_105_diffRmse.pdf}
     \end{column}
 
     \begin{column}{0.3\textwidth}
@@ -59,7 +49,8 @@
 %-----------------------------------------
 \begin{frame}
 \frametitle{Tidal service split}
-      \begin{figure}      
-        \includegraphics[height=0.6\textheight]{figures/diagrams/tideSchematic.pdf}
-      \end{figure}
+Ongoing role for conventional service.\\
+Clarify and differentiate targets to enable improvement. 
+\vfill{}
+    \includegraphics[height=0.6\textheight]{figures/diagrams/tideSchematic.pdf}
 \end{frame}
