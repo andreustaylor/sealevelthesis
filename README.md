@@ -1,5 +1,11 @@
 # Uni of Melbourne Phd Thesis Material
 
+## Notes
+* overleaf
+* github not gitlab
+* first submit Apr 2021
+* revisions Nov 2021
+
 ## Content
 * thesis document
 * completion seminar material
