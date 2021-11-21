@@ -1,10 +1,10 @@
 # Examiner response plan and comments Nov 2021
 
 ## Approach
-1. revise and revive production tools: overleaf, github, Papers 
-2. digest feedback
-3. initial summary of revision requirements in unimelb standard table format (below)
-* update panel *
+1. ~~revise and revive production tools: overleaf, github, Papers ~~
+2. ~~digest feedback~~
+3. ~~initial summary of revision requirements in unimelb standard table format (below)~~
+* ~~update panel~~ *
 4. obtain references mentioned by reviewers
 5. fix listed spelling/typos
 6. fix cite format problem
