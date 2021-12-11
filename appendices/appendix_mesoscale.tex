@@ -61,22 +61,22 @@ This approach has the advantage of accurately representing the \ATGP{} and facil
 Furthermore, this approach could offer consistent numerical formulation with other barotropic forcing fields.
 
 
-On the other hand, a direct formulation of the broadband tidal forcing introduces some programatic inconveniences and risks. 
-For instance, the input time series must be extracted from a numerical ephemerides at timings to suit each particular simulation.  This is essentially a programing complication that adds an upstream data dependence.
+On the other hand, a direct formulation of the broadband tidal forcing introduces some programmatic inconveniences and risks. 
+For instance, the input time series must be extracted from a numerical ephemerides at timings to suit each particular simulation.  This is essentially a programming complication that adds an upstream data dependence.
 Furthermore, the process for converting ephemerides to forcing fields is relatively opaque and introduces additional needs for integration testing measure to mitigate the risk of non-fatal errors arising from handing upstream dependencies (e.g. incorrect reading of dates).
 
 Direct (or ``full'') tidal forcing is apparently not as common in the ocean literature as in gravity related studies. One instance of forcing a global hydrodynamic model directly is described by \cite{Weis:2008ex} and more recently \cite{Logemann:2020} - notably in an non-operational settings.   These authors stress that ``\textit{tidal predictions produced by such a model [free running and formulated with the full tidal potential], even after the inclusion of the LSA terms, will still be far away from the precision of current tidal models using data assimilation techniques}''.
 
 In contrast, a harmonic formulation of $c_{nm}(t)$ for the same range of spatial harmonics requires the specification of many constants for each \emph{temporal} harmonic to be included.  
-Hundreds of harmonic components \citep[pp3]{Desai:2006wo} would be required to match the spectral content of an equivilant direct formulation.
+Hundreds of harmonic components \citep[pp3]{Desai:2006wo} would be required to match the spectral content of an equivalent direct formulation.
 
 
 In practice only a small number (often 8) of the most powerful spectral clusters are specified as primary constituents.  
 Truncation is based on the relative power of tidal lines within the harmonic development and subsequently requires nodal adjustments (as per equation \ref{E:Axb}).
 
-Programatically the harmonic approach facilities some attractive simplifications.  
+Programmatically the harmonic approach facilities some attractive simplifications.  
 After the specification of a small number of constants, the temporal variation can be cheaply calculated within the ocean model via only a few lines of code.   
-For relatively short simulations ($\ll$ 1 year), the nodal corrections are reasonably treated as fixed.   This situation is amenable to de-bugging and has no external dependancies.
+For relatively short simulations ($\ll$ 1 year), the nodal corrections are reasonably treated as fixed.   This situation is amenable to de-bugging and has no external dependencies.
 It is also a relevant consideration that assessment of tidal output is conventionally based on harmonic fits to these same primary constituents.
 
 Arbic et al \citep{Arbic:2010us}, apply body forcing using the temporal harmonic representation. In what appears to be common approach the authors describe developing their implementation via a progressive addition of temporal harmonics: no tides, M2-only, 8 primary constituents.  Treating M2 separately facilitates interpretation and comparison to other literature; including theoretical developments of single frequencies and tidal atlases.

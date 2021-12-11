@@ -33,14 +33,14 @@ Many of the sea level observations were supplied to the Bureau in near-real-time
 These operational observations differ from typical research quality archives with respect to the type and level of quality control measures that are applied.   As a consequence this operational data is not guaranteed to be reported relative to a constant reference and can be susceptible to contamination with influences such as communication drop-outs and glitches.  Handling of observational quality issues like these is however fundamental to the operational setting as is discussed in the body of this manuscript. 
 
 
-Table \ref{table:jargon} presents a brief summary of some key terminology and acronyms used in throughout this document.   Mostly these terms are are introduced and described in the body of the text but are highlighted here for reference and clarity.
+Table \ref{table:jargon} presents a brief summary of some key terminology and acronyms used in throughout this document.   Mostly these terms are introduced and described in the body of the text but are highlighted here for reference and clarity.
 \begin{table}[h]\centering
     \begin{tabular}{ |p{3cm}|p{11cm}| }
     \hline
     Term & Description  \\
     %-----------
     \hline
-    Sea level & Generally ``still water level''; observed or simulated elevation of the ocean water surface; time scale range hours to weeks.\\
+    Sea level & Generally ``still water level''; observed or simulated elevation of the ocean water surface; timescale range hours to weeks.\\
     %-----------
     \hline
     Tide & Sea level component somehow associated with the \ATGP{}; exposition of details and differing implications are taken up in section \ref{sec:tidesOverview}\\
@@ -49,20 +49,23 @@ Table \ref{table:jargon} presents a brief summary of some key terminology and ac
     \ATGP{} & Astronomical Tide Generating Potential, abstract definition of the time varying components of gravitational forces driving ocean tides as a Newtonian potential field.\\
     %-----------
     \hline
-    Operational & Part of the regular or routine sustained daily production cycle of a service organisation;  in contrast to idealised,academic or historical re-analysis data and simulations.\\
+    Operational & Part of the regular or routine sustained daily production cycle of a service organisation;  in contrast to idealised, academic or historical re-analysis data and simulations.\\
     %-----------
     \hline
     Bluelink OceanMAPS & Mesoscale ocean forecasting system at the Australian Bureau of Meteorology; one component of the wider Bluelink ocean forecasting collaboration of the Australian CSIRO, Navy and Bureau of Meteorology.\\
     %-----------
     \hline
-    Insitu & In place or undertaken directly at some place; with regard observations from fixed position instruments in particular. \\
+    Mesoscale & ocean circulation phenomena at length scales of $\sim$100km and time scales of days to weeks, the "weather" of the ocean.\\
+    %-----------
+    \hline
+    Insitu & In place or undertaken directly at some place; with regard to observations from fixed position instruments in particular. \\
     %-----------
     \hline
     Seamless &  Consistent and without discontinuities across multiple timescales; especially with regard to numerical forecasts and services built from a variety of sources. \\
     %-----------
     \hline
     \end{tabular}
-    \caption{Select nomencalture}
+    \caption{Select nomenclature}
     \label{table:jargon}
 \end{table}
 
@@ -81,7 +84,7 @@ Figure \ref{fig:sealevelScales} provides a schematic summary of the physical tim
   \label{fig:sealevelScales}
 \end{figure}
 %-----------------------------
-The visual differentiation of tides from the other phenomena in Figure \ref{fig:sealevelScales} is intentional.  Tides have unique properties; but exactly what is designated as tidal in an operational context can be more ambiguous than first impressions imply. This topic is unpacked further in section \ref{sec:tide_intro}. Tides in the schematic are seen to span from very short to very long length-scales but at more restricted frequencies than other phenomena.    Furthermore, the long period tides are are shown separately in anticipation of a later discussion of how these species are potentially problematic in some forecasting applications.
+The visual differentiation of tides from the other phenomena in Figure \ref{fig:sealevelScales} is intentional.  Tides have unique properties; but exactly what is designated as tidal in an operational context can be more ambiguous than first impressions imply. This topic is unpacked further in section \ref{sec:tide_intro}. Tides in the schematic are seen to span from very short to very long length-scales but at more restricted frequencies than other phenomena.    Furthermore, the long period tides are shown separately in anticipation of a later discussion of how these species are potentially problematic in some forecasting applications.
 
 How the varying balance of phenomena is expressed in observed sea level is illustrated by the spectra shown in Figure \ref{fig:obsSpectraEg} for two Australian locations.   Variability at nominally tidal frequencies is a striking feature at nearly all coastal locations;  ``the [tidal] constituent lines emerge from the noise background as trees from the grass'' \citep{godin:1972}.
 Observed power at tidal frequencies does not however provide a direct attribution to tidal forcing and the extent to which this matters for forecasting applications is a conceptual theme addressed in chapter \ref{chp:tideFlavours}.
@@ -107,7 +110,7 @@ Quantified observations of sea level currently available for operational use fal
 
 Insitu observations from coastal tide gauges are by far the most established and studied source.    The availability of tide gauge observations is intrinsically connected to the history of sea level study and the development of forecasting techniques; the longer view of which is covered in the history of \citeauthor{Cartwright:2000tt}.
 Typical tide gauge instruments in fact measure the `air gap' between a sensor and the water surface from which a relative level is derived \citep{PCTMSL-sp9}. 
-But the very nature of why and how tide gauges are installed raises a list of special characteristics relevant to operational forecasting. These characteristics are variously considered to add complication or insight for different applications. \citeauthor{10.1175/jtech-d-18-0203.1} put it simply that ``\textit{most tide gauges are limited to deep water or sheltered harbors and omit part of the natural total sea level variability at open coasts}''.   
+But the very nature of why and how tide gauges are installed raises a list of special characteristics relevant to operational forecasting. These characteristics are variously considered to add complication or insight for different applications. \citeauthor{10.1175/jtech-d-18-0203.1} put it simply that ``\textit{most tide gauges are limited to deep water or sheltered harbours and omit part of the natural total sea level variability at open coasts}''.   
 %-----------------------------
 \begin{figure}[!hbt]\centering
   \includegraphics[width=\figwidthBig]{figures/diagrams/sealevel_cartoon.pdf}
@@ -118,7 +121,7 @@ But the very nature of why and how tide gauges are installed raises a list of sp
 Coastal locations are subject to both global and spatially localised hydrodynamic effects; in addition to influences like sediment movement, riverine phenomena and even coastal engineering works.  The limited extent to which the range of scales present in the tide gauge observations can be adequately represented by any forecast system is a fundamental characterisation discussed across chapters \ref{chp:aggregate},\ref{chp:waveguide} and \ref{chp:tideFlavours}.    
 Tide gauge observations can be mapped to certain sea level impacts and decisions, though not always directly; as for instance in \citep{Hague:2019ha}.    The fact that wave run-up and swash are generally invisible to tide gauges is a notable limitation when considering impacts at the land-sea interface \citep{Serafin:2017fl,10.1007/s11069-020-04178-3}.
 Commonly tide gauge observations are also the basis of vertical reference information and geodetic derivations that are ultimately connected to the interpretation of any quantitative sea level forecast \citep{Woppelmann:2006un}\citep{AVWS2021}.
-More comprehensive observations of sea level than are possible from tide gauges is listed as a key requirement for future development by \citeauthor{10.3389/fmars.2019.00437}.    Video-based systems in particular show promise \citep{10.1175/jtech-d-18-0203.1}\citep{2018agufmep52d..26h} but as yet are far from general oeprational availability. 
+More comprehensive observations of sea level than are possible from tide gauges is listed as a key requirement for future development by \citeauthor{10.3389/fmars.2019.00437}.    Video-based systems in particular show promise \citep{10.1175/jtech-d-18-0203.1 m,10.1002/2014gl060517} but as yet are far from general operational availability. 
 %-----------------------------
 \begin{figure}[!hbt]\centering
   \includegraphics[width=\figwidthThird]{figures/images/tidegaugeEg.png}
@@ -127,12 +130,12 @@ More comprehensive observations of sea level than are possible from tide gauges 
 \end{figure}
 %-----------------------------
 
-Remote observations of sea level are also derived from what is effectively a very large air-gap .   The derivation from active radar return signals to a meaningful sea level value is non-trivial but very mature away from the coast \citep{Fu:2001ub}.  Operational mesoscale oceanography is heavily dependant on altimeter observations across the global ocean and is discussed further in section \ref{sec:mesoscaleOperational}.  
+Remote observations of sea level are also derived from what is effectively a very large air-gap. The derivation from active radar return signals to a meaningful sea level value is non-trivial but very mature away from the coast \citep{Fu:2001ub}.  Operational mesoscale oceanography is heavily dependent on altimeter observations across the global ocean and is discussed further in section \ref{sec:mesoscaleOperational}.  
 Operational application of remote sea level observations near the coast is complicated by both the very presence of land within the sensing `footprint' as well as more powerful but shorter time and length scales of sea level variability \citep{Vignudelli:2011wl}.   Whilst this is a  rapidly advancing field, coastal altimetry effectively remains pre-operational and needs to solve the handling of fundamental details such as vertical reference datums \citep{10.3389/fmars.2020.549467}.
 The active nadir radar architecture of satellite sea level observations of the last two decades is expected to undergo a qualitative change with the planned wide-swath altimeter missions starting with SWOT \footnote{\url{https://earth.esa.int/web/eoportal/satellite-missions/s/swot}, \url{https://auswot.org/}}.   Wide swath observations of sea level remote observations promise to radically impact water level forecasting in the longer term but can not hope to become operationally relevant for some years to come. 
 
 Operationally-relevant observations of sea level suffer from additional limitations that can be handled differently in more academic settings.   The most basic limitations are whether observations are accessible in near-real-time and the extent to which appropriate metadata is available and up to date.  
-Quality control of observations is challenging task that is applied differently between an operational setting as for important long term historical archive projects \footnote{such as \url{www.gloss-sealevel.org}, \url{uhslc.soest.hawaii.edu} and \url{www.gesla.org}}.
+Quality control of observations is a challenging task that is applied differently between an operational setting as for important long term historical archive projects \footnote{such as \url{www.gloss-sealevel.org}, \url{uhslc.soest.hawaii.edu} and \url{www.gesla.org}}.
 
 The non-uniform network of tide gauges from which sea level observations are provided to the Bureau of Meteorology are operated by a range of port authorities, state agencies and the Bureau itself. Inhomogeneity of tide gauge data quality is expected to persist as a permanent feature for operations; a status that is argued to be a core value of traditional tide prediction services in chapter \ref{chp:tideFlavours}. All evaluations made against tide gauges in this thesis are intentionally based on the Bureau's own operational archive.
 
@@ -155,7 +158,6 @@ The operational setting of the Australian Bureau is considered to share broad ch
 Unfortunately the documentation of operational systems is partial and inconsistent and can often fall far behind aspirations.  
 
 When considering the suite of forecasting systems that ostensibly forecast sea level variations, there is a basic trade-off between temporal fidelity and prognostic range.    Figure \ref{fig:forecastScalesAll} illustrates this schematically.    The schematic reflects the fact that the physical representation of sea level in a long range climate model intentionally parameterises or excludes phenomena associated with sharp gradients in both space and time in order to provide a very long forecast.  Similarly, simulations that aim to resolve highly local and fast coastal sea level phenomena provide relatively short forecasts.    
-(\ref{sec:tidesOverview}.    
 \begin{figure}[!hbt]\centering
   \includegraphics[width=\figwidthBig]{figures/diagrams/scales.pdf}
   \caption{Forecasting suite schematic showing overlapping scales.}
@@ -169,7 +171,7 @@ However it is the exceptional status of tide prediction in this framework that i
 This unique status of tidal methods with regard to forecast skill and range prompts the problems of conceptual clarity addressed in the body of this thesis.  In short, can we expect the overlap of tidal forecast systems with dynamic physical simulations to be complimentary in a way analogous to the idealised cascade of scales?
 %--------------------------------------------------
 \subsection{Relevance of restricted scope}
-This study is intentionally restricted to \underline{Australia} and the Australian operational setting.  Whilst some characteristics are peculiar and unique to Australia, others are internationally relevant will be discussed as such.
+This study is intentionally restricted to \underline{Australia} and the Australian operational setting.  Whilst some characteristics are peculiar and unique to Australia, others are internationally relevant and will be discussed as such.
 
 
 The conceptual scope of the study is intentionally focused on the overlap of tidal methods with the ocean mesoscale and is illustrated schematically in Figure \ref{fig:forecastScalesFocus}.
@@ -186,7 +188,7 @@ This scope also intentionally excludes outputs from nested downscaling of mesosc
   \label{fig:forecastScalesFocus}
 \end{figure}
 
-Despite looking away from localised and radical extremes of sea level, the present novel and restricted scope is relevant and important for essentially two  reasons: (1) the are a range of applications in which a longer horizon forecast of essentially ``tidal'' sea level is valued over short range forecast of extremes; and (2) the goal of seamless forecasting will inevitably require conceptual clarity regarding tides to interpret and merge information from numerical systems that are not cleanly complimentary. 
+Despite looking away from localised and radical extremes of sea level, the present novel and restricted scope is relevant and important for essentially two  reasons: (1) there are a range of applications in which a longer horizon forecast of essentially ``tidal'' sea level is valued over short range forecast of extremes; and (2) the goal of seamless forecasting will inevitably require conceptual clarity regarding tides to interpret and merge information from numerical systems that are not cleanly complimentary. 
 
 \begin{figure}[!hbt]\centering
   \begin{subfigure}[t]{\figwidthHalf}
