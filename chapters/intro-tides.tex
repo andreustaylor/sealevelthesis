@@ -220,7 +220,7 @@ Similar effects that vary on tidal timescales are also associated with the time 
 
 
 Similarly to body tide effects, it is possible to formulate \SAL{} as a scaled modification to the astronomical tidal forces.  This is very convenient, but known to be associated with significant inaccuracies \citep{Ray:1998jl}.  The present distribution of \MOM{} makes this so called `$\beta$' approximation.\\
-An evaluation of intermediate methods to parameterise SAL is described by Stepanov and Hughes \citep{Stepanov:2004up}
+An evaluation of intermediate methods to parameterise SAL is described by \citet{Stepanov:2004up}
 In contrast to the $\beta$ scaling approximation, it appears to be quite reasonable to consider \SAL{} as separate pre-calculated body forcing rather than a scaling of $\eta_{eq}$. 
 \begin{quotation}
 SAL should be computed by convolution \dots with the Green's function for loading and self-attraction. Since this convolution smoothes out small-scale features, and since large-scale tidal elevations are now well determined over most	of the earth, SAL is in fact now reasonably well known, even where local details of tidal elevations and currents remain uncertain. \citep{Egbert:2002ug}
@@ -228,7 +228,7 @@ SAL should be computed by convolution \dots with the Green's function for loadin
 
 
 \underline{Time, polar motion and ephemeris.}\\ 
-Diurnal Earth rotation and hence time UT1 are effected by tidal effects \citep[sec 8]{IERS2003}.  In addition, conventional UT1 contains discontinuities at leap seconds is not strictly identical to ephermeris time.  For the purposes of ocean forecasting these variations are in general considered negligible and definitions of time are treated as unproblematic.\\
+Diurnal Earth rotation and hence time UT1 are effected by tidal effects \citep[sec 8]{IERS2003}.  In addition, conventional UT1 contains discontinuities at leap seconds is not strictly identical to ephemeris time.  For the purposes of ocean forecasting these variations are in general considered negligible and definitions of time are treated as unproblematic.\\
 
 
 A special case is the \underline{pole tide}. Geocentric coordinates align the polar zenith approximately with the Earths axis of rotation. However, there are continual variations of alignment from the reference axis described by theories of precession and nutation and in general referred to as `polar motion'.   More generally, any changes in the Earth's instantaneous rotation vector can be associated with changes in the gravity field  experienced in surface fixed geocentric coordinates.\\
@@ -302,7 +302,7 @@ For sea level, the different forecasting methods are essentially variants on the
 %-----------------%
 \subsection{Tidal harmonics and formalisms}
 \label{sec:formalisms}
-There is no unique approach to implementing the LTI concept of ocean tide prediction. In fact, ``\textit{many organizations have developed their own methods of tidal analysis}''\citep{IOC:2005tj}. But the different approaches or formalisms share the LTI system model discussed above.  
+There is no unique approach to implementing the LTI concept of ocean tide prediction. In fact, ``\textit{many organisations have developed their own methods of tidal analysis}''\citep{IOC:2005tj}. But the different approaches or formalisms share the LTI system model discussed above.  
 In very broad terms tidal these formalisms fall into basically two categories: harmonic methods and response methods.  
 Neither of these concepts actually involve any hydrodynamics. When hydrodynamic simulations of the ocean are undertaken it seems that tidal LTI conceptualisations are at least indirectly involved in one way or another; and this will be apparent in subsequent sections dealing with hydrodynamic and spatial models. 
 
@@ -394,7 +394,7 @@ On the other hand, broadband effects that simply project some colour onto tidal 
 
 More basically, it is not clear that users of tide predictions are always cognisant of exactly what phenomena conventional predictions represent.    This issue partly motivates chapter \ref{chp:tideFlavours}.
 Consider for now the case of seasonal phenomena.   The harmonic decomposition of $c_{nm}(t)$ provides two relatively tiny signals at periods of 1 and 0.5 years - conventionally termed Sa and Ssa.  Despite the insignificance of seasonal terms in the forcing $\eta_{eq}$, conventional predictions frequently assign  disproportionately large values to account for observed patterns.  
-Terms that reflect non-tidal seasonal modulation of semi-diurnal components can also be included in standard predictions;such as H1 and H2 in the \citet{Foreman:1977ua} scheduTThere are also  diurnal and semidiurnal sea level signals driven directly by meteorology  but coherent with the \ATGP{}. \citet{Ray:2003ui} evaluate \NWP{} representations of barometric tides (ie atmospheric tides) at these frequencies with implications for oceanographic processes.  
+Terms that reflect non-tidal seasonal modulation of semi-diurnal components can also be included in standard predictions;such as H1 and H2 in the \citet{Foreman:1977ua} schedule.  There are also  diurnal and semidiurnal sea level signals driven directly by meteorology but coherent with the \ATGP{}. \citet{Ray:2003ui} evaluate \NWP{} representations of barometric tides (ie atmospheric tides) at these frequencies with implications for oceanographic processes.  
 
 
 Treatment of meteorological versus gravitational influences on observed sea level for terms such as Sa, Ssa, S1 and S2 are a point of difference between conventional harmonic analysis and response methods.  
@@ -527,7 +527,7 @@ Internal waves at tidal frequencies do have an observable surface signature albe
 For sea level forecasting, internal modes are ostensibly of interest insofar as they impact the prediction of surface elevation.  
 Internal tides are in general not stationary and not as predictable as surface tides \citep{Nash:2012}.  The extent to which aperiodic internal modes can be separated from surface tides is a measure of the value core stationarity model of  tide prediction.
 The tidal view of the ocean as a LTI system driven by the \ATGP{} is very useful, but with the caveat that ``the ocean is a physically complex and noisy filter.  In consequence, tidal harmonics are not strictly constant \citep[197]{Ray:2010jm}''.  
-Whilst stratification and all internal hydrodynamic mechanisms are very coarsely parameterised in global tide models, the internal structure of the ocean is a primary focus of \OGCM{}s, and this forecasting perspective is discusssed in section \ref{sec:mesoscaleOperational}.  Some further detail on on modeling global tides is also included in Appendix \ref{appendix:globalTides}.
+Whilst stratification and all internal hydrodynamic mechanisms are very coarsely parameterised in global tide models, the internal structure of the ocean is a primary focus of \OGCM{}s, and this forecasting perspective is discussed in section \ref{sec:mesoscaleOperational}.  Some further detail on modelling global tides is also included in Appendix \ref{appendix:globalTides}.
 
 %-----------------%
 \subsection{Operational need for multiple tide concepts}
@@ -537,7 +537,7 @@ In the simplest terms, there are two operational conceptions of ocean tides actu
     \item tides as a predictable periodic variation in total water height and;
     \item tides as a longwave physical response to gravitational forces.
 \end{itemize}
-Whereas methods for representing and forecasting both of these are centered on the linear-time-invariant concept of an ocean admittance, they are not identical.
+Whereas methods for representing and forecasting both of these are centred on the linear-time-invariant concept of an ocean admittance, they are not identical.
 Furthermore, the aim of forecasting the total water height differs greatly in intent from the aim of filtering or decomposing water height; and there is no reason to require both to be satisfied by a single conceptualisation of an ocean tide. 
 Allowing for ocean tides to be other than singular may give rise to some unique complications given that conventional tide predictions have come to play such an established role in coastal economies.   A notable role in this regard is how derivations from conventional tide predictions are built into spatial references such as nautical chart datum and highest astronomical tide (HAT).   Ensuring that forecast products are consistent with these spatial applications would appear to require some care.  
 Most broadly, there is room in the operational setting for improved clarity in handling tides in forecasting and this topic is addressed in both chapters 

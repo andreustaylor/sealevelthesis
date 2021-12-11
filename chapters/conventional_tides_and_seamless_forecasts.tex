@@ -83,7 +83,7 @@ In fact, the range of contemporary uses motivates the present discussion; for in
     \item filtering (de-tiding) of sea level observations
     \item input into data-driven decision support systems
     \item combination with physical forecasts into seamless water level forecasts 
-    \item verification and tuning of hydrodynamic modeling
+    \item verification and tuning of hydrodynamic modelling
 \end{inparaenum}
 
 A notable aspect of national tide services is the special status of promulgating predictions that have official status \citep{AusNavAct2012}.   For some applications it could be argued this status is more important than forecast accuracy alone.
@@ -120,7 +120,7 @@ Most simply, the distinction between a forecast and an ``analysis'' would not be
 This distinction is obvious to users of weather forecast data and other oceanographic products \footnote{(eg \url{https://marine.copernicus.eu/})} but arguably tidal predictions have to date maintained an exceptional product status.  Tides in general are commonly thought of as being much more akin to astronomical phenomena than oceanographic model outputs \citep{Jay:2003bj} \citep{10.1029/2018rg000636}.
 
 
-The operational delivery of remote  observations of sea level has well established distinctions between what could be called data `flavours'.   Both with regard to the distinction between rapid update interim products and behind-real-time quality analysis as well as the wide range of geophysical  correction combinations that are suited to different applications ( eg \citep{Scharroo:2014vv} )
+The operational delivery of remote  observations of sea level has well established distinctions between what could be called data `flavours'.   Both with regard to the distinction between rapid update interim products and behind-real-time quality analysis as well as the wide range of geophysical  correction combinations that are suited to different applications (eg \citep{Scharroo:2014vv} )
 
 
 Allowing for the effective operational use of standard tide products in the context of satellite observations raises the significance of basic compatibility 
@@ -172,7 +172,7 @@ In contrast to conventional tidal analysis, the widely used Oregon State Univers
 \subsection{Inter-representation agreement}
 Given that the signal amplitudes are generally rather small and that most tidal evaluations are carried out in frequency space, the following evaluation aims to demonstrate the practical implications when handling synthesised timeseries.
 
-Variants of 15 minute tide predictions at all Australian sites for the full year of 2020 are used for comparison.   TPXO predictions were generated using the standard interpolation to site locations and sites where excluded that fell beyond the solution grid.   The National Tide Unit in-house software (unpublished) was modified to selectively exclude particular constituents in order to generate alternative ``standard'' predictions for the study period.  All prediction time series for this comparison are relative to MSL (more on that in Section \ref{Sec:MSL}).   Both systems apply so-called nodal or satellite corrections to modulate a finite list of constituent parameters.   
+Variants of 15 minute tide predictions at all Australian sites for the full year of 2020 are used for comparison. TPXO predictions were generated using the standard interpolation to site locations and sites where excluded that fell beyond the solution grid.   The National Tide Unit in-house software (unpublished) was modified to selectively exclude particular constituents in order to generate alternative ``standard'' predictions for the study period.  All prediction time series for this comparison are relative to MSL (more on that in Section \ref{Sec:MSL}).   Both systems apply so-called nodal or satellite corrections to modulate a finite list of constituent parameters.   
 
 It is to be expected that a global tide solution will not represent all the localised and shallow-water patterns that a conventional analysis can capture.   However the aim of this evaluation is to highlight the arguably less-expected but intentional representational difference for primarily meteorological tides.   To this end a the following timeseries comparison metric is shown on the summary map in Figure \ref{fig:improveOtps}.
 \begin{equation}
@@ -556,7 +556,7 @@ The absence of rankable quality measures left \citeauthor{10.5194/os-2020-107} t
 \label{Sec:Discussion}
 This article has put the case that an appropriate clarification of tidal data types and aims will enable a conventional tide prediction service to better compliment a range of modern applications; and that such a change could be relatively incremental and feasible with existing technology. 
 There is of course a very long history of proposals for refinements or up-ending of tide prediction techniques \citep{Cartwright:2000tt}\citep{Jay:2003bj}, but this is in contrast a proposal for an incremental shift in thinking for an established and valuable \textit{service}.
-The magnitude of the signals and discontinuties are overall rather small at only $\sim10-20cm$.   But scales like this are worth some attention when considering the operational role for forewarning of nuisance flooding \citep{Devlin:2017hu}\citep{10.1071/es19024} and in potentially in complimenting future remote observation platforms \footnote{\url{auswot.org}} and coastal forecasting \citep{10.3389/fmars.2019.00437}.
+The magnitude of the signals and discontinuities are overall rather small at only $\sim10-20cm$.   But scales like this are worth some attention when considering the operational role for forewarning of nuisance flooding \citep{Devlin:2017hu}\citep{10.1071/es19024} and in potentially in complimenting future remote observation platforms \footnote{\url{auswot.org}} and coastal forecasting \citep{10.3389/fmars.2019.00437}.
 
 This proposal has intentionally not promoted the promulgation of tidal analysis parameters and has instead focused on the value of timeseries.   Whilst the publication of parameters would of itself be desirable in terms of transparency, these are less likely to directly deliver the value required by downstream applications.    Most simply because the interpretation and application of tidal constants requires consistency between the analysis and synthesis software. Consider for instance the inconsistent designation of \textbf{Sa} to Doodson numbers \texttt{[0 0 1 0 0 0]} and \texttt{[0 0 1 0 0 ‐1]} between tools \citep{PCTMSL-sp9}.  Let alone the manner in which energy is variously projected onto named constituent groups as a function of record length.  
 Providing timeseries would directly serve many direct downstream applications as well as allowing specialist users to `back out' parameters in their own analysis framework as required and in isolation from the details of tools in use by the supplier.

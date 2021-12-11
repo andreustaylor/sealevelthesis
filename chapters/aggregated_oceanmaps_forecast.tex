@@ -103,7 +103,7 @@ While more real time observations in principle opens opportunities for assimilat
 \subsection{Motivation}
 This work is founded on the operational maturity of a global ocean forecast system (OceanMAPS) within a agency that also provides weather, tide and river forecasts.
 The demonstration of limited non-tidal sea level forecast skill in earlier versions of OceanMAPS \citep{Taylor:2010ud} motivated investigation of potential practical applications. 
-Liaison with forecastors and forecast-users lead to the current configuration; routine 7-day forecasts that can be directly evaluated against tide gauge observations.
+Liaison with forecasters and forecast-users lead to the current configuration; routine 7-day forecasts that can be directly evaluated against tide gauge observations.
 A~secondary motivation was to establish a performance benchmark against which new sea level forecast capabilities can be evaluated. 
 
 \subsection{Superposition}
@@ -122,7 +122,7 @@ There are some notable \textit{exclusions} from the current configuration.
 Spectral wave forecasts are available but not included on the basis that observation sites are located outside of surf zones (similar to  \citep{Tilburg:2004cg}).
 River levels or outflow forecasts are not available in suitable form or coverage. In contrast, sea~level forecasts are an input into hydrological models \citep{Taylor:2011ud}.  
 
-As the native time disctritisation of the input differ, each timeseries is projected onto a common 1-hourly format using an integral spline method.  
+As the native time discretization of the input differ, each timeseries is projected onto a common 1-hourly format using an integral spline method.  
 In the case of model inputs this is interpolation from 3-hourly averaged model outputs to 1-hourly.  
 For observations the same method provides a~down-sampling from from 1-min or 15-min samples to 1-hourly averages.  
 \begin{equation}
@@ -151,13 +151,13 @@ Gravitation tidal forces are intentionally \textit{not} included in OceanMAPS.
 
 
 Land run-off fresh water fluxes are only roughly approximated with a climatological annual cycle. 
-Australian rivers are typically dry for very long periods with intermittant flooding.   
+Australian rivers are typically dry for very long periods with intermittent flooding.   
 The climatological river input is only included for maintaining global mass balance and has essentially no skill for Australian river outflow impacts on sea level.    
 
 
 Initial conditions for the ocean state are constrained using an ensemble optimal interpolation data assimilation scheme \citep{Oke:2008wr} which ingests a large number and range of remote and in situ ocean observations. 
 Importantly for sea level, tide gauge observations are \textit{not} assimilated and are independent.   
-Satellite altimeter observations of sea level are assimilated, but not inshore of the shelf break; nominally cut off at the 200 m isobath.
+Satellite altimeter observations of sea level are assimilated, but not inshore of the shelf break; nominally cut off at the 200m isobath.
 
 
 Atmospheric fluxes, excluding barometric pressure, are applied directly from the global numerical weather prediction (NWP) system ACCESS-G \citep{BureauofMeterology:C8IaJ2Qq}.
@@ -176,7 +176,7 @@ $\eta_{SLA}$ is quantified relative to the model rest state, which nominally rep
 The regular spatial discretisation of OceanMAPS does not resolve features smaller than 10 km.   
 In addition, some nominally larger embayments have also been intentionally excluded such as Port Phillip Bay in South Eastern Australia.
 The Arakawa B-grid discretization imposes a numerical requirement to exclude 1-cell bays. 
-An minumum depth of three z-levels equivalent to 15 m is also imposed.
+An minimum depth of three z-levels equivalent to 15 m is also imposed.
 
 The representation of the coast is illustrated in Figure \ref{fig:map_masks}.
 
@@ -229,7 +229,7 @@ The subset time series is designated as a harmonic adjustment signal that is the
 Near real-time observations are available at an increasing number of tide gauge locations, and~intuitively serve as a source of guidance to users.
 Typical practice, though often not formalised, is~to~inspect recent tidal error (residual) evolution and project as a correction to tide tables into the near~future.
 
-Operational availability of this source of information is exploited in a generic and un-trained bias correction scheme. 
+Operational availability of this source of information is exploited in a generic and untrained bias correction scheme. 
 The bias term ($b$ in Equation (\ref{eq:aggSL})) is a constant added to each forecast.
 The value of $b$ is derived as a weighted mean of recent errors between observed sea level and previous forecasts between 0--24 lead times.
 The most recent value persists in the case of observation drop-outs and gaps.
@@ -346,7 +346,7 @@ In order to highlight the differentiation between dynamic forecast skill between
 Each `comet' contains a point for each 24~h period of the 7-day forecasts.
 Site number is located at the 1st day forecast point.
 Both the reference observations and forecasts have been de-tided using only the nominally gravitational tide signal described in Section \ref{sec:harmonics}.
-All statistics are centered and normalised relative to the reference observation value $\hat{h}_{OBS}$ as defined in Equation (\ref{eq:taylor}).
+All statistics are centred and normalised relative to the reference observation value $\hat{h}_{OBS}$ as defined in Equation (\ref{eq:taylor}).
 \begin{equation}
 \begin{split}
 \hat{h}_{OBS}(t) &= h_{OBS}(t) - (\eta_{T}(t) - \eta_{HA}(t))  \\ 
@@ -418,9 +418,9 @@ Following Equation (\ref {eq:aggSL}).  Where $\hat{h(t)}$ is sea level de-tided 
     Statistics are derived from filtered time series, not total sea level, and are normalised relative to the reference observations. (\textbf{a}) Indian; (\textbf{b}) Gulf of Carpentaria; (\textbf{c}) North West; (\textbf{d}) South West; (\textbf{e}) Great Aust Bight; (\textbf{f}) Bass Strait; (\textbf{g}) Tasmania; (\textbf{h}) South East; (\textbf{i}) East; (\textbf{j}) North East; (\textbf{k}) Torres Stait; (\textbf{l})~Tasman Sea. }
     \label{fig:taylors}
 \end{figure}   
-A notable feature of this visualisation is the de-correlation with forecast lead time.   
-This is expected behaviour of a skillful deterministic forecast model where errors grow due to explicit numerical approximation of chaotic dynamics. 
-Regional differences are apparent in degree of initial correlation and rate of de-correlation.
+A notable feature of this visualisation is the decorrelation with forecast lead time.   
+This is expected behaviour of a skilful deterministic forecast model where errors grow due to explicit numerical approximation of chaotic dynamics. 
+Regional differences are apparent in degree of initial correlation and rate of decorrelation.
 
 The under-prediction of variability in the `East' region (panel i) appears to reflect the noisy observational data streams from these 3rd party sites - such that the observation reference variability is inflated by communications glitches.
 
@@ -469,25 +469,25 @@ Figure \ref{fig:bias_mean} shows the correspondence between model MDT ($\eta_{sp
 \label{fig:bias_mean}
 \end{figure}   
 
-As the model MDT is known apriori, this correspondance supports the expectation that it is a~good first guess of the bias term.
+As the model MDT is known apriori, this correspondence supports the expectation that it is a~good first guess of the bias term.
 
 Several sites deviate from this alignment by more than a fixed arbitrary threshold of 10 cm, and~these are distributed across the domain.
 % This simple metric does not account for the wide range of signal variance around the coast. 
-A large deviation indicates that the bias correction term systematically adjusted for information not available in the modeling systems alone.  
+A large deviation indicates that the bias correction term systematically adjusted for information not available in the modelling systems alone.  
 
 
-Site 46 is an esturine location where observations are strongly effected by surrounding sand sediment. The bias term at this location is partially adjusting to the asymmtery of the choked tidal~signal. 
+Site 46 is an esturine location where observations are strongly effected by surrounding sand sediment. The bias term at this location is partially adjusting to the asymmetry of the choked tidal~signal. 
 
 
 Model sources of bias are feasible and likely.
 However, of special note is the possibility of datum metadata mismatch between the available real-time observation data stream and the standard tide predictions. 
 Site 43 is an example of a 3rd party datastream with such~a~mismatch. 
 
-This is a symptom of organisational rather than modeling factors.   
+This is a symptom of organisational rather than modelling factors.   
 Australian tide gauges are owned and operated by different bodies under a variety of data sharing arrangements.
 Consistent metadata management from these diverse agencies remains problematic, despite being a nominally simple matter.
 
-Tide predictions in Australia are reported relative to `prediction datum' which \textit{typically} aligns with the promalgated lowest astronomical tide (LAT) value.   
+Tide predictions in Australia are reported relative to `prediction datum' which \textit{typically} aligns with the promulgated lowest astronomical tide (LAT) value.   
 From time to time either the value for LAT or the alignment of prediction datum may be updated.  
 % Real-time observations may have become available within the operational centre for reasons other than tide monitoring; in particular when such data is collated with river flood warning information.  
 While overall the real-time data is expected to be reported relative to either instrument zero, Australian Height Datum (AHD) or tidal prediction datum, operational systems avaiable at the time of writing cannot reliably manage these differences.
@@ -546,5 +546,5 @@ On the other hand, NWP forecasts currently cover out to 10-days lead time. The o
 
 Uncertainty information can already be roughly indicated by means of presenting overlaid sequential forecasts as in Figure \ref{fig:fc_eg}.
 Optimal treatment of the lagged ensemble and communicating error growth to users is an outstanding need.
-Developments in ensemble NWP systems within the operational center are expected to provide additional sampling of uncertainty and enable further development of this important aspect of sea level forecasts.  
+Developments in ensemble NWP systems within the operational centre are expected to provide additional sampling of uncertainty and enable further development of this important aspect of sea level forecasts.  
 
