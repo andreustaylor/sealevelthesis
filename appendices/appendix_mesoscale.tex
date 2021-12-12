@@ -1,7 +1,7 @@
 \chapter{More on global and modelled tides}
 \label{appendix:globalTides}
 \section{Global tide model details}
-Following chapter \ref{sec:spatialTides}, the Laplace Tidal Equations (LTE) evolve a simple 3 dimensional ocean state consisting of horizontal mass transport and sea level perturbation. In time domain, the LTE can be written following the notation and discussion of \cite[pp185]{Egbert:2002ug}:
+Following chapter \ref{sec:spatialTides}, the Laplace Tidal Equations (LTE) evolve a simple 3 dimensional ocean state consisting of horizontal mass transport and sea level perturbation. In the time domain, the LTE can be written following the notation and discussion of \cite[pp185]{Egbert:2002ug}:
 %----------------------
 % LTE in time-domain
 \begin{align}
@@ -18,7 +18,7 @@ An approximation for SAL is here written as a separate forcing term to reflect t
 Alternatively $\eta_{SAL}$ can be put on the left hand side of the equation as a scaled version of $\eta$ - as is the case in \MOM{}.   
 This scalar approximation is relatively inaccurate as discussed in section \ref{sec:basic_potential}.\\
 The frictional dissipation term $F$ is a particular source of complexity, especially with regard to parameterisation and linearisation.
-Compared to the dynamics represented within an \OGCM{}, these tidal hydrodynamics simulate a more `aggregated' psuedofluid in that the processes contained within parameterisations are have a higher degree of complexity - as per the schematic in Figure \ref{fig:ogcmScales}
+Compared to the dynamics represented within an \OGCM{}, these tidal hydrodynamics simulate a more `aggregated' pseudofluid in that the processes contained within parameterisations that have a higher degree of complexity - as per the schematic in Figure \ref{fig:ogcmScales}
 \begin{quotation}
 Forward global tide models are an ideal testing ground for the hydrodynamical cores of numerical ocean general circulation models, and for ideas about drag and dissipation. In contrast to data-constrained models, forward models cannot achieve accurate tidal elevations unless substantial parameterised drag is included in the abyss. Forward models thus point clearly to drag in the open ocean as a central control on tidal flow.\citep{Arbic:2004wz}
 \end{quotation} 
@@ -53,9 +53,9 @@ Summaries that categorise the many global tide models on the basis of design cho
 %-----------------%
 \section{Implementation of tidal forcing in \OGCM{}s }
 %\label{S:numerical_impl}
-The motivations for explicitly representing tides within an \OGCM{} where introduced in section \ref{sec:mesoscaleOperational}
+The motivations for explicitly representing tides within an \OGCM{} where introduced in section \ref{sec:mesoscaleOperational}. 
 The astronomical tidal forcing can be conceptualised as a relatively smooth global surface field that varies in time. 
-Subsequently, perhaps the most significant design choice for numerical implementation regards how to formulated the time variation of this field.
+Subsequently, perhaps the most significant design choice for numerical implementation is with regards to the formulation of the time variation of this field.
 At face value, the \emph{direct formulation} provides the most unmediated and accurate representation of $\eta_{eq}$. Given spherical harmonics $(n,m) \in (2,0) , (2,1) , (2,2)$, the full global tidal forcing can be pre-computed $c_{nm}(t)$ as 6 real valued time series and simple trigonometric functions of location.
 This approach has the advantage of accurately representing the \ATGP{} and facilitates incorporation of best-practice pre-computed SAL corrections \citep{Egbert:2002ug}. 
 Furthermore, this approach could offer consistent numerical formulation with other barotropic forcing fields.
@@ -79,7 +79,7 @@ After the specification of a small number of constants, the temporal variation c
 For relatively short simulations ($\ll$ 1 year), the nodal corrections are reasonably treated as fixed.   This situation is amenable to de-bugging and has no external dependencies.
 It is also a relevant consideration that assessment of tidal output is conventionally based on harmonic fits to these same primary constituents.
 
-Arbic et al \citep{Arbic:2010us}, apply body forcing using the temporal harmonic representation. In what appears to be common approach the authors describe developing their implementation via a progressive addition of temporal harmonics: no tides, M2-only, 8 primary constituents.  Treating M2 separately facilitates interpretation and comparison to other literature; including theoretical developments of single frequencies and tidal atlases.
+\citet{Arbic:2010us} applies body forcing using the temporal harmonic representation. In what appears to be common approach the authors describe developing their implementation via a progressive addition of temporal harmonics: no tides, M2-only, 8 primary constituents.  Treating M2 separately facilitates interpretation and comparison to other literature; including theoretical developments of single frequencies and tidal atlases.
 
 
 %MOM

@@ -261,7 +261,7 @@ It is notable that long period signals in Australian sea level studies have alwa
         \includegraphics[width=\textwidth]{figures/maps/AustRegionDiff_S1.pdf}
         \caption{S1}
     \end{subfigure}
-    \caption{Fraction of tidal amplitude attributed to wind and pressure effects}
+    \caption{Fractional ratio of tidal amplitude attributed to wind and pressure effects}
     {Data from supplementary material provided by \citet{10.5194/os-2020-107}, based only on amplitude and ignoring magnitudes $<1$cm.  As a starting estimate, the observational-based standard analysis of these constituents could be categorised as primarily non-astronomical.}
     \label{fig:williamsFraction}
 \end{figure}
@@ -301,15 +301,15 @@ For these evaluations no bias correction was applied and sample means over appro
 The final problem to motivate the proposed split of tidal data service types is the manner in which tidal parameters vary historically with each annual update.
 Australian tidal agencies do not systematically publish the parameters associated with the annual tidal production cycle; expect for the subset of constituent values at select sites that are supplied with the nautical publications \citep{austides}.  The following evaluation is believed to be the first account of the temporal evolution of parameters behind these official predictions.  
 
-Conventional tidal parlance reflects an effective aim for the annual analysis that is to better identify a time-invariant admittance relationship characterised by a set of constants; constants that ideally wouldn't change if only we knew them well enough. Flinchem characterises this as old clockwork and  line-spectrum framework \citep{Flinchem:2000kp}. 
+Conventional tidal parlance reflects an effective aim for the annual analysis that is to better identify a time-invariant admittance relationship characterised by a set of constants; constants that ideally wouldn't change if only we knew them well enough. \citet{Flinchem:2000kp} characterises this as old clockwork and  line-spectrum framework. 
 
-In contrast, Colosi and Munk assert that ``\textit{variability in the values of tidal `constants' should be the rule rather than the exception!}'' \citep{Colosi:2006va}
+In contrast, \citet{Colosi:2006va} assert that ``\textit{variability in the values of tidal `constants' should be the rule rather than the exception!}'' 
 The expectation of temporal instability for tidal constants has recently been further elaborated by  \citet{10.1029/2018rg000636} and \citet{10.1002/2017jc013165} amongst others.    This reasonable characterisation obviously presents some level of conceptual incompatibility with standard practice.
 
 Inspection of annual changes across the archive of analysis parameters first and foremost highlights the wide range of sources and heterogeneous inputs managed to produce tide tables - as characterised in Figure \ref{fig:tidePractice}.    Whilst the ability to derive value from such a range is a great strength of conventional practice, the resulting predictions  should be accompanied by rankable quality measures as proposed in Section \ref{Sec:proposed}.
 The evolution of tidal parameters across the archive is addressed below in two parts relevant to a prospective automated tidal data service:  updates to nominally weather-dominated harmonics and then updates to the separation of MSL from prediction datum.
 
-Of all the sites on the archive, only a subset are based on tide gauges stations that are both in operation and supplying data to the agency for analysis. When new observations are available the annual analysis typically extends the length of record analysed.   The analysis of a continually accumulating record is consistent with the aim of better fitting a set of constants; but is in contrast to studies specifically investigating non-stationary tidal evolution such as Devin \citep{10.1002/2017jc013165}.
+Of all the sites on the archive, only a subset are based on tide gauges stations that are both in operation and supplying data to the agency for analysis. When new observations are available the annual analysis typically extends the length of record analysed.   The analysis of a continually accumulating record is consistent with the aim of better fitting a set of constants; but is in contrast to studies specifically investigating non-stationary tidal evolution such as \citet{10.1002/2017jc013165}.
 As an indication of how actively updated tidal parameters actually are, the full set of well over 600 tidal locations was reduced to around 130 that had any change to the 5 significant figures attributed to M2 amplitude since 2011 - as shown by the reduction in sites between Figures \ref{fig:SaAmp} and \ref{fig:SaPha}.
 
 
@@ -436,8 +436,8 @@ changes in this offset across all Australian primary and secondary ports relativ
 
 \begin{figure}[!hbt] \centering
     \includegraphics[width=\figwidthFull]{figures/plots/Z0_evolution.pdf}
-        \caption{Evolution of zero frequency levels used for annual tide predictions at primary and secondary ports.}
-        {Changes are shown relative to arbitrary zero year of 2011. Variations reflect the heterogeneity of sources and potential for offset discontinuities with on-demand data delivery}
+        \caption{Evolution of zero frequency levels used for annual tide predictions at Australian primary and secondary ports. }
+        {Each line represents a single station and traces the change in zero frequency level values relative to arbitrary zero year of 2011. More discontinuous updates are apparent for predictions in the early period and for secondary ports; reflecting the heterogeneity of sources and potential for offset discontinuities with on-demand data delivery.  The vertical scale of the second panel is intentionally clipped to match that of the primary ports.}
     \label{fig:z0Evolution}
 \end{figure}   
 
@@ -445,12 +445,12 @@ changes in this offset across all Australian primary and secondary ports relativ
 The annual update to official parameters is undertaken with the specific goal of improving stand-alone water level predictions for the year ahead.  It should come as no surprise that this practice may introduce discontinuities when looking back over historical predictions.
 But looking back at official data is exactly what some users of an automated data service may require and it is important that there is no confusion about what data is being supplied.
 Compare this to an application where the aim is simply to estimate the tidal water level variability component  for a historical period regardless of what was official or available at the time.
-Figure \ref{fig:tideHistoryTs} illustrates the difference for the case of  \Dname{}.  The evolving long period characteristics of the official annual updates can be compared to panel [c] in Figure \ref{fig:complexEvolution} recalling that these operational values represent a growing input record and a independent observations such in the studies of Devin \citep{10.1002/2017jc013165}. 
+Figure \ref{fig:tideHistoryTs} illustrates the difference for the case of  \Dname{}.  The evolving long period characteristics of the official annual updates can be compared to panel [c] in Figure \ref{fig:complexEvolution} recalling that these operational values represent a growing input record and an independent observations such in the studies of \citet{10.1002/2017jc013165}. 
 
 \begin{figure}[!hbt] \centering
     \includegraphics[width=\figwidthFull]{figures/plots/piecewiseTide_62430.pdf}
-        \caption{Contrast between concatenated standard predictions and a hindcast.}
-        {Site \Dname{}. The hindcast shown is based on the approximate ``weather-free'' tidal parameters.  Note the intentional discontinuities in official predictions associated with annual updates and growing input record length.}
+        \caption{Contrast between concatenated standard predictions and an alternative physical hindcast.}
+        {Illustrated by hourly tide prediction variants for \Dname{}. The left panel overlays standard and physical variants across the period 2008 to 2023, and shows the houlr differnce timeseries in green. The hindcast shown is based on the approximate ``weather-free'' tidal parameters.  In addition to the constant offset, intentional discontinuities are apparent in official predictions associated with annual updates and growing input record length.  The right planel compares the same two multi-year timeseries as a scatter of contemperanous hourly samples; both axes show prediciton heights in metres.}
     \label{fig:tideHistoryTs}
 \end{figure}   
 
@@ -464,7 +464,7 @@ Adding any complexity to operational systems is generally undesirable and a good
     \item isolate users from details of backend software 
     \item distinguish a physical tide estimate from standard predictions
     \item allow for differentiation between forecasts, hindcasts and analyses
-    \item explicate reference datum and MSL change components
+    \item visibility of reference datum and MSL change components
     \item provide rankable quality measures
 \end{itemize}
 
@@ -547,7 +547,7 @@ Uniformity of format is not the same as uniformity of quality, but without appro
 Australian systems currently have effectively only two quality categories: `primary' and `secondary' \citep{austides} that are sometimes also designated `standard' and `subordinate'  \citep{PCTMSL-sp9}.   
 It is also common to see unofficial tide predictions clearly marked as ``not for navigation'' to indicate a status other than official.
 This binary classification is not sufficient for many applications and it is asserted that the major deficiency is the lack of ability to rank by quality.   There are several dimensions by which synthesized tidal timeseries could be assigned rankable quality measures.    
-The analysed observational record length is at least one practical candidate and specifically highlighted by \citeauthor{MHL2156}. But the bespoke analysis process, for instance involving inference or moved stations \citep{godin:1972}), can render record length more ambiguous than at first may be apparent.    
+The analysed observational record length is at least one practical candidate and specifically highlighted by \citet{MHL2156}. But the bespoke analysis process, for instance involving inference or moved stations \citep{godin:1972}), can render record length more ambiguous than at first may be apparent.    
 Related to record length is the candidate measure of extrapolation time, to quantify the time period prior-to or after the analysed observational record.     
 A quality measure that reflects skill relative to an independent period of water level observations could also provide useful guidance to users of the data.    In contrast, any measure derived directly from the tidal analysis itself (inversion) would require care to avoid over-fitting and the type of circular reference described by  \citeauthor{Thompson2019}. 
 
@@ -558,7 +558,7 @@ The absence of rankable quality measures left \citeauthor{10.5194/os-2020-107} t
 \label{Sec:Discussion}
 This article has put the case that an appropriate clarification of tidal data types and aims will enable a conventional tide prediction service to better compliment a range of modern applications; and that such a change could be relatively incremental and feasible with existing technology. 
 There is of course a very long history of proposals for refinements or up-ending of tide prediction techniques \citep{Cartwright:2000tt}\citep{Jay:2003bj}, but this is in contrast a proposal for an incremental shift in thinking for an established and valuable \textit{service}.
-The magnitude of the signals and discontinuities are overall rather small at only $\sim10-20cm$.   But scales like this are worth some attention when considering the operational role for forewarning of nuisance flooding \citep{Devlin:2017hu}\citep{10.1071/es19024} and in potentially in complimenting future remote observation platforms \footnote{\url{auswot.org}} and coastal forecasting \citep{10.3389/fmars.2019.00437}.
+The magnitude of the signals and discontinuities are overall rather small at only $\sim10-20cm$.   But scales like this are worth some attention when considering the operational role for forewarning of nuisance flooding \citep{Devlin:2017hu,10.1071/es19024} and potentially in complimenting future remote observation platforms \footnote{\url{auswot.org}} and coastal forecasting \citep{10.3389/fmars.2019.00437}.
 
 This proposal has intentionally not promoted the promulgation of tidal analysis parameters and has instead focused on the value of timeseries.   Whilst the publication of parameters would of itself be desirable in terms of transparency, these are less likely to directly deliver the value required by downstream applications.    Most simply because the interpretation and application of tidal constants requires consistency between the analysis and synthesis software. Consider for instance the inconsistent designation of \textbf{Sa} to Doodson numbers \texttt{[0 0 1 0 0 0]} and \texttt{[0 0 1 0 0 ‐1]} between tools \citep{PCTMSL-sp9}.  Let alone the manner in which energy is variously projected onto named constituent groups as a function of record length.  
 Providing timeseries would directly serve many direct downstream applications as well as allowing specialist users to `back out' parameters in their own analysis framework as required and in isolation from the details of tools in use by the supplier.
