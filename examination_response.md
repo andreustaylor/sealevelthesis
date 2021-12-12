@@ -8,11 +8,11 @@
 4. ~~obtain references mentioned by reviewers~~
 5. ~~fix listed spelling/typos~~
 6. ~~fix cite format problem~~
-7. digest new references
+7. ~~digest new references~~
 8. ~~add new references to bib~~
-7. re-write and extend sections where required
+7. ~~re-write and extend sections where required~~
 8. spellcheck very well
-9. update the change table
+9. ~~update the change table~~
 10.  update panel
 11.  re-submit
 
