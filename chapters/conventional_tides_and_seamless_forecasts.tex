@@ -196,30 +196,30 @@ As an example of the practical implications of such compatibility, consider the 
 \begin{figure}[!hbt] \centering
     \begin{subfigure}[b]{\figwidthHalf}
         \includegraphics[trim={0 0 0 1cm},clip,width=\textwidth]{figures/maps/otpsPortCompare_Improve2020_105_diffRmse.pdf}
-        \caption{Improvement metric due to all exclusions}
+        \caption{Metric $I$ evaluated for variant excluding nominally weather dominated consituents.}
     \end{subfigure}
     \begin{subfigure}[b]{\figwidthHalf}
         \includegraphics[trim={0 0 0 1cm},clip,width=\textwidth]{figures/maps/otpsPortCompare_Improve2020_205_diffRmse.pdf}
-        \caption{Same for \textbf{Mf} alone - note scale}
+        \caption{Same as (a) for variant excluding \textbf{Mf} alone - note scale}
     \end{subfigure}
     \\
     \begin{subfigure}[b]{\figwidthThird}
         \includegraphics[width=\textwidth]{figures/plots/compareTides_\Fa_Full2020.pdf} 
-        \caption{\Fname{} comparing standard tides to TPXO}
+        \caption{Timeseries scatter at \Fname{} comparing 1 year of hourly standard tide predictions to TPXO}
     \end{subfigure}
     \hfill{}
     \begin{subfigure}[b]{\figwidthThird}
         \includegraphics[width=\textwidth]{figures/plots/compareTides_\Fa_2020_201.pdf} 
-        \caption{\Fname{} excluding only annual \textbf{Sa}}
+        \caption{Same as (c) for insitu prediction variant excluding only the annual cycle constituent \textbf{Sa}}
     \end{subfigure}
     \hfill{}
     \begin{subfigure}[b]{\figwidthThird}
         \includegraphics[width=\textwidth]{figures/plots/compareTides_\Fa_2020_105.pdf} 
-        \caption{\Fname{} excluding all constituents discussed}
+        \caption{Same as (c) for case excluding all nominally weather dominated constituents}
     \end{subfigure}
     
-    \caption{Representational agreement between global tide model and port tides}
-    {Consistency between TPXO tide model and 'official' port tides is improved by total removal of weather dominated constituents from the later.   Predictions relative to MSL.  Metric is unitless - see Figure \ref{fig:SaAmp} for \textbf{Sa} amplitudes.}
+    \caption{Representational agreement between global tide model and port tides evaluated on hourly predictions for the year 2020.}
+    {Panels a-b show unitless metric $I$ evaluated for two port prediction variants;  consistency between TPXO tide model and 'official' port tides is improved by total removal of weather dominated constituents from the later.  Panels c-e illustrate underlying data for the single location of \Fname{} by presenting scatter comparison of predicted heights relative to MSL for selected port prediction varients.  See Figure \ref{fig:SaAmp} for \textbf{Sa} amplitudes.}
     \label{fig:improveOtps}
 \end{figure}   
 
