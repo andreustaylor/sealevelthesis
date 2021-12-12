@@ -5,11 +5,11 @@
 2. ~~digest feedback~~
 3. ~~initial summary of revision requirements in unimelb standard table format (below)~~
 * ~~update panel~~ *
-4. obtain references mentioned by reviewers
-5. fix listed spelling/typos
-6. fix cite format problem
+4. ~~obtain references mentioned by reviewers~~
+5. ~~fix listed spelling/typos~~
+6. ~~fix cite format problem~~
 7. digest new references
-8. add new references to bib
+8. ~~add new references to bib~~
 7. re-write and extend sections where required
 8. spellcheck very well
 9. update the change table
@@ -23,25 +23,20 @@ Table for reporting responses to reviewers comments
 
 Examiners comment                                                 | Student’s response         | Change made to thesis (if any)   | Page reference
 ------------------------------------------------------------------|----------------------------|----------------------------------|---------------
-various spelling, grammar and typographic  errors                          | apologies to examiners     | spell checker and address list   | throughout
+various spelling, grammar and typographic  errors                 | apologies to examiners     | spell checker and address list   | throughout
 citation formats from latex, repeated names                       | review latex               | update latex and check           | throughout
+Clarify orthoganility - including Rayleigh                        | agree this important topic was underdone | re-wording, additional descriptive and references | mainly around pp21-pp28
 definitions table                                                 | -                          | add entries                      | intro
-acronym ATGF/ATPF                                                 | agree                      | fix                              | ~pp53
+acronym errors ATGF/ATPF                                          | agree                      | fix                              | ~pp53
 Proudman history names                                            | review history             | confirm and correct LTI, POL     | pp91
-Equation supporting text                                          | agree                      | added guide text                 | Eq 5.1
-Figure labels and support text                                    | agree                      | modify labels   | Fig 5.4, 5.9, 5.10
-Clarify wording around  proposal                                  |          || section 5.5  
-------------------------------------------------------------------|----------------------------|----------------------------------|---------------
-Clarify orthoganility - including Rayleigh                        | tbc | tbc | pp21 (pp28more?)
-Nonstationarity - overtides, secular.  future steps at least      | tbc | tbc | chpt 5 
-Clarify international relevance and importance                    | tbc | tbc | Chp5 and 6 
-Instruments, stilling well as filter, lidar                      | tbc | tbc | pp5
-"Never pins down a definition"                                    | fair point | tbc | pp14
-legacl uses - cadastre refs    | note US and mention Aus cases  | add refs NSW MHWM,NT blue water, etc | Sec 5.1.3
-assertions: relevance                | a | a |a
-overtides as nonstationary | a | a | a
-secular change scale and drives | a | a | ~pp100
-International methods - NOAA                                       |a    | a|a 
+Equation supporting text                                          | agree - original was poor  | added guide text                 | Eq 5.1
+Figure labels and support text                                    | agree - original was poor    | modify labels   | Fig 5.4, 5.9, 5.10
+Clarify wording around "proposal"                                 | agree                        | re-phrase several statements | section 5.5  
+Instruments, stilling well as filter, lidar                       | fair points | additional refernces and comments | around pp5
+History and "never pins down a definition"                        | fair points, Reidy history suggestion was a very good idea | re-worded with expanded history comments | around pp14
+Several comments on nonstationarity                               | all fair   | re-worded some parts with addtional references  | chpt 2 and 5 
+Legal uses - cadastre                                            | agree, looked into US references but reluctant to divert too far from core Australian focus | re-worded and added references to extra Australian uses | Sec 5.5
+More on international relevance                                 | international cross-comparison would be great but again reluctant to divert too far from core Australian focus | Re-worded some phrases and included additional references to USA comparitive institutions in partiular | Chp1 and 5 
 
 
 ## Andy's working playback and summary
