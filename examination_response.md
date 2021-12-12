@@ -23,12 +23,13 @@ Table for reporting responses to reviewers comments
 
 Examiners comment                                                 | Student’s response         | Change made to thesis (if any)   | Page reference
 ------------------------------------------------------------------|----------------------------|----------------------------------|---------------
-various spelling errors                                           | apologies to examiners     | spell checker and address list   | throughout
-citation format, repeated names                                   | review latex               | update latex and check           | throughout
-check acronym ATGF                                                | agree                      |                                  | ~pp53
-Proudman history names                                            | review history             |                                  | pp91
-Equation supporting text                                          | agree   || Eq 5.1
-Figure labels and support text                                    | agree    || Fig 5.4, 5.9, 5.10
+various spelling, grammar and typographic  errors                          | apologies to examiners     | spell checker and address list   | throughout
+citation formats from latex, repeated names                       | review latex               | update latex and check           | throughout
+definitions table                                                 | -                          | add entries                      | intro
+acronym ATGF/ATPF                                                 | agree                      | fix                              | ~pp53
+Proudman history names                                            | review history             | confirm and correct LTI, POL     | pp91
+Equation supporting text                                          | agree                      | added guide text                 | Eq 5.1
+Figure labels and support text                                    | agree                      | modify labels   | Fig 5.4, 5.9, 5.10
 Clarify wording around  proposal                                  |          || section 5.5  
 ------------------------------------------------------------------|----------------------------|----------------------------------|---------------
 Clarify orthoganility - including Rayleigh                        | tbc | tbc | pp21 (pp28more?)
