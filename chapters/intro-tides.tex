@@ -380,14 +380,11 @@ The harmonic idealisation effectively operates on infinite basis functions where
 Given the close clustering of tidal lines in frequency-space, equation \ref{E:Axb} is poorly conditioned for inversion.   This matrix condition is further degraded by the presence of non-tidal variations. 
 Subsequently, practical harmonic analysis procedures must specify which frequencies to include in the basis set and then somehow account for the effects of unresolved frequencies.
 
-The canonical selection concept is known as the ``Rayleigh criterion'' for assessing frequency separability on the basis of frequency and time period alone.  Two basis functions are considered separable only if the number of cycles expressed over the sample period differs by at least one (or a specified portion of a cycle). \citet[section 2.1.2]{Foreman:1977us} details a decision tree process that applies this test successively to pairs of constituents in an order configured in light of the relative magnitudes of the equilibrium tide ($H_{nmk}$ in Equation \ref{E:harmonic}).
+The canonical selection concept is known as the ``Rayleigh criterion'' for assessing frequency separability on the basis of frequency and time period alone.  Two basis functions are considered separable only if the number of cycles expressed over the sample period differs by at least one (or a specified portion of a cycle). \citet[section 2.1.2]{Foreman:1977us} details a decision tree process that applies this test successively to pairs of constituents in an order configured in light of the relative magnitudes of the abstract equilibrium tide ($H_{nmk}$ in Equation \ref{E:harmonic}).
 
+Rayleigh-based constituent selection is a very blunt tool that does not account in anyway for the role of "noise" in the inversion. \citet{Foreman:2009bg} describes an updated approach to tidal analysis that do address questions of signal to noise by targeting the matrix condition number directly, but thereby losing the convenience of an automated decision tree.  The methods described by \citet{Matte:2012df} also address the importance of non-stationarity and noise by an extension of the Rayleigh concept to account for spectral cusps.
 
-The
-\citet{Matte:2012df}
-
-
-At the time of writing the Bureau of Meteorology process does not systematically account for the inversion quality with regard to signal:noise ratios as suggested by \citet{Foreman:2009bg}.
+At the time of writing the Bureau of Meteorology operational process does not systematically account for inversion quality or signal to noise ratios in constituent selection. 
 This fact contributes to the potential for overfitting or projection of non-tidal signal onto standard tide predictions that are relevant to later chapters \ref{chp:aggregate} and \ref{chp:tideFlavours}.
 
 
