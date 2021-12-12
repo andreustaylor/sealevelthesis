@@ -143,14 +143,8 @@ It is this harmonic decomposition of the \ATGP{} that leads to the conventional 
 The index $k$ represents a discrete series of tidal components; potentially expanded out to hundreds of terms.  Each component is associated with a discrete point in complex frequency-space with amplitude $H$ and angular argument $\theta_{nmk}$.   For the relevant celestial bodies this argument can further decomposed to time variations at a fixed frequency $\omega$ relative to a reference phase $\beta$.  
 
 Despite a common misconception, it is important to emphasise that equation \ref{E:harmonic} does not represent a Fourier series.  The finite sequence of frequencies $\omega_{nmk}$ are derived from the relative motions of the earth-moon-sun system in contrast to any content-independent mathematical approach. 
-%% Review comment
-%% extra here about orthoganal & re etc
-do not provide either an orthogonal set of sinusoids nor a complete basis.
-Whilst not an orthogonal set, the harmonic decomposition does provide a special list of frequencies that can be ranked by the scalar magnitudes $H_{nmk}$. 
-
-
-%%
-
+%% Review response about orthoganility - part here
+The components do not in general provide either an orthogonal set of sinusoids nor a complete basis (compare \citep{Briggs_1995}).   The relevance of finite record length and constituent selection is described further below, but for present discussion it is noteworthy that the harmonic decomposition \textit{does} provide a special list of frequencies that can be ranked by the scalar magnitudes $H_{nmk}$. 
 
 \citet{Doodson:1921kt} introduced a novel and influential system of notation for specifying $\theta_{nmk}$ based on a laborious harmonic decomposition of $V_T$ using Brown's lunar theory; that is, a polynomial model for the lunar ephemeris.  
 In the Doodson formulation, all the relevant astronomical information is summarised by code of 6 small integers; together called the Doodson number or argument numbers.   Each position in the code is associated with an fundamental astronomical concept as summarised in Table \ref{T:doodson}.  Doodson codes are in common use across the tidal literature and provide the only useful means of describing tidal components beyond the small number associated with traditional Darwin names such as M2, K1, O1, S2.
@@ -332,9 +326,9 @@ The conventional harmonic tide representation of a timeseries is given in equati
     \eta_{tide}(t) = \sum_{k} f_k A_k \cos ( t.\omega_k + g_k + u_k)
     \label{eq:cos}
 \end{equation}
-Where $\eta_{tide}$ is the time varying tidal signal, $A_k$ and $\omega_k$ are the nominal tidal amplitude and frequency, $g_k$ is a reference phase argument (dependant on the ephemeris epoch) and conventional adjustments $f_k$ and $u_k$ to account for finite record length and are discussed below. 
+Where $\eta_{tide}$ is the time varying tidal signal, $A_k$ and $\omega_k$ are the nominal tidal amplitude and frequency, $g_k$ is a reference phase argument (dependent on the ephemeris epoch) and conventional adjustments $f_k$ and $u_k$ to account for finite record length and are discussed below. 
 %---------------------
-Significantly, the harmonics involved with such an analysis can only ever be a subset of tidal frequencies arising from the decomposition $c(t) = \sum_{k} H_{k} e^{-i( t\theta_{k})}$.  This limitation comes mainly from the non-orthogonality of the basis functions and the fact that all observational records are of finite length.
+Significantly, the harmonics involved with such an analysis can only ever be a subset of tidal frequencies arising from the decomposition $c(t) = \sum_{k} H_{k} e^{-i( t\theta_{k})}$.  This limitation results from the general non-orthogonality of the basis functions over finite length observational records.
 Conventional tide practice applies a range of elaborations and work-arounds in order to select the set of analysed components and produce predictions.  
 Before discussing any further, the essential steps of the harmonic analysis and prediction process are  illustrated schematically in Figure \ref{fig:tidePractice} and summarised as follows:
 \begin{enumerate}
@@ -352,7 +346,7 @@ For almost all ocean-exposed locations, harmonic analysis can reduce the majorit
 
 The standout power of some tidal variations is apparent in the spectra shown in Figure \ref{fig:obsSpectraEg}. 
 But conventional practice has developed additional terms that are not directly apparent in the \ATGP{} that have in some locations greatly improved the value of the resulting predictions; in particular for what are called the compound, shallow water or overtide terms. In this case, hydrodynamic reasoning has been applied to select and justify additional terms that could result from the behaviour of depth limited waves and wave-wave interactions.
-Any seasonal modulation terms are analogous in the sense that the rational for the LTI model has been extended to account for observed patterns rather than derived solely from the \ATGP{}.
+Any seasonal modulation terms are analogous in the sense that the rationale for the LTI model has been extended to account for observed patterns rather than derived solely from the \ATGP{}.
 %----------------------
 \begin{figure}[!hbt] \centering
 	\begin{subfigure}[t]{\figwidthHalf}
@@ -376,8 +370,8 @@ Harmonic analysis can be formulated as an over-determined inverse problem:
 \end{equation}
 %--------------------
 Where $\M{A}$ is a matrix of tidal timeseries basis functions, $\V{x}$ is the analysed tidal solution and $\V{b}$ is an observational record. The tidal basis functions that comprise $\M{A}$ are developed from the combination of the harmonic decomposition of $\eta_{eq}$ and a series of conventions.  
-%% Review comment on ortho
-The resulting basis is neither orthogonal nor complete. Inclusion of the modulation terms $f_k$ and $u_k$, discussed below, means that the basis functions are not actually sinusoids. The core assumption of stationarity for the finite series of basis functions is equivalent to an assumption that the basis has infinite span in time.   
+%% More review comment on ortho in section below
+The resulting basis is in general neither orthogonal nor complete. Inclusion of the modulation terms $f_k$ and $u_k$, discussed below, means that the basis functions are not actually sinusoids. The core assumption of stationarity for the finite series of basis functions is equivalent to an assumption that the basis has infinite span in time.   
 
 Practical applications of the harmonic formalism has largely evolved prior to modern cheap computing, and many details can appear somewhat baroque in isolation.  The analogue instruments shown in Figure \ref{fig:tide_machines} serve to highlight this operational history.
 
@@ -385,6 +379,13 @@ Practical applications of the harmonic formalism has largely evolved prior to mo
 The harmonic idealisation effectively operates on infinite basis functions whereas any observational record is of finite length.
 Given the close clustering of tidal lines in frequency-space, equation \ref{E:Axb} is poorly conditioned for inversion.   This matrix condition is further degraded by the presence of non-tidal variations. 
 Subsequently, practical harmonic analysis procedures must specify which frequencies to include in the basis set and then somehow account for the effects of unresolved frequencies.
+
+The canonical selection concept is known as the ``Rayleigh criterion'' for assessing frequency separability on the basis of frequency and time period alone.  Two basis functions are considered separable only if the number of cycles expressed over the sample period differs by at least one (or a specified portion of a cycle). \citet[section 2.1.2]{Foreman:1977us} details a decision tree process that applies this test successively to pairs of constituents in an order configured in light of the relative magnitudes of the equilibrium tide ($H_{nmk}$ in Equation \ref{E:harmonic}).
+
+
+The
+\citet{Matte:2012df}
+
 
 At the time of writing the Bureau of Meteorology process does not systematically account for the inversion quality with regard to signal:noise ratios as suggested by \citet{Foreman:2009bg}.
 This fact contributes to the potential for overfitting or projection of non-tidal signal onto standard tide predictions that are relevant to later chapters \ref{chp:aggregate} and \ref{chp:tideFlavours}.
