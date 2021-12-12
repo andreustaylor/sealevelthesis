@@ -508,6 +508,10 @@ serve an important but different role.
 \label{Sec:flavour1}
 Standard tide predictions have an official legal status both directly for navigation purposes and indirectly for some other applications.   
 For instance the Australian Navigation Act \citep{AusNavAct2012} details a requirement for vessels to carry nautical publications, and specifically tide tables, from the official charting authority.  Charted depths are defined relative to a datum generally aligned with the Lowest Astronomical Tide value derived from synthesised official tidal timeseries over a fixed period \citep{PCTMSL-sp9}.
+
+% reviewer input on legal
+Official tide predictions are not \textit{directly} connected to cadastral definitions in Australia, but may often play an indirect role in the determination of boundary references such as `mean high water mark' \citep{NSW_spatial2012} or the `intertidal zone' \citep{BlueMud_2017}.
+
 %Official predictions are forecasts that aim to represent the total still-water level under average conditions. ``\textit{As predictions are given for average meteorological conditions it follows that when conditions are not average the actual tides may differ from those predicted.}''\citep{austides}
 Official predictions traditionally cover a fixed validity period of one year and are issued on an annual update cycle well in advance; for instance the 2022 predictions may be issued in late 2020.  An on-demand data service should allow users to access these predictions at arbitrary timestamps within the validity period, and conventional needs such as high and low waters just represent a special timeseries subset.
 As described in section \ref{Sec:Evolution}, discontinuities should be expected between these annual official predictions. 
@@ -557,8 +561,17 @@ The absence of rankable quality measures left \citeauthor{10.5194/os-2020-107} t
 \section{Concluding discussion}
 \label{Sec:Discussion}
 This article has put the case that an appropriate clarification of tidal data types and aims will enable a conventional tide prediction service to better compliment a range of modern applications; and that such a change could be relatively incremental and feasible with existing technology. 
-There is of course a very long history of proposals for refinements or up-ending of tide prediction techniques \citep{Cartwright:2000tt}\citep{Jay:2003bj}, but this is in contrast a proposal for an incremental shift in thinking for an established and valuable \textit{service}.
-The magnitude of the signals and discontinuities are overall rather small at only $\sim10-20cm$.   But scales like this are worth some attention when considering the operational role for forewarning of nuisance flooding \citep{Devlin:2017hu,10.1071/es19024} and potentially in complimenting future remote observation platforms \footnote{\url{auswot.org}} and coastal forecasting \citep{10.3389/fmars.2019.00437}.
+There is of course a very long history of proposals for refinements or up-ending of tide prediction techniques \citep{Cartwright:2000tt}\citep{Jay:2003bj}, but in contrast the present argument is for an incremental shift in the thinking behind an established and valuable \textit{service}.
+The magnitude of the signals and discontinuities are overall rather small at only $\sim10-20cm$.   But scales like this are worthy of attention when considering the operational role for forewarning of nuisance flooding \citep{Devlin:2017hu,10.1071/es19024} and potentially in complimenting future remote observation platforms \footnote{\url{auswot.org}} and coastal forecasting more generally \citep{10.3389/fmars.2019.00437}.
 
-This proposal has intentionally not promoted the promulgation of tidal analysis parameters and has instead focused on the value of timeseries.   Whilst the publication of parameters would of itself be desirable in terms of transparency, these are less likely to directly deliver the value required by downstream applications.    Most simply because the interpretation and application of tidal constants requires consistency between the analysis and synthesis software. Consider for instance the inconsistent designation of \textbf{Sa} to Doodson numbers \texttt{[0 0 1 0 0 0]} and \texttt{[0 0 1 0 0 ‐1]} between tools \citep{PCTMSL-sp9}.  Let alone the manner in which energy is variously projected onto named constituent groups as a function of record length.  
+This discussion has intentionally not promoted the promulgation of tidal analysis parameters and has instead focused on the value of timeseries services.   
+Whilst transparency of prediction methods and parameters is of itself desirable, the publication of tidal constants is less likely to directly deliver the value required by downstream applications.    Most simply because the interpretation and application of tidal constants requires consistency between the analysis and synthesis software. 
+
+A technically trivial but serious case is the known inconsistent designation of \textbf{Sa} to Doodson numbers \texttt{[0 0 1 0 0 0]} and \texttt{[0 0 1 0 0 ‐1]} between tools \citep{PCTMSL-sp9}.  
+
+More generally, supplying tidal constants as a service raises deeper uncertainties regarding the varying manner in which non-stationary signals are either projected onto named constituent groups or even incorporated into predictions (eg \citep{Matte:2012df}). 
 Providing timeseries would directly serve many direct downstream applications as well as allowing specialist users to `back out' parameters in their own analysis framework as required and in isolation from the details of tools in use by the supplier.
+
+
+
+Moving towards a differentiated micro-service \citep{BCG2020} approach to supplying conventional tidal data would be a step in the right direction for the National agency.
