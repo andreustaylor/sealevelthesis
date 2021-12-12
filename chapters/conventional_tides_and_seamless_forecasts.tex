@@ -68,7 +68,7 @@ Conventional products such as tide tables are however so well embedded and usefu
 \subsection{National agency practice and diverse uses}
 In Australia, harmonic tidal analysis and prediction have been routine business for government agencies for several decades.  For navigation purposes the Australian Hydrographic Service promulgates an annual official set of port predictions in the form of the Australian National Tide Tables (ANTT) and its software version AusTides \citep{austides}.  AusTides is not an automated data delivery service, but rather stand alone electronic version of the tide tables.  
 The majority of the analysis behind the tide tables is carried out by the Bureau of Meteorology National Tidal Unit.  
-The analyses are founded on a harmonic least-squares method implemented within a proprietary suite of software that traces a lineage to the Proudman institute \citep{MHL2156}.    
+The analyses are founded on a harmonic least-squares method implemented within a proprietary suite of software that traces a lineage to what was then known as the Proudman Oceanographic Laboratory in Liverpool \citep{MHL2156,Cartwright:2000tt}.    
 The Bureau and various other state agencies publish annual tide predictions at locations additional to the ANTT. 
 This well established practice of routine harmonic tidal analysis and prediction will be called ``conventional''.
 
@@ -185,6 +185,8 @@ With water level timeseries $\eta$ variants:
     \item port tides with all constituents; 
     \item port tides with excluded constituents individually and in combination: Sa, Ssa, Mm, Msf, Mf and S1.
 \end{inparaenum}
+Increasingly positive values for the metric $I$ reflects improved agreement between the insitu and the global tide solution by the exclusion of constituents.  A null value reflects no change, and negative $I$ reflects decreased agreement.
+
 
 The \textit{total removal} of the selected constituent terms consistently improves the compatibility of the physical and conventional predictions as is expected.   Moreover, improvement in agreement is partially contributed by each individual constituent with the only case for any ambiguity being \textbf{Mf}; visualised in Figure \ref{fig:improveOtps} panel [b]. Mf is the strongest of the long period forcing terms but still overall these results indicate that the conventional tide attribution is skewed towards the projection of nontidal noise (see Figure \ref{fig:williamsFraction} panel [e] as well). 
 
