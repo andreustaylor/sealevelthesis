@@ -142,8 +142,15 @@ It is this harmonic decomposition of the \ATGP{} that leads to the conventional 
 %----------------
 The index $k$ represents a discrete series of tidal components; potentially expanded out to hundreds of terms.  Each component is associated with a discrete point in complex frequency-space with amplitude $H$ and angular argument $\theta_{nmk}$.   For the relevant celestial bodies this argument can further decomposed to time variations at a fixed frequency $\omega$ relative to a reference phase $\beta$.  
 
-Despite a common misconception, it is important to emphasise that equation \ref{E:harmonic} does not represent a Fourier series.  The finite sequence of frequencies $\omega_{nmk}$ are derived from the relative motions of the earth-moon-sun system and do not provide either an orthogonal set of sinusoids nor a complete basis.
+Despite a common misconception, it is important to emphasise that equation \ref{E:harmonic} does not represent a Fourier series.  The finite sequence of frequencies $\omega_{nmk}$ are derived from the relative motions of the earth-moon-sun system in contrast to any content-independent mathematical approach. 
+%% Review comment
+%% extra here about orthoganal & re etc
+do not provide either an orthogonal set of sinusoids nor a complete basis.
 Whilst not an orthogonal set, the harmonic decomposition does provide a special list of frequencies that can be ranked by the scalar magnitudes $H_{nmk}$. 
+
+
+%%
+
 
 \citet{Doodson:1921kt} introduced a novel and influential system of notation for specifying $\theta_{nmk}$ based on a laborious harmonic decomposition of $V_T$ using Brown's lunar theory; that is, a polynomial model for the lunar ephemeris.  
 In the Doodson formulation, all the relevant astronomical information is summarised by code of 6 small integers; together called the Doodson number or argument numbers.   Each position in the code is associated with an fundamental astronomical concept as summarised in Table \ref{T:doodson}.  Doodson codes are in common use across the tidal literature and provide the only useful means of describing tidal components beyond the small number associated with traditional Darwin names such as M2, K1, O1, S2.
@@ -311,7 +318,7 @@ Neither of these concepts actually involve any hydrodynamics. When hydrodynamic 
 
 Within operational authorities, tide prediction is practically synonymous with conventional harmonic methods. It is here that the role of special frequencies (section \ref{sec:temporal}) has come to play a primary role.
 ``Standard harmonic methods demand little accuracy in the harmonic amplitudes of the [tidal] potential, since they \textit{use only the frequencies} at which the larger amplitudes appear, and certain details on which to base nodal corrections''\citep{Cartwright:1973em} emphasis added.
-Recall that the basis for this analysis is not harmonic in the sense of an orthogonal Fourier series, but rather that it follows from the harmonic development of the \ATGP{} as described in section \ref{sec:basic_potential}.    Here again the historical legacy of tidal terminology lends itself to misunderstanding \citep{Cartwright:2000tt}\citep{Parker:2007wq}.
+Recall that the basis for this analysis is not harmonic in the sense of an orthogonal Fourier series, but rather that it follows from the harmonic development of the \ATGP{} as described in section \ref{sec:basic_potential}.    Here again the historical legacy of tidal terminology lends itself to misunderstanding \citep{Cartwright:2000tt,Parker:2007wq}.
 
 
 Harmonic methods of sea level prediction are very successful and will continue to be important for years to come, regardless of other advances.  The conventional and routine harmonic analysis of tide-gauge data provides a foundational set of products that is embedded across the whole coastal economy. Tide tables and derived tidal planes (such as LAT) provide ubiquitous references for both land and marine applications. This situation provides some of the difficulties discussed in Chapter \ref{chp:aggregate}, and is elaborated further in  Chapter \ref{chp:tideFlavours}.
@@ -368,7 +375,9 @@ Harmonic analysis can be formulated as an over-determined inverse problem:
     \M{A} \V{x}=\V{b} 
 \end{equation}
 %--------------------
-Where $\M{A}$ is a matrix of tidal timeseries basis functions, $\V{x}$ is the analysed tidal solution and $\V{b}$ is an observational record. The tidal basis functions that comprise $\M{A}$ are developed from the combination of the harmonic decomposition of $\eta_{eq}$ and a series of conventions.  The resulting basis is neither orthogonal nor complete. Inclusion of the modulation terms $f_k$ and $u_k$, discussed below, means that the basis functions are not actually sinusoids. The core assumption of stationarity for the finite series of basis functions is equivalent to an assumption that the basis has infinite span in time.   
+Where $\M{A}$ is a matrix of tidal timeseries basis functions, $\V{x}$ is the analysed tidal solution and $\V{b}$ is an observational record. The tidal basis functions that comprise $\M{A}$ are developed from the combination of the harmonic decomposition of $\eta_{eq}$ and a series of conventions.  
+%% Review comment on ortho
+The resulting basis is neither orthogonal nor complete. Inclusion of the modulation terms $f_k$ and $u_k$, discussed below, means that the basis functions are not actually sinusoids. The core assumption of stationarity for the finite series of basis functions is equivalent to an assumption that the basis has infinite span in time.   
 
 Practical applications of the harmonic formalism has largely evolved prior to modern cheap computing, and many details can appear somewhat baroque in isolation.  The analogue instruments shown in Figure \ref{fig:tide_machines} serve to highlight this operational history.
 
