@@ -147,7 +147,7 @@ The index $k$ represents a discrete series of tidal components; potentially expa
 
 Despite a common misconception, it is important to emphasise that equation \ref{E:harmonic} does not represent a Fourier series.  The finite sequence of frequencies $\omega_{nmk}$ are derived from the relative motions of the earth-moon-sun system in contrast to any content-independent mathematical approach. 
 %% Review response about orthoganility - part here
-The components do not in general provide either an orthogonal set of sinusoids nor a complete basis (compare \citep{Briggs_1995}).   The relevance of finite record length and constituent selection is described further below, but for present discussion it is noteworthy that the harmonic decomposition \textit{does} provide a special list of frequencies that can be ranked by the scalar magnitudes $H_{nmk}$. 
+The components do not in general provide either an orthogonal set of sinusoids nor a complete basis (compare \citet{Briggs_1995}).   The relevance of finite record length and constituent selection is described further below, but for present discussion it is noteworthy that the harmonic decomposition \textit{does} provide a special list of frequencies that can be ranked by the scalar magnitudes $H_{nmk}$. 
 
 \citet{Doodson:1921kt} introduced a novel and influential system of notation for specifying $\theta_{nmk}$ based on a laborious harmonic decomposition of $V_T$ using Brown's lunar theory; that is, a polynomial model for the lunar ephemeris.  
 In the Doodson formulation, all the relevant astronomical information is summarised by code of 6 small integers; together called the Doodson number or argument numbers.   Each position in the code is associated with an fundamental astronomical concept as summarised in Table \ref{T:doodson}.  Doodson codes are in common use across the tidal literature and provide the only useful means of describing tidal components beyond the small number associated with traditional Darwin names such as M2, K1, O1, S2.
@@ -385,7 +385,7 @@ Subsequently, practical harmonic analysis procedures must specify which frequenc
 
 The canonical selection concept is known as the ``Rayleigh criterion'' for assessing frequency separability on the basis of frequency and time period alone.  Two basis functions are considered separable only if the number of cycles expressed over the sample period differs by at least one (or a specified portion of a cycle). \citet[section 2.1.2]{Foreman:1977us} details a decision tree process that applies this test successively to pairs of constituents in an order configured in light of the relative magnitudes of the abstract equilibrium tide ($H_{nmk}$ in Equation \ref{E:harmonic}).
 
-Rayleigh-based constituent selection is a very blunt tool that does not account in anyway for the role of "noise" in the inversion. \citet{Foreman:2009bg} describes an updated approach to tidal analysis that do address questions of signal to noise by targeting the matrix condition number directly, but thereby losing the convenience of an automated decision tree.  The methods described by \citet{Matte:2012df} also address the importance of non-stationarity and noise by an extension of the Rayleigh concept to account for spectral cusps.
+Rayleigh-based constituent selection is quite a blunt tool that does not account in any way for the role of "noise" in the inversion. \citet{Foreman:2009bg} describes an updated approach to tidal analysis that do address questions of signal to noise by targeting the matrix condition number directly, but thereby losing the convenience of an automated decision tree.  The methods described by \citet{Matte:2012df} also address the importance of non-stationarity and noise by an extension of the Rayleigh concept to account for spectral cusps.
 
 At the time of writing the Bureau of Meteorology operational process does not systematically account for inversion quality or signal to noise ratios in constituent selection. 
 This fact contributes to the potential for overfitting or projection of non-tidal signal onto standard tide predictions that are relevant to later chapters \ref{chp:aggregate} and \ref{chp:tideFlavours}.
@@ -485,7 +485,7 @@ Modern tidal atlases are in close agreement with regard to broad patterns, but c
 %---------------------------
 \begin{figure}[!hbt] \centering
     \includegraphics[width=\figwidthBig]{figures/maps/map_tide_differences_tpx_xovers.png}
-    \caption{Tide solution differences at topex cross-overs near Australia.}{Maximum absolute differences between tidal timeseries at topex cross-overs for a 1 year period. The different solutions agree very closely in deep water, whilst the significance of shallow water effects are apparent.  Models included: CSR04\citep{Eanes:1996tr}, FES04\citep{Lyard:2006ir}, DTU10\citep{IMPROVEMENTOFGLOBA:2010tu}, GOT47, GOT48\citep{Schrama:1994vr}\citep{Ray:1999vm} }
+    \caption{Tide solution differences at topex cross-overs near Australia.}{Maximum absolute differences between tidal timeseries at topex cross-overs for a 1 year period. The different solutions agree very closely in deep water, whilst the significance of shallow water effects are apparent.  Models included: CSR04\citep{Eanes:1996tr}, FES04\citep{Lyard:2006ir}, DTU10\citep{IMPROVEMENTOFGLOBA:2010tu}, GOT47, GOT48\citep{Schrama:1994vr,Ray:1999vm} }
     \label{fig:tpx_cross}
 \end{figure}
 %---------------------------
@@ -494,13 +494,13 @@ Modern tidal atlases are in close agreement with regard to broad patterns, but c
 The LTI concept embodied in tidal atlases is well suited to representing deep water tides.   Amplitudes of each partial tide are no larger than about 0.02 cm for the majority of the global ocean, compared to depths of around 4km.
 Given the underlying LTI framework, the tidal literature has naturally focused on stationary frequency-space metrics.  Intercomparison of mode1s and assessment against observations is almost always performed at a small set of dominant tidal frequencies - commonly only M2, K1, O1 and S2.
 
-Summaries that categorise the many global tide models on the basis of design choices, parameterisations and data assimilation methods are given in \citep{Ardalan:2008gs} and \citep{Matsumoto:2000tg}. 
+Summaries that categorise the many global tide models on the basis of design choices, parameterisations and data assimilation methods are given in \citet{Ardalan:2008gs} and \citet{Matsumoto:2000tg}. 
 
 Tidal atlases are in essence spatial extensions of insitu tide predictions and subsequently each solution is formulated in terms of a particular tidal formalism.  
 Similarly, interpretation of any tidal atlas warrants special attention to be given to the representation of signals associated with non-gravitational effects.   This topic is discussed further in chapter \ref{chp:tideFlavours}.
 
 
-Some authors have gone so far to presented the existence of repeat-orbit altimetry observations as effectively being `thousands of tide gauges', but reduction of these observations via tidal analysis requires many special considerations. Most obviously is that ground-path of these orbits results in repeated but infrequent samples of any fixed point; and subsequently frequency aliasing is a primary limitation on tidal analysis methods..
+Some authors have gone so far to presented the existence of repeat-orbit altimetry observations as effectively being `thousands of tide gauges', but reduction of these observations via tidal analysis requires many special considerations. Most obviously is that ground-path of these orbits results in repeated but infrequent samples of any fixed point; and subsequently frequency aliasing is a primary limitation on tidal analysis methods.
 
 
 
@@ -529,7 +529,7 @@ Now with over 20 years of altimetry data, all the highly evolved global tidal mo
 The data assimilation employed for global tide solutions has quite a different form to that used in forward models like \BL{}; section \ref{sec:mesoscaleOperational}.  Whereas a mesoscale ocean model requires initial conditions from which to integrate forward in time, the LTI tidal conception of the ocean seeks a single optimal solution in frequency space. 
 
 
-The dynamics relevant to tidal sea level are conventionally written as the Laplace Tidal Equations (LTE) ; \citep[9.8]{gill1982atmosphere} and \citep{Hendershott:1981ub}.  The LTE are a set of depth integrated shallow water equations on a rotating thin shell.  Advection is neglected altogether.
+The dynamics relevant to tidal sea level are conventionally written as the Laplace Tidal Equations (LTE) ; \citep[Sec9.8]{gill1982atmosphere} and \citep{Hendershott:1981ub}.  The LTE are a set of depth integrated shallow water equations on a rotating thin shell.  Advection is neglected altogether.
 The combination of barotropic hydrodynamics and data assimilation used in global tide models has proven to be a adequate when the aim is to map tidal patterns of surface elevation.  The LTE provide a tractable means of doing so given the incomplete spatial and temporal coverage of observations.
 This formulation excludes a direct representation of internal tides, despite the important role they play in the energetics of ocean tides.
 \begin{quote}
